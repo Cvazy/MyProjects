@@ -1,0 +1,9 @@
+@media (max-width: 1320px) {
+    .contend .cards {
+        padding-top: 3%;
+    }
+
+    .contend .sidebar {
+        padding-top: 0;
+    }
+}

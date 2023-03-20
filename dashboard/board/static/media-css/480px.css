@@ -1,0 +1,72 @@
+@media (max-width: 480px) {
+    .text {
+        font-size: 12px;
+    }
+
+    .weather {
+        padding: 0 55% 40%;
+    }
+
+    .weather-img {
+        padding-top: 15%;
+    }
+
+    .nav-block .nav-list {
+        display: none;
+    }
+
+    .nav-block.open .nav-list {
+        display: block;
+        position: fixed;
+        right: 0;
+        left: 0;
+        padding: 20% 20%;
+        background: #20223B;
+        z-index: 1;
+    }
+
+    .nav-button img {
+        padding-left: 10%;
+        height: 40px;
+        width: 40px;
+    }
+
+    .nav-button {
+        display: block;
+        position: fixed;
+        z-index: 3;
+        padding: 10% 3%;
+    }
+
+    .card.third-line {
+        width: 268px;
+    }
+
+    .card.third-line canvas {
+        margin-top: 20%;
+    }
+
+    .card.small {
+        width: 267px;
+    }
+
+    .employees {
+        font-size: 18px;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .modal-close img {
+        margin-top: 50%;
+        height: 30px;
+        width: 30px;
+        margin-left: 360px;
+    }
+
+    .modal-photo {
+        height: 250px;
+        width: 320px;
+    }
+}

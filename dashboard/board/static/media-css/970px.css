@@ -1,0 +1,53 @@
+@media (max-width: 970px) {
+    .nav-block .nav-list {
+        display: none;
+    }
+
+    .nav-block.open .nav-list {
+        display: block;
+        position: fixed;
+        right: 0;
+        left: 0;
+        padding: 20% 20%;
+        background: #20223B;
+        z-index: 1;
+    }
+
+    .nav-button img {
+        height: 55px;
+        width: 55px;
+    }
+
+    .nav-button {
+        display: block;
+        position: fixed;
+        z-index: 3;
+        padding: 10% 4.5%;
+    }
+
+    .card.first-line {
+        width: 305px;
+        height: 200px;
+    }
+
+    .card.small {
+        width: 305px;
+        height: 200px;
+    }
+
+    .card.long {
+        width: 625px;
+        height: 220px;
+    }
+
+    .card.third-line {
+        width: 625px;
+        height: 270px;
+    }
+
+    .modal-close img {
+        height: 50px;
+        width: 50px;
+        margin-left: 850px;
+    }
+}

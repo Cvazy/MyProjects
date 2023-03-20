@@ -1,0 +1,77 @@
+@media (max-width: 768px) {
+    .text {
+        font-size: 14px;
+    }
+
+    .nav-block .nav-list {
+        display: none;
+    }
+
+    .nav-block.open .nav-list {
+        display: block;
+        position: fixed;
+        right: 0;
+        left: 0;
+        padding: 20% 20%;
+        background: #20223B;
+        z-index: 1;
+    }
+
+    .long.diagram {
+        margin-left: 2%;
+        margin-top: 6%;
+    }
+
+    .weather {
+        padding: 0 70% 30%;
+    }
+
+    .weather-img {
+        height: 70px;
+        width: 70px;
+        padding: 8% 15%;
+    }
+
+    .nav-button img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .nav-button {
+        display: block;
+        position: fixed;
+        z-index: 3;
+        padding: 10% 4%;
+    }
+
+    .card.first-line {
+        width: 475px;
+        height: 180px;
+    }
+
+    .card.small {
+        width: 475px;
+        height: 180px;
+    }
+
+    .card.long {
+        width: 475px;
+        height: 210px;
+    }
+
+    .card.third-line {
+        width: 475px;
+        height: 250px;
+    }
+
+    .modal-close img {
+        height: 40px;
+        width: 40px;
+        margin-left: 650px;
+    }
+
+    .modal-photo {
+        height: 250px;
+        width: 500px;
+    }
+}

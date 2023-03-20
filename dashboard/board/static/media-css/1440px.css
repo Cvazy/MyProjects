@@ -1,0 +1,65 @@
+@media (min-width: 1440px) {
+    .contend .sidebar {
+        position: fixed;
+        padding-top: 10px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .long.diagram {
+        margin-left: 8%;
+    }
+
+    .nav-item {
+        font-size: 20px;
+        line-height: 60px;
+    }
+
+    .nav-item img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .weather-img {
+        padding: 5% 3%;
+    }
+
+    .notes {
+        font-size: 12px;
+    }
+
+    .weather {
+        font-size: 14px;
+    }
+
+    .card.first-line {
+        width: 310px;
+        height: 190px;
+    }
+
+    .card.small {
+        width: 310px;
+        height: 220px;
+    }
+
+    .card.long {
+        width: 635px;
+        height: 220px;
+    }
+
+    .card.third-line {
+        width: 473px;
+        height: 270px;
+    }
+
+    .modal-close img {
+        margin-left: 1180px;
+    }
+
+    .modal-photo {
+        height: 450px;
+        width: 900px;
+    }
+}

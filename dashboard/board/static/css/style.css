@@ -1,0 +1,161 @@
+body {
+    background: #4E5474;
+    margin: 0;
+    font-family: 'Patua One', cursive;
+}
+
+.contend .sidebar {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    height: 100%;
+    width: 15%;
+    background: #20223B;
+}
+
+.contend .cards {
+    display: flex;
+    height: 96%;
+    width: 68%;
+    flex-wrap: wrap;
+    padding-top: 2%;
+    padding-left: 17.5%;
+    margin: auto;
+}
+
+.card {
+    display: grid;
+    margin-right: 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    background: #383E56;
+}
+
+.first-line {
+    width: 355px;
+    height: 220px;
+}
+
+.small {
+    width: 350px;
+    height: 220px;
+}
+
+.long {
+    width: 730px;
+    height: 220px;
+}
+
+.third-line {
+    width: 540px;
+    height: 260px;
+}
+
+.nav-block {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-list {
+    display: block;
+    height: 100%;
+    padding-top: 50%;
+}
+
+.nav-item {
+    color: #BFC3CF;
+    font-weight: 400;
+    font-size: 20px;
+    padding-left: 30px;
+    line-height: 50px;
+}
+
+.nav-item:hover {
+    border: solid #4E5474;
+    transition: 0.1s;
+}
+
+.nav-button {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text {
+    text-align: center;
+    color: #BFC3CF;
+}
+
+.diagram {
+    padding: 2% 2%;
+}
+
+.notes {
+    text-align: left;
+    white-space: nowrap;
+    padding-bottom: 0;
+    padding-left: 10%
+}
+
+.weather {
+    text-align: left;
+    padding: 0 45% 30%;
+    white-space: nowrap;
+}
+
+.weather-img {
+    display: flex;
+    position: absolute;
+    padding-left: 3%;
+    padding-top: 4%;
+}
+
+.contend-employees {
+    display: inline-block;
+}
+
+.employees {
+    float: left;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 6%;
+    white-space: nowrap;
+}
+
+.phone {
+    float: right;
+    font-size: 20px;
+    text-align: right;
+    padding-right: 6%;
+    white-space: nowrap;
+}
+
+.pb-2 {
+    padding-bottom: 2%;
+}
+
+.pb-5 {
+    padding-bottom: 5%;
+}
+
+.canvas-st {
+    height:100%;
+    width:100%;
+    padding-right: 15%;
+}
+
+.span-col {
+    color: #BFC3CF;
+}
+
+.diagram-st {
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+}

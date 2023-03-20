@@ -1,0 +1,76 @@
+@media (min-width: 2500px) {
+    .contend .cards {
+        padding-top: 10%;
+    }
+
+    .contend .sidebar {
+        padding-top: 150px;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+
+    .notes {
+        font-size: 22px;
+    }
+
+    .long.diagram {
+        margin-left: 10%;
+    }
+
+    .employees {
+        font-size: 40px;
+    }
+
+    .phone {
+        font-size: 40px;
+    }
+
+    .nav-item {
+        font-size: 40px;
+        line-height: 100px;
+    }
+
+    .nav-item img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .weather-img {
+        height: 120px;
+        width: 120px;
+        padding: 5% 3%;
+    }
+
+    .card.first-line {
+        width: 550px;
+        height: 340px;
+    }
+
+    .card.small {
+        width: 600px;
+        height: 380px;
+    }
+
+    .card.long {
+        width: 1065px;
+        height: 380px;
+    }
+
+    .card.third-line {
+        width: 833px;
+        height: 500px;
+    }
+
+    .modal-close img {
+        height: 100px;
+        width: 100px;
+        margin-left: 2100px;
+    }
+
+    .modal-photo {
+        height: 800px;
+        width: 1600px;
+    }
+}

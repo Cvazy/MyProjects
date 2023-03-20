@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/media.css' %}">
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+  <title>DashBoard</title>
+</head>
+<body>
+
+<div class="contend">
+  <div class="sidebar">
+    <div id="nav" class="nav-block">
+      <div class="nav-list">
+        {% for sb in sidebar %}
+          <a href="{% url 'home' %}">
+            <div class="nav-item">
+              <img src="media/{{ sb.image }}" alt="">
+              <span>{{ sb.name }}</span>
+            </div>
+          </a>
+        {% endfor %}
+
+        <div class="nav-item">
+          <a href="{% static 'weatherfile/weather_data.xlsx' %}" download="">
+            <img src="{% static 'img/dload.png' %}" alt="">
+            <span class="span-col">Download</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="nav-btn" class="nav-button">
+    <img id="nav-btn-img" src="{% static 'img/menu.png' %}" alt="">
+  </div>
+  
+  <div class="cards text">
+    <div class="card first-line">
+      <h2>Notes</h2>
+      <div class="pb-5">
+        {% for note in notes %}
+          <div class="notes">
+            <big>{{ note.name }}</big>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="card first-line">
+      <canvas class="diagram diagram-st" id="FirstChart"></canvas>
+    </div>
+    
+    <div class="card first-line">
+      <h2>Moscow</h2>
+      <div class="weather-img">
+        {% if description == 'broken clouds' %}
+          <img src="{% static 'img/windy.png' %}" alt="">
+        {% elif description == 'moderate rain' %}
+          <img src="{% static 'img/rainy.png' %}" alt="">
+        {% elif description == 'clear sky' %}
+          <img src="{% static 'img/sunny.png' %}" alt="">
+        {% elif description == 'light snow' %}
+          <img src="{% static 'img/snowy.png' %}" alt="">
+        {% else %}
+          <img src="{% static 'img/none.png' %}" alt="">
+        {% endif %}
+      </div>
+      <div class="weather">
+        <big>{{ temp }} °C</big> <br/>
+        <big>Wind {{ wind }} m/s</big> <br/>
+        <big>Humidity {{ humidity }} %</big> <br/>
+        <big>Pressure {{ pressure }} mm Hg.</big> <br/>
+      </div>
+    </div>
+    
+    {% for mod in modal %}
+      <a href="#" data-modal-window="#ModalWindow">
+        <div class="card small">
+          <img class="card small" src="media/{{ mod.image }}" alt="">
+        </div>
+      </a>
+
+      <div class="window" id="ModalWindow" aria-hidden="true">
+        <div class="modal-window" role="dialog" aria-hidden="true">
+          <button
+            data-modal-close
+            class="modal-close"
+          >
+            <img src="{% static 'img/close.png' %}" alt="">
+          </button>
+          <img data-modal-window class="modal-photo" src="media/{{ mod.image }}" alt=""/>
+        </div>
+      </div>
+    {% endfor %}
+    
+    <div class="card long">
+      <canvas class="card long diagram canvas-st" id="SecondChart"></canvas>
+    </div>
+    
+    <div class="card third-line">
+      <canvas class="diagram" id="ThirdChart"></canvas>
+    </div>
+    
+    <div class="card third-line">
+      <h2>Employees</h2>
+      <div class="contend-employees">
+        {% for employee in employees %}
+          <div class="employees pb-2">
+            <li>{{ employee.employee }}</li>
+          </div>
+
+          <div class="phone pb-2">
+            <span>{{ employee.phone }}</span> <br/>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="{% static 'js/modal.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/first-line.js' %}"></script>
+<script src="{% static 'js/second-line.js' %}"></script>
+<script src="{% static 'js/third-line.js' %}"></script>
+
+</html>

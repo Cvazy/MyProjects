@@ -1,0 +1,63 @@
+.window {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    -webkit-overflow-scrolling: touch;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.modal-window {
+    transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
+    transform: scale(1);
+}
+
+.modal-close {
+    display: flex;
+    margin-left: auto;
+    background: none;
+    border: none;
+    margin-right: 25%;
+}
+
+.window-active {
+    visibility: visible;
+}
+
+.window-active .modal-window {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.window-shadow {
+    position: fixed;
+    border: none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 98;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    background-color: black;
+}
+
+.window-shadow-show {
+    pointer-events: auto;
+    opacity: 0.6;
+}
+
+.window-opened {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
