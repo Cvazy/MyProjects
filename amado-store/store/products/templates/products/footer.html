@@ -1,0 +1,66 @@
+{% load static %}
+{% load i18n %}
+
+<section class="newsletter-area section-padding-100-0">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6 col-xl-7">
+        <div class="newsletter-text mb-100">
+          <h2>{% trans 'Subscribe for a ' %}<span>{% trans '25% Discount' %}</span></h2>
+          <p>Nulla ac convallis lorem, eget euismod nisl. Donec in libero sit amet mi vulputate
+            consectetur. Donec auctor interdum purus, ac finibus massa bibendum nec.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6 col-xl-5">
+        <div class="newsletter-form mb-100">
+          <form action="#" method="post">
+            <label>
+              <input type="email" name="email" class="nl-email" placeholder="{% trans 'Your E-mail' %}">
+            </label>
+            <input type="submit" value="{% trans 'Subscribe' %}">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer_area clearfix">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-8">
+        <div class="single_widget_area">
+          <div class="footer_menu">
+            <nav class="navbar navbar-expand-lg justify-content-end">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#footerNavContent"
+                aria-controls="footerNavContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="footerNavContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">{% trans 'Home' %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'products:shop' %}">{% trans 'Shop' %}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cart' %}">{% trans 'Cart' %}</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

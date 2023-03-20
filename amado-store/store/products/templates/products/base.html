@@ -1,0 +1,37 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+{% if user.id %}
+  {% get_available_languages as LANGUAGES %}
+  {% for lang in LANGUAGES %}
+    {% if LANGUAGE_CODE == lang.0 %}
+      {{ lang.1 }} ({{ lang.0 }})
+    {% else %}
+      <a href="{% url 'products:set_language' %}?l={{ lang.0 }}">{{ lang.1 }} ({{ lang.0 }})</a>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+  <title>{% block title %} {% endblock %}</title>
+</head>
+
+<body>
+<div class="main-content-wrapper d-flex clearfix">
+  {% include 'products/header.html' %}
+  {% block content %}{% endblock %}
+</div>
+
+{% include 'products/footer.html' %}
+{% include 'products/js_style.html' %}
+
+</body>
+</html>

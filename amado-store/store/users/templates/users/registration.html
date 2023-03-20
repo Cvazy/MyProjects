@@ -1,0 +1,55 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+  {% trans 'Amado - Furniture Ecommerce Template | Registration' %}
+{% endblock %}
+
+{% block content %}
+  <div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="checkout_details_area mt-50 clearfix">
+            <div class="cart-title text-center">
+              <h2>{% trans 'Registration' %}</h2>
+            </div>
+
+            <form action="{% url 'users:registration' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="{{ form.first_name.id_for_label }}"></label>{{ form.first_name }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="{{ form.last_name.id_for_label }}"></label>{{ form.last_name }}
+                </div>
+
+                <div class="col-12 mb-3">
+                  <label for="{{ form.username.id_for_label }}"></label>{{ form.username }}
+                  <label for="{{ form.email.id_for_label }}"></label>{{ form.email }}
+                  <label for="{{ form.town.id_for_label }}"></label>{{ form.town }}
+                  <label for="{{ form.address.id_for_label }}"></label>{{ form.address }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="{{ form.password1.id_for_label }}"></label>{{ form.password1 }}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="{{ form.password2.id_for_label }}"></label>{{ form.password2 }}
+                </div>
+
+                <div class="col-12 mb-3 text-center">
+                  <input class="btn amado-btn" type="submit" value="{% trans 'Register' %}">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

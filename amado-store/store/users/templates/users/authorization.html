@@ -1,0 +1,72 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}
+  {% trans 'Amado - Furniture Ecommerce Template | Authorization' %}
+{% endblock %}
+
+{% block content %}
+  <div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="checkout_details_area mt-50 clearfix">
+            {% if messages or form.errors %}
+              <div
+                class="alert {% if messages %} alert-success {% else %} alert-warning {% endif %} alert-dismissible fade show"
+                role="alert"
+                class="mt-50"
+              >
+                {% if messages %}{% for message in messages %}{{ message }}{% endfor %}
+                {% else %}
+                  {{ form.non_field_errors }}
+                {% endif %}
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="alert"
+                  aria-label="{% trans 'Close' %}"
+                >
+                  <span aria-hidden="true"></span>
+                </button>
+              </div>
+            {% endif %}
+            <div class="cart-title text-center">
+              <h2>{% trans 'Authorization' %}</h2>
+            </div>
+
+            <form action="{% url 'users:authorization' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-12 mb-3">
+                  <label for="{{ form.login.id_for_label }}"></label>
+                  {{ form.username }}
+                </div>
+
+                <div class="col-12 mb-3">
+                  <label for="{{ form.password.id_for_label }}"></label>
+                  {{ form.password }}
+                </div>
+
+                <div class="col-6 mb-3">
+                  <input class="btn amado-btn mb-15" type="submit" value="{% trans 'Log in' %}">
+                </div>
+
+                <div class="col-6 mb-3">
+                  <a
+                    href="{% url 'users:registration' %}"
+                    class="btn amado-btn mb-15 fl-r"
+                  >
+                    {% trans 'Registration' %}
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-07 00:55+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Amado - Furniture Ecommerce Template | Cart"
+msgstr "Amado - Шаблон для электронной коммерции мебели | Корзина"
+
+msgid "Shopping Cart"
+msgstr "Корзина товаров"
+
+msgid "Basket is empty"
+msgstr "Корзина пуста"
+
+msgid "Remove from cart"
+msgstr "Удалить из корзины"
+
+msgid "Enlarge"
+msgstr "Увеличить"
+
+msgid "Reduce"
+msgstr "Уменьшить"
+
+msgid "Cart Total"
+msgstr "Итого"
+
+msgid "Free"
+msgstr "Бесплатно"
+
+msgid "Checkout"
+msgstr "Оформление"
+
+msgid "Subscribe for a "
+msgstr "Подпишитесь"
+
+msgid "25% Discount"
+msgstr "25% скидку"
+
+msgid "Your E-mail"
+msgstr "Ваш E-mail"
+
+msgid "Subscribe"
+msgstr "Подписаться"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Shop"
+msgstr "Товары"
+
+msgid "Cart"
+msgstr "Корзина"
+
+msgid "Discount"
+msgstr "Скидки"
+
+msgid "New this week"
+msgstr "Новости недели"
+
+msgid "Profile"
+msgstr "Профиль"
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "Authorization"
+msgstr "Авторизация"
+
+msgid "Amado - Furniture Ecommerce Template | Home"
+msgstr "Amado - Шаблон для электронной коммерции мебели | Главная"
+
+msgid "From "
+msgstr "От "
+
+msgid "Amado - Furniture Ecommerce Template | Product Details"
+msgstr "Amado - Шаблон для электронной коммерции мебели | Информация о товаре"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Forward"
+msgstr "Вперёд"
+
+msgid "Write A Review"
+msgstr "Написать отзыв"
+
+msgid "In Stock"
+msgstr "В налиции"
+
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+msgid "Similar products"
+msgstr "Похожие товары"
+
+msgid "Amado - Furniture Ecommerce Template | Shop"
+msgstr "Amado - Шаблон для электронной коммерции мебели | Товары"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgid "Brands"
+msgstr "Производители"
+
+msgid "Price"
+msgstr "Цена"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Newest"
+msgstr "Новизна"
+
+msgid "Popular"
+msgstr "Популярность"
+
+msgid "subtotal:"
+msgstr "Предварительно: "
+
+msgid "delivery:"
+msgstr "Доставка: "
+
+msgid "total:"
+msgstr "Итого: "
+
+msgid "Sort by"
+msgstr "Сортировать"
+
+msgid "Showing 1-4 of"
+msgstr "Показано 1-4 из "

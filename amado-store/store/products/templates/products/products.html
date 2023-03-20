@@ -1,0 +1,162 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+  {% trans 'Amado - Furniture Ecommerce Template | Product Details' %}
+{% endblock %}
+
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+>
+
+{% block content %}
+  {% for product in products %}
+    <div class="single-product-area section-padding-0-100 clearfix">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mt-50">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">{% trans 'Home' %}</a></li>
+              <li class="breadcrumb-item">
+                <a href="{% url 'shop:category' product.category.pk %}">{{ product.category }}</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-lg-5">
+          <div id="carousel-basic" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img src="{{ product.image.url }}" alt="" class="img-fluid">
+              </div>
+
+              <div class="carousel-item">
+                <img src="{{ product.image.url }}" alt="" class="img-fluid">
+              </div>
+
+              <div class="carousel-item">
+                <img src="{{ product.image.url }}" alt="" class="img-fluid">
+              </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carousel-basic" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">{% trans 'Back' %}</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carousel-basic" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">{% trans 'Forward' %}</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="single_product_desc">
+
+            <div class="product-meta-data">
+            <div class="d-in-bl">
+              <p class="product-price fl-l">${{ product.prices.price }}</p>
+              {% if product.prices.discount > 0 %}
+                <p class="product-old-price fl-l">${{ product.prices.old_price }}</p>
+              {% endif %}
+            </div>
+              <a href="{% url 'products:index' product.pk %}">
+                <h6>{{ product.name }}</h6>
+              </a>
+
+              <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                <div class="ratings">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <div class="review">
+                  <a href="#">{% trans 'Write A Review' %}</a>
+                </div>
+              </div>
+
+              <p class="avaibility"><i class="fa fa-circle"></i>{% trans 'In Stock' %}</p>
+
+              <div class="short_overview my-5">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae eveniet
+                  culpa officia quidem mollitia impedit iste asperiores nisi reprehenderit consequatur,
+                  autem, nostrum pariatur enim?</p>
+              </div>
+
+              <div class="cart">
+                {% if user.id %}
+                  <form action="{% url 'products:basket_add' %}" method="post">
+                {% else %}
+                  <form action="{% url 'users:authorization' %}" method="post">
+                {% endif %}
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ product.pk }}">
+                <button type="submit" value="5" class="btn amado-btn">{% trans 'Add to cart' %}</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+&nbsp;
+<h2 class="ta-c">{% trans 'Similar products' %}</h2>
+
+<div class="row">
+  {% for similar in similars %}
+    <div class="col-3 col-lg-4" style="display: inline-block">
+      <div class="card">
+        <a href="{% url 'products:index' similar.pk %}">
+          <img src="{{ similar.image.url }}" class="card-img-top" alt="...">
+        </a>
+
+        <div class="card-body" style="text-align: center">
+          <h5 class="card-title">{{ similar.name }}</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            cards content.</p>
+          <div style="text-align: center">
+            {% if user.id %}
+              <form action="{% url 'products:basket_add' %}" method="post">
+            {% else %}
+              <form action="{% url 'users:authorization' %}" method="post">
+            {% endif %}
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="{{ similar.pk }}">
+            <button type="submit" class="btn amado-btn mb-15">{% trans 'Add to cart' %}</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"
+></script>
+
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"
+></script>

@@ -1,0 +1,27 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+  {% trans 'Amado - Furniture Ecommerce Template | Home' %}
+{% endblock %}
+
+{% block content %}
+  <div class="products-catagories-area clearfix">
+    <div class="amado-pro-catagory clearfix">
+      {% for item in index %}
+        <div class="single-products-catagory clearfix">
+          <a href="{% url 'products:shop' %}">
+            <img src="{{ item.main_image.url }}" alt="">
+
+            <div class="hover-content">
+              <div class="line"></div>
+              <p>{% trans 'From ' %} ${{ item.price }}</p>
+              <h4>{{ item.name }}</h4>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

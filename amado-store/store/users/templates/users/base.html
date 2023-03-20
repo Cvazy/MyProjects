@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+
+  <title>{% block title %} {% endblock %}</title>
+
+  <div class="main-content-wrapper d-flex clearfix">
+    <header class="header-area clearfix">
+      <div class="nav-close">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </div>
+
+      <div class="logo">
+        <a href="#"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+      </div>
+    </header>
+
+    <div class="mobile-nav">
+      <div class="amado-navbar-brand">
+        <a href="{% url 'index' %}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+      </div>
+
+      <div class="amado-navbar-toggler"></div>
+    </div>
+    {% block content %}{% endblock %}
+  </div>
+
+  {% include 'products/footer.html' %}
+{% include 'products/js_style.html' %}

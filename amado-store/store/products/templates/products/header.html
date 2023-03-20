@@ -1,0 +1,80 @@
+{% load static %}
+{% load i18n %}
+
+<header class="header-area clearfix">
+  <div class="nav-close">
+    <i class="fa fa-close" aria-hidden="true"></i>
+  </div>
+
+  <div class="logo">
+    <a href="{% url 'index' %}"><img src="{% static 'img/core-img/logo.png' %}" alt=""></a>
+  </div>
+
+  <nav class="amado-nav">
+    <ul>
+      <li>
+        <a href="{% url 'index' %}">{% trans 'Home' %}</a>
+      </li>
+
+      <li>
+        <a href="{% url 'products:shop' %}">{% trans 'Shop' %}</a>
+      </li>
+
+      {% if user.id %}
+        <li>
+          <a href="{% url 'cart' %}">{% trans 'Cart' %}</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{% url 'users:authorization' %}">{% trans 'Cart' %}</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <div class="amado-btn-group">
+    <a href="{% url 'products:sale-shop' %}" class="btn amado-btn mb-15">{% trans 'Discount' %}</a>
+  </div>
+
+  {% if user.id %}
+    <div class="cart-fav-search mb-100">
+      <a href="{% url 'users:profile' %}" class="search-nav">
+        <img
+          src="{% static 'img/core-img/profile.png' %}"
+          alt=""
+        >
+        {% trans 'Profile' %}
+      </a>
+
+      <a href="{% url 'cart' %}" class="cart-nav">
+        <img
+          src="{% static 'img/core-img/cart.png' %}"
+          alt=""
+        >
+        {% trans 'Cart' %}
+      </a>
+
+      <a href="{% url 'users:logout' %}" class="search-nav">
+        <img
+          src="{% static 'img/core-img/exit.png' %}"
+          alt=""
+        >
+        {% trans 'Exit' %}
+      </a>
+    </div>
+  {% else %}
+    <div class="cart-fav-search mb-100">
+      <a href="{% url 'users:authorization' %}" class="search-nav">
+        <img src="{% static 'img/core-img/authorization.png' %}" alt="">
+        {% trans 'Authorization' %}
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="social-info d-flex justify-content-between">
+    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  </div>
+</header>

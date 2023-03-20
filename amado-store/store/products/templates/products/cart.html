@@ -1,0 +1,133 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+  {% trans 'Amado - Furniture Ecommerce Template | Cart' %}
+{% endblock %}
+
+{% if cart %}
+  {% block content %}
+    <div class="cart-table-area section-padding-100">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <div class="cart-title mt-50">
+              <h2>{% trans 'Shopping Cart' %}</h2>
+            </div>
+
+            <div class="cart-table clearfix">
+              <table class="table table-responsive">
+                <thead>
+                <tr>
+                  <th></th>
+                  {% for item in basket_item %}
+                    <th>{{ item.item }}</th>
+                  {% endfor %}
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for basket in baskets %}
+                  <tr>
+                    <td class="cart_product_img">
+                      <a href="{% url 'products:index' basket.shop.pk %}">
+                        <img src="{{ basket.shop.image.url }}" alt="">
+                      </a>
+                    </td>
+
+                    <td class="cart_product_desc">
+                      <a class="fz-16"
+                        href="{% url 'products:index' basket.shop.pk %}">{{ basket.shop.name }}</a>
+                    </td>
+
+                    <td class="price">
+                      <span>${{ basket.sum }}</span>
+                    </td>
+
+                    <td class="qty">
+                      <div class="qty-btn d-flex">
+                        <p>Qty: {{ basket.quantity }}</p>
+                      </div>
+                      &nbsp;&nbsp;&nbsp;
+
+                      <form action="{% url 'products:basket_del' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ basket.id }}">
+                        <div class="col-6 mb-3">
+                          <button
+                            type="submit"
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            title="{% trans 'Remove from cart' %}"
+                          >
+                            <img src="{% static 'img/core-img/delete.png' %}" alt="">
+                          </button>
+                        </div>
+                      </form>
+
+                      <form action="{% url 'products:basket_add' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ basket.shop.id }}">
+                        <div class="col-6 mb-3">
+                          <button
+                            type="submit"
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            title="{% trans 'Enlarge' %}"
+                          >
+                            <img src="{% static 'img/core-img/dob_plus.png' %}" alt="">
+                          </button>
+                        </div>
+                      </form>
+
+                      <form action="{% url 'products:basket_min' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ basket.shop.id }}">
+                        <div class="col-6 mb-3">
+                          <button
+                            type="submit"
+                            data-toggle="tooltip"
+                            data-placement="left"
+                            title="{% trans 'Reduce' %}"
+                          >
+                            <img src="{% static 'img/core-img/minus.png' %}" alt="">
+                          </button>
+                        </div>
+                      </form>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="cart-summary">
+              <h5>{% trans 'Cart Total' %}</h5>
+              <ul class="summary-table">
+                <li>
+                  <span>{% trans 'subtotal:' %}</span>
+                  <span>${{ total_sum }}</span>
+                </li>
+                <li>
+                  <span>{% trans 'delivery:' %}</span>
+                  <span>{% trans 'Free' %}</span>
+                </li>
+                <li>
+                  <span>{% trans 'total:' %}</span>
+                  <span>${{ total_sum }}</span>
+                </li>
+              </ul>
+
+              <div class="cart-btn mt-100">
+                <a href="{% url 'cart' %}" class="btn amado-btn w-100">{% trans 'Checkout' %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endif %}

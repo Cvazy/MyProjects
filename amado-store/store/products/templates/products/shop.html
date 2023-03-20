@@ -1,0 +1,126 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+  {% trans 'Amado - Furniture Ecommerce Template | Shop' %}
+{% endblock %}
+
+{% block content %}
+  <div class="shop_sidebar_area">
+    <div class="widget catagory mb-50">
+      <h6 class="widget-title mb-30">{% trans 'Categories' %}</h6>
+      <div class="catagories-menu">
+        <ul>
+          {% for category in categories %}
+            <li><a href="{% url 'shop:category' category.pk %}">{{ category.name }}</a></li>
+          {% endfor %}
+          <li><a href="{% url 'products:shop'%}">Reset filter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="amado_product_area section-padding-100">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+            <div class="total-products">
+              <p>{% trans 'Showing 1-4 of' %} {{ products_count.count }}</p>
+            </div>
+
+            <div class="product-sorting d-flex">
+              <div class="sort-by-date d-flex align-items-center mr-15">
+                <p>{% trans 'Sort by' %}</p>
+                <label for="sortBydate"></label><select name="select" id="sortBydate">
+                <option value="value">{% trans 'Date' %}</option>
+                <option value="value">{% trans 'Newest' %}</option>
+                <option value="value">{% trans 'Popular' %}</option>
+              </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        {% for product in shop %}
+          <div class="col-12 col-sm-6 col-md-12 col-xl-6">
+            <div class="single-product-wrapper">
+              <div class="product-img">
+                <a
+                  href="{% url 'products:index' product.pk %}"
+                  class="d-block w-100"
+                >
+                  <img src="{{ product.image.url }}" alt="">
+                </a>
+              </div>
+
+              <div class="product-description d-flex align-items-center justify-content-between">
+                <div class="product-meta-data">
+                  <div class="d-in-bl">
+                    <p class="product-price fl-l">${{ product.prices.price }}</p>
+                    {% if product.prices.discount > 0 %}
+                      <p class="product-old-price fl-l">${{ product.prices.old_price }}</p>
+                    {% endif %}
+                  </div>
+
+                  <a href="{% url 'products:index' product.pk %}">
+                    <h6>{{ product.name }}</h6>
+                  </a>
+                </div>
+
+                <div class="ratings-cart text-right">
+                  <div class="ratings">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+
+                  {% if user.id %}
+                    <div class="cart">
+                      <form action="{% url 'products:basket_add' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        <button
+                          type="submit"
+                          data-toggle="tooltip"
+                          data-placement="left"
+                          title="Add to Cart"
+                        >
+                          <img src="{% static 'img/core-img/cart.png' %}" alt="" method="post">
+                        </button>
+                      </form>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="navigation">
+            <ul class="pagination justify-content-end mt-50">
+              {% for page in shop.paginator.page_range %}
+                <li class="page-item active">
+                  <a
+                    class="page-link"
+                    href="{% url 'shop:page' page %}"
+                  >
+                    {{ page }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
