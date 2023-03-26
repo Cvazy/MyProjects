@@ -3,6 +3,7 @@ import requests
 import sqlite3
 
 from aiogram import types, Bot, executor, Dispatcher
+from aiogram.dispatcher.filters import Text
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher.filters.state import StatesGroup, State
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
@@ -28,15 +29,21 @@ class TgBotStates(StatesGroup):
     limit = State()
 
 
-def get_kb():
-    kb = ReplyKeyboardMarkup(resize_keyboard=True)
-    kb.add(KeyboardButton('/weather'))
-    kb.add(KeyboardButton('/states'))
-    kb.add(KeyboardButton('/ticket'))
-    kb.add(KeyboardButton('/depth'))
-    kb.add(KeyboardButton('/trades'))
-    kb.add(KeyboardButton('/cancel'))
-    return kb
+def get_keyboard():
+    keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = [
+        '\U0001F9D0 Узнать сегодняшнюю погоду \U0001F9D0',
+        '\U0001F911 Указать значения для coin, currency, limit \U0001F911',
+        '\U0001F4C8 Получить статистику по крипте \U0001F4C9',
+        '\U0001F4B0 Общая сумма предложений по крипте \U0001F4B0',
+        '\U0001F4B5 Информация о купле/продаже крипты \U0001F4B5',
+        '\U0001F97A Сброс текущего состояния бота \U0001F97A'
+    ]
+
+    for button in buttons:
+        keyboard.add(button)
+
+    return keyboard
 
 
 @db.message_handler(commands=['start'])
@@ -44,19 +51,20 @@ async def cmd_start(message: types.Message):
     await message.answer(
         '\U0001F60A Приветики! \U0001F60A \n'
         'Я твой новый бот. Я умею узнавать погоду, а также слежу за криптовалютой \n'
-        '/weather Узнать сегодняшнюю погоду \U0001F9D0 \n'
-        '/states Указать значения для coin, currency, limit \U0001F911 \n'
-        '/ticket Получить статистику по крипте \n'
-        '/depth Общая сумма предложений по крипте \n'
-        '/trades Информация о купле/продаже по крипте \n'
-        '/cancel Сброс текущего состояния бота \U0001F97A',
-        reply_markup=get_kb()
+        'Вот более подробный набор моих возможностей: \n'
+        '\U0001F9D0 Узнать сегодняшнюю погоду \U0001F9D0 \n'
+        '\U0001F911 Указать значения для coin, currency, limit \U0001F911 \n'
+        '\U0001F4C8 Получить статистику по крипте \U0001F4C9 \n'
+        '\U0001F4B0 Общая сумма предложений по крипте \U0001F4B0 \n'
+        '\U0001F4B5 Информация о купле/продаже по крипте \U0001F4B5 \n'
+        '\U0001F97A Сброс текущего состояния бота \U0001F97A',
+        reply_markup=get_keyboard()
     )
 
     await create_user(user_id=message.from_user.id)
 
 
-@db.message_handler(commands=['cancel'], state='*')
+@db.message_handler(Text(equals="Сброс текущего состояния бота \U0001F97A"), state='*')
 async def cmd_cancel(message: types.Message, state: FSMContext):
     if state is None:
         return
@@ -64,11 +72,11 @@ async def cmd_cancel(message: types.Message, state: FSMContext):
     await state.finish()
     await message.reply(
         'Состояние сброшено',
-        reply_markup=get_kb()
+        reply_markup=get_keyboard()
     )
 
 
-@db.message_handler(commands=['weather'])
+@db.message_handler(Text(equals="Узнать сегодняшнюю погоду \U0001F9D0"))
 async def start_weather(message: types.Message):
     await message.reply('Укажи город, в котором нужно узнать погоду')
     await TgBotStates.city.set()
@@ -130,7 +138,7 @@ async def set_city(message: types.Message, state: FSMContext):
     await state.finish()
 
 
-@db.message_handler(commands=['states'])
+@db.message_handler(Text(equals="Указать значения для coin, currency, limit \U0001F911"))
 async def start_cript(message: types.Message):
     await message.reply(
         'Введите криптовалюту, о которой хотите получать данные '
@@ -180,7 +188,7 @@ async def get_limit(message: types.Message, state: FSMContext):
     await state.finish()
 
 
-@db.message_handler(commands=['ticket'])
+@db.message_handler(Text(equals="Получить статистику по крипте"))
 async def ticket(message: types.Message):
     bd = sqlite3.connect('bot.db')
     cursor = bd.cursor()
@@ -210,7 +218,7 @@ async def ticket(message: types.Message):
         )
 
 
-@db.message_handler(commands=['depth'])
+@db.message_handler(Text(equals="Общая сумма предложений по крипте"))
 async def depth(message: types.Message):
     bd = sqlite3.connect('bot.db')
     cursor = bd.cursor()
@@ -231,7 +239,7 @@ async def depth(message: types.Message):
         await message.answer(f'Общая сумма предложений: {round(total_bids_amount, 2)} $ \n')
 
 
-@db.message_handler(commands=['trades'])
+@db.message_handler(Text(equals="Информация о купле/продаже крипты"))
 async def trades(message: types.Message):
     bd = sqlite3.connect('bot.db')
     cursor = bd.cursor()
