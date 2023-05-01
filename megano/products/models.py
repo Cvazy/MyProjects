@@ -1,4 +1,6 @@
 from django.db import models
+from products import settings
+
 
 from users.models import User
 
@@ -105,3 +107,33 @@ class Reviews(models.Model):
     def __str__(self):
         return f"{self.name} - {self.product}"
 
+
+class Order(models.Model):
+    createdAt = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
+    user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='пользователь', related_name='orders')
+    # deliveryType = models.CharField(max_length=128, default=settings.deliveryType[0], verbose_name='тип доставки')
+    # paymentType = models.CharField(max_length=128, default=settings.paymentType[0], verbose_name='тип оплаты')
+    totalCost = models.DecimalField(max_digits=10, default=0, decimal_places=2, verbose_name='сумма заказа')
+    # status = models.CharField(max_length=128, default=settings.status[0], verbose_name='статус')
+    city = models.CharField(max_length=256, default='', verbose_name='город')
+    address = models.CharField(max_length=256, default='', verbose_name='адрес')
+    products = models.ManyToManyField(Products, related_name='orders', verbose_name='продуты')
+
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
+    def email(self):
+        return self.user.email
+
+    def fio(self):
+        return self.user.fio
+
+    def phone(self):
+        return self.user.phone
+
+    def orderId(self):
+        return f'{self.pk}'
+
+    def __str__(self):
+        return f'{self.pk}'

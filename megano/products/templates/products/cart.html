@@ -84,7 +84,7 @@
             </div>
 
             <div class="Cart-block" v-if="basketCount.count">
-              <form action="{% url 'users:order' %}" method="post">
+              <form action="{% url 'shop:order' %}" method="post">
                 {% csrf_token %}
                 <button type="submit" class="btn btn_success btn_lg">Оформить заказ</button>
               </form>

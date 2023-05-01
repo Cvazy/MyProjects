@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'base', 'products', 'users', 'pages',
     'payments',
 
-    "phonenumber_field"
+    'phonenumber_field', 'rest_framework'
 ]
 
 MIDDLEWARE = [

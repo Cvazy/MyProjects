@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Reviews
+from .models import Reviews, Order
 
 
 class ReviewForm(forms.ModelForm):
@@ -8,13 +8,14 @@ class ReviewForm(forms.ModelForm):
         model = Reviews
         fields = ('email', 'name', 'text', 'rate')
 
-    # name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Ваше имя'}))
-    # text = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Отзыв'}))
-    # email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-    # rate = forms.IntegerField(widget=forms.NumberInput())
 
-    # def __init__(self, *args, **kwargs):
-    #     super(ReviewForm, self).__init__(*args, **kwargs)
-    #     for field_item, field in self.fields.items():
-    #         field.widget.attrs['class'] = 'form-input'
-    #     self.fields['text'].widget.attrs['class'] = 'form-textarea'
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['address'] #'delivery_type', 'payment_type',
+        labels = {
+            'delivery_type': 'Тип доставки',
+            'payment_type': 'Способ оплаты',
+            'address': 'Адрес',
+        }
+
