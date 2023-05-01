@@ -1,0 +1,82 @@
+[
+  {
+    "model": "products.products",
+    "pk": 1,
+    "fields": {
+      "name": "Laptop",
+      "price": "1000.0",
+      "index_sorted": 0,
+      "active": true,
+      "sale": 0,
+      "image": "products/bigGoods_RFbTUmK.png",
+      "description": "Description. Description. Description. Description. Description",
+      "short_description": null,
+      "category": 1,
+      "tag": 1
+    }
+  },
+  {
+    "model": "products.products",
+    "pk": 2,
+    "fields": {
+      "name": "Tablet computer",
+      "price": "800.0",
+      "index_sorted": 1,
+      "active": true,
+      "sale": 0,
+      "image": "products/card.jpg",
+      "description": "Description. Description. Description",
+      "short_description": null,
+      "category": 2,
+      "tag": 2
+    }
+  },
+  {
+    "model": "products.products",
+    "pk": 3,
+    "fields": {
+      "name": "Table",
+      "price": "600.0",
+      "index_sorted": 0,
+      "active": true,
+      "sale": 0,
+      "image": "products/product.png",
+      "description": "Description. Description. Description. Description. Description. Description. Description",
+      "short_description": null,
+      "category": 2,
+      "tag": 1
+    }
+  },
+  {
+    "model": "products.products",
+    "pk": 4,
+    "fields": {
+      "name": "Videocard",
+      "price": "550.0",
+      "index_sorted": 2,
+      "active": true,
+      "sale": 0,
+      "image": "products/videoca.png",
+      "description": "No Description.",
+      "short_description": "Very very strong video 100500 fuil",
+      "category": 4,
+      "tag": 2
+    }
+  },
+  {
+    "model": "products.products",
+    "pk": 5,
+    "fields": {
+      "name": "Copter",
+      "price": "400.0",
+      "index_sorted": 1,
+      "active": true,
+      "sale": 0,
+      "image": "products/slider.png",
+      "description": "Good Description. Nice item.",
+      "short_description": null,
+      "category": 3,
+      "tag": 4
+    }
+  }
+]

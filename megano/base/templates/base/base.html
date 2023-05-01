@@ -1,0 +1,23 @@
+{% load static %}
+
+<html lang="ru">
+<head>
+  <title>Megano</title>
+  <meta name="description" content="Описание страницы">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  {% include 'base/css-and-fonts.html' %}
+</head>
+
+<body class="Site" id="site">
+  {% include 'base/header.html' %}
+
+  {% block content %}{% endblock %}
+
+  {% include 'base/footer.html' %}
+
+  {% block mixins %}{% endblock %}
+
+  {% include 'base/js-scripts.html' %}
+</body>
+</html>

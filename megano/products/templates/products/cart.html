@@ -1,0 +1,101 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="Middle Middle_top">
+    <div class="Middle-top">
+      <div class="wrap">
+        <div class="Middle-header">
+          <h1 class="Middle-title">Корзина
+          </h1>
+          <ul class="breadcrumbs Middle-breadcrumbs">
+            <li class="breadcrumbs-item"><a href="{% url 'shop:index' %}">home</a>
+            </li>
+            <li class="breadcrumbs-item breadcrumbs-item_current"><span>Корзина</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="Section">
+      <div class="wrap">
+        <div class="form Cart">
+          <!-- Данные по товару в корзине -->
+          {% for basket in baskets %}
+            <div v-for="product in Object.values(basket)" class="Cart-product">
+              <div class="Cart-block Cart-block_row">
+                <div class="Cart-block Cart-block_pict"><a class="Cart-pict"
+                  href="{% url 'shop:product' basket.shop.pk %}">
+                  <img class="Cart-img" src="{{ basket.image.url }}" :alt="product.title"/></a>
+                </div>
+                <div class="Cart-block Cart-block_info">
+                  <a class="Cart-title" href="{% url 'shop:product' basket.shop.pk %}">{{ basket.shop.name }}</a>
+                  {% if basket.shop.short_description != None %}
+                    <div class="Cart-desc">{{ basket.shop.short_description }}</div>
+                  {% endif %}
+                </div>
+                <div class="Cart-block Cart-block_price">
+                  <div class="Cart-price">{{ basket.price }}$</div>
+                </div>
+              </div>
+              <div class="Cart-block Cart-block_row">
+                <div class="Cart-block Cart-block_seller"></div>
+                <div class="Cart-block Cart-block_amount">
+                  <div class="Cart-amount">
+                    <div class="Amount">
+                      <form style="margin-bottom: 0" action="{% url 'products:basket_min' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ basket.shop.pk }}">
+                        <button class="Amount-remove" type="submit"></button>
+                      </form>
+
+                      <label>
+                        <input class="Amount-input form-input" name="amount" type="text" value="{{ basket.quantity }}"/>
+                      </label>
+
+                      <form style="margin-bottom: 0" action="{% url 'products:basket_add' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ basket.shop.pk }}">
+                        <button class="Amount-add" type="submit"></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="Cart-block Cart-block_delete">
+                  <form style="margin-bottom: 0" action="{% url 'products:basket_del' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="{{ basket.shop.pk }}">
+                    <button class="Cart-delete">
+                      <img src="{% static 'frontend/assets/img/icons/card/delete.svg' %}"
+                        alt="delete.svg"/>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+          <!-- Данные по товару в корзине -->
+
+          <div class="Cart-total">
+            <div class="Cart-block Cart-block_total">
+              <strong class="Cart-title">Итого:</strong>
+              <span class="Cart-price">{{ total_sum }}$</span>
+            </div>
+
+            <div class="Cart-block" v-if="basketCount.count">
+              <form action="{% url 'users:order' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn_success btn_lg">Оформить заказ</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block mixins %}
+  <script src="{% static 'frontend/assets/js/cart.js' %}"></script>
+{% endblock %}
