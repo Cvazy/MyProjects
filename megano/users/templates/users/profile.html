@@ -44,53 +44,20 @@
                 <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
                   {% csrf_token %}
                   <div class="form-group">
-                    <label class="form-label" for="{{ form.image.id_for_label }}">Аватар</label>
-                    <div v-if="!avatar" class="Profile-avatar Profile-avatar_noimg">
-                      <label class="Profile-fileLabel" for="{{ form.image.id_for_label }}">Выберите аватар</label>
-                      {{ form.image }}
-                    </div>
+                    <label class="form-label" for="{{ form.image.id_for_label }}">Изменение фото</label>
+                    <a href="{% url 'users:change_profile_image' %}" class="btn btn-primary">Change Profile Image</a>
                   </div>
                   <div class="form-group">
-                    <label class="form-label" for="{{ form.fio.id_for_label }}">ФИО</label>
-                    {{ form.fio }}
+                    <label class="form-label" for="{{ form.image.id_for_label }}">Изменение пароля</label>
+                    <a href="{% url 'users:change_password' %}" class="btn btn-primary">Change Password</a>
                   </div>
-                  <div class="form-group">
-                    <label class="form-label" for="{{ form.phone.id_for_label }}">Телефон</label>
-                    {{ form.phone }}
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="{{ form.email.id_for_label }}">E-mail</label>
-                    {{ form.email }}
-                  </div>
-                  <div class="form-group">
-                    <div class="form-group">
-                      <button class="btn btn_success" type="submit">Сохранить</button>
-                    </div>
-                  </div>
+                  <form method="post" action="{% url 'users:profile' %}">
+                    {% csrf_token %}
+                    {{ profile_form.as_p }}
+                    <button type="submit">Сохранить</button>
+                  </form>
                 </form>
               </div>
-
-              <div class="row-block">
-                <form action="{% url 'users:profile' %}" method="post" @submit.prevent="changePassword">
-                  {% csrf_token %}
-                  <div class="form-group">
-                    <label class="form-label" for="{{ form.password.id_for_label }}">Текущий пароль</label>
-                    {{ form.password }}
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="{{ form.password1.id_for_label }}">Пароль</label>
-                    {{ form.password1 }}
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="{{ form.password2.id_for_label }}">Подтверждение пароля</label>
-                    {{ form.password2 }}
-                  </div>
-                  <div class="form-group">
-                    <button class="btn btn_success" type="submit">Сохранить</button>
-                  </div>
-                </form>
-              </div>
-
             </div>
           </div>
         </div>

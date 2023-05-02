@@ -1,6 +1,12 @@
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
+from django.contrib.sessions.backends.db import SessionStore
+from django.contrib.auth.signals import user_logged_in
+from django.dispatch import receiver
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.urls import reverse_lazy
 from django.views.generic.base import View
 from django.db.models import Q
 from rest_framework.generics import get_object_or_404
@@ -8,172 +14,133 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import viewsets, status
 
-from products.forms import ReviewForm
-from products.models import Products, Basket, Category, Feature, Reviews, Tags
+from products.forms import ReviewForm, OrderForm, OrderDeliveryForm
+from products.models import Products, Basket, Category, Feature, Review, Tags
 from users.models import User
 from .serializers import *
 
 
 def index(request, user_id=None):
-    baskets = Basket.objects.filter(user=request.user)
-
-    total_sum = sum(basket.sum() for basket in baskets)
-
     context = {
-        'index': Products.objects.filter(active=True).order_by('-index_sorted'),
-        'total_sum': total_sum
+        'index': Products.objects.filter(active=True, top_item=False).order_by('-index_sorted'),
+        'top': Products.objects.filter(active=True, top_item=True).order_by('-index_sorted'),
     }
 
     if request.user:
         baskets = Basket.objects.filter(user=user_id)
         context.update(dict(baskets=baskets))
+        total_sum = sum(basket.sum() for basket in baskets)
+        context.update(dict(total_sum=total_sum))
 
     return render(request, 'products/index.html', context)
 
 
-@login_required
-def cart(request):
-    baskets = Basket.objects.filter(user=request.user)
+def cart_view(request):
+    if request.user.is_authenticated:
+        cart_items = Basket.objects.filter(user=request.user)
 
-    total_sum = sum(basket.sum() for basket in baskets)
+    else:
+        cart = request.session.get('cart', {})
+        cart_items = []
+        for product_id, quantity in cart.items():
+            product = Products.objects.get(pk=product_id)
+            cart_items.append({'product': product, 'quantity': quantity})
+
+    return render(request, 'products/cart.html', {'cart_items': cart_items})
+
+
+def add_to_cart(request, product_id):
+    product = Products.objects.get(pk=product_id)
+    if request.user.is_authenticated:
+        try:
+            cart_product = Basket.objects.get(user=request.user, shop=product)
+            cart_product.quantity += 1
+            cart_product.save()
+        except Basket.DoesNotExist:
+            cart_product = Basket(user=request.user, shop=product, quantity=1)
+            cart_product.save()
+    else:
+        cart = request.session.get('cart', {})
+        cart[str(product_id)] = cart.get(str(product_id), 0) + 1
+        request.session['cart'] = cart
+    return redirect('shop:cart')
+
+
+def remove_from_cart(request, product_id):
+    product = Products.objects.get(pk=product_id)
+    if request.user.is_authenticated:
+        try:
+            cart_product = Basket.objects.get(user=request.user, shop=product)
+            if cart_product.quantity > 1:
+                cart_product.quantity -= 1
+                cart_product.save()
+            else:
+                cart_product.delete()
+        except Basket.DoesNotExist:
+            pass
+    else:
+        cart = request.session.get('cart', {})
+        if str(product_id) in cart:
+            if cart[str(product_id)] > 1:
+                cart[str(product_id)] -= 1
+            else:
+                del cart[str(product_id)]
+            request.session['cart'] = cart
+    return redirect('shop:cart')
+
+
+def basket_del(request, product_id):
+    if request.user.is_authenticated:
+        cart_items = Basket.objects.filter(user=request.user, shop_id=product_id)
+        cart_items.delete()
+
+    else:
+        cart = request.session.get('cart', {})
+        del cart[str(product_id)]
+        request.session['cart'] = cart
+
+    return redirect('shop:cart')
+
+
+def product(request, pk, user_id=None):
+    product = get_object_or_404(Products, pk=pk)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.author = request.user
+            review.save()
+            return redirect('shop:product', pk=pk)
+    else:
+        form = ReviewForm()
 
     context = {
-        'baskets': baskets,
-        'total_sum': total_sum
+        'products': Products.objects.filter(pk=pk),
+        'feature': Feature.objects.filter(product=pk),
+        'reviews': Review.objects.filter(product_id=pk),
+        'reviews_count': Review.objects.filter(product_id=pk).count(),
+        'form': form,
     }
 
-    return render(request, 'products/cart.html', context)
-
-
-@login_required
-def basket_add(request):
-    current_page = request.META.get('HTTP_REFERER')
-    shops = Products.objects.get(id=request.POST['product_id'])
-    price = shops.price
-    sale = shops.sale
-    image = shops.image
-    baskets = Basket.objects.filter(
-        user=request.user,
-        price=price,
-        image=image,
-        shop=shops.id,
-        sale=sale
-    )
-
-    if not baskets.exists():
-        Basket.objects.create(
-            user=request.user,
-            shop=shops,
-            price=price,
-            sale=sale,
-            image=image,
-            quantity=1
-        )
-        return HttpResponseRedirect(current_page)
-    else:
-        basket = baskets.first()
-        basket.quantity += 1
-        basket.save()
-        return HttpResponseRedirect(current_page)
-
-
-@login_required
-def basket_min(request):
-    current_page = request.META.get('HTTP_REFERER')
-    shops = Products.objects.get(id=request.POST['product_id'])
-    price = shops.price
-    sale = shops.sale
-    image = shops.image
-    baskets = Basket.objects.filter(
-        user=request.user,
-        price=price,
-        sale=sale,
-        image=image,
-        shop=shops.id
-    )
-
-    if not baskets.exists():
-        Basket.objects.create(
-            user=request.user,
-            shop=shops,
-            price=price,
-            sale=sale,
-            image=image,
-            quantity=1
-        )
-        return HttpResponseRedirect(current_page)
-    else:
-        basket = baskets.first()
-        if basket.quantity != 0:
-            basket.quantity -= 1
-            basket.save()
-
-        return HttpResponseRedirect(current_page)
-
-
-@login_required
-def basket_del(request):
-    shops = Products.objects.get(id=request.POST['product_id'])
-    price = shops.price
-    sale = shops.sale
-    image = shops.image
-    baskets = Basket.objects.filter(
-        user=request.user,
-        price=price,
-        sale=sale,
-        image=image,
-        shop=shops.id
-    )
-
-    if not baskets.exists():
-        Basket.objects.create(
-            user=request.user,
-            shop=shops,
-            price=price,
-            sale=sale,
-            image=image,
-            quantity=1
-        )
-
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-    else:
-        baskets.delete()
-
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-
-def product(request, product_id=None, user_id=None):
-    baskets = Basket.objects.filter(user=request.user)
-
-    total_sum = sum(basket.sum() for basket in baskets)
-
-    context = {
-        'products': Products.objects.filter(pk=product_id),
-        'feature': Feature.objects.filter(product=product_id),
-        'reviews': Reviews.objects.filter(product_id=product_id),
-        'reviews_count': Reviews.objects.filter(product_id=product_id).count(),
-        'total_sum': total_sum
-    }
     if request.user:
         baskets = Basket.objects.filter(user=user_id)
         context.update(dict(baskets=baskets))
+        total_sum = sum(basket.sum() for basket in baskets)
+        context['total_sum'] = total_sum
 
     return render(request, 'products/product.html', context)
 
 
 def shop(request, category_id=None, tag_id=None, page=1, user_id=None):
-    baskets = Basket.objects.filter(user=request.user)
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
     query = request.GET.get('q')
 
-    total_sum = sum(basket.sum() for basket in baskets)
-
     context = {
         'categories': Category.objects.all(),
         'tags': Tags.objects.all(),
-        'total_sum': total_sum,
         'shop': Products.objects.filter(active=True).order_by('-index_sorted'),
         'min_price': min_price or 0,
         'max_price': max_price or 1000
@@ -182,26 +149,28 @@ def shop(request, category_id=None, tag_id=None, page=1, user_id=None):
     if request.user:
         baskets = Basket.objects.filter(user=user_id)
         context.update(dict(baskets=baskets))
+        total_sum = sum(basket.sum() for basket in baskets)
+        context['total_sum'] = total_sum
 
     if category_id:
-        shops = Products.objects\
-            .order_by('-index_sorted')\
+        shops = Products.objects \
+            .order_by('-index_sorted') \
             .filter(category_id=category_id, active=True)
 
     elif query:
         shops = Products.objects.filter(Q(name__icontains=query) & Q(price__range=(min_price, max_price)))
 
     elif tag_id:
-        shops = Products.objects\
-            .order_by('-index_sorted')\
+        shops = Products.objects \
+            .order_by('-index_sorted') \
             .filter(tag_id=tag_id, active=True)
 
     elif min_price and max_price:
         shops = Products.objects.filter(price__range=(min_price, max_price))
 
     else:
-        shops = Products.objects\
-            .filter(active=True)\
+        shops = Products.objects \
+            .filter(active=True) \
             .order_by('-index_sorted')
 
     shops_paginator = Paginator(shops, 4).page(page)
@@ -210,6 +179,173 @@ def shop(request, category_id=None, tag_id=None, page=1, user_id=None):
     return render(request, 'products/catalog.html', context)
 
 
+def sale(request, page=1, user_id=None):
+    context = {
+        'sales': Products.objects.exclude(sale=0).filter(active=True).order_by('-index_sorted'),
+    }
+
+    if request.user:
+        baskets = Basket.objects.filter(user=user_id)
+        context.update(dict(baskets=baskets))
+        total_sum = sum(basket.sum() for basket in baskets)
+        context['total_sum'] = total_sum
+
+    sales = Products.objects.exclude(sale=0).filter(active=True).order_by('-index_sorted')
+
+    shops_paginator = Paginator(sales, 4).page(page)
+    context.update({'sales': shops_paginator})
+
+    return render(request, 'products/sale.html', context)
+
+
+class OrderCreateView(LoginRequiredMixin, View):
+    login_url = reverse_lazy('login')
+    success_url = reverse_lazy('order_success')
+
+    def get(self, request, *args, **kwargs):
+        if 'step' in request.session:
+            step = int(request.session['step'])
+        else:
+            step = 1
+            request.session['step'] = 1
+        if step == 1:
+            # Отображаем форму для ввода данных пользователя
+            return render(request, 'order_step1.html')
+        elif step == 2:
+            # Отображаем форму для выбора способа доставки
+            return render(request, 'order_step2.html')
+        elif step == 3:
+            # Отображаем форму для выбора способа оплаты
+            return render(request, 'order_step3.html')
+        elif step == 4:
+            # Отображаем страницу с подтверждением заказа
+            order = Order(
+                user=request.user,
+                delivery_method=request.session['delivery_method'],
+                address=request.session['address'],
+                city=request.session['city'],
+                payment_method=request.session['payment_method']
+            )
+            order.save()
+            return render(request, 'order_step4.html', {'order': order})
+
+    def post(self, request, *args, **kwargs):
+        step = int(request.session['step'])
+        if step == 1:
+            # Обрабатываем данные из первой формы
+            request.session['first_name'] = request.POST.get('first_name')
+            request.session['last_name'] = request.POST.get('last_name')
+            request.session['phone_number'] = request.POST.get('phone_number')
+            request.session['email'] = request.POST.get('email')
+            request.session['step'] = 2
+            return redirect('order_create')
+        elif step == 2:
+            # Обрабатываем данные из второй формы
+            request.session['delivery_method'] = request.POST.get('delivery_method')
+            request.session['address'] = request.POST.get('address')
+            request.session['city'] = request.POST.get('city')
+            request.session['step'] = 3
+            return redirect('order_create')
+        elif step == 3:
+            # Обрабатываем данные из третьей формы
+            request.session['payment_method'] = request.POST.get('payment_method')
+            request.session['step'] = 4
+            return redirect('order_create')
+        elif step == 4:
+            # Перенаправляем пользователя на страницу с подтверждением заказа
+            return redirect('order_confirm')
+
+
+class OrderSuccessView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'products/order_success.html')
+
+
+class OrderStepOneView(View):
+    template_name = 'step1.html'
+    success_url = reverse_lazy('shop:order_step2')
+
+    def get(self, request, *args, **kwargs):
+        # Создаем новую форму, передаем ее в шаблон и рендерим его
+        form = OrderForm()
+        return render(request, 'products/step1.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        # Извлекаем данные из формы и сохраняем их в сессии
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order_data = form.cleaned_data
+            request.session['order_data'] = order_data
+            return redirect(self.success_url)
+        # Если форма невалидна, то возвращаем ошибки на страницу
+        return render(request, 'products/step1.html', {'form': form})
+
+
+class OrderStepTwoView(View):
+    template_name = 'step2.html'
+    success_url = reverse_lazy('order_step3')
+
+    def get(self, request, *args, **kwargs):
+        # Если пользователь еще не заполнил первый шаг, возвращаем его на этот шаг
+        if 'order_data' not in request.session:
+            return redirect('shop:order_step1')
+        # Создаем новую форму, передаем ее в шаблон и рендерим его
+        form = OrderDeliveryForm()
+        return render(request, 'products/step2.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        # Извлекаем данные из формы и сохраняем их в сессии
+        form = OrderDeliveryForm(request.POST)
+        if form.is_valid():
+            order_data = request.session['order_data']
+            order_data.update(form.cleaned_data)
+            request.session['order_data'] = order_data
+            return redirect(self.success_url)
+        # Если форма невалидна, то возвращаем ошибки на страницу
+        return render(request, 'products/step2.html', {'form': form})
+
+
+class OrderStepThreeView(View):
+    template_name = 'step3.html'
+
+    def get(self, request):
+        order_form = OrderForm()
+
+        return render(request, 'products/step3.html', {
+            'form': order_form,
+        })
+
+    def post(self, request):
+        order_form = OrderForm(request.POST)
+
+        if order_form.is_valid():
+            # Обработка формы
+            # ...
+
+            # Редирект на страницу подтверждения заказа
+            return redirect('shop:order_success')
+
+        return render(request, 'products/step3.html', {
+            'form': order_form,
+        })
+
+
+class OrderConfirmView(View):
+    template_name = 'order_confirm.html'
+
+    def get(self, request):
+        # Получаем данные заказа из сессии
+        order = request.session.get('order', {})
+
+        # Удаляем данные заказа из сессии
+        request.session['order'] = {}
+
+        return render(request, 'products/order_confirm.html', {
+            'order': order,
+        })
+
+
+@login_required
 def order(request):
     baskets = Basket.objects.filter(user=request.user)
     total_sum = sum(basket.sum() for basket in baskets)
@@ -220,19 +356,19 @@ def order(request):
         'total_sum': total_sum,
     }
 
-    return render(request, 'products/order.html', context)
+    return render(request, 'products/order-ex.html', context)
 
 
-class AddReview(View):
-    def post(self, request, pk):
-        form = ReviewForm(data=request.POST)
-        good = Products.objects.get(id=pk)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.product = good
-            form.save()
-
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+# class AddReview(View):
+#     def post(self, request, pk):
+#         form = ReviewForm(data=request.POST)
+#         good = Products.objects.get(id=pk)
+#         if form.is_valid():
+#             form = form.save(commit=False)
+#             form.product = good
+#             form.save()
+#
+#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 def get_products_in_cart(cart):
@@ -428,5 +564,3 @@ class OrdersView(viewsets.ModelViewSet):
         order = Order.objects.get(pk=pk)
         serializer = self.get_serializer(order)
         return Response(serializer.data)
-
-

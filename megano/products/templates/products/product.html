@@ -58,7 +58,7 @@
                 </div>
                 <div class="ProductCard-cart">
                   <div class="ProductCard-cartElement">
-                    <form action="{% url 'products:basket_add' %}" method="post">
+                    <form action="{% url 'products:add_to_cart' product.pk %}" method="post">
                       {% csrf_token %}
                       <input type="hidden" name="product_id" value="{{ product.pk }}">
                       <button class="btn btn_primary">
@@ -134,62 +134,77 @@
                         </div>
                       </div>
                     </div>
+                  {% empty %}
+                    <li>Отзывов пока нет.</li>
                   {% endfor %}
-                  <header class="Section-header Section-header_product">
-                    <h3 class="Section-title">Add Review</h3>
-                  </header>
-                  <div class="Tabs-addComment">
-                    <form class="form"
-                      action="{% url 'shop:add_review' product.pk %}"
-                      method="post"
-                      @submit.prevent="submitReview">
+
+                  {% if user.is_authenticated %}
+                    <h2>Добавить отзыв</h2>
+                    <form method="post" class="review-form">
                       {% csrf_token %}
-                      <div class="form-group">
-                        <label for="review"></label>
-                        <input class="form-textarea"
-                          name="review"
-                          id="review"
-                          placeholder="Review"
-                          v-model="review.text">
-                      </div>
-                      <div class="form-group">
-                        <div class="row">
-                          <div class="row-block">
-                            <label for="name"></label>
-                            <input class="form-input"
-                              id="name"
-                              name="name"
-                              type="text"
-                              placeholder="Name"
-                              v-model="review.author"/>
-                          </div>
-                          <div class="row-block">
-                            <label for="email"></label>
-                            <input class="form-input"
-                              id="email"
-                              name="email"
-                              type="text"
-                              placeholder="Email"
-                              v-model="review.email"/>
-                          </div>
-                          <div class="row-block">
-                            <select name="rate" id="rate" v-model="review.rate">
-                              <optgroup label="rate">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </optgroup>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <button class="btn btn_muted" type="submit">Submit Review</button>
-                      </div>
+                      {{ form.as_p }}
+                      <button type="submit">Добавить отзыв</button>
                     </form>
-                  </div>
+                  {% else %}
+                    <p><a href="{% url 'users:login' %}">Авторизуйтесь</a> для добавления отзыва. </p>
+                  {% endif %}
+
+                  {#                {% include 'products/add_review_to_product.html' %}#}
+                  {#                  <header class="Section-header Section-header_product">#}
+                  {#                    <h3 class="Section-title">Add Review</h3>#}
+                  {#                  </header>#}
+                  {#                  <div class="Tabs-addComment">#}
+                  {#                    <form class="form"#}
+                  {#                      action="{% url 'shop:add_review_to_product' product.pk %}"#}
+                  {#                      method="post"#}
+                  {#                      @submit.prevent="submitReview">#}
+                  {#                      {% csrf_token %}#}
+                  {#                      <div class="form-group">#}
+                  {#                        <label for="review"></label>#}
+                  {#                        <input class="form-textarea"#}
+                  {#                          name="review"#}
+                  {#                          id="review"#}
+                  {#                          placeholder="Review"#}
+                  {#                          v-model="review.text">#}
+                  {#                      </div>#}
+                  {#                      <div class="form-group">#}
+                  {#                        <div class="row">#}
+                  {#                          <div class="row-block">#}
+                  {#                            <label for="name"></label>#}
+                  {#                            <input class="form-input"#}
+                  {#                              id="name"#}
+                  {#                              name="name"#}
+                  {#                              type="text"#}
+                  {#                              placeholder="Name"#}
+                  {#                              v-model="review.author"/>#}
+                  {#                          </div>#}
+                  {#                          <div class="row-block">#}
+                  {#                            <label for="email"></label>#}
+                  {#                            <input class="form-input"#}
+                  {#                              id="email"#}
+                  {#                              name="email"#}
+                  {#                              type="text"#}
+                  {#                              placeholder="Email"#}
+                  {#                              v-model="review.email"/>#}
+                  {#                          </div>#}
+                  {#                          <div class="row-block">#}
+                  {#                            <select name="rate" id="rate" v-model="review.rate">#}
+                  {#                              <optgroup label="rate">#}
+                  {#                                <option value="1">1</option>#}
+                  {#                                <option value="2">2</option>#}
+                  {#                                <option value="3">3</option>#}
+                  {#                                <option value="4">4</option>#}
+                  {#                                <option value="5">5</option>#}
+                  {#                              </optgroup>#}
+                  {#                            </select>#}
+                  {#                          </div>#}
+                  {#                        </div>#}
+                  {#                      </div>#}
+                  {#                      <div class="form-group">#}
+                  {#                        <button class="btn btn_muted" type="submit">Submit Review</button>#}
+                  {#                      </div>#}
+                  {#                    </form>#}
+                  {#                  </div>#}
                 </div>
               </div>
             </div>

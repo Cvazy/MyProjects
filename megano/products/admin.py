@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import Category, Products, Basket, ProductsImages, Reviews, Feature, Tags
+from .models import Category, Products, Basket, ProductsImages, Review, Feature, Tags
 
 admin.site.register(Category)
 admin.site.register(Tags)
-admin.site.register(Reviews)
+admin.site.register(Review)
 
 
 class ProductsImageInLine(admin.TabularInline):

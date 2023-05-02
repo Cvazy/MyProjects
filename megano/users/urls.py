@@ -14,6 +14,8 @@ urlpatterns = [
     path("api/profile/avatar/", ProfileAvatarView.as_view({'post': 'update'})),
     path("api/profile/password/", UserChangePasswordView.as_view({'post': 'update'})),
     path('register/', RegisterView.as_view(), name='register'),
-    path('login/', MyLoginView.as_view(), name='login'),
+    path('login/',  my_login, name='login'),
     path('logout/', MyLogoutView.as_view(), name='logout'),
+    path('change-password/', change_password, name='change_password'),
+    path('change-profile-image/', change_profile_image, name='change_profile_image')
 ]

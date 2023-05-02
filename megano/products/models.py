@@ -1,6 +1,7 @@
 from django.db import models
 from products import settings
-
+from django.utils import timezone
+from django.contrib.sessions.models import Session
 
 from users.models import User
 
@@ -30,6 +31,7 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=1, default=0)
     index_sorted = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=False)
+    top_item = models.BooleanField(default=False)
     sale = models.IntegerField(blank=True, default=0)
     image = models.ImageField(upload_to='products')
     description = models.TextField()
@@ -75,8 +77,8 @@ class ProductsImages(models.Model):
 
 
 class Basket(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    shop = models.ForeignKey(Products, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    shop = models.ForeignKey(Products, on_delete=models.CASCADE, null=True, blank=True)
     price = models.PositiveIntegerField(default=0)
     short_description = models.CharField(max_length=255, null=True)
     sale = models.IntegerField(blank=True, default=0)
@@ -94,46 +96,34 @@ class Basket(models.Model):
         return self.quantity * (float(self.price * (100 - self.sale) / 100))
 
 
-class Reviews(models.Model):
-    email = models.EmailField()
-    name = models.CharField(max_length=100)
-    text = models.TextField(max_length=2000)
+class Review(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='reviews')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
     rate = models.PositiveIntegerField()
-    product = models.ForeignKey(Products, on_delete=models.CASCADE, default=None)
 
     class Meta:
         verbose_name_plural = "Reviews"
 
     def __str__(self):
-        return f"{self.name} - {self.product}"
+        return f"{self.author} - {self.product}"
 
 
 class Order(models.Model):
-    createdAt = models.DateTimeField(auto_now_add=True, verbose_name='дата создания')
-    user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='пользователь', related_name='orders')
-    # deliveryType = models.CharField(max_length=128, default=settings.deliveryType[0], verbose_name='тип доставки')
-    # paymentType = models.CharField(max_length=128, default=settings.paymentType[0], verbose_name='тип оплаты')
-    totalCost = models.DecimalField(max_digits=10, default=0, decimal_places=2, verbose_name='сумма заказа')
-    # status = models.CharField(max_length=128, default=settings.status[0], verbose_name='статус')
-    city = models.CharField(max_length=256, default='', verbose_name='город')
-    address = models.CharField(max_length=256, default='', verbose_name='адрес')
-    products = models.ManyToManyField(Products, related_name='orders', verbose_name='продуты')
-
-    class Meta:
-        verbose_name = 'Заказ'
-        verbose_name_plural = 'Заказы'
-
-    def email(self):
-        return self.user.email
-
-    def fio(self):
-        return self.user.fio
-
-    def phone(self):
-        return self.user.phone
-
-    def orderId(self):
-        return f'{self.pk}'
+    DELIVERY_CHOICES = (
+        ('standard', 'Стандартная доставка'),
+        ('express', 'Экспресс-доставка'),
+    )
+    PAYMENT_CHOICES = (
+        ('card', 'Оплата картой'),
+        ('cash', 'Оплата наличными'),
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    delivery_method = models.CharField(choices=DELIVERY_CHOICES, max_length=10, default=None)
+    address = models.CharField(max_length=100)
+    city = models.CharField(max_length=50)
+    payment_method = models.CharField(choices=PAYMENT_CHOICES, max_length=10, default=None)
 
     def __str__(self):
-        return f'{self.pk}'
+        return f"Заказ {self.id} - {self.user.fio}"

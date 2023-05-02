@@ -3,7 +3,7 @@ import datetime
 
 from rest_framework import serializers
 
-from products.models import Products, Tags, Category, Reviews, Feature, Order
+from products.models import Products, Tags, Category, Review, Feature, Order
 
 
 class BasketSerializer(serializers.ModelSerializer):
@@ -48,8 +48,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     date = serializers.SerializerMethodField()
 
     class Meta:
-        model = Reviews
-        fields = ['name', 'email', 'text', 'rate', 'product']
+        model = Review
+        fields = ['author', 'text', 'rate', 'product']
 
     def get_date(self, instance):
         date = instance.date + datetime.timedelta(hours=3)

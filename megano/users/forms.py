@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm, UsernameField
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm, UsernameField, PasswordChangeForm
 from django.core.exceptions import ValidationError
 from django.contrib.auth import password_validation
 
@@ -8,8 +8,8 @@ from products.models import Order
 
 
 class UserProfileForm(UserChangeForm):
-    fio = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
+    fio = forms.CharField(widget=forms.TextInput())
+    email = forms.CharField(widget=forms.EmailInput())
     phone = forms.CharField(widget=forms.TextInput())
     image = forms.ImageField(widget=forms.FileInput(), required=False)
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Введите текущий пароль'}))
@@ -35,7 +35,7 @@ class UserProfileForm(UserChangeForm):
 
 
 class UserRegistrationForm(UserCreationForm):
-    fullName = forms.CharField(required=True, label='Ф.И.О.', widget=forms.TextInput)
+    fio = forms.CharField(required=True, label='Ф.И.О.', widget=forms.TextInput)
     phone = forms.CharField(required=True, label='Номер телефона', widget=forms.TextInput)
     password1 = forms.CharField(required=True, label='Пароль', widget=forms.PasswordInput,
                                 help_text=password_validation.password_validators_help_text_html())
@@ -50,7 +50,7 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("username", 'fullName', 'email', 'phone', 'password1', 'password2')
+        fields = ("username", 'fio', 'email', 'phone', 'password1', 'password2')
         field_classes = {"username": UsernameField}
 
     def clean_phone(self):
@@ -72,3 +72,36 @@ class UserRegistrationForm(UserCreationForm):
                 code="email_exists",
             )
         return email
+
+
+class ProfileImageForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['image']
+
+
+class CustomPasswordChangeForm(PasswordChangeForm):
+    error_css_class = 'error'
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password'}))
+    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password'}))
+    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'type': 'password'}))
+
+    class Meta:
+        model = User
+        fields = ['old_password', 'new_password1', 'new_password2']
+
+
+class ProfileForm(forms.ModelForm):
+    fio = forms.CharField(max_length=100, required=True)
+    email = forms.EmailField(required=True)
+    phone = forms.CharField(max_length=12, required=True)
+
+    class Meta:
+        model = User
+        fields = ['fio', 'email', 'phone']
+
+    def clean_phone_number(self):
+        phone = self.cleaned_data.get('phone')
+        if not phone.isdigit():
+            raise forms.ValidationError('Номер телефона должен содержать только цифры')
+        return phone

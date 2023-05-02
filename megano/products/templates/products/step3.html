@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="Middle Middle_top">
+  <div class="Middle-top">
+    <div class="wrap">
+      <div class="Middle-header">
+        <h1 class="Middle-title">Оформление заказа
+        </h1>
+        <ul class="breadcrumbs Middle-breadcrumbs">
+          <li class="breadcrumbs-item"><a href="{% url 'shop:index' %}">home</a>
+          </li>
+          <li class="breadcrumbs-item breadcrumbs-item_current"><span>Оформление заказа</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="Section Section_column Section_columnRight Section_columnWide Order">
+    <div class="wrap">
+      <div class="Section-column">
+        {% if user.is_authenticated %}
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">Прогресс заполнения
+              </strong>
+            </header>
+            <div class="Section-columnContent">
+              <ul class="menu menu_vt Order-navigate">
+                <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="#step1">Шаг 1. Параметры
+                  пользователя</a>
+                </li>
+                <li class="menu-item"><a class="menu-link" href="#step2">Шаг 2. Способ доставки</a>
+                </li>
+                <li class="menu-item"><a class="menu-link" href="#step3">Шаг 3. Способ оплаты</a>
+                </li>
+                <li class="menu-item"><a class="menu-link" href="#step4">Шаг 4. Подтверждение заказа</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="Section-content">
+        {% if user.is_authenticated %}
+          <div class="Order-block" id="step3">
+          <div class="form-group">
+            <header class="Section-header Section-header_sm">
+              <label class="Section-title" for="payment_type">Шаг 3. Способ оплаты</label>
+            </header>
+            <form method="POST">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="payment_method">Способ оплаты:</label>
+                <select class="form-control" id="payment_method" name="payment_method">
+                  <option value="card">Оплата картой</option>
+                  <option value="cash">Оплата наличными</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Далее</button>
+            </form>
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
