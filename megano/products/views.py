@@ -1,3 +1,6 @@
+import os
+import re
+
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
@@ -14,21 +17,20 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import viewsets, status
 
-from products.forms import ReviewForm, OrderForm, OrderDeliveryForm
-from products.models import Products, Basket, Category, Feature, Review, Tags
+from products.forms import ReviewForm, OrderForm, OrderDeliveryForm, OrderPayForm
+from products.models import Products, Basket, Category, Feature, Review, Tags, Order
 from users.models import User
 from .serializers import *
 
 
-def index(request, user_id=None):
+def index(request):
     context = {
         'index': Products.objects.filter(active=True, top_item=False).order_by('-index_sorted'),
         'top': Products.objects.filter(active=True, top_item=True).order_by('-index_sorted'),
     }
 
     if request.user:
-        baskets = Basket.objects.filter(user=user_id)
-        context.update(dict(baskets=baskets))
+        baskets = Basket.objects.filter(user_id=request.user.pk)
         total_sum = sum(basket.sum() for basket in baskets)
         context.update(dict(total_sum=total_sum))
 
@@ -37,7 +39,7 @@ def index(request, user_id=None):
 
 def cart_view(request):
     if request.user.is_authenticated:
-        cart_items = Basket.objects.filter(user=request.user)
+        cart_items = Basket.objects.all()
 
     else:
         cart = request.session.get('cart', {})
@@ -46,7 +48,16 @@ def cart_view(request):
             product = Products.objects.get(pk=product_id)
             cart_items.append({'product': product, 'quantity': quantity})
 
-    return render(request, 'products/cart.html', {'cart_items': cart_items})
+    context = {
+        'cart_items': cart_items
+    }
+
+    if request.user:
+        baskets = Basket.objects.filter(user_id=request.user.pk)
+        total_sum = sum(basket.sum() for basket in baskets)
+        context.update(dict(total_sum=total_sum))
+
+    return render(request, 'products/cart.html', context)
 
 
 def add_to_cart(request, product_id):
@@ -57,9 +68,10 @@ def add_to_cart(request, product_id):
             cart_product.quantity += 1
             cart_product.save()
         except Basket.DoesNotExist:
-            cart_product = Basket(user=request.user, shop=product, quantity=1)
+            cart_product = Basket(user=request.user, shop=product, quantity=1, price=product.prices()['price'])
             cart_product.save()
     else:
+        Basket.objects.create(shop_id=product.pk, price=product.price, quantity=1)
         cart = request.session.get('cart', {})
         cart[str(product_id)] = cart.get(str(product_id), 0) + 1
         request.session['cart'] = cart
@@ -102,7 +114,7 @@ def basket_del(request, product_id):
     return redirect('shop:cart')
 
 
-def product(request, pk, user_id=None):
+def product(request, pk):
     product = get_object_or_404(Products, pk=pk)
 
     if request.method == 'POST':
@@ -125,15 +137,14 @@ def product(request, pk, user_id=None):
     }
 
     if request.user:
-        baskets = Basket.objects.filter(user=user_id)
-        context.update(dict(baskets=baskets))
+        baskets = Basket.objects.filter(user_id=request.user.pk)
         total_sum = sum(basket.sum() for basket in baskets)
-        context['total_sum'] = total_sum
+        context.update(dict(total_sum=total_sum))
 
     return render(request, 'products/product.html', context)
 
 
-def shop(request, category_id=None, tag_id=None, page=1, user_id=None):
+def shop(request, category_id=None, tag_id=None, page=1):
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
     query = request.GET.get('q')
@@ -147,10 +158,9 @@ def shop(request, category_id=None, tag_id=None, page=1, user_id=None):
     }
 
     if request.user:
-        baskets = Basket.objects.filter(user=user_id)
-        context.update(dict(baskets=baskets))
+        baskets = Basket.objects.filter(user_id=request.user.pk)
         total_sum = sum(basket.sum() for basket in baskets)
-        context['total_sum'] = total_sum
+        context.update(dict(total_sum=total_sum))
 
     if category_id:
         shops = Products.objects \
@@ -179,16 +189,15 @@ def shop(request, category_id=None, tag_id=None, page=1, user_id=None):
     return render(request, 'products/catalog.html', context)
 
 
-def sale(request, page=1, user_id=None):
+def sale(request, page=1):
     context = {
         'sales': Products.objects.exclude(sale=0).filter(active=True).order_by('-index_sorted'),
     }
 
     if request.user:
-        baskets = Basket.objects.filter(user=user_id)
-        context.update(dict(baskets=baskets))
+        baskets = Basket.objects.filter(user_id=request.user.pk)
         total_sum = sum(basket.sum() for basket in baskets)
-        context['total_sum'] = total_sum
+        context.update(dict(total_sum=total_sum))
 
     sales = Products.objects.exclude(sale=0).filter(active=True).order_by('-index_sorted')
 
@@ -199,8 +208,8 @@ def sale(request, page=1, user_id=None):
 
 
 class OrderCreateView(LoginRequiredMixin, View):
-    login_url = reverse_lazy('login')
-    success_url = reverse_lazy('order_success')
+    login_url = reverse_lazy('users:login')
+    success_url = reverse_lazy('shop:order_success')
 
     def get(self, request, *args, **kwargs):
         if 'step' in request.session:
@@ -210,32 +219,41 @@ class OrderCreateView(LoginRequiredMixin, View):
             request.session['step'] = 1
         if step == 1:
             # Отображаем форму для ввода данных пользователя
-            return render(request, 'order_step1.html')
+            return render(request, 'products/step1.html')
         elif step == 2:
             # Отображаем форму для выбора способа доставки
-            return render(request, 'order_step2.html')
+            return render(request, 'products/step2.html')
         elif step == 3:
             # Отображаем форму для выбора способа оплаты
-            return render(request, 'order_step3.html')
+            return render(request, 'products/step3.html')
         elif step == 4:
             # Отображаем страницу с подтверждением заказа
-            order = Order(
-                user=request.user,
-                delivery_method=request.session['delivery_method'],
-                address=request.session['address'],
-                city=request.session['city'],
-                payment_method=request.session['payment_method']
+            with open(r'C:\Users\79967\Desktop\freelance\megano\data.txt', 'r', encoding='utf-8') as file:
+                data = file.readline()
+
+            pattern = r"'(?:fio|email|phone|delivery_method|address|city|payment_method)': '([^']+)'"
+
+            matches = re.findall(pattern, data)
+
+            order = Order.objects.create(
+                address=matches[4],
+                user_id=request.user.id,
+                delivery_method=matches[3],
+                payment_method=matches[6],
+                city=matches[5],
+                status='Доставляется'
             )
+
             order.save()
-            return render(request, 'order_step4.html', {'order': order})
+
+            return render(request, 'products/order_confirm.html', {'order': order})
 
     def post(self, request, *args, **kwargs):
         step = int(request.session['step'])
         if step == 1:
             # Обрабатываем данные из первой формы
-            request.session['first_name'] = request.POST.get('first_name')
-            request.session['last_name'] = request.POST.get('last_name')
-            request.session['phone_number'] = request.POST.get('phone_number')
+            request.session['fio'] = request.POST.get('fio')
+            request.session['phone'] = request.POST.get('phone')
             request.session['email'] = request.POST.get('email')
             request.session['step'] = 2
             return redirect('order_create')
@@ -262,8 +280,7 @@ class OrderSuccessView(View):
 
 
 class OrderStepOneView(View):
-    template_name = 'step1.html'
-    success_url = reverse_lazy('shop:order_step2')
+    template_name = 'products/step1.html'
 
     def get(self, request, *args, **kwargs):
         # Создаем новую форму, передаем ее в шаблон и рендерим его
@@ -276,14 +293,15 @@ class OrderStepOneView(View):
         if form.is_valid():
             order_data = form.cleaned_data
             request.session['order_data'] = order_data
-            return redirect(self.success_url)
+            with open('data.txt', 'a', encoding='utf-8') as file:
+                file.write(f"{request.session['order_data']}")
+            return redirect('shop:order_step2')
         # Если форма невалидна, то возвращаем ошибки на страницу
         return render(request, 'products/step1.html', {'form': form})
 
 
 class OrderStepTwoView(View):
-    template_name = 'step2.html'
-    success_url = reverse_lazy('order_step3')
+    template_name = 'products/step2.html'
 
     def get(self, request, *args, **kwargs):
         # Если пользователь еще не заполнил первый шаг, возвращаем его на этот шаг
@@ -297,33 +315,35 @@ class OrderStepTwoView(View):
         # Извлекаем данные из формы и сохраняем их в сессии
         form = OrderDeliveryForm(request.POST)
         if form.is_valid():
-            order_data = request.session['order_data']
-            order_data.update(form.cleaned_data)
+            order_data = form.cleaned_data
             request.session['order_data'] = order_data
-            return redirect(self.success_url)
+            with open('data.txt', 'a', encoding='utf-8') as file:
+                file.write(f"{request.session['order_data']}")
+            return redirect('shop:order_step3')
         # Если форма невалидна, то возвращаем ошибки на страницу
         return render(request, 'products/step2.html', {'form': form})
 
 
 class OrderStepThreeView(View):
-    template_name = 'step3.html'
+    template_name = 'products/step3.html'
 
     def get(self, request):
-        order_form = OrderForm()
+        order_form = OrderPayForm()
 
         return render(request, 'products/step3.html', {
             'form': order_form,
         })
 
     def post(self, request):
-        order_form = OrderForm(request.POST)
+        order_form = OrderPayForm(request.POST)
 
         if order_form.is_valid():
-            # Обработка формы
-            # ...
+            order_data = order_form.cleaned_data
+            request.session['order_data'] = order_data
+            with open('data.txt', 'a', encoding='utf-8') as file:
+                file.write(f"{request.session['order_data']}")
 
-            # Редирект на страницу подтверждения заказа
-            return redirect('shop:order_success')
+            return redirect('shop:order_confirm')
 
         return render(request, 'products/step3.html', {
             'form': order_form,
@@ -331,44 +351,47 @@ class OrderStepThreeView(View):
 
 
 class OrderConfirmView(View):
-    template_name = 'order_confirm.html'
+    template_name = 'products/order_confirm.html'
 
     def get(self, request):
-        # Получаем данные заказа из сессии
-        order = request.session.get('order', {})
+        with open(r'C:\Users\79967\Desktop\freelance\megano\data.txt', 'r', encoding='utf-8') as file:
+            data = file.readline()
 
-        # Удаляем данные заказа из сессии
-        request.session['order'] = {}
+        pattern = r"'(?:fio|email|phone|delivery_method|address|city|payment_method)': '([^']+)'"
 
-        return render(request, 'products/order_confirm.html', {
-            'order': order,
-        })
+        matches = re.findall(pattern, data)
 
+        baskets = Basket.objects.filter(user=request.user)
 
-@login_required
-def order(request):
-    baskets = Basket.objects.filter(user=request.user)
-    total_sum = sum(basket.sum() for basket in baskets)
+        total_sum = sum(basket.sum() for basket in baskets)
 
-    context = {
-        'baskets': baskets,
-        'baskets_count': baskets.count(),
-        'total_sum': total_sum,
-    }
+        Order.objects.create(
+            address=matches[4],
+            user_id=request.user.id,
+            delivery_method=matches[3],
+            payment_method=matches[6],
+            city=matches[5],
+            status='Не оплачен',
+            total_sum=sum(basket.sum() for basket in baskets)
+        )
 
-    return render(request, 'products/order-ex.html', context)
+        context = {
+            'fio': matches[0],
+            'email': matches[1],
+            'phone': matches[2],
+            'delivery_method': matches[3],
+            'address': matches[4],
+            'city': matches[5],
+            'payment_method': matches[6],
+            'baskets': baskets,
+            'all_count': baskets.count(),
+            'total_sum': total_sum,
+            'order_id': Order.objects.get(total_sum=sum(basket.sum() for basket in baskets)).pk
+        }
 
+        os.remove(r'C:\Users\79967\Desktop\freelance\megano\data.txt')
 
-# class AddReview(View):
-#     def post(self, request, pk):
-#         form = ReviewForm(data=request.POST)
-#         good = Products.objects.get(id=pk)
-#         if form.is_valid():
-#             form = form.save(commit=False)
-#             form.product = good
-#             form.save()
-#
-#         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        return render(request, 'products/order_confirm.html', context)
 
 
 def get_products_in_cart(cart):
@@ -564,3 +587,4 @@ class OrdersView(viewsets.ModelViewSet):
         order = Order.objects.get(pk=pk)
         serializer = self.get_serializer(order)
         return Response(serializer.data)
+

@@ -115,15 +115,22 @@ class Order(models.Model):
         ('standard', 'Стандартная доставка'),
         ('express', 'Экспресс-доставка'),
     )
+
     PAYMENT_CHOICES = (
         ('card', 'Оплата картой'),
         ('cash', 'Оплата наличными'),
     )
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     delivery_method = models.CharField(choices=DELIVERY_CHOICES, max_length=10, default=None)
+    total_sum = models.PositiveIntegerField(default=0)
     address = models.CharField(max_length=100)
+    pay_status = models.BooleanField(default=False)
     city = models.CharField(max_length=50)
+    session_key = models.CharField(max_length=50, null=True, blank=True)
     payment_method = models.CharField(choices=PAYMENT_CHOICES, max_length=10, default=None)
+    status = models.CharField(max_length=100, null=True, default=None)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return f"Заказ {self.id} - {self.user.fio}"

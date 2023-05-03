@@ -17,15 +17,14 @@ from rest_framework.parsers import FileUploadParser
 from rest_framework.permissions import IsAuthenticated
 
 from products import settings
-from products.models import Basket
+from products.models import Basket, Order
 from users.forms import *
 from .serializers import *
 
 
 @login_required
 def profile(request):
-    baskets = Basket.objects.filter(user=request.user)
-
+    baskets = Basket.objects.filter(user_id=request.user.pk)
     total_sum = sum(basket.sum() for basket in baskets)
 
     if request.method == 'POST':
@@ -51,6 +50,9 @@ def profile(request):
 
 @login_required
 def change_password(request):
+    baskets = Basket.objects.filter(user_id=request.user.pk)
+    total_sum = sum(basket.sum() for basket in baskets)
+
     if request.method == 'POST':
         form = CustomPasswordChangeForm(user=request.user, data=request.POST)
         if form.is_valid():
@@ -61,11 +63,14 @@ def change_password(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = CustomPasswordChangeForm(user=request.user)
-    return render(request, 'users/change_password.html', {'form': form})
+    return render(request, 'users/change_password.html', {'form': form, 'total_sum': total_sum})
 
 
 @login_required
 def change_profile_image(request):
+    baskets = Basket.objects.filter(user_id=request.user.pk)
+    total_sum = sum(basket.sum() for basket in baskets)
+
     if request.method == 'POST':
         form = ProfileImageForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
@@ -76,12 +81,12 @@ def change_profile_image(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = ProfileImageForm(instance=request.user)
-    return render(request, 'users/change_profile_image.html', {'form': form})
+    return render(request, 'users/change_profile_image.html', {'form': form, 'total_sum': total_sum})
 
 
 @login_required
 def account(request):
-    baskets = Basket.objects.filter(user=request.user)
+    baskets = Basket.objects.filter(user_id=request.user.pk)
     total_sum = sum(basket.sum() for basket in baskets)
 
     context = {
@@ -94,6 +99,18 @@ def account(request):
     return render(request, 'users/account.html', context)
 
 
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('shop:index')
+    else:
+        form = RegisterForm()
+
+    return render(request, 'users/register.html', {'form': form})
+
+
 class ProfileViewChange(UpdateView):
     model = User
     form_class = ProfileForm
@@ -102,11 +119,13 @@ class ProfileViewChange(UpdateView):
 
 
 @login_required
-def one_order(request):
-    baskets = Basket.objects.filter(user=request.user)
+def one_order(request, order_id=None):
+    order = Order.objects.filter(id=order_id)
+    baskets = Basket.objects.filter(user_id=request.user.pk)
     total_sum = sum(basket.sum() for basket in baskets)
 
     context = {
+        'order': order,
         'baskets': baskets,
         'baskets_count': baskets.count(),
         'total_sum': total_sum,
@@ -118,11 +137,13 @@ def one_order(request):
 
 @login_required
 def history_order(request):
-    baskets = Basket.objects.filter(user=request.user)
+    orders = Order.objects.filter(user=request.user, pay_status=True)
+    baskets = Basket.objects.filter(user_id=request.user.pk)
     total_sum = sum(basket.sum() for basket in baskets)
 
     context = {
         'baskets': baskets,
+        'orders': orders,
         'baskets_count': baskets.count(),
         'total_sum': total_sum,
         'user': request.user
@@ -150,7 +171,7 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        User.objects.create(fio=form.cleaned_data.get('fio'),
+        User.objects.create(username=form.cleaned_data.get('username'), fio=form.cleaned_data.get('fio'),
                             phone=form.cleaned_data.get('phone'), email=form.cleaned_data.get('email'))
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password1')

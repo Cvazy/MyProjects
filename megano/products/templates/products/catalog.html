@@ -34,26 +34,6 @@
                 {#                {% csrf_token %}#}
                 <div class="form-group">
                   <div class="range Section-columnRange">
-
-                    <!-- Получаем данные по фильтру цены -->
-                    {#                    <input class="range-line"#}
-                    {#                      id="price"#}
-                    {#                      name="price"#}
-                    {#                      type="text"#}
-                    {#                      data-type="double"#}
-                    {#                      :data-min="filters.price.minValue"#}
-                    {#                      :data-max="filters.price.maxValue"#}
-                    {#                      :data-from="filter.minPrice"#}
-                    {#                      :data-to="filter.maxPrice"#}
-                    {#                    />#}
-                    {#                    <input type="hidden" name="minPrice" v-model="filters.price.currentFromValue">#}
-                    {#                    <input type="hidden" name="maxPrice" v-model="filters.price.currentToValue">#}
-                    <!-- Получаем данные по фильтру цены -->
-                    
-                    {#                    <div class="range-price">Price:&#32;#}
-                    {#                      <div class="rangePrice">#}
-                    {#                      </div>#}
-                    {#                    </div>#}
                     <form method="get">
                       <div class="form-group">
                         <label for="min_price">Минимальная цена:
@@ -206,7 +186,7 @@
                     <a href="{% url 'shop:product' product.pk %}">{{ product.name }}</a>
                   </strong>
                   <div class="Card-description">
-                    <div class="Card-cost"><span class="Card-price">${{ product.price }}</span></div>
+                    <div class="Card-cost"><span class="Card-price">${{ product.prices.price }}</span></div>
                     <div class="Card-category">{{ product.category }}</div>
                   </div>
                 </div>

@@ -16,16 +16,10 @@
       <input type="password" name="password" id="password">
     </div>
     <div>
-      <button type="submit">Login</button>
+      <button type="submit">Войти</button>
+      <a class="my_login" href="{% url 'users:register' %}">
+        <button type="button">Зарегистрироваться</button>
+      </a>
     </div>
   </form>
-{#  <div class="register_main">#}
-{#    <h3>Вход</h3>#}
-{#    <form class="register" action="{% url 'users:login' %}" method="post">#}
-{#      {% csrf_token %}#}
-{#      {{ form.as_p }}#}
-{#      <input class="my_button" type="submit" value="Войти"/>#}
-{#      <a class="my_login" href="{% url 'users:register' %}">Зарегистрироваться</a>#}
-{#    </form>#}
-{#  </div>#}
 {% endblock %}

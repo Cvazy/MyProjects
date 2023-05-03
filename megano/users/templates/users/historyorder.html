@@ -39,37 +39,45 @@
         </div>
         <div class="Section-content">
           <div class="Orders">
-            <div v-for="order in orders" class="Order Order_anons">
-              <div class="Order-personal">
-                <div class="row">
-                  <div class="row-block">
-                    <a class="Order-title" :href="`/oneorder/${order.id}`">
-                      Заказ&#32;<span class="Order-numberOrder">№</span>&#32;от&#32;<span class="Order-dateOrder"></span></a>
-                  </div>
-                  <div class="row-block">
-                    <div class="Order-info Order-info_delivery">
-                      <div class="Order-infoType">Тип доставки:</div>
-                      <div class="Order-infoContent"></div>
-                    </div>
-                    <div class="Order-info Order-info_pay">
-                      <div class="Order-infoType">Оплата:</div>
-                      <div class="Order-infoContent"></div>
-                    </div>
-                    <div class="Order-info">
-                      <div class="Order-infoType">Общая стоимость:
+            {% if orders %}
+              {% for order in orders %}
+                <div v-for="order in orders" class="Order Order_anons">
+                  <div class="Order-personal">
+                    <div class="row">
+                      <div class="row-block">
+                        <a class="Order-title" href="{% url 'users:order-detail' order.id %}">
+                          Заказ&#32;<span class="Order-numberOrder">№ {{ order.id }}</span>&#32;от&#32;<span class="Order-dateOrder">{{ order.created_at }}</span></a>
                       </div>
-                      <div class="Order-infoContent">
-                        <span class="Order-price">$</span>
+                      <div class="row-block">
+                        <div class="Order-info Order-info_delivery">
+                          <div class="Order-infoType">Тип доставки:</div>
+                          <div class="Order-infoContent">{{ order.delivery_method }}</div>
+                        </div>
+                        <div class="Order-info Order-info_pay">
+                          <div class="Order-infoType">Оплата:</div>
+                          <div class="Order-infoContent">{{ order.payment_method }}</div>
+                        </div>
+                        <div class="Order-info">
+                          <div class="Order-infoType">Общая стоимость:
+                          </div>
+                          <div class="Order-infoContent">
+                            <span class="Order-price">$ {{ order.total_sum }}</span>
+                          </div>
+                        </div>
+                        <div class="Order-info Order-info_status">
+                          <div class="Order-infoType">Статус:</div>
+                          <div class="Order-infoContent">{{ order.status }}</div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="Order-info Order-info_status">
-                      <div class="Order-infoType">Статус:</div>
-                      <div class="Order-infoContent"></div>
                     </div>
                   </div>
                 </div>
+              {% endfor %}
+            {% else %}
+              <div class="row-block">
+                <a class="Order-title" href="{% url 'shop:cart' %}">Заказов пока нет</a>
               </div>
-            </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -78,5 +86,5 @@
 {% endblock %}
 
 {% block mixins %}
-<script src="{% static 'frontend/assets/js/historyOrder.js' %}"></script>
+  <script src="{% static 'frontend/assets/js/historyOrder.js' %}"></script>
 {% endblock %}

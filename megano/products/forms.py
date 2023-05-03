@@ -15,12 +15,7 @@ class ReviewForm(forms.ModelForm):
 
 
 class OrderForm(forms.Form):
-    PAYMENT_CHOICES = (
-        ('card', 'Оплата картой'),
-        ('cash', 'Оплата наличными'),
-    )
-
-    full_name = forms.CharField(
+    fio = forms.CharField(
         label='ФИО',
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=100,
@@ -34,11 +29,18 @@ class OrderForm(forms.Form):
         required=True,
     )
 
-    phone_number = forms.CharField(
+    phone = forms.CharField(
         label='Телефон',
         widget=forms.TextInput(attrs={'class': 'form-control'}),
         max_length=20,
         required=True,
+    )
+
+
+class OrderPayForm(forms.Form):
+    PAYMENT_CHOICES = (
+        ('card', 'Оплата картой'),
+        ('cash', 'Оплата наличными'),
     )
 
     payment_method = forms.ChoiceField(

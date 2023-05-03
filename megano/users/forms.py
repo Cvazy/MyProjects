@@ -34,6 +34,16 @@ class UserProfileForm(UserChangeForm):
         self.fields['image'].widget.attrs['class'] = 'Profile-file form-input'
 
 
+class RegisterForm(UserCreationForm):
+    fio = forms.CharField(required=True, label='Ф.И.О.', widget=forms.TextInput)
+    email = forms.CharField(required=True, label='Адрес электронной почты', widget=forms.EmailInput)
+    phone = forms.CharField(required=True, label='Номер телефона', widget=forms.TextInput)
+
+    class Meta:
+        model = User
+        fields = ['username', 'fio', 'phone', 'email', 'password1', 'password2']
+
+
 class UserRegistrationForm(UserCreationForm):
     fio = forms.CharField(required=True, label='Ф.И.О.', widget=forms.TextInput)
     phone = forms.CharField(required=True, label='Номер телефона', widget=forms.TextInput)
@@ -52,26 +62,6 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ("username", 'fio', 'email', 'phone', 'password1', 'password2')
         field_classes = {"username": UsernameField}
-
-    def clean_phone(self):
-        phone = self.cleaned_data.get("phone")
-        phone_in_db = User.objects.filter(phone=phone)
-        if phone_in_db:
-            raise ValidationError(
-                self.error_messages["phone_exists"],
-                code="phone_exists",
-            )
-        return phone
-
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        email_in_db = User.objects.filter(email=email)
-        if email_in_db:
-            raise ValidationError(
-                self.error_messages["email_exists"],
-                code="email_exists",
-            )
-        return email
 
 
 class ProfileImageForm(forms.ModelForm):

@@ -1,4 +1,4 @@
-{% extends "base/base.html" %}
+{% extends 'base/base.html' %}
 {% load static %}
 
 {% block content %}
@@ -28,8 +28,7 @@
               </header>
               <div class="Section-columnContent">
                 <ul class="menu menu_vt Order-navigate">
-                  <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="{% url 'shop:order_step1' %}">Шаг 1.
-                    Параметры
+                  <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="#step1">Шаг 1. Параметры
                     пользователя</a>
                   </li>
                   <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_step2' %}">Шаг 2. Способ
@@ -38,7 +37,7 @@
                   <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_step3' %}">Шаг 3. Способ
                     оплаты</a>
                   </li>
-                  <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_confirm' %}">Шаг 4. Подтверждение
+                  <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_success' %}">Шаг 4. Подтверждение
                     заказа</a>
                   </li>
                 </ul>
@@ -48,97 +47,71 @@
         </div>
         <div class="Section-content">
           {% if user.is_authenticated %}
-            <form class="form" action="#" method="post">
-              {% csrf_token %}
-              <div class="Order-block" id="step4">
-                <header class="Section-header Section-header_sm">
-                  <h2 class="Section-title">Шаг 4. Подтверждение заказа</h2>
-                </header>
-                <div class="Order-infoBlock">
-                  <div class="Order-personal">
-                    {% if order %}
-                      <h2>Данные заказа:</h2>
-                      <ul>
-                        <li>ФИО: {{ order.name }}</li>
-                        <li>Телефон: {{ order.phone }}</li>
-                        <li>Электронная почта: {{ order.email }}</li>
-                        <li>Способ доставки: {{ order.delivery }}</li>
-                        <li>Адрес: {{ order.address }}</li>
-                        <li>Город: {{ order.city }}</li>
-                        <li>Способ оплаты: {{ order.payment }}</li>
-                      </ul>
-                    {% else %}
-                      <p>Данные заказа не найдены</p>
-                    {% endif %}
-                  </div>
-                  <div class="Cart Cart_order">
-                    <div v-for="product in order.products" class="Cart-product">
-                      {% for basket in baskets %}
-                        <div class="Cart-block Cart-block_row">
-                          <div class="Cart-block Cart-block_pict">
-                            <a class="Cart-pict" href="{% url 'shop:product' basket.shop.pk %}">
-                              <img class="Cart-img"
-                                src="{{ basket.shop.image.url }}"
-                                alt=""/>
-                            </a>
-                          </div>
-                          <div class="Cart-block Cart-block_info">
-                            <a class="Cart-title"
-                              href="{% url 'shop:product' basket.shop.pk %}">{{ basket.shop.name }}</a>
-                            <div class="Cart-desc">{{ basket.shop.short_description }}</div>
-                          </div>
-                        </div>
-                        <div class="Cart-block Cart-block_price">
-                          <div class="Cart-price">{{ basket.shop.price }}$</div>
-                        </div>
-                        <div class="Cart-block Cart-block_row">
-                          <div class="Cart-block Cart-block_amount">{{ basket.quantity }} шт.</div>
-                        </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-                  <!-- Товар на оплату -->
-
-                  <div class="Cart-total">
-                    <div class="Cart-block Cart-block_total">
-                      <strong class="Cart-title">Итого:</strong>
-                      <span class="Cart-price">{{ baskets_count }} товаров на сумму {{ total_sum }}$$</span>
-                    </div>
-                    <div class="Cart-block">
-                      <a href="{% url 'page:payment' %}">
-                        <button class="btn btn_primary btn_lg" type="submit">Оплатить</button>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+            <div class="Order-block Order-block_OPEN" id="step1">
+            <header class="Section-header Section-header_sm">
+              <h2 class="Section-title">Оформление заказа</h2>
+            </header>
+            <div class="Order-infoBlock">
+              <div class="Order-personal">
+                <h2>Данные заказа:</h2>
+                <ul>
+                  <li>ФИО: {{ fio }}</li>
+                  <li>Телефон: {{ phone }}</li>
+                  <li>Электронная почта: {{ email }}</li>
+                  <li>Способ доставки: {{ delivery_method }}</li>
+                  <li>Адрес: {{ address }}</li>
+                  <li>Город: {{ city }}</li>
+                  <li>Способ оплаты: {{ payment_method }}</li>
+                </ul>
               </div>
-            </form>
-          {% else %}
-            <div class="row-block">
-              <form action="/auth/signin?next={{ request.get_full_path }}" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                  <label class="form-label" for="login">Логин</label>
-                  <input class="form-input" id="login" name="login" type="text" placeholder="Login"/>
+              {% for basket in baskets %}
+                <div class="Cart Cart_order">
+                  <div v-for="product in order.products" class="Cart-product">
+                    <div class="Cart-block Cart-block_row">
+                      <div class="Cart-block Cart-block_pict">
+                        <a class="Cart-pict" href="{% url 'shop:product' basket.shop.pk %}">
+                          <img class="Cart-img"
+                            src="{{ basket.shop.image.url }}"
+                            alt=""/>
+                        </a>
+                      </div>
+                      <div class="Cart-block Cart-block_info">
+                        <a class="Cart-title"
+                          href="{% url 'shop:product' basket.shop.pk %}">{{ basket.shop.name }}</a>
+                        {% if basket.shop.short_description %}
+                          <div class="Cart-desc">{{ basket.shop.short_description }}</div>
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="Cart-block Cart-block_price">
+                      <div class="Cart-price">{{ basket.shop.price }}$</div>
+                    </div>
+                    <div class="Cart-block Cart-block_row">
+                      <div class="Cart-block Cart-block_amount">{{ basket.quantity }} шт.</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label class="form-label" for="password">Пароль</label>
-                  <input class="form-input" id="password" name="password" type="password" placeholder="Password"/>
+              {% endfor %}
+              <!-- Товар на оплату -->
+
+              <div class="Cart-total">
+                <div class="Cart-block Cart-block_total">
+                  <strong class="Cart-title">Итого:</strong>
+                  <span class="Cart-price">{{ all_count }} товаров на сумму {{ total_sum }}$$</span>
                 </div>
-                <div class="form-group">
-                  <button class="btn btn_muted Order-btnReg" type="submit">Авторизация</button>
-                </div>
-                <div class="form-group"><a class="btn btn_muted Order-btnReg" href="/auth/signup">Регистрация</a>
-                </div>
-              </form>
+                {% if payment_method == 'card' %}
+                  <div class="Cart-block">
+                    <a href="{% url 'page:payment' order_id %}">
+                      <button class="btn btn_primary btn_lg" type="submit">Оплатить</button>
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
             </div>
           {% endif %}
+          </div>
         </div>
       </div>
     </div>
   </div>
-{% endblock %}
-
-{% block mixins %}
-  <script src="{% static 'frontend/assets/js/order-detail.js' %}"></script>
 {% endblock %}

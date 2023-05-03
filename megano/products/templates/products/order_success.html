@@ -1,20 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'base/base.html' %}
 
 {% block content %}
-<h1>Заказ подтверждён</h1>
+  <h1>Заказ подтверждён</h1>
 
-{% if order %}
-<h2>Данные заказа:</h2>
-<ul>
-    <li>ФИО: {{ order.name }}</li>
-    <li>Телефон: {{ order.phone }}</li>
-    <li>Электронная почта: {{ order.email }}</li>
-    <li>Способ доставки: {{ order.delivery }}</li>
-    <li>Адрес: {{ order.address }}</li>
-    <li>Город: {{ order.city }}</li>
-    <li>Способ оплаты: {{ order.payment }}</li>
-</ul>
-{% else %}
-<p>Данные заказа не найдены</p>
-{% endif %}
+  {% if order %}
+    <h2>Данные заказа:</h2>
+    <ul>
+      <li>ФИО: {{ order.name }}</li>
+      <li>Телефон: {{ order.phone }}</li>
+      <li>Электронная почта: {{ order.email }}</li>
+      <li>Способ доставки: {{ order.delivery }}</li>
+      <li>Адрес: {{ order.address }}</li>
+      <li>Город: {{ order.city }}</li>
+      <li>Способ оплаты: {{ order.payment }}</li>
+    </ul>
+  {% else %}
+    <p>Данные заказа не найдены</p>
+  {% endif %}
 {% endblock %}

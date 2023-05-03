@@ -31,7 +31,6 @@ urlpatterns = [
     path('api/products/limited/', ProductLimitedView.as_view()),
     path('api/product/<int:pk>/', ProductDetailView.as_view({'get': 'retrieve'})),
     path('create/', OrderCreateView.as_view(), name='order_create'),
-    path('success/', OrderSuccessView.as_view(), name='order_success'),
     path('order/create/step1/', OrderStepOneView.as_view(), name='order_step1'),
     path('order/create/step2/', OrderStepTwoView.as_view(), name='order_step2'),
     path('order/create/step3/', OrderStepThreeView.as_view(), name='order_step3'),

@@ -17,10 +17,6 @@
         </div>
       </div>
     </div>
-    {% if not user.is_authenticated %}
-      <p>Для сохранения корзины необходимо
-        <a href="{% url 'users:login' %}?next={% url 'shop:cart' %}">авторизоваться</a></p>
-    {% endif %}
 
     <div class="Section">
       <div class="wrap">
@@ -41,7 +37,7 @@
                     {% endif %}
                   </div>
                   <div class="Cart-block Cart-block_price">
-                    <div class="Cart-price">{{ basket.shop.price }}$</div>
+                    <div class="Cart-price">{{ basket.shop.prices.price }}$</div>
                   </div>
                 </div>
                 <div class="Cart-block Cart-block_row">
@@ -89,6 +85,68 @@
                   </div>
                 </div>
               </div>
+            {% else %}
+              <div v-for="product in Object.values(basket)" class="Cart-product">
+                <div class="Cart-block Cart-block_row">
+                  <div class="Cart-block Cart-block_pict"><a class="Cart-pict"
+                    href="{% url 'shop:product' basket.product.pk %}">
+                    <img class="Cart-img" src="{{ basket.product.image.url }}" :alt="product.title"/></a>
+                  </div>
+                  <div class="Cart-block Cart-block_info">
+                    <a class="Cart-title" href="{% url 'shop:product' basket.product.pk %}">{{ basket.product.name }}</a>
+                    {% if basket.shop.short_description != None %}
+                      <div class="Cart-desc">{{ basket.product.short_description }}</div>
+                    {% endif %}
+                  </div>
+                  <div class="Cart-block Cart-block_price">
+                    <div class="Cart-price">{{ basket.product.prices.price }}$</div>
+                  </div>
+                </div>
+                <div class="Cart-block Cart-block_row">
+                  <div class="Cart-block Cart-block_seller"></div>
+                  <div class="Cart-block Cart-block_amount">
+                    <div class="Cart-amount">
+                      <div class="Amount">
+                        <form style="margin-bottom: 0"
+                          action="{% url 'shop:remove_from_cart' basket.product.pk %}"
+                          method="post">
+                          {% csrf_token %}
+                          <input type="hidden" name="product_id" value="{{ basket.product.pk }}">
+                          <button class="Amount-remove" type="submit"></button>
+                        </form>
+
+                        <label>
+                          <input class="Amount-input form-input"
+                            name="amount"
+                            type="text"
+                            value="{{ basket.quantity }}"/>
+                        </label>
+
+                        <form style="margin-bottom: 0"
+                          action="{% url 'products:add_to_cart' basket.product.pk %}"
+                          method="post">
+                          {% csrf_token %}
+                          <input type="hidden" name="product_id" value="{{ basket.product.pk }}">
+                          <button class="Amount-add" type="submit"></button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="Cart-block Cart-block_delete">
+                    <form style="margin-bottom: 0"
+                      action="{% url 'products:basket_del' basket.product.pk %}"
+                      method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="product_id" value="{{ basket.product.pk }}">
+                      <button class="Cart-delete">
+                        <img src="{% static 'frontend/assets/img/icons/card/delete.svg' %}"
+                          alt="delete.svg"/>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
             {% endif %}
           {% endfor %}
 
@@ -104,44 +162,6 @@
       </div>
     </div>
   </div>
-
-  {#    <table>#}
-  {#      <thead>#}
-  {#      <tr>#}
-  {#        <th>Название</th>#}
-  {#        <th>Цена</th>#}
-  {#        <th>Количество</th>#}
-  {#        <th>Действия</th>#}
-  {#      </tr>#}
-  {#      </thead>#}
-  {#      <tbody>#}
-  {#      {% for item in cart_items %}#}
-  {#        {% if user.is_authenticated %}#}
-  {#          <tr>#}
-  {#            <td>{{ item.shop.title }}</td>#}
-  {#            <td>{{ item.shop.price }}</td>#}
-  {#            <td>{{ item.quantity }}</td>#}
-  {#            <td>#}
-  {#              <a href="{% url 'shop:remove_from_cart' item.shop.pk %}">Удалить</a>#}
-  {#            </td>#}
-  {#          </tr>#}
-  {#        {% else %}#}
-  {#          <tr>#}
-  {#            <td>{{ item.product.title }}</td>#}
-  {#            <td>{{ item.product.price }}</td>#}
-  {#            <td>{{ item.quantity }}</td>#}
-  {#            <td>#}
-  {#              <a href="{% url 'shop:remove_from_cart' item.product.pk %}">Удалить</a>#}
-  {#            </td>#}
-  {#          </tr>#}
-  {#        {% endif %}#}
-  {#      {% empty %}#}
-  {#        <tr>#}
-  {#          <td colspan="4">Корзина пуста</td>#}
-  {#        </tr>#}
-  {#      {% endfor %}#}
-  {#      </tbody>#}
-  {#    </table>#}
 {% endblock %}
 
 {% block mixins %}

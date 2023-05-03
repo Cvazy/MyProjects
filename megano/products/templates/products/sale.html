@@ -30,9 +30,9 @@
               <div class="Card-content">
                 <strong class="Card-title"><a href="{% url 'shop:product' sale.pk %}">{{ sale.name }}</a>
                 </strong>
-                <div class="Card-description"><s><{{ sale.prices.price }}</s></div>
+                <div class="Card-description"><s>{{ sale.prices.old_price }}</s></div>
                 <br>
-                <div class="Card-description">{{ sale.prices.old_price }}</div>
+                <div class="Card-description">{{ sale.prices.price }}</div>
               </div>
             </div>
           {% endfor %}

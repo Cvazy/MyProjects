@@ -60,7 +60,7 @@
             </li>
 
             <li class="menu-item">
-              <a class="menu-link" href="{% url 'shop:sale' %}">Blog</a>
+              <a class="menu-link" href="{% url 'shop:sale' %}">Sale</a>
             </li>
             <li class="menu-item">
               <span class="menu-label menu-label_success">Hot</span>
@@ -73,13 +73,14 @@
           </ul>
         </div>
       </nav>
-      <div class="row-block">
+      <div {% if not user.is_authenticated %} style="margin-right: 20px" {% endif %} class="row-block">
         <div class="CartBlock"><a class="CartBlock-block" href="{% url 'shop:cart' %}">
           <img class="CartBlock-img"
             src="{% static 'frontend/assets/img/icons/cart.svg' %}"
             alt="cart.svg"/><span class="CartBlock-amount" v-text="basketCount.count"></span></a>
-          <div class="CartBlock-block"><span class="CartBlock-price">{{ total_sum }}$</span>
-          </div>
+          {% if user.is_authenticated %}
+            <div class="CartBlock-block"><span class="CartBlock-price">{{ total_sum }}$</span></div>
+          {% endif %}
         </div>
       </div>
       <div class="row-block Header-trigger">

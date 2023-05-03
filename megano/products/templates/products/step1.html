@@ -55,7 +55,7 @@
             <form method="POST">
               {% csrf_token %}
               <div class="form-group">
-                <label for="first_name">ФИО</label>
+                <label for="fio">ФИО</label>
                 <input type="text" class="form-control" id="fio" name="fio">
               </div>
               <div class="form-group">
@@ -66,9 +66,7 @@
                 <label for="phone">Телефон</label>
                 <input type="text" class="form-control" id="phone" name="phone">
               </div>
-              <a href="{% url 'shop:order_step2' %}">
                 <button type="submit" class="btn btn-primary">Далее</button>
-              </a>
             </form>
           {% endif %}
           </div>

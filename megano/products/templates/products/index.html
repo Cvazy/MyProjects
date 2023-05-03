@@ -3,32 +3,6 @@
 
 {% block content %}
   <div class="Middle">
-    <div class="Section">
-      <div class="wrap">
-        <div class="BannersHome">
-          <!-- Получаем баннеры -->
-          <a v-for="(banner, index) in banners"
-            :key="index"
-            class="BannersHomeBlock"
-            href="{% url 'shop:catalog' %}">
-            <div class="BannersHomeBlock-row">
-              <div class="BannersHomeBlock-block">
-                <strong class="BannersHomeBlock-title">Баннер для магазина электроники Megano</strong>
-                <div class="BannersHomeBlock-content">from &#32;<span class="BannersHomeBlock-price">$500</span>
-                </div>
-              </div>
-              <div class="BannersHomeBlock-block" v-if="banner.images.length > 0">
-                <div class="BannersHomeBlock-img">
-                  <img src="{% static 'frontend/bricks/extra/BannersHome/banner.jpg' %}" alt="banner.title"/>
-                </div>
-              </div>
-            </div>
-          </a>
-          <!-- Получаем баннеры -->
-
-        </div>
-      </div>
-    </div>
     <div class="Section Section_column Section_columnDesktop">
       <div class="wrap">
         <div class="Section-content">
@@ -46,12 +20,11 @@
                   <strong class="Card-title"><a :href="card.href">{{ product.name }}</a>
                   </strong>
                   <div class="Card-description">
-                    <div class="Card-cost"><span class="Card-price">${{ product.price }}</span></div>
+                    <div class="Card-cost"><span class="Card-price">${{ product.prices.price }}</span></div>
 
                     <div class="Card-category">{{ product.category }}</div>
 
                     <div class="Card-hover">
-                      {#                      <form action="{% url 'products:basket_add' %}" method="post">#}
                       <form action="{% url 'products:add_to_cart'  product.pk %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="product_id" value="{{ product.pk }}">
@@ -88,7 +61,7 @@
                   <strong class="Card-title"><a :href="card.href">{{ item.name }}</a>
                   </strong>
                   <div class="Card-description">
-                    <div class="Card-cost"><span class="Card-price">${{ item.price }}</span></div>
+                    <div class="Card-cost"><span class="Card-price">${{ item.prices.price }}</span></div>
 
                     <div class="Card-category">{{ item.category }}</div>
 
