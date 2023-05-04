@@ -17,7 +17,7 @@ from rest_framework.parsers import FileUploadParser
 from rest_framework.permissions import IsAuthenticated
 
 from products import settings
-from products.models import Basket, Order
+from products.models import Basket, Order, OrderItem
 from users.forms import *
 from .serializers import *
 
@@ -105,8 +105,22 @@ def register(request):
         if form.is_valid():
             form.save()
             return redirect('shop:index')
+        else:
+            print(form.errors)
     else:
         form = RegisterForm()
+
+
+    # if request.method == 'POST':
+    #     form = RegisterForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         messages.success(request, 'Регистрация прошла успешно')
+    #         return redirect('shop:index')
+    #     else:
+    #         print(form.errors)
+    # else:
+    #     form = RegisterForm()
 
     return render(request, 'users/register.html', {'form': form})
 
@@ -119,17 +133,23 @@ class ProfileViewChange(UpdateView):
 
 
 @login_required
-def one_order(request, order_id=None):
+def one_order(request, order_id):
+    global total_cost
     order = Order.objects.filter(id=order_id)
     baskets = Basket.objects.filter(user_id=request.user.pk)
     total_sum = sum(basket.sum() for basket in baskets)
+    order_items = OrderItem.objects.filter(order_id=order_id)
+
+    for i in order_items:
+        total_cost = i.total
 
     context = {
-        'order': order,
+        'order_info': order,
         'baskets': baskets,
         'baskets_count': baskets.count(),
         'total_sum': total_sum,
-        'user': request.user
+        'order_items': order_items,
+        'all_prices': total_cost
     }
 
     return render(request, 'users/oneorder.html', context)
@@ -137,7 +157,7 @@ def one_order(request, order_id=None):
 
 @login_required
 def history_order(request):
-    orders = Order.objects.filter(user=request.user, pay_status=True)
+    orders = Order.objects.filter(user=request.user)
     baskets = Basket.objects.filter(user_id=request.user.pk)
     total_sum = sum(basket.sum() for basket in baskets)
 

@@ -7,3 +7,15 @@
 <script src="{% static 'frontend/assets/plg/range/ion.rangeSlider.min.js' %}"></script>
 <script src="{% static 'frontend/assets/plg/Slider/slick.min.js' %}"></script>
 <script src="{% static 'frontend/assets/js/scripts.js' %}"></script>
+<script>
+    var phoneInput = document.getElementById('id_phone');
+
+    function formatPhone() {
+        var phone = phoneInput.value;
+        var digits = phone.replace(/\D/g, '');
+        var formattedPhone = digits.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+7 ($2) $3-$4-$5');
+        phoneInput.value = formattedPhone;
+    }
+
+    phoneInput.addEventListener('input', formatPhone);
+</script>

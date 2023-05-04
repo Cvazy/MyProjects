@@ -93,8 +93,9 @@
                     <img class="Cart-img" src="{{ basket.product.image.url }}" :alt="product.title"/></a>
                   </div>
                   <div class="Cart-block Cart-block_info">
-                    <a class="Cart-title" href="{% url 'shop:product' basket.product.pk %}">{{ basket.product.name }}</a>
-                    {% if basket.shop.short_description != None %}
+                    <a class="Cart-title"
+                      href="{% url 'shop:product' basket.product.pk %}">{{ basket.product.name }}</a>
+                    {% if basket.product.short_description != None %}
                       <div class="Cart-desc">{{ basket.product.short_description }}</div>
                     {% endif %}
                   </div>
@@ -150,14 +151,21 @@
             {% endif %}
           {% endfor %}
 
-          <div class="Cart-total">
-            <div class="Cart-block" v-if="basketCount.count">
-              <form action="{% url 'shop:order_step1' %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn btn_success btn_lg">Оформить заказ</button>
-              </form>
+          {% if user.is_authenticated %}
+            <div class="Cart-total">
+              <div class="Cart-block Cart-block_total">
+                <strong class="Cart-title">Итого:</strong>
+                <span class="Cart-price">{{ total_sum }}$</span>
+              </div>
+
+              <div class="Cart-block" v-if="basketCount.count">
+                <form action="{% url 'shop:order_step1' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="btn btn_success btn_lg">Оформить заказ</button>
+                </form>
+              </div>
             </div>
-          </div>
+          {% endif %}
         </div>
       </div>
     </div>

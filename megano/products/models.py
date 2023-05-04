@@ -95,6 +95,54 @@ class Basket(models.Model):
     def sum(self):
         return self.quantity * (float(self.price * (100 - self.sale) / 100))
 
+    @classmethod
+    def merge_carts(cls, anonymous_cart, user_cart):
+        # Объединение корзин авторизованного и неавторизованного пользователя
+        if anonymous_cart and user_cart:
+            # Обновляем записи в корзине с null user на user_id авторизованного пользователя
+            anonymous_cart.update(user=user_cart.user)
+
+            # Получаем записи из корзины пользователя
+            user_cart_items = user_cart.cart_set.all()
+
+            # Объединяем корзины и группируем по продукту
+            merged_carts = {}
+            for item in anonymous_cart:
+                key = item.product.id
+                if key not in merged_carts:
+                    merged_carts[key] = item.quantity
+                else:
+                    merged_carts[key] += item.quantity
+            for item in user_cart_items:
+                key = item.product.id
+                if key not in merged_carts:
+                    merged_carts[key] = item.quantity
+                else:
+                    merged_carts[key] += item.quantity
+
+            # Создаем новые записи в корзине пользователя
+            for key, value in merged_carts.items():
+                product = Products.objects.get(id=key)
+                cart_item, created = Basket.objects.get_or_create(
+                    user=user_cart.user,
+                    product=product,
+                    defaults={'quantity': value}
+                )
+                if not created:
+                    cart_item.quantity += value
+                    cart_item.save()
+
+            # Удаляем записи в корзине с null user
+            anonymous_cart.delete()
+
+        # Если у пользователя нет корзины, возвращаем корзину неавторизованного пользователя
+        elif anonymous_cart:
+            return anonymous_cart
+
+        # Если нет корзины неавторизованного пользователя, возвращаем корзину пользователя
+        else:
+            return user_cart
+
 
 class Review(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='reviews')
@@ -134,3 +182,15 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Заказ {self.id} - {self.user.fio}"
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    items = models.ForeignKey(Basket, on_delete=models.CASCADE)
+    total = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        verbose_name_plural = "OrderItem"
+
+    def __str__(self):
+        return f"{self.order} - {self.items}"

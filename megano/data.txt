@@ -1,0 +1,1 @@
+{'fio': 'VKJDNjkvnkv vkdjnvskdjnv vkedjvndskjn', 'email': 'fdkjvndkjvndkvjn@mail.ru', 'phone': '+7 (832) 839-83-98'}{'delivery_method': 'standard', 'address': 'dcskjnkjn', 'city': 'fdkjnfdkjvnfdkjn'}{'payment_method': 'card'}

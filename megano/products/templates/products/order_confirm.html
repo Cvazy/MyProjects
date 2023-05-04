@@ -28,7 +28,7 @@
               </header>
               <div class="Section-columnContent">
                 <ul class="menu menu_vt Order-navigate">
-                  <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="#step1">Шаг 1. Параметры
+                  <li class="menu-item"><a class="menu-link" href="#step1">Шаг 1. Параметры
                     пользователя</a>
                   </li>
                   <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_step2' %}">Шаг 2. Способ
@@ -37,7 +37,7 @@
                   <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_step3' %}">Шаг 3. Способ
                     оплаты</a>
                   </li>
-                  <li class="menu-item"><a class="menu-link" href="{% url 'shop:order_success' %}">Шаг 4. Подтверждение
+                  <li class="menu-item_ACTIVE menu-item"><a class="menu-link" href="{% url 'shop:order_success' %}">Шаг 4. Подтверждение
                     заказа</a>
                   </li>
                 </ul>
@@ -84,7 +84,7 @@
                       </div>
                     </div>
                     <div class="Cart-block Cart-block_price">
-                      <div class="Cart-price">{{ basket.shop.price }}$</div>
+                      <div class="Cart-price">{{ basket.shop.prices.price }}$</div>
                     </div>
                     <div class="Cart-block Cart-block_row">
                       <div class="Cart-block Cart-block_amount">{{ basket.quantity }} шт.</div>
@@ -97,7 +97,7 @@
               <div class="Cart-total">
                 <div class="Cart-block Cart-block_total">
                   <strong class="Cart-title">Итого:</strong>
-                  <span class="Cart-price">{{ all_count }} товаров на сумму {{ total_sum }}$$</span>
+                  <span class="Cart-price">{{ all_count }} товаров на сумму {{ total_sum }}$</span>
                 </div>
                 {% if payment_method == 'card' %}
                   <div class="Cart-block">

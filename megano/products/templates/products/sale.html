@@ -30,9 +30,17 @@
               <div class="Card-content">
                 <strong class="Card-title"><a href="{% url 'shop:product' sale.pk %}">{{ sale.name }}</a>
                 </strong>
-                <div class="Card-description"><s>{{ sale.prices.old_price }}</s></div>
+                <div class="Card-description">
+                  <div class="Card-cost">
+                    <span class="Card-price">${{ sale.prices.price }}</span>
+                  </div>
+                </div>
                 <br>
-                <div class="Card-description">{{ sale.prices.price }}</div>
+                <div class="Card-description">
+                  <div class="Card-cost">
+                    <s class="Card-price" style="font-weight: 400">${{ sale.prices.old_price }}</s>
+                  </div>
+                </div>
               </div>
             </div>
           {% endfor %}

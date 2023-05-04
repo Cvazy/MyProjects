@@ -1,7 +1,11 @@
+import re
+
+import phonenumbers
 from django import forms
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm, UsernameField, PasswordChangeForm
 from django.core.exceptions import ValidationError
 from django.contrib.auth import password_validation
+from django.core.validators import RegexValidator
 
 from .models import User
 from products.models import Order
@@ -37,11 +41,33 @@ class UserProfileForm(UserChangeForm):
 class RegisterForm(UserCreationForm):
     fio = forms.CharField(required=True, label='Ф.И.О.', widget=forms.TextInput)
     email = forms.CharField(required=True, label='Адрес электронной почты', widget=forms.EmailInput)
-    phone = forms.CharField(required=True, label='Номер телефона', widget=forms.TextInput)
+    phone = forms.CharField(required=True, label='Номер телефона', widget=forms.TextInput, max_length=18)
 
     class Meta:
         model = User
         fields = ['username', 'fio', 'phone', 'email', 'password1', 'password2']
+
+
+# class RegisterForm(UserCreationForm):
+#     fio = forms.CharField(required=True, label='Ф.И.О.', widget=forms.TextInput)
+#     email = forms.CharField(required=True, label='Адрес электронной почты', widget=forms.EmailInput)
+#     phone = forms.CharField(
+#         max_length=18,
+#         required=True,
+#         label='Номер телефона',
+#         widget=forms.TextInput(attrs={'placeholder': '+7 (___) ___-__-__'}),
+#     )
+#
+#     def clean_phone(self):
+#         phone = self.cleaned_data['phone']
+#         phone_regex = re.compile(r'^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$')
+#         if not phone_regex.match(phone):
+#             raise ValidationError('Введен некорректный номер телефона.')
+#         return phone
+#
+#     class Meta:
+#         model = User
+#         fields = ['username', 'fio', 'phone', 'email', 'password1', 'password2']
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -84,14 +110,8 @@ class CustomPasswordChangeForm(PasswordChangeForm):
 class ProfileForm(forms.ModelForm):
     fio = forms.CharField(max_length=100, required=True)
     email = forms.EmailField(required=True)
-    phone = forms.CharField(max_length=12, required=True)
+    phone = forms.CharField(max_length=18, required=True)
 
     class Meta:
         model = User
         fields = ['fio', 'email', 'phone']
-
-    def clean_phone_number(self):
-        phone = self.cleaned_data.get('phone')
-        if not phone.isdigit():
-            raise forms.ValidationError('Номер телефона должен содержать только цифры')
-        return phone

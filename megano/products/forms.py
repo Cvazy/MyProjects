@@ -29,12 +29,7 @@ class OrderForm(forms.Form):
         required=True,
     )
 
-    phone = forms.CharField(
-        label='Телефон',
-        widget=forms.TextInput(attrs={'class': 'form-control'}),
-        max_length=20,
-        required=True,
-    )
+    phone = forms.CharField(max_length=18, widget=forms.TextInput(attrs={'class': 'form-control'}), required=True)
 
 
 class OrderPayForm(forms.Form):

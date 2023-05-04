@@ -117,8 +117,8 @@
                   <header class="Section-header">
                     <h3 class="Section-title">{{ reviews_count }} Отзывов</h3>
                   </header>
-                  {% for review in reviews %}
-                    <div class="Comments">
+                  {% for review in reviews|slice:":2" %}
+                    <div id="reviews" class="Comments">
                       <div v-for="review in product.reviews" class="Comment">
                         <div class="Comment-column Comment-column_pict">
                           <div class="Comment-avatar"></div>
@@ -126,7 +126,7 @@
                         <div class="Comment-column">
                           <header class="Comment-header">
                             <div>
-                              <strong class="Comment-title">Автор: {{ review.name }}</strong>
+                              <strong class="Comment-title">Автор: {{ review.author }}</strong>
                               <span class="Comment-date">Оценка: {{ review.rate }}</span><br>
                             </div>
                           </header>
@@ -137,6 +137,31 @@
                   {% empty %}
                     <li>Отзывов пока нет.</li>
                   {% endfor %}
+
+                  {% if reviews|length > 2 %}
+                    <button id="show-more-btn">Show more</button>
+                  {% endif %}
+
+                  <div id="reviews-more" style="display: none">
+                    {% for review in reviews|slice:"2:" %}
+                      <div class="Comments">
+                        <div v-for="review in product.reviews" class="Comment">
+                          <div class="Comment-column Comment-column_pict">
+                            <div class="Comment-avatar"></div>
+                          </div>
+                          <div class="Comment-column">
+                            <header class="Comment-header">
+                              <div>
+                                <strong class="Comment-title">Автор: {{ review.author }}</strong>
+                                <span class="Comment-date">Оценка: {{ review.rate }}</span><br>
+                              </div>
+                            </header>
+                            <div class="Comment-content">{{ review.text }}</div>
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
 
                   {% if user.is_authenticated %}
                     <h2>Добавить отзыв</h2>
@@ -161,4 +186,16 @@
 {% block mixins %}
   <script>var pk = {{ pk }}</script>
   <script src="{% static 'frontend/assets/js/product-detail.js' %}"></script>
+  <script>
+      var reviewsMore = document.getElementById("reviews-more");
+      var showMoreBtn = document.getElementById("show-more-btn");
+
+      if (reviewsMore) {
+          showMoreBtn.style.display = "block";
+          showMoreBtn.addEventListener("click", function () {
+              reviewsMore.style.display = "block";
+              showMoreBtn.style.display = "none";
+          });
+      }
+  </script>
 {% endblock %}

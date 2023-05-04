@@ -66,7 +66,13 @@
                         </div>
                         <div class="Order-info Order-info_status">
                           <div class="Order-infoType">Статус:</div>
-                          <div class="Order-infoContent">{{ order.status }}</div>
+                          {% if order.pay_status != False %}
+                            <div class="Order-infoContent">{{ order.status }}</div>
+                          {% else %}
+                            <a href="{% url 'pages:payment' order.id %}">
+                              <div class="Order-infoContent">{{ order.status }}</div>
+                            </a>
+                          {% endif %}
                         </div>
                       </div>
                     </div>

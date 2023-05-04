@@ -9,6 +9,7 @@ from django.contrib.auth.signals import user_logged_in
 from django.dispatch import receiver
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic.base import View
 from django.db.models import Q
@@ -18,7 +19,7 @@ from rest_framework.views import APIView
 from rest_framework import viewsets, status
 
 from products.forms import ReviewForm, OrderForm, OrderDeliveryForm, OrderPayForm
-from products.models import Products, Basket, Category, Feature, Review, Tags, Order
+from products.models import Products, Basket, Category, Feature, Review, Tags, OrderItem
 from users.models import User
 from .serializers import *
 
@@ -39,7 +40,7 @@ def index(request):
 
 def cart_view(request):
     if request.user.is_authenticated:
-        cart_items = Basket.objects.all()
+        cart_items = Basket.objects.filter(user_id=request.user.pk)
 
     else:
         cart = request.session.get('cart', {})
@@ -114,8 +115,12 @@ def basket_del(request, product_id):
     return redirect('shop:cart')
 
 
-def product(request, pk):
-    product = get_object_or_404(Products, pk=pk)
+def product(request, product_id):
+    product = get_object_or_404(Products, pk=product_id)
+
+    reviews =  Review.objects.filter(product_id=product_id)
+
+    num_reviews = 2 if len(reviews) > 3 else len(reviews)
 
     if request.method == 'POST':
         form = ReviewForm(request.POST)
@@ -124,15 +129,15 @@ def product(request, pk):
             review.product = product
             review.author = request.user
             review.save()
-            return redirect('shop:product', pk=pk)
+            return redirect('shop:product', product_id=product_id)
     else:
         form = ReviewForm()
 
     context = {
-        'products': Products.objects.filter(pk=pk),
-        'feature': Feature.objects.filter(product=pk),
-        'reviews': Review.objects.filter(product_id=pk),
-        'reviews_count': Review.objects.filter(product_id=pk).count(),
+        'products': Products.objects.filter(pk=product_id),
+        'feature': Feature.objects.filter(product=product_id),
+        'reviews': reviews,
+        'reviews_count': Review.objects.filter(product_id=product_id).count(),
         'form': form,
     }
 
@@ -142,6 +147,25 @@ def product(request, pk):
         context.update(dict(total_sum=total_sum))
 
     return render(request, 'products/product.html', context)
+
+
+def load_more_reviews(request):
+    if request.method == 'GET':
+        product_id = request.GET.get('product_id')
+        page_number = request.GET.get('page_number')
+        reviews_per_page = request.GET.get('reviews_per_page')
+
+        product = get_object_or_404(Products, pk=product_id)
+        reviews = product.reviews.order_by('-created_date')[(int(page_number) - 1) * int(reviews_per_page) + 2:int(page_number) * int(reviews_per_page) + 2]
+
+        if len(reviews) == 0:
+            return JsonResponse({'has_next': False})
+
+        reviews_html = ''
+        for review in reviews:
+            reviews_html += f'<div class="review"><p>{review.text}</p><p class="author">{review.author} - {review.created_date}</p></div>'
+
+        return JsonResponse({'reviews_html': reviews_html, 'has_next': True})
 
 
 def shop(request, category_id=None, tag_id=None, page=1):
@@ -228,7 +252,7 @@ class OrderCreateView(LoginRequiredMixin, View):
             return render(request, 'products/step3.html')
         elif step == 4:
             # Отображаем страницу с подтверждением заказа
-            with open(r'C:\Users\79967\Desktop\freelance\megano\data.txt', 'r', encoding='utf-8') as file:
+            with open(os.path.abspath('data.txt'), 'r', encoding='utf-8') as file:
                 data = file.readline()
 
             pattern = r"'(?:fio|email|phone|delivery_method|address|city|payment_method)': '([^']+)'"
@@ -288,6 +312,8 @@ class OrderStepOneView(View):
         return render(request, 'products/step1.html', {'form': form})
 
     def post(self, request, *args, **kwargs):
+        if os.path.exists(os.path.abspath('data.txt')):
+            os.remove(os.path.abspath('data.txt'))
         # Извлекаем данные из формы и сохраняем их в сессии
         form = OrderForm(request.POST)
         if form.is_valid():
@@ -317,7 +343,7 @@ class OrderStepTwoView(View):
         if form.is_valid():
             order_data = form.cleaned_data
             request.session['order_data'] = order_data
-            with open('data.txt', 'a', encoding='utf-8') as file:
+            with open(os.path.abspath('data.txt'), 'a', encoding='utf-8') as file:
                 file.write(f"{request.session['order_data']}")
             return redirect('shop:order_step3')
         # Если форма невалидна, то возвращаем ошибки на страницу
@@ -340,7 +366,7 @@ class OrderStepThreeView(View):
         if order_form.is_valid():
             order_data = order_form.cleaned_data
             request.session['order_data'] = order_data
-            with open('data.txt', 'a', encoding='utf-8') as file:
+            with open(os.path.abspath('data.txt'), 'a', encoding='utf-8') as file:
                 file.write(f"{request.session['order_data']}")
 
             return redirect('shop:order_confirm')
@@ -354,7 +380,7 @@ class OrderConfirmView(View):
     template_name = 'products/order_confirm.html'
 
     def get(self, request):
-        with open(r'C:\Users\79967\Desktop\freelance\megano\data.txt', 'r', encoding='utf-8') as file:
+        with open(os.path.abspath('data.txt'), 'r', encoding='utf-8') as file:
             data = file.readline()
 
         pattern = r"'(?:fio|email|phone|delivery_method|address|city|payment_method)': '([^']+)'"
@@ -375,6 +401,13 @@ class OrderConfirmView(View):
             total_sum=sum(basket.sum() for basket in baskets)
         )
 
+        for basket in baskets:
+            OrderItem.objects.create(
+                total=total_sum,
+                items=basket,
+                order_id=Order.objects.get(total_sum=sum(basket.sum() for basket in baskets)).pk
+            )
+
         context = {
             'fio': matches[0],
             'email': matches[1],
@@ -388,8 +421,6 @@ class OrderConfirmView(View):
             'total_sum': total_sum,
             'order_id': Order.objects.get(total_sum=sum(basket.sum() for basket in baskets)).pk
         }
-
-        os.remove(r'C:\Users\79967\Desktop\freelance\megano\data.txt')
 
         return render(request, 'products/order_confirm.html', context)
 
