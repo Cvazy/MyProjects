@@ -1,8 +1,6 @@
 from django import forms
-from django.shortcuts import redirect, render
-from django.views import View
 
-from .models import Review, Order
+from .models import Review
 
 
 class ReviewForm(forms.ModelForm):
@@ -72,5 +70,3 @@ class OrderDeliveryForm(forms.Form):
         max_length=100,
         required=True,
     )
-
-

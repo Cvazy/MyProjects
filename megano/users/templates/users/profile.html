@@ -6,37 +6,45 @@
     <div class="Middle-top">
       <div class="wrap">
         <div class="Middle-header">
-          <h1 class="Middle-title">Профиль
-          </h1>
+          <h1 class="Middle-title">Профиль</h1>
+
           <ul class="breadcrumbs Middle-breadcrumbs">
-            <li class="breadcrumbs-item"><a href="{% url 'shop:index' %}">home</a>
+            <li class="breadcrumbs-item">
+              <a href="{% url 'shop:index' %}">home</a>
             </li>
-            <li class="breadcrumbs-item breadcrumbs-item_current"><span>Профиль</span>
+
+            <li class="breadcrumbs-item breadcrumbs-item_current">
+              <span>Профиль</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
+
     <div class="Section Section_column Section_columnLeft">
       <div class="wrap">
         <div class="Section-column">
           <div class="Section-columnSection">
             <header class="Section-header">
-              <strong class="Section-title">Навигация
-              </strong>
+              <strong class="Section-title">Навигация</strong>
             </header>
+
             <div class="Section-columnContent">
               <div class="NavigateProfile">
                 <ul class="menu menu_vt">
-                  <li class="menu-item"><a class="menu-link" href="{% url 'users:profile' %}">Профиль</a>
+                  <li class="menu-item">
+                    <a class="menu-link" href="{% url 'users:profile' %}">Профиль</a>
                   </li>
-                  <li class="menu-item"><a class="menu-link" href="{% url 'users:history-order' %}">История заказов</a>
+
+                  <li class="menu-item">
+                    <a class="menu-link" href="{% url 'users:history-order' %}">История заказов</a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+
         <div class="Section-content">
           <div class="Profile">
             <div class="row">
@@ -47,10 +55,12 @@
                     <label class="form-label" for="{{ form.image.id_for_label }}">Изменение фото</label>
                     <a href="{% url 'users:change_profile_image' %}" class="btn btn-primary">Change Profile Image</a>
                   </div>
+
                   <div class="form-group">
                     <label class="form-label" for="{{ form.image.id_for_label }}">Изменение пароля</label>
                     <a href="{% url 'users:change_password' %}" class="btn btn-primary">Change Password</a>
                   </div>
+
                   <form method="post" action="{% url 'users:profile' %}">
                     {% csrf_token %}
                     {{ profile_form.as_p }}

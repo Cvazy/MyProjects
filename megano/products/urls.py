@@ -1,14 +1,9 @@
 from django.urls import path
-from django.views.generic import TemplateView
-from rest_framework import routers
 
 from . import views
 from .views import *
 
 app_name = 'products'
-
-router = routers.SimpleRouter()
-router.register(r'api/orders', OrdersView)
 
 urlpatterns = [
     path('', index, name='index'),
@@ -24,17 +19,10 @@ urlpatterns = [
     path('catalog/sale/page/<page>/', sale, name='sale-page'),
     path('product/<int:product_id>', product, name='product'),
     path('product/<int:product_id>/reviews/load/', load_more_reviews, name='load_reviews'),
-    path('api/basket/', BasketOfProductsView.as_view(), name='basket'),
-    path('api/categories/', CategoryView.as_view()),
-    path('api/tags/', TagsView.as_view()),
-    path('api/catalog/', CatalogView.as_view()),
-    path('api/products/popular/', ProductPopularView.as_view()),
-    path('api/products/limited/', ProductLimitedView.as_view()),
-    path('api/product/<int:pk>/', ProductDetailView.as_view({'get': 'retrieve'})),
     path('create/', OrderCreateView.as_view(), name='order_create'),
     path('order/create/step1/', OrderStepOneView.as_view(), name='order_step1'),
     path('order/create/step2/', OrderStepTwoView.as_view(), name='order_step2'),
     path('order/create/step3/', OrderStepThreeView.as_view(), name='order_step3'),
     path('order/create/confirm/', OrderConfirmView.as_view(), name='order_confirm'),
     path('order/success/', OrderSuccessView.as_view(), name='order_success'),
-]+router.urls
+]

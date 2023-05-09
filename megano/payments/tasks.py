@@ -42,5 +42,3 @@ def process_payment(order_id):
             order.save()
     except ObjectDoesNotExist:
         pass
-
-

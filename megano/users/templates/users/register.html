@@ -2,38 +2,36 @@
 {% load static %}
 
 {% block content %}
-    <div class="register_main">
+  <div class="register_main">
     <h3>Регистрация нового пользователя</h3>
-      <form class="register" action="#" method="post">
-        {% csrf_token %}
-        {{ form.as_div }}
-          <input class="my_button" type="submit" value="Зарегистрироваться"/>
-          <a class="my_login" href="{% url 'users:login' %}">
-            <button type="button">Вход</button>
-          </a>
-      </form>
+
+    <form class="register" action="#" method="post">
+      {% csrf_token %}
+      {{ form.as_div }}
+      <input class="my_button" type="submit" value="Зарегистрироваться"/>
+      <a class="my_login" href="{% url 'users:login' %}">
+        <button type="button">Вход</button>
+      </a>
+    </form>
   </div>
 {% endblock %}
-{##}
-{#<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>#}
-{#<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>#}
-{#<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>#}
-<script>
-$(function() {
-    var phoneInput = $("#phone-input");
-    var iti = window.intlTelInput(phoneInput[0], {
-        initialCountry: "ru",
-        preferredCountries: ["ru"],
-        separateDialCode: true,
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
-    });
 
-    phoneInput.mask("+7 (999) 999-99-99");
-    phoneInput.on("input", function() {
-        var phoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-        if (phoneNumber) {
-            phoneInput.val(phoneNumber.slice(2));
-        }
+<script>
+    $(function () {
+        var phoneInput = $("#phone-input");
+        var iti = window.intlTelInput(phoneInput[0], {
+            initialCountry: "ru",
+            preferredCountries: ["ru"],
+            separateDialCode: true,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+
+        phoneInput.mask("+7 (999) 999-99-99");
+        phoneInput.on("input", function () {
+            var phoneNumber = iti.getNumber(intlTelInputUtils.numberFormat.E164);
+            if (phoneNumber) {
+                phoneInput.val(phoneNumber.slice(2));
+            }
+        });
     });
-});
 </script>

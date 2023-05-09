@@ -9,18 +9,23 @@
           <header class="Section-header">
             <h2 class="Section-title">Popular Products</h2>
           </header>
-          <div class="Cards">
 
-            <!-- Получаем популярные товары -->
+          <div class="Cards">
             {% for product in index %}
               <div v-for="card in popularCards" class="Card">
                 <a class="Card-picture" href="{% url 'shop:product' product.pk %}">
-                  <img v-if="card.images.length > 0" src="{{ product.image.url }}" :alt="card.title"/></a>
+                  <img v-if="card.images.length > 0" src="{{ product.image.url }}" :alt="card.title"/>
+                </a>
+
                 <div class="Card-content">
-                  <strong class="Card-title"><a :href="card.href">{{ product.name }}</a>
+                  <strong class="Card-title">
+                    <a :href="card.href">{{ product.name }}</a>
                   </strong>
+
                   <div class="Card-description">
-                    <div class="Card-cost"><span class="Card-price">${{ product.prices.price }}</span></div>
+                    <div class="Card-cost">
+                      <span class="Card-price">${{ product.prices.price }}</span>
+                    </div>
 
                     <div class="Card-category">{{ product.category }}</div>
 
@@ -37,8 +42,6 @@
                 </div>
               </div>
             {% endfor %}
-            <!-- Получаем популярные товары -->
-
           </div>
         </div>
       </div>
@@ -50,18 +53,23 @@
           <header class="Section-header">
             <h2 class="Section-title">Limited edition</h2>
           </header>
-          <div class="Cards">
 
-            <!-- Получаем популярные товары -->
+          <div class="Cards">
             {% for item in top %}
               <div v-for="card in popularCards" class="Card">
                 <a class="Card-picture" href="{% url 'shop:product' item.pk %}">
-                  <img v-if="card.images.length > 0" src="{{ item.image.url }}" :alt="card.title"/></a>
+                  <img v-if="card.images.length > 0" src="{{ item.image.url }}" :alt="card.title"/>
+                </a>
+
                 <div class="Card-content">
-                  <strong class="Card-title"><a :href="card.href">{{ item.name }}</a>
+                  <strong class="Card-title">
+                    <a :href="card.href">{{ item.name }}</a>
                   </strong>
+
                   <div class="Card-description">
-                    <div class="Card-cost"><span class="Card-price">${{ item.prices.price }}</span></div>
+                    <div class="Card-cost">
+                      <span class="Card-price">${{ item.prices.price }}</span>
+                    </div>
 
                     <div class="Card-category">{{ item.category }}</div>
 
@@ -78,8 +86,6 @@
                 </div>
               </div>
             {% endfor %}
-            <!-- Получаем популярные товары -->
-
           </div>
         </div>
       </div>

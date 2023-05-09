@@ -1,6 +1,4 @@
 from django.db import models
-from products import settings
-from django.utils import timezone
 from django.contrib.sessions.models import Session
 
 from users.models import User
@@ -97,15 +95,11 @@ class Basket(models.Model):
 
     @classmethod
     def merge_carts(cls, anonymous_cart, user_cart):
-        # Объединение корзин авторизованного и неавторизованного пользователя
         if anonymous_cart and user_cart:
-            # Обновляем записи в корзине с null user на user_id авторизованного пользователя
             anonymous_cart.update(user=user_cart.user)
 
-            # Получаем записи из корзины пользователя
             user_cart_items = user_cart.cart_set.all()
 
-            # Объединяем корзины и группируем по продукту
             merged_carts = {}
             for item in anonymous_cart:
                 key = item.product.id
@@ -120,7 +114,6 @@ class Basket(models.Model):
                 else:
                     merged_carts[key] += item.quantity
 
-            # Создаем новые записи в корзине пользователя
             for key, value in merged_carts.items():
                 product = Products.objects.get(id=key)
                 cart_item, created = Basket.objects.get_or_create(
@@ -132,14 +125,11 @@ class Basket(models.Model):
                     cart_item.quantity += value
                     cart_item.save()
 
-            # Удаляем записи в корзине с null user
             anonymous_cart.delete()
 
-        # Если у пользователя нет корзины, возвращаем корзину неавторизованного пользователя
         elif anonymous_cart:
             return anonymous_cart
 
-        # Если нет корзины неавторизованного пользователя, возвращаем корзину пользователя
         else:
             return user_cart
 

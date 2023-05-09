@@ -1,27 +1,17 @@
 import os
 import re
 
-from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, HttpResponseRedirect, redirect, get_object_or_404
-from django.contrib.sessions.backends.db import SessionStore
-from django.contrib.auth.signals import user_logged_in
-from django.dispatch import receiver
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic.base import View
 from django.db.models import Q
 from rest_framework.generics import get_object_or_404
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework import viewsets, status
 
 from products.forms import ReviewForm, OrderForm, OrderDeliveryForm, OrderPayForm
-from products.models import Products, Basket, Category, Feature, Review, Tags, OrderItem
-from users.models import User
-from .serializers import *
+from products.models import Basket, OrderItem, Products, Review, Feature, Category, Tags, Order
 
 
 def index(request):
@@ -118,7 +108,7 @@ def basket_del(request, product_id):
 def product(request, product_id):
     product = get_object_or_404(Products, pk=product_id)
 
-    reviews =  Review.objects.filter(product_id=product_id)
+    reviews = Review.objects.filter(product_id=product_id)
 
     num_reviews = 2 if len(reviews) > 3 else len(reviews)
 
@@ -242,16 +232,12 @@ class OrderCreateView(LoginRequiredMixin, View):
             step = 1
             request.session['step'] = 1
         if step == 1:
-            # Отображаем форму для ввода данных пользователя
             return render(request, 'products/step1.html')
         elif step == 2:
-            # Отображаем форму для выбора способа доставки
             return render(request, 'products/step2.html')
         elif step == 3:
-            # Отображаем форму для выбора способа оплаты
             return render(request, 'products/step3.html')
         elif step == 4:
-            # Отображаем страницу с подтверждением заказа
             with open(os.path.abspath('data.txt'), 'r', encoding='utf-8') as file:
                 data = file.readline()
 
@@ -275,26 +261,22 @@ class OrderCreateView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         step = int(request.session['step'])
         if step == 1:
-            # Обрабатываем данные из первой формы
             request.session['fio'] = request.POST.get('fio')
             request.session['phone'] = request.POST.get('phone')
             request.session['email'] = request.POST.get('email')
             request.session['step'] = 2
             return redirect('order_create')
         elif step == 2:
-            # Обрабатываем данные из второй формы
             request.session['delivery_method'] = request.POST.get('delivery_method')
             request.session['address'] = request.POST.get('address')
             request.session['city'] = request.POST.get('city')
             request.session['step'] = 3
             return redirect('order_create')
         elif step == 3:
-            # Обрабатываем данные из третьей формы
             request.session['payment_method'] = request.POST.get('payment_method')
             request.session['step'] = 4
             return redirect('order_create')
         elif step == 4:
-            # Перенаправляем пользователя на страницу с подтверждением заказа
             return redirect('order_confirm')
 
 
@@ -307,14 +289,12 @@ class OrderStepOneView(View):
     template_name = 'products/step1.html'
 
     def get(self, request, *args, **kwargs):
-        # Создаем новую форму, передаем ее в шаблон и рендерим его
         form = OrderForm()
         return render(request, 'products/step1.html', {'form': form})
 
     def post(self, request, *args, **kwargs):
         if os.path.exists(os.path.abspath('data.txt')):
             os.remove(os.path.abspath('data.txt'))
-        # Извлекаем данные из формы и сохраняем их в сессии
         form = OrderForm(request.POST)
         if form.is_valid():
             order_data = form.cleaned_data
@@ -322,7 +302,6 @@ class OrderStepOneView(View):
             with open('data.txt', 'a', encoding='utf-8') as file:
                 file.write(f"{request.session['order_data']}")
             return redirect('shop:order_step2')
-        # Если форма невалидна, то возвращаем ошибки на страницу
         return render(request, 'products/step1.html', {'form': form})
 
 
@@ -330,15 +309,12 @@ class OrderStepTwoView(View):
     template_name = 'products/step2.html'
 
     def get(self, request, *args, **kwargs):
-        # Если пользователь еще не заполнил первый шаг, возвращаем его на этот шаг
         if 'order_data' not in request.session:
             return redirect('shop:order_step1')
-        # Создаем новую форму, передаем ее в шаблон и рендерим его
         form = OrderDeliveryForm()
         return render(request, 'products/step2.html', {'form': form})
 
     def post(self, request, *args, **kwargs):
-        # Извлекаем данные из формы и сохраняем их в сессии
         form = OrderDeliveryForm(request.POST)
         if form.is_valid():
             order_data = form.cleaned_data
@@ -346,7 +322,6 @@ class OrderStepTwoView(View):
             with open(os.path.abspath('data.txt'), 'a', encoding='utf-8') as file:
                 file.write(f"{request.session['order_data']}")
             return redirect('shop:order_step3')
-        # Если форма невалидна, то возвращаем ошибки на страницу
         return render(request, 'products/step2.html', {'form': form})
 
 
@@ -423,199 +398,3 @@ class OrderConfirmView(View):
         }
 
         return render(request, 'products/order_confirm.html', context)
-
-
-def get_products_in_cart(cart):
-    products_in_cart = [product for product in cart.cart.keys()]
-    products = Products.objects.filter(pk__in=products_in_cart)
-    serializer = BasketSerializer(products, many=True, context=cart.cart)
-    return serializer
-
-
-class BasketOfProductsView(APIView):
-    def get(self, *args, **kwargs):
-        cart = Basket(self.request)
-        serializer = get_products_in_cart(cart)
-        return Response(serializer.data)
-
-    def post(self, *args, **kwargs):
-        cart = Basket(self.request)
-        product = get_object_or_404(Products, id=self.request.data.get('id'))
-        cart.add(product=product, count=self.request.data.get('count'))
-        serializer = get_products_in_cart(cart)
-        return Response(serializer.data)
-
-    def delete(self, *args, **kwargs):
-        cart = Basket(self.request)
-        product = get_object_or_404(Products, id=self.request.query_params.get('id'))
-        count = self.request.query_params.get('count', False)
-        cart.remove(product, count=count)
-        serializer = get_products_in_cart(cart)
-        return Response(serializer.data)
-
-
-class CategoryView(APIView):
-    def get(self, request):
-        categories = []
-        categories_tmp = Category.objects.filter(parent=None, active=True).prefetch_related('image', 'subcategories')
-        for category in categories_tmp:
-            categories.append({'id': category.id, 'name': category.name})
-        serializer = CategorySerializer(categories, many=True)
-        return Response(serializer.data)
-
-
-class TagsView(APIView):
-    def get(self, request):
-        tags = Tags.objects.all()
-        serializer = TagsSerializer(tags, many=True)
-        return Response(serializer.data)
-
-
-def sorting_catalog(request):
-    category = request.GET.get('category')
-
-    if category != '0':
-        catalog = Category.objects.get(pk=category, active=True).products
-    else:
-        catalog = Products.objects.all()
-
-    return catalog
-
-
-def filter_catalog(request):
-    category = request.query_params.get('category')
-    name = request.query_params.get('filter[name]')
-    available = request.query_params.get('filter[available]').capitalize()
-    tag = request.query_params.get('tag', '').split(',')
-    search = request.query_params.get('filter[search]', '')
-    min_price = (request.query_params.get('filter[minPrice]'))
-    max_price = (request.GET.get('filter[maxPrice]'))
-
-    if category != '0':
-        catalog = Category.objects.get(pk=category, active=True).products
-    else:
-        catalog = Products.objects.all()
-
-    if available == 'True':
-        if tag != ['']:
-            catalog = catalog.filter(title__iregex=name, price__range=(min_price, max_price), count__gt=0,
-                                     tags__in=tag).prefetch_related('images', 'tag')
-        elif search:
-            catalog = catalog.filter(title__iregex=search, price__range=(min_price, max_price),
-                                     count__gt=0).prefetch_related('images')
-        else:
-            catalog = catalog.filter(title__iregex=name, price__range=(min_price, max_price),
-                                     count__gt=0).prefetch_related('images')
-
-    elif tag != ['']:
-        catalog = catalog.filter(title__iregex=name, price__range=(min_price, max_price),
-                                 tags__in=tag).prefetch_related('images', 'tag')
-    else:
-        catalog = catalog.filter(title__iregex=name, price__range=(min_price, max_price)).prefetch_related('images')
-    return catalog
-
-
-class CatalogView(APIView):
-    def get(self, request, *args, **kwargs):
-        shops = filter_catalog(request)
-        products = sorting_catalog(request, shops)
-        paginator = Paginator(products, 8)
-        current_page = paginator.get_page(request.GET.get('page'))
-        if len(products) % 8 == 0:
-            lastPage = len(products) // 8
-        else:
-            lastPage = len(products) // 8 + 1
-        for product in current_page:
-            product.categoryName = product.category
-        serializer = ProductSerializer(current_page, many=True)
-        return Response({'items': serializer.data, 'currentPage': request.GET.get('page'), 'lastPage': lastPage})
-
-
-class ProductPopularView(APIView):
-    def get(self, request):
-        products = Products.objects.filter(active=True).order_by('-rating')[:8].prefetch_related('images')
-        for product in products:
-            product.categoryName = product.category
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data)
-
-
-class ProductDetailView(viewsets.ViewSet):
-    def retrieve(self, request, pk):
-        product = Products.objects.get(pk=pk)
-        serializer = ProductSerializer(product, many=False)
-        return Response(serializer.data)
-
-
-class ProductLimitedView(APIView):
-    def get(self, request):
-        products = Products.objects.filter(limited_edition=True, active=True)[:15].prefetch_related('images')
-        for product in products:
-            product.categoryName = product.category
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data)
-
-
-class OrdersView(viewsets.ModelViewSet):
-    queryset = Order.objects.all().select_related('user').prefetch_related('products')
-    serializer_class = OrderSerializer
-
-    def submit_basket(self, request, *args, **kwargs):
-        if request.user.pk:
-            user = User.objects.get(pk=request.user.pk)
-            fullName, email, phone = user.fullName, user.email, user.phone
-        else:
-            user = request.user
-            fullName, email, phone = '', '', ''
-        products = request.data
-        totalCost = sum([product.get('count') * product.get('price') for product in products])
-        data_of_order = {'user': user,
-                         'products': products,
-                         'fullName': fullName,
-                         'email': email,
-                         'phone': phone,
-                         'totalCost': totalCost,
-                         }
-        serializer = self.get_serializer(data=data_of_order)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
-        return Response(serializer.data)
-
-    def active(self, request):
-        order = self.queryset.last()
-        cart = Basket(request).cart
-
-        if cart:
-            for product in order.products.all():
-                product.count = cart.get(str(product.pk)).get('count')
-        serializer = self.get_serializer(order)
-        return Response(serializer.data)
-
-    def update(self, request, *args, **kwargs):
-        cart = Basket(request)
-        instance = self.get_object()
-        serializer = self.get_serializer(instance, data=request.data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_update(serializer)
-        for product in instance.products.all():
-            product.count -= cart.cart.get(str(product.pk)).get('count')
-            if product.count <= 0:
-                product.active = False
-            product.save()
-        cart.clear()
-        return Response(serializer.data)
-
-    def list(self, request, *args, **kwargs):
-        queryset = Order.objects.filter(user_id=request.user.pk)
-        page = self.paginate_queryset(queryset)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-        serializer = self.get_serializer(queryset, many=True)
-        return Response({'orders': serializer.data})
-
-    def details(self, request, pk):
-        order = Order.objects.get(pk=pk)
-        serializer = self.get_serializer(order)
-        return Response(serializer.data)
-

@@ -6,12 +6,14 @@
     <div class="Middle-top">
       <div class="wrap">
         <div class="Middle-header">
-          <h1 class="Middle-title">Корзина
-          </h1>
+          <h1 class="Middle-title">Корзина</h1>
+
           <ul class="breadcrumbs Middle-breadcrumbs">
-            <li class="breadcrumbs-item"><a href="{% url 'shop:index' %}">home</a>
+            <li class="breadcrumbs-item">
+              <a href="{% url 'shop:index' %}">home</a>
             </li>
-            <li class="breadcrumbs-item breadcrumbs-item_current"><span>Корзина</span>
+            <li class="breadcrumbs-item breadcrumbs-item_current">
+              <span>Корзина</span>
             </li>
           </ul>
         </div>
@@ -21,27 +23,34 @@
     <div class="Section">
       <div class="wrap">
         <div class="form Cart">
-          <!-- Данные по товару в корзине -->
           {% for basket in cart_items %}
             {% if user.is_authenticated %}
               <div v-for="product in Object.values(basket)" class="Cart-product">
                 <div class="Cart-block Cart-block_row">
-                  <div class="Cart-block Cart-block_pict"><a class="Cart-pict"
-                    href="{% url 'shop:product' basket.shop.pk %}">
-                    <img class="Cart-img" src="{{ basket.shop.image.url }}" :alt="product.title"/></a>
+                  <div class="Cart-block Cart-block_pict">
+                    <a class="Cart-pict" href="{% url 'shop:product' basket.shop.pk %}">
+                      <img class="Cart-img" src="{{ basket.shop.image.url }}" :alt="product.title"/>
+                    </a>
                   </div>
+
                   <div class="Cart-block Cart-block_info">
-                    <a class="Cart-title" href="{% url 'shop:product' basket.shop.pk %}">{{ basket.shop.name }}</a>
+                    <a class="Cart-title" href="{% url 'shop:product' basket.shop.pk %}">
+                      {{ basket.shop.name }}
+                    </a>
+
                     {% if basket.shop.short_description != None %}
                       <div class="Cart-desc">{{ basket.shop.short_description }}</div>
                     {% endif %}
                   </div>
+
                   <div class="Cart-block Cart-block_price">
                     <div class="Cart-price">{{ basket.shop.prices.price }}$</div>
                   </div>
                 </div>
+
                 <div class="Cart-block Cart-block_row">
                   <div class="Cart-block Cart-block_seller"></div>
+
                   <div class="Cart-block Cart-block_amount">
                     <div class="Cart-amount">
                       <div class="Amount">
@@ -78,33 +87,41 @@
                       {% csrf_token %}
                       <input type="hidden" name="product_id" value="{{ basket.shop.pk }}">
                       <button class="Cart-delete">
-                        <img src="{% static 'frontend/assets/img/icons/card/delete.svg' %}"
-                          alt="delete.svg"/>
+                        <img src="{% static 'frontend/assets/img/icons/card/delete.svg' %}" alt="delete.svg"/>
                       </button>
                     </form>
                   </div>
                 </div>
               </div>
             {% else %}
+
               <div v-for="product in Object.values(basket)" class="Cart-product">
                 <div class="Cart-block Cart-block_row">
-                  <div class="Cart-block Cart-block_pict"><a class="Cart-pict"
-                    href="{% url 'shop:product' basket.product.pk %}">
-                    <img class="Cart-img" src="{{ basket.product.image.url }}" :alt="product.title"/></a>
+                  <div class="Cart-block Cart-block_pict">
+                    <a class="Cart-pict"
+                      href="{% url 'shop:product' basket.product.pk %}">
+                      <img class="Cart-img" src="{{ basket.product.image.url }}" :alt="product.title"/>
+                    </a>
                   </div>
+
                   <div class="Cart-block Cart-block_info">
-                    <a class="Cart-title"
-                      href="{% url 'shop:product' basket.product.pk %}">{{ basket.product.name }}</a>
+                    <a class="Cart-title" href="{% url 'shop:product' basket.product.pk %}">
+                      {{ basket.product.name }}
+                    </a>
+
                     {% if basket.product.short_description != None %}
                       <div class="Cart-desc">{{ basket.product.short_description }}</div>
                     {% endif %}
                   </div>
+
                   <div class="Cart-block Cart-block_price">
                     <div class="Cart-price">{{ basket.product.prices.price }}$</div>
                   </div>
                 </div>
+
                 <div class="Cart-block Cart-block_row">
                   <div class="Cart-block Cart-block_seller"></div>
+
                   <div class="Cart-block Cart-block_amount">
                     <div class="Cart-amount">
                       <div class="Amount">

@@ -6,29 +6,48 @@
       <div class="row ControlPanel-row">
         <div class="row-block">
           <div class="row ControlPanel-rowSplit">
-            <div class="row-block"><a class="ControlPanel-title" href="{% url 'page:about' %}">Free delivery</a>
+            <div class="row-block">
+              <a class="ControlPanel-title" href="{% url 'page:about' %}">
+                Free delivery
+              </a>
             </div>
+
             <div class="row-block hide_700"><span class="ControlPanel-title">Follow Us</span>
               <ul class="menu menu_img menu_smallImg ControlPanel-menu">
-                <li class="menu-item"><a class="menu-link"
-                  href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/fb.svg' %}" alt="fb.svg"/></a>
+                <li class="menu-item">
+                  <a class="menu-link" href="#">
+                    <img src="{% static 'frontend/assets/img/icons/socialHeader/fb.svg' %}" alt="fb.svg"/>
+                  </a>
                 </li>
-                <li class="menu-item"><a class="menu-link"
-                  href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/tw.svg' %}" alt="tw.svg"/></a>
+
+                <li class="menu-item">
+                  <a class="menu-link" href="#">
+                    <img src="{% static 'frontend/assets/img/icons/socialHeader/tw.svg' %}" alt="tw.svg"/>
+                  </a>
                 </li>
-                <li class="menu-item"><a class="menu-link"
-                  href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/in.svg' %}" alt="in.svg"/></a>
+
+                <li class="menu-item">
+                  <a class="menu-link" href="#">
+                    <img src="{% static 'frontend/assets/img/icons/socialHeader/in.svg' %}" alt="in.svg"/>
+                  </a>
                 </li>
-                <li class="menu-item"><a class="menu-link"
-                  href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/pt.svg' %}" alt="pt.svg"/></a>
+
+                <li class="menu-item">
+                  <a class="menu-link" href="#">
+                    <img src="{% static 'frontend/assets/img/icons/socialHeader/pt.svg' %}" alt="pt.svg"/>
+                  </a>
                 </li>
-                <li class="menu-item"><a class="menu-link"
-                  href="#"><img src="{% static 'frontend/assets/img/icons/socialHeader/mail.svg' %}"
-                  alt="mail.svg"/></a></li>
+
+                <li class="menu-item">
+                  <a class="menu-link" href="#">
+                    <img src="{% static 'frontend/assets/img/icons/socialHeader/mail.svg' %}" alt="mail.svg"/>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
         </div>
+
         <nav class="row-block">
           <div class="row ControlPanel-rowSplit">
             {% if user.is_authenticated %}
@@ -36,15 +55,17 @@
               <a class="ControlPanel-title" href="{% url 'users:profile' %}">{{ user.username }}</a>
               <a style="margin-left: 10px" class="ControlPanel-title" href="{% url 'users:logout' %}">Выйти</a>
             {% else %}
-              <div class="row-block"><a class="ControlPanel-title" href="{% url 'users:login' %}">Login / Register</a>
+              <div class="row-block">
+                <a class="ControlPanel-title" href="{% url 'users:login' %}">Login / Register</a>
+              </div>
             {% endif %}
-            </div>
             </div>
           </div>
         </nav>
       </div>
     </div>
   </div>
+
   <div class="wrap">
     <div class="row Header-rowMain">
       <div class="row-block Header-logo">
@@ -52,6 +73,7 @@
           <img class="logo-image" src="{% static 'frontend/assets/img/logo.png' %}" alt="logo.png"/>
         </a>
       </div>
+
       <nav class="row-block row-block_right Header-menu">
         <div class="menuModal" id="navigate">
           <ul class="menu menu_main">
@@ -62,6 +84,7 @@
             <li class="menu-item">
               <a class="menu-link" href="{% url 'shop:sale' %}">Sale</a>
             </li>
+
             <li class="menu-item">
               <span class="menu-label menu-label_success">Hot</span>
               <a class="menu-link" href="{% url 'shop:product' 1 %}">Product</a>
@@ -73,16 +96,24 @@
           </ul>
         </div>
       </nav>
+
       <div {% if not user.is_authenticated %} style="margin-right: 20px" {% endif %} class="row-block">
-        <div class="CartBlock"><a class="CartBlock-block" href="{% url 'shop:cart' %}">
-          <img class="CartBlock-img"
-            src="{% static 'frontend/assets/img/icons/cart.svg' %}"
-            alt="cart.svg"/><span class="CartBlock-amount" v-text="basketCount.count"></span></a>
+        <div class="CartBlock">
+          <a class="CartBlock-block" href="{% url 'shop:cart' %}">
+            <img class="CartBlock-img"
+              src="{% static 'frontend/assets/img/icons/cart.svg' %}"
+              alt="cart.svg"/>
+
+            <span class="CartBlock-amount" v-text="basketCount.count"></span>
+          </a>
           {% if user.is_authenticated %}
-            <div class="CartBlock-block"><span class="CartBlock-price">{{ total_sum }}$</span></div>
+            <div class="CartBlock-block">
+              <span class="CartBlock-price">{{ total_sum }}$</span>
+            </div>
           {% endif %}
         </div>
       </div>
+
       <div class="row-block Header-trigger">
         <a class="menuTrigger" href="#navigate">
           <div class="menuTrigger-content">Показать навигацию</div>
@@ -93,48 +124,52 @@
       </div>
     </div>
   </div>
+
   <div class="Header-searchWrap">
     <div class="wrap">
       <div class="Header-categories">
         <div class="CategoriesButton">
           <div class="CategoriesButton-title">
-            <div class="CategoriesButton-icon"><img src="{% static 'frontend/assets/img/icons/allDep.svg' %}"
-              alt="allDep.svg"/>
+            <div class="CategoriesButton-icon">
+              <img src="{% static 'frontend/assets/img/icons/allDep.svg' %}" alt="allDep.svg"/>
             </div>
-            <span class="CategoriesButton-text">All Departments</span>
-            <div class="CategoriesButton-arrow">
-            </div>
-          </div>
-          <div class="CategoriesButton-content">
 
-            <!-- Получаем категории и подкатегории  -->
-            <div class="CategoriesButton-link" v-for="category in categories"><a href="{% url 'shop:catalog' %}">
-              <div class="CategoriesButton-icon"><img :src="category.image.src" :alt="category.image.alt"/>
-              </div>
-              <span class="CategoriesButton-text">Категории товаров</span></a>
+            <span class="CategoriesButton-text">All Departments</span>
+
+            <div class="CategoriesButton-arrow"></div>
+          </div>
+
+          <div class="CategoriesButton-content">
+            <div class="CategoriesButton-link" v-for="category in categories">
+              <a href="{% url 'shop:catalog' %}">
+                <span class="CategoriesButton-text">Категории товаров</span>
+              </a>
               <a v-if="category.subcategories.length > 0"
                 class="CategoriesButton-arrow"
-                href="{% url 'shop:catalog' %}"></a>
+                href="{% url 'shop:catalog' %}">
+              </a>
 
-              <div v-if="category.subcategories.length > 0" class="CategoriesButton-submenu">
+              <div class="CategoriesButton-submenu">
                 {% for category in categories %}
                   <div v-for="subcategory in category.subcategories">
                     <a class="CategoriesButton-link" href="{% url 'shop:category' category.pk %}">
                       <div class="CategoriesButton-icon">
                         <img :src="subcategory.image.src" :alt="subcategory.alt"/>
                       </div>
-                      <span class="CategoriesButton-text">{{ category.name }}</span></a>
+                      <span class="CategoriesButton-text">{{ category.name }}</span>
+                    </a>
                   </div>
                 {% endfor %}
               </div>
             </div>
-            <!-- Получаем категории и подкатегории  -->
-
           </div>
         </div>
       </div>
-      <div class="Header-searchLink"><img src="{% static 'frontend/assets/img/icons/search.svg' %}" alt="search.svg"/>
+
+      <div class="Header-searchLink">
+        <img src="{% static 'frontend/assets/img/icons/search.svg' %}" alt="search.svg"/>
       </div>
+
       <div class="Header-search">
         <div class="search">
           <form class="form form_search" @submit.prevent="search">

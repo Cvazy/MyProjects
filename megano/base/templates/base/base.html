@@ -1,6 +1,7 @@
 {% load static %}
 
 <html lang="ru">
+
 <head>
   <title>Megano</title>
   <meta name="description" content="Описание страницы">
@@ -10,14 +11,14 @@
 </head>
 
 <body class="Site" id="site">
-  {% include 'base/header.html' %}
+{% include 'base/header.html' %}
 
-  {% block content %}{% endblock %}
+{% block content %}{% endblock %}
 
-  {% include 'base/footer.html' %}
+{% include 'base/footer.html' %}
 
-  {% block mixins %}{% endblock %}
+{% block mixins %}{% endblock %}
 
-  {% include 'base/js-scripts.html' %}
+{% include 'base/js-scripts.html' %}
 </body>
 </html>
