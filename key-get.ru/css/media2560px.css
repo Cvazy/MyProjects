@@ -1,0 +1,120 @@
+@media (min-width: 2550px) {
+    .main-content {
+        margin-left: 870px;
+    }
+
+    .head-left {
+        font-size: 30px;
+    }
+
+    .head-right {
+        font-size: 28px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .help {
+        width: 650px;
+        height: 200px;
+    }
+
+    .up-text {
+        margin-top: 45px;
+        font-size: 28px;
+    }
+
+    .title {
+        font-size: 48px;
+        line-height: 100px;
+    }
+
+    .add-text {
+        font-size: 34px;
+        line-height: 50px;
+    }
+
+    .button-help {
+        height: 55px;
+        width: 530px;
+        font-size: 23px;
+        margin-top: 35px;
+    }
+
+    .step {
+        font-size: 50px;
+    }
+
+    .small-text {
+        font-size: 26px;
+    }
+
+    .key-input {
+        height: 300px;
+        width: 690px;
+    }
+
+    .block img {
+        height: 40px;
+        margin-left: 45px;
+    }
+
+    .block input {
+        width: 600px;
+        height: 90px;
+        margin-left: 40px;
+        font-size: 28px;
+    }
+
+    .block input::placeholder {
+        font-size: 28px;
+    }
+
+    .block input:focus {
+        font-size: 28px;
+    }
+
+    .question {
+        margin-top: 100px;
+        font-size: 26px;
+        margin-left: 355px;
+    }
+
+    .next {
+        width: 250px;
+        height: 100px;
+        font-size: 36px;
+    }
+
+    .item {
+        font-size: 28px;
+    }
+
+    .step2 {
+        margin-top: 270px;
+    }
+
+    .send-key {
+        margin-left: 345px;
+    }
+
+    .key {
+        width: 650px;
+        height: 100px;
+        font-size: 34px;
+    }
+
+    .email span {
+        font-size: 28px;
+    }
+
+    .email img {
+        height: 40px;
+    }
+
+    .footer {
+        font-size: 28px;
+        margin-left: 750px;
+    }
+}

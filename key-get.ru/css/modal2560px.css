@@ -1,0 +1,95 @@
+@media (min-width: 2550px) {
+    .window {
+        width: 800px;
+        height: 450px;
+    }
+
+    .first-modal-content {
+        width: 730px;
+        height: 300px;
+    }
+
+    .hint {
+        width: 260px;
+        height: 300px;
+    }
+
+    .hint img {
+        width: 120px;
+        height: 30px;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .illustration {
+        width: 160px;
+        height: 80px;
+        margin-top: 200px;
+        margin-left: 80px;
+    }
+
+    .small-instr {
+        width: 85px;
+        height: 40px;
+        margin-top: 32px;
+        margin-left: 67px;
+        font-size: 14px;
+    }
+
+    .modal-text {
+        width: 420px;
+        height: 270px;
+        line-height: 40px;
+    }
+
+    .modal-title {
+        font-size: 34px;
+    }
+
+    .modal-instruction {
+        font-weight: 300;
+        font-size: 30px;
+        margin-top: 50px;
+    }
+
+    .modal-close {
+        width: 200px;
+        height: 50px;
+        font-size: 22px;
+        margin-left: 290px;
+    }
+
+    .second-window {
+        width: 730px;
+        height: 300px;
+    }
+
+    .second-modal-content {
+        width: 625px;
+        height: 160px;
+        margin-top: 30px;
+    }
+
+    .send-email {
+        font-size: 34px;
+    }
+
+    .second-modal-content input {
+        width: 600px;
+        height: 100px;
+        font-size: 28px;
+    }
+
+    .send-btn {
+        width: 200px;
+        height: 50px;
+        font-size: 22px;
+        margin-top: 15px;
+        margin-left: 265px;
+    }
+
+    .second-close {
+        font-size: 20px;
+        margin-left: 220px;
+    }
+}
