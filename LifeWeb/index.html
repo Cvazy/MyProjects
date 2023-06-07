@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+        href="public/style.css">
+  <link rel="stylesheet"
+        href="src/css/main.css">
+  <link rel="stylesheet"
+        href="src/fonts/stylesheet.css">
+  <title>LifeWeb</title>
+</head>
+
+<body class="bg-main-color w-full h-full">
+<div class="w-full bg-main shadow-lg shadow-up-reg-color/30 mb-20">
+  <div id="nav" class="hidden flex-col justify-center items-center h-23 w-full absolute z-20 mr-5 bg-gradient-to-br from-from-burger to-to-burger">
+    <a class="flex w-full h-12 text-up-reg-color text-2xl justify-center hover:bg-gradient-to-r hover:from-burg-acrive-from hover:via-burg-acrive-via hover:to-burg-acrive-to" href="index.html">Главная</a>
+    <a class="flex w-full h-12 text-up-reg-color text-2xl justify-center hover:bg-gradient-to-r hover:from-burg-acrive-from hover:via-burg-acrive-via hover:to-burg-acrive-to question" href="#">Почему именно мы?</a>
+    <a class="flex w-full h-12 text-up-reg-color text-2xl justify-center hover:bg-gradient-to-r hover:from-burg-acrive-from hover:via-burg-acrive-via hover:to-burg-acrive-to contact" href="#">Контакты</a>
+    <a class="flex w-full h-12 text-up-reg-color text-2xl justify-center hover:bg-gradient-to-r hover:from-burg-acrive-from hover:via-burg-acrive-via hover:to-burg-acrive-to application" href="#">Оставить заявку</a>
+  </div>
+
+  <div class="flex justify-center w-full h-1.5 pb-10">
+    <div class="bg-up-reg-color h-1.5 w-20 rounded-b-lg"></div>
+  </div>
+
+  <header class="flex ml-5 2xl:ml-80 mr-5 2xl:mr-80 xl:ml-4 xl:mr-4 items-center justify-between">
+    <a class="flex justify-start"
+       href="index.html">
+      <img src="public/images/logo.svg"
+           alt="Logo">
+    </a>
+
+    <nav class="hidden xl:flex items-center">
+      <ul class="text-white font-semibold text-xl inline-flex items-center">
+        <li><a class="pr-5 xl:pr-20 hover:text-up-reg-color/50 font-semibold"
+               href="index.html">Главная</a></li>
+        <li><a class="pr-5 xl:pr-20 hover:text-up-reg-color/50 font-semibold question"
+               href="#">Почему именно мы?</a></li>
+        <li><a class="hover:text-up-reg-color/50 font-semibold contact"
+               href="#">Контакты</a></li>
+      </ul>
+
+      <ul class="text-white inline-flex items-center pl-5 xl:pl-20">
+        <li>
+          <button type="button"
+                  class="w-20 xl:w-40 h-8 xl:h-12 bg-dark-green text-sm xl:text-lg font-normal rounded-3xl border-1 border-up-reg-color order hover:bg-up-reg-color/30">
+            Заказать
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <button id="nav-btn" class="inline-flex xl:hidden">
+      <img id="nav-btn-img" src="public/images/burger.png" alt="">
+    </button>
+  </header>
+
+  <div class="flex w-full h-31 xl:h-45">
+    <div class="hidden 2xl:flex xl:flex-col xl:top-20 2xl:left-[168.5px] relative">
+      <div class="inline-flex justify-center items-center mb-5 xl:mb-72">
+        <span class="text-lg xl:text-xl font-bold text-up-reg-color w-12 xl:w-26 h-12 xl:h-26 mr-2">01</span>
+        <div class="w-2 xl:w-4 h-4 xl:h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+      </div>
+
+      <a class="question" href="#">
+        <div class="inline-flex justify-center items-center mb-5 xl:mb-12">
+          <span class="text-lg xl:text-xl font-bold text-up-reg-color w-12 xl:w-26 h-12 xl:h-26 mr-2">02</span>
+          <div class="w-2 xl:w-4 h-4 xl:h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+        </div>
+      </a>
+
+      <a class="order" href="#">
+        <div class="inline-flex justify-center items-center mb-5 xl:mb-12">
+          <span class="text-lg xl:text-xl font-bold text-up-reg-color w-12 xl:w-26 h-12 xl:h-26 mr-2">03</span>
+          <div class="w-2 xl:w-4 h-4 xl:h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+        </div>
+      </a>
+
+      <a class="application" href="#">
+        <div class="inline-flex justify-center items-center">
+          <span class="text-lg xl:text-xl font-bold text-up-reg-color w-12 xl:w-26 h-12 xl:h-26 mr-2">04</span>
+          <div class="w-2 xl:w-4 h-4 xl:h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="max-2xl:hidden 2xl:pl-24 2xl:pl-40">
+      <img class="h-45" src="public/images/nav-line.png" alt="Nav Line">
+    </div>
+
+    <div class="w-80 xl:w-59 pl-14 pt-14 xl:pl-32 xl:pt-32 2xl:pl-40 2xl:pt-40 2xl:w-1200">
+      <h1 id="header" class="text-4xl xl:text-5xl 2xl:text-6xl text-up-reg-color 2xl:leading-[70px] font-extrabold transition-opacity">
+        РАЗРАБОТКА САЙТОВ
+      </h1>
+      <h3 id="business" class="text-2xl max-lg:hidden xl:text-2xl 2xl:text-4xl text-up-reg-color pt-3 font-extrabold transition-opacity">ДЛЯ ТВОЕГО БИЗНЕСА</h3>
+      <p id="paragraph" class="text-lg max-lg:hidden text-gray-400 xl:text-lg 2xl:text-xl pt-6 font-medium transition-opacity">
+        Мы предоставляем услуги по созданию качественных <br> и удобных сайтов любой сложности.
+      </p>
+
+      <div class="inline-flex items-center pt-14">
+        <ul class="text-white inline-flex items-center">
+          <li>
+            <button type="button"
+                    class="inline-flex justify-center items-center w-32 h-8 xl:w-44 xl:h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+              <span class="text-13 xl:text-lg font-normal order">Подробнее</span>
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   fill="none"
+                   viewBox="0 0 24 24"
+                   stroke-width="1.5"
+                   stroke="currentColor"
+                   class="w-6 h-6 pl-2 pt-1">
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
+
+        <a class="text-13 xl:text-lg text-gray-500 pl-6 contact hover:underline" href="#">Остались вопросы?</a>
+      </div>
+    </div>
+
+    <div class="sm:hidden max-sm:flex max-sm:justify-end max-sm:right-0  max-sm:mt-84 absolute">
+      <img src="public/images/men-mobile.png" alt="Men">
+    </div>
+
+    <div class="max-sm:hidden flex justify-end max-xl:-mt-55 max-2xl:mt-170 2xl:mt-0 2xl:ml-22 xl:ml-780 ml-80 lg:ml-30 min-[1540px]:ml-1250 absolute">
+      <img class="h-480 xl:h-520 2xl:h-650 mt-70 2xl:mt-70 xl:mt-29 absolute pr-20"
+           src="public/images/men.png"
+           alt="Men">
+      <img class="mt-140 h-25 2xl:mt-160 mb-10 2xl:h-35"
+           src="public/images/ellipses.png"
+           alt="">
+    </div>
+  </div>
+</div>
+
+<div id="why-we" class="inline-flex w-full bg-first-step mb-20">
+  <div class="hidden 2xl:flex flex-col top-36 left-[168.5px] relative">
+    <div class="inline-flex justify-center items-center mb-72">
+      <span class="text-xl font-bold text-up-reg-color w-26 h-26 mr-2">02</span>
+      <div class="w-4 h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+    </div>
+
+    <a class="order" href="#">
+      <div class="inline-flex justify-center items-center mb-12">
+        <span class="text-xl font-bold text-up-reg-color w-26 h-26 mr-2">03</span>
+        <div class="w-4 h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+      </div>
+    </a>
+
+    <a class="application" href="#">
+      <div class="inline-flex justify-center items-center mb-12">
+        <span class="text-xl font-bold text-up-reg-color w-26 h-26 mr-2">04</span>
+        <div class="w-4 h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="max-2xl:hidden pl-40">
+    <img class="h-45" src="public/images/nav-line.png" alt="Nav Line">
+  </div>
+
+  <div class="w-full ml-0 xl: ml-5 2xl:ml-20 2xl:pl-24">
+    <div class="flex max-[1024px]:flex-col max-[1024px]:items-center xl:inline-flex">
+      <div class="block xl:pr-135 2xl:pr-175 max-[1024px]:mt-10">
+        <h2 class="text-4xl 2xl:text-5xl font-bold text-up-reg-color max-[1024px]:mb-8 max-[1024px]:text-center">Причины сотрудничать <br> с нами</h2>
+        <p class="max-xl:hidden text-gray-400 text-lg font-medium pt-6">Вы можете посмотреть на сайты конкурентов где они кричат что
+          лучшие,<br>
+          пока они только говорят от этом - мы говорим языком фактов</p>
+        <p class="max-xl:hidden text-gray-400 text-lg font-medium pt-6">Вы можете за пару минут прочитать о нас информацию, а так же
+          после <br>
+          этого посмотреть наше портфолио</p>
+      </div>
+
+      <div class="max-2xl:mt-5 h-400 w-400 rounded-lg bg-gradient-to-tl from-block-start to-block-end">
+        <div class="pt-8 pl-10">
+          <div class="w-52 h-20">
+            <h3 class="text-white text-2xl font-medium">Приемлемые цены</h3>
+          </div>
+          <div class="w-80">
+            <p class="text-17 font-light text-white">
+              Мы максимально оптимизируем наш труд, для того, чтобы цены были доступными
+            </p>
+          </div>
+        </div>
+
+        <img class="float-right"
+             src="public/images/money.png"
+             alt="">
+      </div>
+    </div>
+
+    <div class="flex max-[1024px]:flex-col items-center xl:inline-flex pt-10">
+      <div class="max-xl:mb-10 h-400 w-400 rounded-lg bg-gradient-to-br from-grey-start via-grey-end to-grey-end xl:mr-5 2xl:mr-10">
+        <div class="pt-8 pl-10">
+          <div class="w-52 h-20">
+            <h3 class="text-white text-2xl font-medium">В сроки сдаем работу!</h3>
+          </div>
+          <div class="w-80">
+            <p class="text-17 font-light text-white pb-5">
+              Расписываем каждый этап по срокам, и придерживаемся дедлайнов
+            </p>
+          </div>
+        </div>
+
+        <img class="float-right"
+             src="public/images/clock.png"
+             alt="">
+      </div>
+
+      <div class="max-xl:mb-10 h-400 w-400 rounded-lg bg-gradient-to-br from-grey-start via-grey-end to-grey-end xl:mr-5 2xl:mr-10">
+        <div class="pt-8 pl-10">
+          <div class="w-52 h-20">
+            <h3 class="text-white text-2xl font-medium">Команда специалистов</h3>
+          </div>
+          <div class="w-80">
+            <p class="text-17 font-light text-white pb-5">
+              В нашей команде множество специалистов, и каждый из них хорошо знает свое дело
+            </p>
+          </div>
+        </div>
+
+        <img class="float-right"
+             src="public/images/spez.png"
+             alt="">
+      </div>
+
+      <div class="h-400 w-400 rounded-lg bg-gradient-to-br from-grey-start via-grey-end to-grey-end xl:mr-5 2xl:mr-10">
+        <div class="pt-8 pl-10">
+          <div class="w-52 h-20">
+            <h3 class="text-white text-2xl font-medium">Консультация перед заказом</h3>
+          </div>
+          <div class="w-80">
+            <p class="text-17 font-light text-white pb-5">
+              Наши менеджеры в сети 24/7, и готовы помочь вам, а так же ответить на ваши вопросы
+            </p>
+          </div>
+        </div>
+
+        <img class="float-right"
+             src="public/images/call.png"
+             alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="rates" class="block">
+  <h3 class="flex justify-center w-full font-bold text-5xl text-up-reg-color h-20 mb-3">ТАРИФЫ</h3>
+  <div class="max-[450px]:flex max-[450px]:flex-col max-[450px]:items-center sm:inline-flex justify-center w-full mb-16">
+    <ul class="text-white inline-flex items-center max-[450px]:mb-3">
+      <li>
+        <button id="developmentButton"
+                type="button"
+                class="w-40 h-12 bg-dark-green text-lg font-normal rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          Разработка
+        </button>
+      </li>
+    </ul>
+
+    <ul class="text-white inline-flex items-center sm:pl-5 max-[450px]:mb-3">
+      <li>
+        <button id="marketingButton"
+                type="button"
+                class="w-40 h-12 bg-dark-green text-lg font-normal rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          Маркетинг
+        </button>
+      </li>
+    </ul>
+
+    <ul class="text-white inline-flex items-center sm:pl-5 max-[450px]:mb-3">
+      <li>
+        <button id="designButton"
+                type="button"
+                class="w-40 h-12 bg-dark-green text-lg font-normal rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          Дизайн
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="inline-flex w-full mb-5 bg-second-step">
+  <div class="hidden 2xl:flex flex-col top-36 left-[168.5px] relative">
+    <div class="inline-flex justify-center items-center mb-72">
+      <span class="text-xl font-bold text-up-reg-color w-26 h-26 mr-2 order">03</span>
+      <div class="w-4 h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+    </div>
+
+    <a class="application" href="#">
+      <div class="inline-flex justify-center items-center mb-12">
+        <span class="text-xl font-bold text-up-reg-color w-26 h-26 mr-2">04</span>
+        <div class="w-4 h-8 bg-gradient-to-t from-start-grad to-end-grad rounded-full"></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="max-2xl:hidden pl-40">
+    <img class="h-45" src="public/images/nav-line.png" alt="Nav Line">
+  </div>
+
+  <div id="developmentCards" class="max-[1100px]:flex max-[1100px]:flex-col max-[1100px]:items-center max-xl:inline-flex justify-center w-full h-111 xl:h-45 2xl:mr-200 2xl:pl-0">
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end xl:mr-7 max-[1024px]:mb-5">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Сайт "Визитка"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Сайт-визитка - компактный веб-ресурс – отличный старт бизнеса в интернете.
+        Сайт-визитка содержит несколько страниц, в том числе – информацию о компании,
+        её товарах и услугах, прейскурант цен, контакты и координаты для связи.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 45.000₽</span>
+          <p class="text-17 text-gray-500">От 10 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end xl:mr-7 max-[1024px]:mb-5">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Сайт "Каталог"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Сайт-каталог – это полноценный веб-ресурс, в котором потребители могут ознакомиться с товарами или услугами
+        компании.
+        Являясь удобным инструментом продаж, сайт-каталог может повысить доходность бизнеса и упростить задачу по
+        предоставлению ассортимента целевой аудитории.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 60.000₽</span>
+          <p class="text-17 text-gray-500">От 15 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Сайт "Landing page"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Одностраничный сайт (Landing Page) – так называют промо-сайты для презентации товара, услуги и организации мгновенных продаж.
+        Мы умеем создавать веб-ресурсы, полностью готовые к наплыву лавины посетителей.
+        Одна-единственная страница принесёт колоссальную прибыль: иначе и быть не может.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 50.000₽</span>
+          <p class="text-17 text-gray-500">От 18 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="marketingCards" class="flex flex-col items-center 2xl:inline-flex justify-center w-full h-111 2xl:h-45 mr-200 pl-48 2xl:pl-0">
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end xl:mr-7 max-[1024px]:mb-5">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Продвижение "Small"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Значимость этих проблем настолько очевидна, что глубокий уровень погружения требует от нас анализа
+        своевременного выполнения сверхзадачи. Не следует, однако, забывать, что укрепление и
+        развитие внутренней структуры играет определяющее значение для дальнейших направлений развития.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 45.000₽</span>
+          <p class="text-17 text-gray-500">От 10 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end mr-7">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Продвижение "Bold"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Но некоторые особенности внутренней политики и по сей день остаются уделом либералов,
+        которые жаждут быть призваны к ответу. Идейные соображения высшего порядка, а также убеждённость
+        некоторых оппонентов влечет за собой процесс внедрения и модернизации вывода текущих активов.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 60.000₽</span>
+          <p class="text-17 text-gray-500">От 15 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">
+        Продвижение "All"
+      </div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Внезапно, ключевые особенности структуры проекта являются только методом политического участия
+        и заблокированы в рамках своих собственных рациональных ограничений.
+        Однозначно, ключевые особенности структуры проекта функционально разнесены на независимые элементы.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 50.000₽</span>
+          <p class="text-17 text-gray-500">От 18 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="designCards" class="flex flex-col items-center 2xl:inline-flex justify-center w-full h-111 2xl:h-45 mr-200 pl-48 2xl:pl-0">
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end 2xl:mr-7 max-[1024px]:mb-5">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Дизайн "Small"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Имеется спорная точка зрения, гласящая примерно следующее: диаграммы связей, вне зависимости
+        от их уровня, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости,
+        из-за чего возрастает их статус бесполезности.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 45.000₽</span>
+          <p class="text-17 text-gray-500">От 10 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end mr-7">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Дизайн "Medium"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        Значимость этих проблем настолько очевидна, что повышение уровня гражданского сознания
+        предоставляет широкие возможности для позиций, занимаемых участниками в отношении поставленных задач.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 60.000₽</span>
+          <p class="text-17 text-gray-500">От 15 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-370 h-570 rounded-36 bg-gradient-to-br from-rate-start via-rate-via to-rate-end">
+      <div class="w-370 h-10 text-white text-3xl font-bold pt-10 flex justify-center">Дизайн "All"</div>
+
+      <div class="w-300 h-25 ml-35 flex justify-center text-white text-17 font-medium pt-20 text-center">
+        В своём стремлении улучшить пользовательский опыт мы упускаем, что активно развивающиеся страны третьего мира являются только методом политического участия и смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности.
+      </div>
+
+      <div class="inline-flex pl-5 pt-10">
+        <div class="block pr-5">
+          <span class="text-white text-22">От 50.000₽</span>
+          <p class="text-17 text-gray-500">От 18 дней</p>
+        </div>
+
+        <button type="button"
+                class="inline-flex justify-center text-white items-center w-44 h-12 bg-dark-green rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+          <span class="text-lg font-normal contact">Подробнее</span>
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="w-6 h-6 pl-2 pt-1">
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="application-block" class="w-full 2xl:h-450 bg-gradient-to-r from-rate-via to-banner-via to-banner-start mb-20 inline-flex justify-center">
+  <div class="w-full 2xl:w-2/3 pt-8 2xl:pl-32 max-[1280px]:flex max-[1280px]:flex-col max-[1280px]:items-center">
+    <span class="text-up-reg-color max-[450px]:text-3xl sm:text-5xl font-bold">Оставить заявку</span>
+    <form method="post">
+      <div class="flex flex-col 2xl:flex-wrap mt-7 h-650 2xl:h-450">
+        <div class="pb-8">
+          <p class="text-white/70 text-17 font-light pb-2">Ваше ФИО</p>
+          <label>
+            <input type="text"
+                   class="bg-transparent h-12 w-437 max-[450px]:w-370 rounded-full border-1.5 border-input-border indent-5 text-white/70 text-17 font-light focus:text-white/70 text-17 font-light outline-0">
+          </label>
+        </div>
+
+        <div class="pb-8">
+          <p class="text-white/70 text-17 font-light pb-2">Ваш номер телефона</p>
+          <label>
+            <input type="text"
+                   class="bg-transparent h-12 w-437 max-[450px]:w-370 rounded-full border-1.5 border-input-border indent-5 text-white/70 text-17 font-light focus:text-white/70 text-17 font-light outline-0">
+          </label>
+        </div>
+
+        <div class="pb-8">
+          <p class="text-white/70 text-17 font-light pb-2">Ваш бюджет</p>
+          <label>
+            <input type="text"
+                   class="bg-transparent h-12 w-437 max-[450px]:w-370 rounded-full border-1.5 border-input-border indent-5 text-white/70 text-17 font-light focus:text-white/70 text-17 font-light outline-0">
+          </label>
+        </div>
+
+        <div class="pb-8">
+          <p class="text-white/70 text-17 font-light pb-2">Ваш EMAIL адрес</p>
+          <label>
+            <input type="text"
+                   class="bg-transparent h-12 w-437 max-[450px]:w-370 rounded-full border-1.5 border-input-border indent-5 text-white/70 text-17 font-light focus:text-white/70 text-17 font-light outline-0">
+          </label>
+        </div>
+
+        <div class="pb-8">
+          <p class="text-white/70 text-17 font-light pb-2">Ваш комментарий (по желанию)</p>
+          <label>
+            <input type="text"
+                   class="bg-transparent h-12 w-437 max-[450px]:w-370 rounded-full border-1.5 border-input-border indent-5 text-white/70 text-17 font-light focus:text-white/70 text-17 font-light outline-0">
+          </label>
+        </div>
+
+        <ul class="text-white inline-flex items-center">
+          <li>
+            <button type="submit"
+                    class="w-40 h-12 bg-dark-green text-lg font-normal rounded-3xl border-1 border-up-reg-color hover:bg-up-reg-color/30">
+              Отправить
+            </button>
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="contact-block" class="flex justify-center">
+  <div class="block">
+    <img class="max-[450px]:w-400 max-[450px]:h-120" src="public/images/contact.png"
+         alt="Contacts">
+
+    <div class="inline-flex mt-10 w-full h-120 justify-center">
+      <button class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3" onmouseover="enlargeButton(this)" onmouseout="resetButton(this)">
+        <img src="public/images/people.png"
+             alt="">
+      </button>
+
+      <button class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3" onmouseover="enlargeButton(this)" onmouseout="resetButton(this)">
+        <img class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3"
+             src="public/images/be.png"
+             alt="">
+      </button>
+
+      <button class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3" onmouseover="enlargeButton(this)" onmouseout="resetButton(this)">
+        <img class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3"
+             src="public/images/telegram.png"
+             alt="">
+      </button>
+
+      <button class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3" onmouseover="enlargeButton(this)" onmouseout="resetButton(this)">
+        <img class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3"
+             src="public/images/vk.png"
+             alt="">
+      </button>
+
+      <button class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110 mr-3" onmouseover="enlargeButton(this)" onmouseout="resetButton(this)">
+        <img class="max-[450px]:w-72 max-[450px]:h-72 sm:h-110 sm:w-110"
+             src="public/images/email.png"
+             alt="">
+      </button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+<script src="src/js/icons.js"></script>
+<script src="src/js/burger.js"></script>
+<script src="src/js/transitions.js"></script>
+<script src="src/js/cards.js"></script>
+<script src="src/js/scroll-why-we.js"></script>
+<script src="src/js/scroll-contact-block.js"></script>
+<script src="src/js/scroll-rates.js"></script>
+<script src="src/js/scroll-application.js"></script>
