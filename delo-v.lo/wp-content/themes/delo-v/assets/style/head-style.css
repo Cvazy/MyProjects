@@ -1,0 +1,19 @@
+.block-plus{
+    background: url("../img/bg-pluses.png") center center no-repeat;
+    background-size: cover;
+}
+.swiper-button-next, .swiper-button-prev{
+    background-image: url("../img/arrow-slider-old.svg");
+}
+.accordion:after {
+    transition: .3s;
+    float: right;
+    content: url("../img/plus-faq.svg");
+}
+.active:after {
+    transition: .3s;
+    content: url("../img/minus-faq.svg");
+}
+.custom-checkbox>input:checked+span::before {
+    background-image: url("../img/rectangle.png");
+}
