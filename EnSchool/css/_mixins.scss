@@ -1,0 +1,17 @@
+@mixin respondedTo ($_minWidth) {
+  @media (min-width: $_minWidth) {
+    @content
+  }
+}
+
+@mixin respondedBy ($_maxWidth) {
+  @media (max-width: $_maxWidth) {
+    @content
+  }
+}
+
+@mixin respondedByTo ($_minWidth, $_maxWidth) {
+  @media (min-width: $_minWidth) and (max-width: $_maxWidth) {
+    @content
+  }
+}
