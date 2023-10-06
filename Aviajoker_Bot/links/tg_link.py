@@ -1,0 +1,1 @@
+tg_link = 'https://t.me/DsG182zGH'
