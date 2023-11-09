@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <div class="container">
+    <div class="container_wrapper">
+      <h1>Custom Calculator</h1>
+      <div class="main-content">
+        <div class="inputs">
+          <input type="number" placeholder="Enter First Number" id="firstNumber">
+          <input type="number" placeholder="Enter Second Number" id="secondNumber">
+        </div>
+
+        <div class="action">
+          <button type="button" class="btn btn_green" data-action="plus" onclick="doAction(this)">+</button>
+          <button type="button" class="btn btn_red" data-action="minus" onclick="doAction(this)">-</button>
+          <button type="button" class="btn btn_yellow" data-action="multiply" onclick="doAction(this)">*</button>
+          <button type="button" class="btn btn_blue" data-action="share" onclick="doAction(this)">/</button>
+        </div>
+
+        <div class="submit-wrapper">
+          <button type="button" class="btn submit-btn">Выполнить действие</button>
+        </div>
+
+        <div class="result-block disable">
+          <h2>Your Result</h2>
+          <div class="result-wrapper">
+            <span id="result">1000</span>
+          </div>
+
+          <span class="result-hidden">Скрыть результат</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

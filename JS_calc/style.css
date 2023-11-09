@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: blueviolet;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    border: 2px solid fuchsia;
+    border-radius: 5rem;
+    width: 60%;
+    margin-top: 1rem;
+}
+
+.container_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2.5rem;
+}
+
+h1, h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+    color: blueviolet;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs input {
+    width: 49%;
+    border: 4px solid blueviolet;
+    border-radius: 3rem;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: blueviolet;
+}
+
+.inputs input::placeholder {
+    color: blueviolet;
+}
+
+.inputs input:focus {
+    outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.action {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btn {
+    width: 49%;
+    padding: 2rem;
+    font-size: 3rem;
+    color: white;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.btn:nth-child(-n+2){
+    margin-bottom: 2rem;
+}
+
+.btn_green {
+    background-color: darkgreen;
+}
+
+.btn_blue {
+    background-color: darkblue;
+}
+
+.btn_red {
+    background-color: darkred;
+}
+
+.btn_yellow {
+    background-color: #bcc411;
+}
+
+.btn_active {
+    background-color: black;
+}
+
+.submit-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    background-color: blueviolet;
+    width: 70%;
+    font-size: 2rem;
+    transition: 0.8s ease-in-out;
+    margin-bottom: 0 !important;
+}
+
+.submit-btn:hover {
+    background-color: #53118d;
+    width: 100%;
+    transition: 0.8s ease-in-out;
+}
+
+.result-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.disable {
+    display: none;
+}
+
+.result-wrapper {
+    width: 80%;
+    background-color: blueviolet;
+    border-radius: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#result {
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.result-hidden {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: blueviolet;
+    font-weight: 900;
+    padding-bottom: 0.2rem;
+    cursor: pointer;
+    border-bottom: 3px solid;
+}
