@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/filepond.min.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css?v=1.3">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    <!-- Alpine Core -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js"></script>
+</head>
+<body x-data="{
+    'isModalShow': false,
+    'modalTitle': ''
+}">
+
+    <!-- Header 01 -->
+    <header 
+        x-data="{
+            classHeader: '',
+            isMobileMenu: false,
+            isOpenModal: false,
+            isMenuFixed: false,
+
+            showHeader() {
+                if(this.classHeader == ''){
+                    this.classHeader = 'fixed block bg-[#000000] bg-opacity-90'
+                    this.isMobileMenu = true
+                }
+                else{
+                    this.classHeader = ''
+                    this.isMobileMenu = false
+                }
+            }
+        }"
+        x-init="window.addEventListener('scroll', function() { isMenuFixed = window.pageYOffset > 100 })"
+
+        class="lazy min-h-[100vh] h-[1140px] xl:h-[900px] md:h-auto bg-top bg-center bg-no-repeat bg-cover" 
+        data-bg="./assets/img/header_01/b1_bg.jpeg">
+        
+        <!-- Bueger -->
+        <div class="hidden md:flex gap-5 fixed z-40 top-[65px] right-[40px] sm:top-[20px] sm:right-[20px]">
+            <a href="tel:+74953200086" class="hidden sm:block">
+                <!-- Icon -->
+                <div class="flex justify-center items-center border border-accent w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                    <svg class="w-6 h-6" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5479 8.85985C16.3767 9.78068 16.1146 10.8233 15.3808 11.8122C15.1898 12.0645 14.9835 12.3048 14.7631 12.5318C14.6327 12.6682 14.5005 12.8028 14.3664 12.9356L13.2798 14.0236C13.1382 14.1653 14.11 16.1061 15.9956 17.9945C17.8798 19.8801 19.8206 20.8533 19.9637 20.7103L21.0503 19.6237C21.6481 19.0258 21.964 18.7368 22.3989 18.4521C23.3028 17.8571 24.2902 17.697 25.1218 18.4408C27.8375 20.3844 29.3746 21.5758 30.1283 22.3578C31.5974 23.885 31.4033 26.2338 30.1368 27.574C29.6976 28.0387 29.1394 28.5968 28.4807 29.2315C24.4984 33.2166 16.0919 30.7913 9.64893 24.344C3.20593 17.8925 0.780599 9.4846 4.75718 5.50801C5.46977 4.78268 5.70635 4.54751 6.40052 3.86326C7.69393 2.58826 10.1518 2.38851 11.6464 3.86326C12.4313 4.64101 13.685 6.25176 15.5479 8.85843V8.85985ZM23.052 21.6268L21.9668 22.7134C20.1209 24.5593 16.9788 22.9854 13.9924 19.9977C11.0047 17.0071 9.43218 13.8649 11.2781 12.019L12.3633 10.9338C12.5375 10.7596 12.6183 10.6788 12.7118 10.5797C12.8421 10.4423 12.9483 10.3218 13.0348 10.2156C11.3829 7.91635 10.2609 6.47985 9.65602 5.8806C9.34435 5.57318 8.64452 5.62985 8.38668 5.88343C7.70243 6.55776 7.47718 6.78301 6.76602 7.50551C4.21035 10.0626 6.16677 16.8484 11.6535 22.3394C17.136 27.829 23.9219 29.7868 26.4974 27.2099C27.1448 26.5852 27.6732 26.0553 28.0798 25.6261C28.3744 25.3144 28.4268 24.6755 28.0883 24.3228C27.5259 23.7391 26.1474 22.6653 23.7674 20.9553C23.5178 21.167 23.279 21.3911 23.052 21.6268Z" fill="white"></path>
+                    </svg>
+                </div>
+                <!-- End:Icon -->
+            </a>
+            <button            
+                @click="showHeader()"
+                class="border border-accent rounded p-2 border-opacity-50 bg-black"
+                >
+                <svg x-show="!isMobileMenu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FBC110" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg x-show="isMobileMenu"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FBC110" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                  
+            </button>
+        </div>
+        <!-- End:Bueger -->
+        
+        <!-- Header -->
+        <div class="container py-5 md:py-[30px] sm:py-[15px] md:hidden">
+            <div class="flex gap-5 items-center justify-between sm:flex-col sm:items-start">
+                <!-- Left -->
+                <div class="flex gap-16 justify-between items-center">
+                    <!-- Logo -->
+                    <div class="flex flex-row items-end gap-5 md:flex-col md:items-start md:gap-2">
+                        <div class="mt-[-13px] md:mt-0">
+                            <img src="./assets/img/header_01/logo.png" class="w-[10rem] h-[3.25rem] md:w-[160px] md:h-[52px]" width="160" height="52" alt="Атлон">
+                        </div>
+                        <div class="text-white opacity-70 text-sm leading-snug font-medium">
+                            Работаем <br class="md:hidden"> с 2013 года
+                        </div>
+                    </div>
+                    <!-- End:Logo -->
+
+                    <!-- Address -->
+                    <div class="md:hidden">
+                        <div class="flex items-center gap-5">
+                            <div class="">
+                                <!-- Icon -->
+                                <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                    <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_7_81)">
+                                        <path d="M2.66663 13.3333C2.66663 24.6547 14.8346 31.544 15.352 31.832C15.5502 31.9422 15.7732 32.0001 16 32.0001C16.2267 32.0001 16.4498 31.9422 16.648 31.832C17.1653 31.544 29.3333 24.6547 29.3333 13.3333C29.3333 9.79711 27.9285 6.40573 25.428 3.90524C22.9276 1.40476 19.5362 0 16 0C12.4637 0 9.07235 1.40476 6.57187 3.90524C4.07138 6.40573 2.66663 9.79711 2.66663 13.3333ZM16 2.66667C18.828 2.66984 21.5392 3.79467 23.5389 5.79437C25.5386 7.79407 26.6634 10.5053 26.6666 13.3333C26.6666 21.6987 18.4 27.5733 16 29.1067C13.6 27.5733 5.33329 21.6987 5.33329 13.3333C5.33647 10.5053 6.46129 7.79407 8.46099 5.79437C10.4607 3.79467 13.172 2.66984 16 2.66667Z" fill="white"/>
+                                        <path d="M16 20C17.3186 20 18.6075 19.609 19.7038 18.8765C20.8002 18.1439 21.6547 17.1027 22.1592 15.8845C22.6638 14.6664 22.7958 13.3259 22.5386 12.0327C22.2814 10.7395 21.6464 9.55163 20.7141 8.61928C19.7817 7.68693 18.5938 7.05199 17.3006 6.79476C16.0074 6.53752 14.667 6.66955 13.4488 7.17413C12.2306 7.67871 11.1895 8.5332 10.4569 9.62952C9.72437 10.7259 9.33337 12.0148 9.33337 13.3333C9.33549 15.1008 10.0385 16.7952 11.2883 18.045C12.5381 19.2948 14.2326 19.9979 16 20ZM16 9.33333C16.7912 9.33333 17.5645 9.56792 18.2223 10.0074C18.8801 10.447 19.3928 11.0717 19.6956 11.8026C19.9983 12.5335 20.0775 13.3378 19.9232 14.1137C19.7688 14.8896 19.3879 15.6023 18.8285 16.1618C18.2691 16.7212 17.5563 17.1021 16.7804 17.2565C16.0045 17.4108 15.2002 17.3316 14.4693 17.0288C13.7384 16.7261 13.1137 16.2134 12.6742 15.5556C12.2346 14.8978 12 14.1245 12 13.3333C12 12.2725 12.4215 11.255 13.1716 10.5049C13.9218 9.75475 14.9392 9.33333 16 9.33333Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_7_81">
+                                        <rect width="32" height="32" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <!-- End:Icon -->
+                            </div>
+                            <div class="text-beige font-semibold text-lg leading-snug">
+                                БЦ Сириус Парк, г.Москва. <br>
+                                Каширское ш., 3, строение 9
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End:Address -->
+                </div>
+                <!-- End:Left -->
+
+                <!-- Right -->
+                <div class="flex gap-5 md:flex-col md:ml-[-80px] sm:ml-0">
+                    <div class="md:hidden">
+                        <a href="#">
+                            <!-- Icon -->
+                            <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem]  rounded hover:border-accent">
+                                <svg class="w-8 h-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7_92)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7891 20.391C24.3661 20.1793 22.2865 19.1561 21.8987 19.0148C21.511 18.8736 21.2291 18.8031 20.9471 19.2265C20.6651 19.6499 19.8544 20.6028 19.6076 20.885C19.3609 21.1673 19.1142 21.2028 18.6912 20.9909C18.2682 20.7793 16.9052 20.3326 15.2896 18.8914C14.0322 17.7698 13.1832 16.3846 12.9365 15.9612C12.6897 15.5377 12.9101 15.3088 13.1219 15.0979C13.3123 14.9084 13.5449 14.6038 13.7564 14.3568C13.968 14.1099 14.0384 13.9333 14.1794 13.6511C14.3204 13.3688 14.2499 13.1218 14.1441 12.9101C14.0384 12.6984 13.1925 10.6163 12.84 9.76924C12.4966 8.94454 12.1479 9.05623 11.8882 9.04315C11.6418 9.03093 11.3595 9.02834 11.0776 9.02834C10.7956 9.02834 10.3373 9.13419 9.94952 9.55753C9.56184 9.98101 8.46912 11.0045 8.46912 13.0864C8.46912 15.1685 9.98478 17.1798 10.1963 17.4621C10.4078 17.7445 13.179 22.0169 17.4223 23.8492C18.4315 24.285 19.2194 24.5453 19.8337 24.7402C20.847 25.0622 21.7691 25.0168 22.498 24.9078C23.3107 24.7865 25.0006 23.8846 25.3531 22.8966C25.7055 21.9084 25.7055 21.0615 25.5998 20.885C25.4941 20.7086 25.2121 20.6028 24.7891 20.391ZM17.0711 30.9292H17.0654C14.5405 30.9282 12.0642 30.2499 9.90383 28.9679L9.38998 28.6629L4.06459 30.0599L5.48602 24.8676L5.15153 24.3352C3.74299 22.095 2.99904 19.5058 3.00017 16.8471C3.00329 9.08917 9.3154 2.77759 17.0767 2.77759C20.835 2.77885 24.3678 4.24437 27.0244 6.90401C29.681 9.56358 31.1431 13.0988 31.1417 16.8584C31.1385 24.6169 24.8264 30.9292 17.0711 30.9292ZM29.0463 4.88307C25.8501 1.68321 21.5996 -0.0798057 17.0709 -0.081665C7.73991 -0.081665 0.145629 7.51215 0.141844 16.846C0.140648 19.8298 0.920125 22.742 2.40165 25.3094L0 34.0818L8.97421 31.7277C11.4469 33.0764 14.2309 33.7873 17.0642 33.7882H17.0712C26.4012 33.7882 33.9961 26.1936 34 16.8596C34.0017 12.3362 32.2424 8.08292 29.0463 4.88307Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_7_92">
+                                    <rect width="34" height="34" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>                                    
+                            </div>
+                            <!-- End:Icon -->
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-5 sm:hidden">
+                        <a href="tel:+74953200086">
+                            <!-- Icon -->
+                            <div class="flex justify-center items-center border border-accent w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                <svg class="w-8 h-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5479 8.85985C16.3767 9.78068 16.1146 10.8233 15.3808 11.8122C15.1898 12.0645 14.9835 12.3048 14.7631 12.5318C14.6327 12.6682 14.5005 12.8028 14.3664 12.9356L13.2798 14.0236C13.1382 14.1653 14.11 16.1061 15.9956 17.9945C17.8798 19.8801 19.8206 20.8533 19.9637 20.7103L21.0503 19.6237C21.6481 19.0258 21.964 18.7368 22.3989 18.4521C23.3028 17.8571 24.2902 17.697 25.1218 18.4408C27.8375 20.3844 29.3746 21.5758 30.1283 22.3578C31.5974 23.885 31.4033 26.2338 30.1368 27.574C29.6976 28.0387 29.1394 28.5968 28.4807 29.2315C24.4984 33.2166 16.0919 30.7913 9.64893 24.344C3.20593 17.8925 0.780599 9.4846 4.75718 5.50801C5.46977 4.78268 5.70635 4.54751 6.40052 3.86326C7.69393 2.58826 10.1518 2.38851 11.6464 3.86326C12.4313 4.64101 13.685 6.25176 15.5479 8.85843V8.85985ZM23.052 21.6268L21.9668 22.7134C20.1209 24.5593 16.9788 22.9854 13.9924 19.9977C11.0047 17.0071 9.43218 13.8649 11.2781 12.019L12.3633 10.9338C12.5375 10.7596 12.6183 10.6788 12.7118 10.5797C12.8421 10.4423 12.9483 10.3218 13.0348 10.2156C11.3829 7.91635 10.2609 6.47985 9.65602 5.8806C9.34435 5.57318 8.64452 5.62985 8.38668 5.88343C7.70243 6.55776 7.47718 6.78301 6.76602 7.50551C4.21035 10.0626 6.16677 16.8484 11.6535 22.3394C17.136 27.829 23.9219 29.7868 26.4974 27.2099C27.1448 26.5852 27.6732 26.0553 28.0798 25.6261C28.3744 25.3144 28.4268 24.6755 28.0883 24.3228C27.5259 23.7391 26.1474 22.6653 23.7674 20.9553C23.5178 21.167 23.279 21.3911 23.052 21.6268Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <!-- End:Icon -->
+                        </a>
+
+                        <div class="">
+                            <a href="tel:+74953200086" class="block text-white font-bold text-2xl xl:text-xl">+7 (495) 320-00-86</a>
+                            <button @click="isModalShow = true; modalTitle = 'Заказать дизайн-проект'" class="block text-accent  uppercase underline leading-4">Заказать звонок</button>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="hidden md:block">
+                        <div class="flex items-center gap-5">
+                            <div class="">
+                                <!-- Icon -->
+                                <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                    <svg class="w-8 h-8 " viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_7_81)">
+                                        <path d="M2.66663 13.3333C2.66663 24.6547 14.8346 31.544 15.352 31.832C15.5502 31.9422 15.7732 32.0001 16 32.0001C16.2267 32.0001 16.4498 31.9422 16.648 31.832C17.1653 31.544 29.3333 24.6547 29.3333 13.3333C29.3333 9.79711 27.9285 6.40573 25.428 3.90524C22.9276 1.40476 19.5362 0 16 0C12.4637 0 9.07235 1.40476 6.57187 3.90524C4.07138 6.40573 2.66663 9.79711 2.66663 13.3333ZM16 2.66667C18.828 2.66984 21.5392 3.79467 23.5389 5.79437C25.5386 7.79407 26.6634 10.5053 26.6666 13.3333C26.6666 21.6987 18.4 27.5733 16 29.1067C13.6 27.5733 5.33329 21.6987 5.33329 13.3333C5.33647 10.5053 6.46129 7.79407 8.46099 5.79437C10.4607 3.79467 13.172 2.66984 16 2.66667Z" fill="white"/>
+                                        <path d="M16 20C17.3186 20 18.6075 19.609 19.7038 18.8765C20.8002 18.1439 21.6547 17.1027 22.1592 15.8845C22.6638 14.6664 22.7958 13.3259 22.5386 12.0327C22.2814 10.7395 21.6464 9.55163 20.7141 8.61928C19.7817 7.68693 18.5938 7.05199 17.3006 6.79476C16.0074 6.53752 14.667 6.66955 13.4488 7.17413C12.2306 7.67871 11.1895 8.5332 10.4569 9.62952C9.72437 10.7259 9.33337 12.0148 9.33337 13.3333C9.33549 15.1008 10.0385 16.7952 11.2883 18.045C12.5381 19.2948 14.2326 19.9979 16 20ZM16 9.33333C16.7912 9.33333 17.5645 9.56792 18.2223 10.0074C18.8801 10.447 19.3928 11.0717 19.6956 11.8026C19.9983 12.5335 20.0775 13.3378 19.9232 14.1137C19.7688 14.8896 19.3879 15.6023 18.8285 16.1618C18.2691 16.7212 17.5563 17.1021 16.7804 17.2565C16.0045 17.4108 15.2002 17.3316 14.4693 17.0288C13.7384 16.7261 13.1137 16.2134 12.6742 15.5556C12.2346 14.8978 12 14.1245 12 13.3333C12 12.2725 12.4215 11.255 13.1716 10.5049C13.9218 9.75475 14.9392 9.33333 16 9.33333Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_7_81">
+                                        <rect width="32" height="32" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <!-- End:Icon -->
+                            </div>
+                            <div class="text-beige font-semibold text-md leading-snug">
+                                БЦ Сириус Парк, г.Москва. <br>
+                                Каширское ш., 3, строение 9
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End:Address -->
+
+                </div>
+                <!-- End:Right -->
+
+            </div>
+        </div>
+        <!-- End: Header -->
+
+        <!-- Menu -->
+        <div 
+        class=""
+        x-bind:class="{ 'fixed z-20 bg-fixed-menu top-0 left-0 right-0': isMenuFixed }"
+        >
+            <div 
+            class="container md:hidden"
+            >
+                <div class="">
+                    <nav class="table border border-[#382922] rounded md:border-0 md:block">
+                        <ul class="flex md:flex-col md:justify-center md:gap-5 md:w-[460px] md:mx-auto">
+                        <li><a href="#benefits" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100 md:border md:border-[#382922] md:w-full">ПРЕИМУЩЕСТВА</a></li>
+                        <li><a href="#price" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">СТОИМОСТЬ</a></li>
+                        <li><a href="#go_quiz" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">КАЛЬКУЛЯТОР</a></li>
+                        <li><a href="#design" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">ДИЗАЙН-ПРОЕКТЫ</a></li>
+                        <li><a href="#faq" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">FAQ</a></li>
+                        <li><a href="#contacts" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">КОНТАКТЫ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div :class="{'min-h-[75px] xl:min-h-[56px] md:hidden': isMenuFixed}"></div>
+        <!-- End:Menu -->
+
+        <!-- Mobile Header -->
+        <div
+            :class="classHeader" 
+            class="mobileHeader hidden md:block top-0 left-0 right-0 z-30 w-full  md:pb-[50px] "            
+            >
+
+            <div class="container py-5 md:py-[30px]   sm:py-[15px] ">
+                <div class="flex gap-5 items-center justify-between sm:flex-col sm:items-start">
+                    <!-- Left -->
+                    <div class="flex gap-16 justify-between items-center">
+                        <!-- Logo -->
+                        <div class="flex flex-row items-end gap-5 md:flex-col md:items-start md:gap-2">
+                            <div class="mt-[-13px] md:mt-0">
+                                <img src="./assets/img/header_01/logo.png" class="w-[10rem] h-[3.25rem] md:w-[160px] md:h-[52px]" width="160" height="52" alt="Атлон">
+                            </div>
+                            <div class="text-white opacity-70 text-sm leading-snug font-medium">
+                                Работаем <br class="md:hidden"> с 2013 года
+                            </div>
+                        </div>
+                        <!-- End:Logo -->
+    
+                        <!-- Address -->
+                        <div class="md:hidden">
+                            <div class="flex items-center gap-5">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_7_81)">
+                                            <path d="M2.66663 13.3333C2.66663 24.6547 14.8346 31.544 15.352 31.832C15.5502 31.9422 15.7732 32.0001 16 32.0001C16.2267 32.0001 16.4498 31.9422 16.648 31.832C17.1653 31.544 29.3333 24.6547 29.3333 13.3333C29.3333 9.79711 27.9285 6.40573 25.428 3.90524C22.9276 1.40476 19.5362 0 16 0C12.4637 0 9.07235 1.40476 6.57187 3.90524C4.07138 6.40573 2.66663 9.79711 2.66663 13.3333ZM16 2.66667C18.828 2.66984 21.5392 3.79467 23.5389 5.79437C25.5386 7.79407 26.6634 10.5053 26.6666 13.3333C26.6666 21.6987 18.4 27.5733 16 29.1067C13.6 27.5733 5.33329 21.6987 5.33329 13.3333C5.33647 10.5053 6.46129 7.79407 8.46099 5.79437C10.4607 3.79467 13.172 2.66984 16 2.66667Z" fill="white"/>
+                                            <path d="M16 20C17.3186 20 18.6075 19.609 19.7038 18.8765C20.8002 18.1439 21.6547 17.1027 22.1592 15.8845C22.6638 14.6664 22.7958 13.3259 22.5386 12.0327C22.2814 10.7395 21.6464 9.55163 20.7141 8.61928C19.7817 7.68693 18.5938 7.05199 17.3006 6.79476C16.0074 6.53752 14.667 6.66955 13.4488 7.17413C12.2306 7.67871 11.1895 8.5332 10.4569 9.62952C9.72437 10.7259 9.33337 12.0148 9.33337 13.3333C9.33549 15.1008 10.0385 16.7952 11.2883 18.045C12.5381 19.2948 14.2326 19.9979 16 20ZM16 9.33333C16.7912 9.33333 17.5645 9.56792 18.2223 10.0074C18.8801 10.447 19.3928 11.0717 19.6956 11.8026C19.9983 12.5335 20.0775 13.3378 19.9232 14.1137C19.7688 14.8896 19.3879 15.6023 18.8285 16.1618C18.2691 16.7212 17.5563 17.1021 16.7804 17.2565C16.0045 17.4108 15.2002 17.3316 14.4693 17.0288C13.7384 16.7261 13.1137 16.2134 12.6742 15.5556C12.2346 14.8978 12 14.1245 12 13.3333C12 12.2725 12.4215 11.255 13.1716 10.5049C13.9218 9.75475 14.9392 9.33333 16 9.33333Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_7_81">
+                                            <rect width="32" height="32" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug">
+                                    БЦ Сириус Парк, г.Москва. <br>
+                                    Каширское ш., 3, строение 9
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End:Address -->
+                    </div>
+                    <!-- End:Left -->
+    
+                    <!-- Right -->
+                    <div class="flex gap-5 md:flex-col md:ml-[-80px] sm:ml-0">
+                        <div class="md:hidden">
+                            <a href="#">
+                                <!-- Icon -->
+                                <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem]  rounded hover:border-accent">
+                                    <svg class="w-8 h-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_7_92)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7891 20.391C24.3661 20.1793 22.2865 19.1561 21.8987 19.0148C21.511 18.8736 21.2291 18.8031 20.9471 19.2265C20.6651 19.6499 19.8544 20.6028 19.6076 20.885C19.3609 21.1673 19.1142 21.2028 18.6912 20.9909C18.2682 20.7793 16.9052 20.3326 15.2896 18.8914C14.0322 17.7698 13.1832 16.3846 12.9365 15.9612C12.6897 15.5377 12.9101 15.3088 13.1219 15.0979C13.3123 14.9084 13.5449 14.6038 13.7564 14.3568C13.968 14.1099 14.0384 13.9333 14.1794 13.6511C14.3204 13.3688 14.2499 13.1218 14.1441 12.9101C14.0384 12.6984 13.1925 10.6163 12.84 9.76924C12.4966 8.94454 12.1479 9.05623 11.8882 9.04315C11.6418 9.03093 11.3595 9.02834 11.0776 9.02834C10.7956 9.02834 10.3373 9.13419 9.94952 9.55753C9.56184 9.98101 8.46912 11.0045 8.46912 13.0864C8.46912 15.1685 9.98478 17.1798 10.1963 17.4621C10.4078 17.7445 13.179 22.0169 17.4223 23.8492C18.4315 24.285 19.2194 24.5453 19.8337 24.7402C20.847 25.0622 21.7691 25.0168 22.498 24.9078C23.3107 24.7865 25.0006 23.8846 25.3531 22.8966C25.7055 21.9084 25.7055 21.0615 25.5998 20.885C25.4941 20.7086 25.2121 20.6028 24.7891 20.391ZM17.0711 30.9292H17.0654C14.5405 30.9282 12.0642 30.2499 9.90383 28.9679L9.38998 28.6629L4.06459 30.0599L5.48602 24.8676L5.15153 24.3352C3.74299 22.095 2.99904 19.5058 3.00017 16.8471C3.00329 9.08917 9.3154 2.77759 17.0767 2.77759C20.835 2.77885 24.3678 4.24437 27.0244 6.90401C29.681 9.56358 31.1431 13.0988 31.1417 16.8584C31.1385 24.6169 24.8264 30.9292 17.0711 30.9292ZM29.0463 4.88307C25.8501 1.68321 21.5996 -0.0798057 17.0709 -0.081665C7.73991 -0.081665 0.145629 7.51215 0.141844 16.846C0.140648 19.8298 0.920125 22.742 2.40165 25.3094L0 34.0818L8.97421 31.7277C11.4469 33.0764 14.2309 33.7873 17.0642 33.7882H17.0712C26.4012 33.7882 33.9961 26.1936 34 16.8596C34.0017 12.3362 32.2424 8.08292 29.0463 4.88307Z" fill="white"/>
+                                        </g>
+                                        <defs>
+                                        <clipPath id="clip0_7_92">
+                                        <rect width="34" height="34" fill="white"/>
+                                        </clipPath>
+                                        </defs>
+                                    </svg>                                    
+                                </div>
+                                <!-- End:Icon -->
+                            </a>
+                        </div>
+    
+                        <div class="flex items-center gap-5 sm:hidden">
+                            <a href="tel:+74953200086">
+                                <!-- Icon -->
+                                <div class="flex justify-center items-center border border-accent w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                    <svg class="w-8 h-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5479 8.85985C16.3767 9.78068 16.1146 10.8233 15.3808 11.8122C15.1898 12.0645 14.9835 12.3048 14.7631 12.5318C14.6327 12.6682 14.5005 12.8028 14.3664 12.9356L13.2798 14.0236C13.1382 14.1653 14.11 16.1061 15.9956 17.9945C17.8798 19.8801 19.8206 20.8533 19.9637 20.7103L21.0503 19.6237C21.6481 19.0258 21.964 18.7368 22.3989 18.4521C23.3028 17.8571 24.2902 17.697 25.1218 18.4408C27.8375 20.3844 29.3746 21.5758 30.1283 22.3578C31.5974 23.885 31.4033 26.2338 30.1368 27.574C29.6976 28.0387 29.1394 28.5968 28.4807 29.2315C24.4984 33.2166 16.0919 30.7913 9.64893 24.344C3.20593 17.8925 0.780599 9.4846 4.75718 5.50801C5.46977 4.78268 5.70635 4.54751 6.40052 3.86326C7.69393 2.58826 10.1518 2.38851 11.6464 3.86326C12.4313 4.64101 13.685 6.25176 15.5479 8.85843V8.85985ZM23.052 21.6268L21.9668 22.7134C20.1209 24.5593 16.9788 22.9854 13.9924 19.9977C11.0047 17.0071 9.43218 13.8649 11.2781 12.019L12.3633 10.9338C12.5375 10.7596 12.6183 10.6788 12.7118 10.5797C12.8421 10.4423 12.9483 10.3218 13.0348 10.2156C11.3829 7.91635 10.2609 6.47985 9.65602 5.8806C9.34435 5.57318 8.64452 5.62985 8.38668 5.88343C7.70243 6.55776 7.47718 6.78301 6.76602 7.50551C4.21035 10.0626 6.16677 16.8484 11.6535 22.3394C17.136 27.829 23.9219 29.7868 26.4974 27.2099C27.1448 26.5852 27.6732 26.0553 28.0798 25.6261C28.3744 25.3144 28.4268 24.6755 28.0883 24.3228C27.5259 23.7391 26.1474 22.6653 23.7674 20.9553C23.5178 21.167 23.279 21.3911 23.052 21.6268Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <!-- End:Icon -->
+                            </a>
+    
+                            <div class="">
+                                <a href="tel:+74953200086" class="block text-white font-bold text-2xl xl:text-xl">+7 (495) 320-00-86</a>
+                                <button 
+                                class="block text-accent  uppercase underline leading-4" 
+                                @click="isModalShow = true; modalTitle = 'Заказать дизайн-проект'"
+                                >Заказать звонок</button>
+                            </div>
+    
+                        </div>
+    
+                        <!-- Address -->
+                        <div class="hidden md:block">
+                            <div class="flex items-center gap-5">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                        <svg class="w-8 h-8 " viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_7_81)">
+                                            <path d="M2.66663 13.3333C2.66663 24.6547 14.8346 31.544 15.352 31.832C15.5502 31.9422 15.7732 32.0001 16 32.0001C16.2267 32.0001 16.4498 31.9422 16.648 31.832C17.1653 31.544 29.3333 24.6547 29.3333 13.3333C29.3333 9.79711 27.9285 6.40573 25.428 3.90524C22.9276 1.40476 19.5362 0 16 0C12.4637 0 9.07235 1.40476 6.57187 3.90524C4.07138 6.40573 2.66663 9.79711 2.66663 13.3333ZM16 2.66667C18.828 2.66984 21.5392 3.79467 23.5389 5.79437C25.5386 7.79407 26.6634 10.5053 26.6666 13.3333C26.6666 21.6987 18.4 27.5733 16 29.1067C13.6 27.5733 5.33329 21.6987 5.33329 13.3333C5.33647 10.5053 6.46129 7.79407 8.46099 5.79437C10.4607 3.79467 13.172 2.66984 16 2.66667Z" fill="white"/>
+                                            <path d="M16 20C17.3186 20 18.6075 19.609 19.7038 18.8765C20.8002 18.1439 21.6547 17.1027 22.1592 15.8845C22.6638 14.6664 22.7958 13.3259 22.5386 12.0327C22.2814 10.7395 21.6464 9.55163 20.7141 8.61928C19.7817 7.68693 18.5938 7.05199 17.3006 6.79476C16.0074 6.53752 14.667 6.66955 13.4488 7.17413C12.2306 7.67871 11.1895 8.5332 10.4569 9.62952C9.72437 10.7259 9.33337 12.0148 9.33337 13.3333C9.33549 15.1008 10.0385 16.7952 11.2883 18.045C12.5381 19.2948 14.2326 19.9979 16 20ZM16 9.33333C16.7912 9.33333 17.5645 9.56792 18.2223 10.0074C18.8801 10.447 19.3928 11.0717 19.6956 11.8026C19.9983 12.5335 20.0775 13.3378 19.9232 14.1137C19.7688 14.8896 19.3879 15.6023 18.8285 16.1618C18.2691 16.7212 17.5563 17.1021 16.7804 17.2565C16.0045 17.4108 15.2002 17.3316 14.4693 17.0288C13.7384 16.7261 13.1137 16.2134 12.6742 15.5556C12.2346 14.8978 12 14.1245 12 13.3333C12 12.2725 12.4215 11.255 13.1716 10.5049C13.9218 9.75475 14.9392 9.33333 16 9.33333Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_7_81">
+                                            <rect width="32" height="32" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-md leading-snug">
+                                    БЦ Сириус Парк, г.Москва. <br>
+                                    Каширское ш., 3, строение 9
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End:Address -->
+    
+                    </div>
+                    <!-- End:Right -->
+    
+                </div>
+            </div>
+            <div class="container" x-show="isMobileMenu">
+
+                <div class="flex items-center gap-5 ">
+                    <a href="tel:+74953200086">
+                        <!-- Icon -->
+                        <div class="flex justify-center items-center border border-accent w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                            <svg class="w-8 h-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5479 8.85985C16.3767 9.78068 16.1146 10.8233 15.3808 11.8122C15.1898 12.0645 14.9835 12.3048 14.7631 12.5318C14.6327 12.6682 14.5005 12.8028 14.3664 12.9356L13.2798 14.0236C13.1382 14.1653 14.11 16.1061 15.9956 17.9945C17.8798 19.8801 19.8206 20.8533 19.9637 20.7103L21.0503 19.6237C21.6481 19.0258 21.964 18.7368 22.3989 18.4521C23.3028 17.8571 24.2902 17.697 25.1218 18.4408C27.8375 20.3844 29.3746 21.5758 30.1283 22.3578C31.5974 23.885 31.4033 26.2338 30.1368 27.574C29.6976 28.0387 29.1394 28.5968 28.4807 29.2315C24.4984 33.2166 16.0919 30.7913 9.64893 24.344C3.20593 17.8925 0.780599 9.4846 4.75718 5.50801C5.46977 4.78268 5.70635 4.54751 6.40052 3.86326C7.69393 2.58826 10.1518 2.38851 11.6464 3.86326C12.4313 4.64101 13.685 6.25176 15.5479 8.85843V8.85985ZM23.052 21.6268L21.9668 22.7134C20.1209 24.5593 16.9788 22.9854 13.9924 19.9977C11.0047 17.0071 9.43218 13.8649 11.2781 12.019L12.3633 10.9338C12.5375 10.7596 12.6183 10.6788 12.7118 10.5797C12.8421 10.4423 12.9483 10.3218 13.0348 10.2156C11.3829 7.91635 10.2609 6.47985 9.65602 5.8806C9.34435 5.57318 8.64452 5.62985 8.38668 5.88343C7.70243 6.55776 7.47718 6.78301 6.76602 7.50551C4.21035 10.0626 6.16677 16.8484 11.6535 22.3394C17.136 27.829 23.9219 29.7868 26.4974 27.2099C27.1448 26.5852 27.6732 26.0553 28.0798 25.6261C28.3744 25.3144 28.4268 24.6755 28.0883 24.3228C27.5259 23.7391 26.1474 22.6653 23.7674 20.9553C23.5178 21.167 23.279 21.3911 23.052 21.6268Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <!-- End:Icon -->
+                    </a>
+
+                    <div class="">
+                        <a href="tel:+74953200086" class="block text-white font-bold text-2xl xl:text-xl">+7 (495) 320-00-86</a>
+                        <button @click="isModalShow = true; modalTitle = 'Заказать дизайн-проект'" class="block text-accent  uppercase underline leading-4">Заказать звонок</button>
+                    </div>
+                </div>
+
+
+                <div class="">
+                    <nav class="table border border-[#382922] rounded md:border-0 md:block">
+                        <ul class="flex md:flex-col md:justify-center md:gap-5 md:w-[460px] md:mx-auto">
+                          <li><a href="#benefits" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100 md:border md:border-[#382922] md:w-full">ПРЕИМУЩЕСТВА</a></li>
+                          <li><a href="#price" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">СТОИМОСТЬ</a></li>
+                          <li><a href="#go_quiz" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">КАЛЬКУЛЯТОР</a></li>
+                          <li><a href="#design" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">ДИЗАЙН-ПРОЕКТЫ</a></li>
+                          <li><a href="#faq" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">FAQ</a></li>
+                          <li><a href="#contacts" class="block px-5 py-6 font-semibold text-white opacity-40 border-white rounded border border-opacity-0 hover:text-accent hover:opacity-100 hover:border-opacity-100  md:border md:border-[#382922]">КОНТАКТЫ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-5 text-white max-w-[460px] mx-auto mt-10">
+                    <div class="">
+                        МЫ В СОЦСЕТЯХ: 
+                    </div>
+                    <div class="">
+                        <a href="#">
+                            <!-- Icon -->
+                            <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem]  rounded hover:border-accent">
+                                <svg class="w-8 h-8" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7_92)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.7891 20.391C24.3661 20.1793 22.2865 19.1561 21.8987 19.0148C21.511 18.8736 21.2291 18.8031 20.9471 19.2265C20.6651 19.6499 19.8544 20.6028 19.6076 20.885C19.3609 21.1673 19.1142 21.2028 18.6912 20.9909C18.2682 20.7793 16.9052 20.3326 15.2896 18.8914C14.0322 17.7698 13.1832 16.3846 12.9365 15.9612C12.6897 15.5377 12.9101 15.3088 13.1219 15.0979C13.3123 14.9084 13.5449 14.6038 13.7564 14.3568C13.968 14.1099 14.0384 13.9333 14.1794 13.6511C14.3204 13.3688 14.2499 13.1218 14.1441 12.9101C14.0384 12.6984 13.1925 10.6163 12.84 9.76924C12.4966 8.94454 12.1479 9.05623 11.8882 9.04315C11.6418 9.03093 11.3595 9.02834 11.0776 9.02834C10.7956 9.02834 10.3373 9.13419 9.94952 9.55753C9.56184 9.98101 8.46912 11.0045 8.46912 13.0864C8.46912 15.1685 9.98478 17.1798 10.1963 17.4621C10.4078 17.7445 13.179 22.0169 17.4223 23.8492C18.4315 24.285 19.2194 24.5453 19.8337 24.7402C20.847 25.0622 21.7691 25.0168 22.498 24.9078C23.3107 24.7865 25.0006 23.8846 25.3531 22.8966C25.7055 21.9084 25.7055 21.0615 25.5998 20.885C25.4941 20.7086 25.2121 20.6028 24.7891 20.391ZM17.0711 30.9292H17.0654C14.5405 30.9282 12.0642 30.2499 9.90383 28.9679L9.38998 28.6629L4.06459 30.0599L5.48602 24.8676L5.15153 24.3352C3.74299 22.095 2.99904 19.5058 3.00017 16.8471C3.00329 9.08917 9.3154 2.77759 17.0767 2.77759C20.835 2.77885 24.3678 4.24437 27.0244 6.90401C29.681 9.56358 31.1431 13.0988 31.1417 16.8584C31.1385 24.6169 24.8264 30.9292 17.0711 30.9292ZM29.0463 4.88307C25.8501 1.68321 21.5996 -0.0798057 17.0709 -0.081665C7.73991 -0.081665 0.145629 7.51215 0.141844 16.846C0.140648 19.8298 0.920125 22.742 2.40165 25.3094L0 34.0818L8.97421 31.7277C11.4469 33.0764 14.2309 33.7873 17.0642 33.7882H17.0712C26.4012 33.7882 33.9961 26.1936 34 16.8596C34.0017 12.3362 32.2424 8.08292 29.0463 4.88307Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_7_92">
+                                    <rect width="34" height="34" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>                                    
+                            </div>
+                            <!-- End:Icon -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End:Mobile Header -->
+
+        <!-- Hero -->
+        <div class="container">
+            <div class="flex gap-5 md:flex-col">
+                <!-- Hero_left -->
+                <div class="max-w-[50%] md:max-w-full">
+                    <div class="">
+
+                        <div class="mt-20 md:mt-5">
+                            <div class="text-2xl text-accent uppercase font-bold leading-none mb-4">Профессиональный</div>
+                            <div class="text-hero font-black text-beige leading-none md:text-5xl"> ДИЗАЙН ИНТЕРЬЕРОВ</div>
+                        </div>
+
+                        <div class="">
+                            <div class="mt-2 mb-5 flex items-center gap-5 md:mt-10">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M26.0959 11.3504C26.0959 10.0112 25.6607 8.92634 24.7901 8.09598C23.9196 7.26562 22.7745 6.85044 21.3549 6.85044H14.9263V15.8504H21.3549C22.7745 15.8504 23.9196 15.4353 24.7901 14.6049C25.6607 13.7746 26.0959 12.6897 26.0959 11.3504ZM30.8571 11.3504C30.8571 13.9353 30.01 16.0446 28.3158 17.6786C26.6216 19.3125 24.4352 20.1295 21.7567 20.1295H14.9263V22.5H25.0714C25.2589 22.5 25.4129 22.5603 25.5334 22.6808C25.654 22.8013 25.7143 22.9554 25.7143 23.1429V25.7143C25.7143 25.9018 25.654 26.0558 25.5334 26.1763C25.4129 26.2969 25.2589 26.3571 25.0714 26.3571H14.9263V30.2143C14.9263 30.4018 14.8627 30.5558 14.7355 30.6763C14.6082 30.7969 14.4576 30.8571 14.2834 30.8571H10.9285C10.741 30.8571 10.587 30.7969 10.4665 30.6763C10.3459 30.5558 10.2857 30.4018 10.2857 30.2143V26.3571H5.78568C5.59818 26.3571 5.44416 26.2969 5.32363 26.1763C5.20309 26.0558 5.14282 25.9018 5.14282 25.7143V23.1429C5.14282 22.9554 5.20309 22.8013 5.32363 22.6808C5.44416 22.5603 5.59818 22.5 5.78568 22.5H10.2857V20.1295H5.78568C5.59818 20.1295 5.44416 20.0692 5.32363 19.9487C5.20309 19.8281 5.14282 19.6741 5.14282 19.4866V16.4933C5.14282 16.3192 5.20309 16.1685 5.32363 16.0413C5.44416 15.9141 5.59818 15.8504 5.78568 15.8504H10.2857V3.21428C10.2857 3.02678 10.3459 2.87277 10.4665 2.75223C10.587 2.63169 10.741 2.57143 10.9285 2.57143H21.7567C24.4352 2.57143 26.6216 3.38839 28.3158 5.02232C30.01 6.65625 30.8571 8.76562 30.8571 11.3504Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-3xl leading-snug md:text-2xl">
+                                    от <span class="text-accent">1 400 рублей</span>  за м2
+                                </div>
+                            </div>
+
+
+                            <div class="md:flex md:flex-row-reverse md:justify-end md:items-start md:gap-5">
+                                <div class="text-beige text-xl">
+                                    <p>
+                                        Рассчитайте стоимость дизайн-проекта,<br>
+                                        ответив всего на 7 вопросов<br>
+                                       <strong class="text-accent"> и получите 10% скидку!</strong>
+                                    </p>
+                                </div>
+                                <!-- Arrow -->
+                                <div class="mt-3 md:mt-0  ">
+                                    <span class="flex justify-start items-center rounded bg-[#898989] w-[9.75rem] h-[1.75rem] md:w-[3.125rem] md:rotate-90 md:mt-4">
+                                        <svg class="min-w-[11.25rem] h-[0,66666667rem] ml-4 md:w-[4.375rem] md:min-w-[4.375rem]" viewBox="0 0 180 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M180 6.00003L170 0.226527L170 11.7735L180 6.00003ZM-1.74846e-07 7L171 7.00003L171 5.00003L1.74846e-07 5L-1.74846e-07 7Z" fill="white"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <!-- End:Arrow -->
+                            </div>
+
+                        </div>
+
+                        <div class="my-10 md:hidden">
+                            <div class="flex items-center gap-5 bg-blur backdrop-blur-sm p-5 rounded mb-5">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg width="38" height="36" viewBox="0 0 38 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M30.0687 7.73106C26.9078 5.1282 22.0242 5.51916 19 8.53441C15.9758 5.51916 11.0922 5.12284 7.93125 7.73106C3.81876 11.1212 4.42032 16.6483 7.35157 19.5778L16.9437 29.1484C17.4906 29.6947 18.2234 30 19 30C19.782 30 20.5094 29.7001 21.0562 29.1538L30.6484 19.5832C33.5742 16.6536 34.1867 11.1266 30.0687 7.73106ZM28.7781 17.773L19.1859 27.3436C19.0547 27.4721 18.9453 27.4721 18.8141 27.3436L9.22188 17.773C7.22579 15.7807 6.8211 12.0103 9.6211 9.70195C11.7484 7.95064 15.0297 8.21307 17.0859 10.2643L19 12.1763L20.9141 10.2643C22.9812 8.20236 26.2625 7.95064 28.3789 9.6966C31.1734 12.0049 30.7578 15.7967 28.7781 17.773Z" fill="white"/>
+                                        </svg>                                            
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug">
+                                    Снимем с Вас заботы <br>
+                                    по дизайну и контролю
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-5 bg-blur backdrop-blur-sm p-5 rounded mb-5">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22.5 6.25V3.75C22.5 3.41848 22.3683 3.10054 22.1339 2.86612C21.8995 2.6317 21.5815 2.5 21.25 2.5C20.9185 2.5 20.6005 2.6317 20.3661 2.86612C20.1317 3.10054 20 3.41848 20 3.75V6.25H10V3.75C10 3.41848 9.8683 3.10054 9.63388 2.86612C9.39946 2.6317 9.08152 2.5 8.75 2.5C8.41848 2.5 8.10054 2.6317 7.86612 2.86612C7.6317 3.10054 7.5 3.41848 7.5 3.75V6.25H2.5V26.25H27.5V6.25H22.5ZM25 23.75H5V8.75H25V23.75ZM11.25 12.5H8.75V15H11.25V12.5ZM16.25 12.5H13.75V15H16.25V12.5ZM21.25 12.5H18.75V15H21.25V12.5ZM11.25 17.5H8.75V20H11.25V17.5ZM16.25 17.5H13.75V20H16.25V17.5ZM21.25 17.5H18.75V20H21.25V17.5Z" fill="white"/>
+                                        </svg>                                          
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug">
+                                    Сделаем всё в рамках <br>
+                                    Вашего бюджета и сроков
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Hero_left -->
+
+                <!-- Hero_right -->
+                <div 
+                    x-data="{
+                        step: '1',
+                        maxStep: '8',
+                        activeTab: 'tab1',
+                        percents: [0,3,4,5,6,7,8,9],
+                        showButtons: true,
+                        getDiscont(){
+                            return this.percents[this.step-1]
+                        }
+                    }" 
+                    class="w-full max-w-[50%] pt-10 md:max-w-full sm:pt-0"
+                    >
+                    <form action="" method="POST">
+                        <div class="bg-[#F3F3F3] rounded-lg transition duration-1000">
+                        <div class="border-b">
+                            <div class="flex justify-between items-center gap-5 px-[3.125rem]  mx-auto py-6 sm:px-5 sm:flex-col sm:items-start sm:gap-3">
+                                <div class="font-bold text-black text-xl leading-snug">
+                                    <template x-if="activeTab !== 'tab8'">
+                                        <span>
+                                            Рассчитайте стоимость дизайн-проекта за 3 минуты 
+                                        </span>
+                                    </template>                                    
+                                    <template x-if="activeTab === 'tab8'">
+                                        <span>
+                                            Вы прошли опрос и получили скидку!
+                                        </span>
+                                    </template>
+                                </div>
+                                <!-- Discont -->
+                                <div class="flex justify-between items-center gap-1 bg-accent rounded p-3 pb-2">
+                                    <div class="text-sm font-bold leading-none  text-black pb-1">
+                                        Ваша <br> скидка:
+                                    </div>
+                                    <div class="text-[35px] leading-none font-bold  text-black ">
+                                        <!-- <span x-text="discont" class="animate__animated animate__fadeIn"></span>% -->
+                                        <span 
+                                            x-text="getDiscont()" 
+                                            class="animate__animated animate__fadeIn"></span>%
+                                    </div>
+                                </div>
+                                <!-- End:Discont -->
+                            </div>
+                        </div>
+                        <!-- xl:max-w-[380px] md:max-w-[460px] -->
+
+                        <div class="px-[3.125rem] sm:px-5 mx-auto pb-5">
+                            <!-- Quiz Tab 1-->
+                            <div 
+                                class="" 
+                                x-show="activeTab === 'tab1'"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                            >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                    Для какого помещения будет нужен дизайн-проект?
+                                </div>
+                                <div class="quiz">                               
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=2, activeTab = 'tab2'"  
+                                        >
+                                            <input type="radio" name="quiz-1" checked>
+                                            <i></i>
+                                            <div class="">Новостройка</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=2, activeTab = 'tab2'" 
+                                            >
+                                            <input type="radio" name="quiz-1">
+                                            <i></i>
+                                            <div class="">Вторичное жильё</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=2, activeTab = 'tab2'" 
+                                            >
+                                            <input type="radio" name="quiz-1">
+                                            <i></i>
+                                            <div class="">Частный дом/коттедж</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=2, activeTab = 'tab2'" 
+                                            >
+                                            <input type="radio" name="quiz-1">
+                                            <i></i>
+                                            <div class="">Офис</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=2, activeTab = 'tab2'" 
+                                            >
+                                            <input type="radio" name="quiz-1">
+                                            <i></i>
+                                            <div class="">Коммерческое помещение</div>
+                                        </label>
+                                    </div>                                
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 1-->
+
+                            <!-- Quiz Tab 2-->
+                            <div 
+                                class="" 
+                                x-show="activeTab === 'tab2'"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                            >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101] border-b ">
+                                    В основу расчёта стоимости ложится площадь квартиры. Для точного расчета сметы - <strong>выезжаем на объект.</strong>
+                                </div>
+
+                                <div class="mb-5">
+                                    <div class="text-lg text-[#10101] py-5">Укажите площадь Вашего помещения</div>
+                                    
+                                    <!-- Range slider -->
+                                    <div class="">
+                                        <div x-data="range()" x-init="mintrigger()" class="relative max-w-xl w-full mb-5">
+                                            <div class="flex items-center justify-start space-x-4 text-sm text-gray-700 mb-10">
+                                                <div>
+                                                    <input 
+                                                    type="text" 
+                                                    maxlength="5" 
+                                                    x-on:input.debounce="mintrigger" 
+                                                    x-model="minprice"
+                                                    wire:model.debounce.300="minPrice"
+                                                    class="text-5xl w-32 h-16 px-4 py-2 text-center border border-gray-200 rounded-lg bg-gray-50 focus:border-yellow-400 focus:outline-none"
+                                                    >
+                                                </div>
+                                                <div class="text-lg">
+                                                    М <sup>2</sup>
+                                                </div>
+                                            </div>
+                                            <div class="mb-5">
+                                                <input type="range" step="1" value="80" x-bind:min="min" x-bind:max="max" x-on:input="mintrigger" x-model="minprice" class="absolute  z-20 h-2 w-full opacity-0 cursor-pointer">
+                                                <div class="relative z-10 h-2">
+                                                    <div class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-200"></div>
+                                                    <div class="absolute z-20 top-0 bottom-0 rounded-md bg-accent" x-bind:style="'right:'+maxthumb+'%; left:'+minthumb+'%'"></div>
+                                                    <div class="absolute z-30 w-6 h-6 top-0 left-0 bg-gray-200 rounded-full -mt-2" x-bind:style="'left: '+minthumb+'%'"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="">
+                                                <strong>Срок работ:</strong>
+                                                <span class="" x-text="textMin"></span>
+
+                                            </div>
+                                        </div>
+                                    
+                                        <script>
+                                        function range() {
+                                            const minRange = 15;
+                                            const maxRange = 300;
+                                            const startRange = 80;
+
+
+                                            return {
+                                            textMin: 'От 30 до 49 дней',
+                                            minprice: startRange,
+                                            maxprice: maxRange,
+                                            min: minRange,
+                                            max: maxRange,
+                                            minthumb: 0,
+                                            maxthumb: 0,
+
+                                            mintrigger() {
+                                                this.validation();
+                                                this.minprice = Math.min(this.minprice, this.maxprice - 0);
+                                                this.minthumb = ((this.minprice - this.min) / (this.max - this.min)) * 100;
+
+                                                if (this.minprice < 45) {
+                                                    this.textMin = 'От 30 до 49 дней'
+                                                }
+                                                else if (this.minprice >= 45 && this.minprice < 70){
+                                                    this.textMin = 'От 49 до 74 дней'
+                                                }
+                                                else if(this.minprice >= 70 && this.minprice < 100){
+                                                    this.textMin = 'От 75 до 105 дней'
+                                                }
+                                                else if(this.minprice >= 100 && this.minprice < 150){
+                                                    this.textMin = 'От 105 до 135 дней'
+                                                }
+                                                else {
+                                                    this.textMin = 'От 120 дней'
+                                                }
+                                            },
+                                            
+                                            validation() {
+                                                if (/^\d*$/.test(this.minprice)) {
+                                                if (this.minprice > this.max) {
+                                                    this.minprice = maxRange;
+                                                }
+                                                if (this.minprice < this.min) {
+                                                    this.minprice = this.min;
+                                                }
+                                                } else {
+                                                this.minprice = 0;
+                                                }
+                                            }
+                                            }
+                                        }
+                                        </script>
+                                        
+                                    </div>
+                                    <!-- End:Range slider -->
+
+
+                                    <input type="file" name="file">
+
+                                    <!--div class="relative ">
+                                        <label
+                                          for="file-upload"
+                                          class="cursor-pointer flex gap-5 items-center"
+                                        >
+                                            <div class="bg-accent hover:bg-accent  p-8 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                </svg>
+                                            </div>
+                                            <div class="">Выберите или перетащите файл планировки</div>
+                                          
+                                        </label>
+                                        <input
+                                          id="file-upload"
+                                          type="file"
+                                          class="opacity-0 absolute z-[-1]"
+                                        />
+                                    </div-->
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 2-->
+
+                            <!-- Quiz Tab 3-->
+                            <div 
+                                class="" 
+                                x-show="activeTab === 'tab3'"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                
+                            >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                    Укажите количество комнат:
+                                </div>
+                                <div class="quiz" >                               
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=4, activeTab = 'tab4'" 
+                                            >
+                                            <input type="radio" name="quiz-2" checked>
+                                            <i></i>
+                                            <div class="">Студия</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=4, activeTab = 'tab4'" 
+                                            >
+                                            <input type="radio" name="quiz-2">
+                                            <i></i>
+                                            <div class="">Однокомнатная</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=4, activeTab = 'tab4'" 
+                                            >
+                                            <input type="radio" name="quiz-2">
+                                            <i></i>
+                                            <div class="">Двухкомнатная</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=4, activeTab = 'tab4'" 
+                                            >
+                                            <input type="radio" name="quiz-2">
+                                            <i></i>
+                                            <div class="">Трёхкомнатная</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=4, activeTab = 'tab4'" 
+                                            >
+                                            <input type="radio" name="quiz-2">
+                                            <i></i>
+                                            <div class="">Другое</div>
+                                        </label>
+                                    </div>                                
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 3-->
+
+                            <!-- Quiz Tab 4-->
+                            <div 
+                                class="" 
+                                x-show="activeTab === 'tab4'"
+                                x-transition:enter="transition ease-out duration-500"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                    Какая у Вас отделка на данный момент?
+                                </div>
+                                <div class="quiz" >                               
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=5, activeTab = 'tab5'"
+                                        >
+                                            <input type="radio" name="quiz-3" checked>
+                                            <i></i>
+                                            <div class="">Без отделки</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=5, activeTab = 'tab5'"
+                                            >
+                                            <input type="radio" name="quiz-3">
+                                            <i></i>
+                                            <div class="">Отделка от застройщика</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=5, activeTab = 'tab5'"
+                                            >
+                                            <input type="radio" name="quiz-3">
+                                            <i></i>
+                                            <div class="">Черновая отделка</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=5, activeTab = 'tab5'"
+                                            >
+                                            <input type="radio" name="quiz-3">
+                                            <i></i>
+                                            <div class="">Старый ремонт</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 4-->
+
+                            <!-- Quiz Tab 5-->
+                            <div 
+                                class="" 
+                                x-show="activeTab === 'tab5'"
+                                x-transition:enter="transition ease-out duration-5000"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                    Вам нужны уникальные коллажи будущего интерьера?
+                                </div>
+                                <div class="quiz" >                               
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=6, activeTab = 'tab6'"
+                                            >
+                                            <input type="radio" name="quiz-5" checked>
+                                            <i></i>
+                                            <div class="">Да</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=6, activeTab = 'tab6'"
+                                            >
+                                            <input type="radio" name="quiz-5">
+                                            <i></i>
+                                            <div class="">Нет</div>
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 5-->
+
+                            <!-- Quiz Tab 6-->
+                            <div 
+                                class=""
+                                x-show="activeTab === 'tab6'"
+                                x-transition:enter="transition ease-out duration-5000"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                            >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                    Вам нужна 3D-визуализация Вашего объекта?
+                                </div>
+                                <div class="quiz" >                               
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=7, activeTab = 'tab7'"
+                                            >
+                                            <input type="radio" name="quiz-6" checked>
+                                            <i></i>
+                                            <div class="">Да</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=7, activeTab = 'tab7'"
+                                            >
+                                            <input type="radio" name="quiz-6">
+                                            <i></i>
+                                            <div class="">Нет</div>
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 6-->
+
+                            <!-- Quiz Tab 7-->
+                            <div 
+                                class="" 
+                                x-show="activeTab === 'tab7'"
+                                x-transition:enter="transition ease-out duration-5000"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                >
+                                <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                    Вам нужна комплектация Вашего помещения мебелью и чистовыми материалами?
+                                </div>
+                                <div class="quiz" >                               
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=8, activeTab = 'tab8'"
+                                            >
+                                            <input type="radio" name="quiz-7" checked>
+                                            <i></i>
+                                            <div class="">Да</div>
+                                        </label>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label 
+                                            class="flex items-center gap-2 text-xl bg-white rounded-lg cursor-pointer border border-white  hover:border-accent"
+                                            @click="step=8, activeTab = 'tab8'"
+                                            >
+                                            <input type="radio" name="quiz-7">
+                                            <i></i>
+                                            <div class="">Нет</div>
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!-- End:Quiz Tab 7-->
+
+                             <!-- Quiz Tab 8-->
+                             <div 
+                             class="" 
+                             x-show="activeTab === 'tab8'"
+                             x-transition:enter="transition ease-out duration-5000"
+                             x-transition:enter-start="opacity-0 scale-90"
+                             x-transition:enter-end="opacity-100 scale-100"
+                             >
+                             <div class="max-w-[43.75rem] mx-auto py-5 text-lg text-[#10101]">
+                                Стоимость вашего дизайн проекта уже сформирована! Отправьте свой номер телефона чтобы получить рассчет стоимости
+                                в WhatsApp.
+                             </div>
+                             <div class="quiz" >    
+
+                                <div class="mb-4">
+                                    <input 
+                                        class="w-full p-5 rounded-lg border focus:outline-none" 
+                                        type="tel" 
+                                        placeholder="+7 (999) 999-99-99"
+                                        required=""
+                                    >
+                                </div>
+                                <div class="mb-4">
+                                    <button class="btn btn--submit w-full justify-center" type="submit">Узнать стоимость в WhatsApp</button>
+                                </div>
+        
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="check" required="" checked="">
+                                        <p>
+                                            <i></i>
+                                            <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных данных</span>
+                                        </p>
+                                    </label>
+                                </div>
+                                 
+                             </div>
+                         </div>
+                         <!-- End:Quiz Tab 8-->
+
+
+
+                            <div class="py-3" x-show="step < 8">
+                                <div class="font-bold text-2xl flex items-center gap-2">
+                                    Вопрос 
+                                    <span class="inline-block w-[2.8125rem] h-[2.8125rem] bg-accent flex justify-center items-center rounded-full" x-text="step"></span>
+                                    из
+                                    <span class="inline-block w-[2.8125rem] h-[2.8125rem] bg-[#E8E8E8] flex justify-center items-center rounded-full" x-text="maxStep"></span>
+                                </div>
+                            </div>
+
+                            <div class="py-3 flex justify-between" x-show="showButtons">
+                                <div class="">
+                                    <button class="btn btn--left" x-show="step > 1 && step < 8" @click="step--, activeTab = 'tab'+step">Назад </button>
+                                </div>
+                                <div class="">
+                                    <button class="btn" x-show="step < 8" @click="step++, activeTab = 'tab'+step">Далее </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- End:Hero_right -->
+
+                <!-- Mobile bottom -->
+                <div class="hidden md:flex gap-5 mt-5 mb-10 sm:flex-col">
+                    <div class="flex items-center gap-5 bg-blur backdrop-blur-sm p-5 rounded mb-5">
+                        <div class="">
+                            <!-- Icon -->
+                            <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                <svg width="38" height="36" viewBox="0 0 38 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30.0687 7.73106C26.9078 5.1282 22.0242 5.51916 19 8.53441C15.9758 5.51916 11.0922 5.12284 7.93125 7.73106C3.81876 11.1212 4.42032 16.6483 7.35157 19.5778L16.9437 29.1484C17.4906 29.6947 18.2234 30 19 30C19.782 30 20.5094 29.7001 21.0562 29.1538L30.6484 19.5832C33.5742 16.6536 34.1867 11.1266 30.0687 7.73106ZM28.7781 17.773L19.1859 27.3436C19.0547 27.4721 18.9453 27.4721 18.8141 27.3436L9.22188 17.773C7.22579 15.7807 6.8211 12.0103 9.6211 9.70195C11.7484 7.95064 15.0297 8.21307 17.0859 10.2643L19 12.1763L20.9141 10.2643C22.9812 8.20236 26.2625 7.95064 28.3789 9.6966C31.1734 12.0049 30.7578 15.7967 28.7781 17.773Z" fill="white"/>
+                                </svg>                                            
+                            </div>
+                            <!-- End:Icon -->
+                        </div>
+                        <div class="text-beige font-semibold text-sm leading-snug">
+                            Снимем с Вас заботы <br>
+                            по дизайну и контролю
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-5 bg-blur backdrop-blur-sm p-5 rounded mb-5">
+                        <div class="">
+                            <!-- Icon -->
+                            <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] md:w-[3.125rem] md:h-[3.125rem] rounded">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.5 6.25V3.75C22.5 3.41848 22.3683 3.10054 22.1339 2.86612C21.8995 2.6317 21.5815 2.5 21.25 2.5C20.9185 2.5 20.6005 2.6317 20.3661 2.86612C20.1317 3.10054 20 3.41848 20 3.75V6.25H10V3.75C10 3.41848 9.8683 3.10054 9.63388 2.86612C9.39946 2.6317 9.08152 2.5 8.75 2.5C8.41848 2.5 8.10054 2.6317 7.86612 2.86612C7.6317 3.10054 7.5 3.41848 7.5 3.75V6.25H2.5V26.25H27.5V6.25H22.5ZM25 23.75H5V8.75H25V23.75ZM11.25 12.5H8.75V15H11.25V12.5ZM16.25 12.5H13.75V15H16.25V12.5ZM21.25 12.5H18.75V15H21.25V12.5ZM11.25 17.5H8.75V20H11.25V17.5ZM16.25 17.5H13.75V20H16.25V17.5ZM21.25 17.5H18.75V20H21.25V17.5Z" fill="white"/>
+                                </svg>                                          
+                            </div>
+                            <!-- End:Icon -->
+                        </div>
+                        <div class="text-beige font-semibold text-sm leading-snug">
+                            Сделаем всё в рамках <br>
+                            Вашего бюджета и сроков
+                        </div>
+                    </div>
+                </div>
+                <!-- End:Mobile bottom -->
+                                
+            </div>
+        </div>        
+        <!-- End:Hero -->
+
+        <!-- Modals -->
+<!--
+        <div class="">
+            <div 
+            x-show="isOpenModal" 
+            x-transition.duration.500ms
+            
+            class="fixed inset-0 flex items-center justify-center backdrop-blur-lg bg-black bg-opacity-50 z-50"
+            style="display: none"
+
+            x-init="$watch('isOpenModal', value => {
+                if (value) {
+                    document.body.classList.add('no-scroll');
+                } else {
+                    document.body.classList.remove('no-scroll');
+                }
+            })"
+
+            x-on:keydown.escape.window="isOpenModal = false"
+            @click="isOpenModal = false"
+            >
+
+            <div 
+                class="relative bg-popup w-full max-w-lg p-12 rounded-lg md:p-6 sm:p-2"
+                @click.stop
+                >
+                <button 
+                    class="absolute top-5 right-5 hover:rotate-180"
+                    @click="isOpenModal = false"
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                
+                <h2 class="text-2xl text-gray-800 font-bold mb-5">Заказать дизайн-проект</h2>
+                <h1 x-text="$store.bodyScrollxxxx"></h1>
+                <div class="">                    
+                    <form action="" method="POST">
+                        <div class="mb-4">
+                            <input 
+                            class="w-full p-5 rounded-lg border focus:outline-none" 
+                            type="text" 
+                            placeholder="Как вас зовут?"
+                            required=""
+                            >
+                        </div>
+                        <div class="mb-4">
+                            <input 
+                                class="w-full p-5 rounded-lg border focus:outline-none" 
+                                type="tel" 
+                                placeholder="Ваш номер телефона..."
+                                required=""
+                            >
+                        </div>
+                        <div class="mb-4">
+                            <button class="btn btn--submit w-full justify-center" type="submit">Отправить</button>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="check" required="" checked="">
+                                <p>
+                                    <i></i>
+                                    <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных данных</span>
+                                </p>
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    -->
+        <!-- End:Modals -->
+
+    </header>
+    <!-- End: Header 01 -->
+
+    <!-- Advantages -->
+    <section 
+    class="lazy py-[85px] bg-cover bg-center bg-no-repeat" 
+    data-bg="./assets/img/advantages/b2_bg.jpg"
+    id="benefits"
+    >
+        <div class="container">
+            <div class="flex justify-between items-center gap-5 md:gap-5 sm:flex-col sm:items-start">
+                <h2 class="">
+                    <strong>Преимущества</strong>
+                    работы с нами, <br class="md:hidden">
+                    рассказанные нашими клиентами
+                </h2>
+                <div class="flex gap-2">
+                    <button class="btn btn__right advantages-button-prev"></button>
+                    <button class="btn advantages-button-next"></button>                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Swiper -->
+        <div 
+            class="container mt-14 swiper "
+            x-data="{ swiper: null }" 
+            x-init="swiper = new Swiper($refs.container, { 
+                spaceBetween: 10,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: '.advantages-button-next',
+                    prevEl: '.advantages-button-prev',
+                  },
+                breakpoints: {
+                    680: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    980: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1170: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+
+                }
+             })" 
+            x-ref="container"    
+        >
+            <div class="grid grid-cols-3 pb-[200px] swiper-wrapper">
+
+                <!-- Slide item 1-->
+                <div class="swiper-slide">
+                    <div class="relative h-[440px] bg-[#2B221D] rounded-lg p-6 before:content-[''] before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:border before:border-border-icon before:rounded-lg before:m-2 ">
+                        <div class="h-[300px]">
+                            <h4 class="text-accent pb-5 text-2xl font-bold">Общение с дизайнером</h4>
+                            <p class="pl-5 text-white border-l-2 border-accent mb-5"> Вы можете выбрать удобный для Вас формат общения – онлайн или в нашем офисе. Когда дизайнер Вадим приехал на мой объект, он сразу внимательно изучил особенности помещений, зафиксировал размеры и коммуникации</p>
+                        </div>
+                        <div class="relative">
+                            <div class="flex">
+                                <img class="lazy" data-src="./assets/img/advantages/b2_sl1_bg.png" src="./assets/img/advantages/b2_sl1_bg.png" alt="" loading="lazy">
+                            </div>
+                            <div class="">
+                                <img class="lazy absolute top-[-62px] xl:top-[-49px] left-0 w-full" data-src="./assets/img/advantages/b2_sl1.png" src="./assets/img/advantages/b2_sl1.png" alt="" width="300" height="353" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:Slide item 1-->
+                <!-- Slide item 2-->
+                <div class="swiper-slide">
+                    <div class="relative h-[440px] bg-[#F0E6E0] rounded-lg p-6 before:content-[''] before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:border before:border-[#CBC5C5] before:rounded-lg before:m-2 ">
+                        <div class="h-[300px]">
+                            <h4 class="text-black pb-5 text-2xl font-bold">Контроль качества</h4>
+                            <p class="pl-5 text-black border-l-2 border-white mb-5">
+                                <strong>Специалисты всегда <br>  включаются в процесс</strong>  и находятся на связи на каждом этапе. Они отвечают на любые вопросы и всегда могут созвониться с вами
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <div class="flex">
+                                <img class="lazy" data-src="./assets/img/advantages/b2_sl2_bg.png" src="./assets/img/advantages/b2_sl2_bg.png" alt="" loading="lazy">
+                            </div>
+                            <div class="">
+                                <img class="lazy absolute top-[-69px] xl:top-[-40px] left-[11px] w-[90%]" data-src="./assets/img/advantages/b2_sl2.png" src="./assets/img/advantages/b2_sl2.png" alt="" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <!-- End:Slide item 2-->
+                <!-- Slide item 3-->
+                <div class="swiper-slide">
+                    <div class="relative h-[440px] bg-[#2B221D] rounded-lg p-6 before:content-[''] before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:border before:border-border-icon before:rounded-lg before:m-2 ">
+                        <div class="h-[300px]">
+                            <h4 class="text-accent pb-5 text-2xl font-bold">Оперативность</h4>
+                            <p class="pl-5 text-white border-l-2 border-accent mb-5"> 
+                                Быстрый выезд дизайнера на объект для замеров и оперативное решение вопросов в процессе работы, благодаря чему работа над Дизайн-проектом может быть выполнена, опережая сроки
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <div class="flex">
+                                <img class="lazy" data-src="./assets/img/advantages/b2_sl3_bg.png" src="./assets/img/advantages/b2_sl3_bg.png" alt="" loading="lazy">
+                            </div>
+                            <div class="">
+                                <img class="lazy absolute top-[17px] xl:top-0 right-[3px]" data-src="./assets/img/advantages/b2_sl3.png" src="./assets/img/advantages/b2_sl3.png" alt="" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:Slide item 3-->
+                <!-- Slide item 4-->
+                <div class="swiper-slide">
+                    <div class="relative h-[440px] bg-[#F0E6E0] rounded-lg p-6 before:content-[''] before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:border before:border-[#CBC5C5] before:rounded-lg before:m-2 ">
+                        <div class="h-[300px]">
+                            <h4 class="text-black pb-5 text-2xl font-bold">Функциональность <br>  пространства</h4>
+                            <p class="pl-5 text-black border-l-2 border-white mb-5">
+                                <strong>Компания Атлон ФМ<br> организовала пространство<br> таким образом, чтобы моя<br> повседневная жизнь ничем не<br> была ограничена:</strong>   специалисты <br>  предусмотрели места для хранения, зоны встречи гостей, <br>  зоны для детей и т.д
+                            </p>
+                        </div>
+                        <div class="relative">
+                            <div class="flex">
+                                <img class="lazy" data-src="./assets/img/advantages/b2_sl4_bg.png"  src="./assets/img/advantages/b2_sl4_bg.png" alt="" loading="lazy">
+                            </div>
+                            <div class="">
+                                <img class="lazy absolute top-[30px] xl:top-[45px] right-[40px] w-[65%]" data-src="./assets/img/advantages/b2_sl4.png" src="./assets/img/advantages/b2_sl4.png" alt="" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:Slide item 4-->
+                <!-- Slide item 1-->
+                <div class="swiper-slide">
+                    <div class="relative h-[440px] bg-[#2B221D] rounded-lg p-6 before:content-[''] before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 before:border before:border-border-icon before:rounded-lg before:m-2 ">
+                        <div class="h-[300px]">
+                            <h4 class="text-accent pb-5 text-2xl font-bold">Гарантия результата</h4>
+                            <p class="pl-5 text-white border-l-2 border-accent mb-5">Мы несем полную ответственность за все конструкционные и дизайнерские решения, применяемые в наших дизайн-проектах, поэтому можем гарантировать высочайшее качество.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="flex">
+                                <img class="lazy" data-src="./assets/img/advantages/b2_sl5_bg.png" src="./assets/img/advantages/b2_sl5_bg.png" alt="" loading="lazy">
+                            </div>
+                            <div class="">
+                                <img class="lazy absolute top-[140px] xl:top-[100px] left-[41px] w-[90%]" data-src="./assets/img/advantages/b2_sl5.png" src="./assets/img/advantages/b2_sl5.png" alt="" width="300" height="353" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End:Slide item 1-->
+            </div>
+        
+        </div>
+        <!-- End:Swiper -->
+
+    </section>
+    <!-- End:Advantages -->
+
+
+    <!-- Price_work -->
+    <section 
+    class="lazy pt-[4.375rem] pb-[8.75rem] md:pb-[4.375rem]  bg-cover bg-center bg-no-repeat sm:bg-left" 
+    data-bg="./assets/img/price_work/b3_bg.jpg"
+    id="price"
+    >
+        <div class="container">
+            <h2 class="sm:mb-4"><strong>Стоимость</strong> работ</h2>
+            <div class="relative ml-5 pl-16 text-xl text-light before:content-[''] before:w-[40px] before:h-[2px] before:absolute before:top-[12px] before:left-[0] before:bg-white">Мы предлагаем вам варианты <br> дизайн-проектов под любые бюджеты</div>
+
+            <div 
+                x-data="{ 
+                    activeTab: 'tab1',
+                    mobileNav: false,
+                    activeNavTitle: '<strong>Технический</strong> дизайн-проект',                    
+                }" 
+                class="flex gap-20 my-8 bg-bg-opacity backdrop-blur-lg rounded p-16 md:p-5 md:flex-col md:gap-5 "
+            >
+                <!-- Mobile nav -->
+                <div class="hidden relative md:block">
+
+                    <button class="btn btn--select w-full sm:flex sm:flex-col sm:text-left sm:h-[70px] sm:items-start sm:leading-4" x-html="activeNavTitle" @click="mobileNav = !mobileNav"></button>
+
+                    <div x-show="mobileNav" class="absolute top-[60px] left-0 right-0 bg-light rounded-b-lg h-auto">
+                        <ul class="m-5">
+                            <li @click="activeNavTitle='<strong>Технический</strong> дизайн-проект'; mobileNav=false; activeTab = 'tab1'" class="border-b border-black py-2 cursor-pointer"><strong>Технический</strong> дизайн-проект</li>
+                            <li @click="activeNavTitle='<strong>Оптимальный</strong> дизайн-проект'; mobileNav=false; activeTab = 'tab2'" class="border-b border-black py-2 cursor-pointer"><strong>Оптимальный</strong> дизайн-проект</li>
+                            <li @click="activeNavTitle='<strong>Полный</strong> дизайн-проект'; mobileNav=false; activeTab = 'tab3'" class="border-b border-black py-2 cursor-pointer"><strong>Полный</strong> дизайн-проект</li>
+                            <li @click="activeNavTitle='<strong>Авторский</strong> дизайн-проект'; mobileNav=false; activeTab = 'tab4'" class="py-2 cursor-pointer"><strong>Авторский</strong> дизайн-проект</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- End:Mobile nav -->
+                <!-- Nav -->
+                <div class="flex flex-col gap-4 w-full max-w-[16.25rem] p-5 rounded-lg bg-[#3C302A] md:hidden">
+
+                    <button x-on:click="activeTab = 'tab1'" :class="{ 'active': activeTab === 'tab1' }" class="btn-tab active">
+                        <strong class="duration-0">Технический</strong> <br> дизайн-проект
+                    </button>
+
+                    <button x-on:click="activeTab = 'tab2'" :class="{ 'active': activeTab === 'tab2' }" class="btn-tab">
+                        <strong class="duration-0">Оптимальный</strong> <br> дизайн-проект
+                    </button>
+
+                    <button x-on:click="activeTab = 'tab3'" :class="{ 'active': activeTab === 'tab3' }" class="btn-tab">
+                        <strong class="duration-0">Полный</strong> <br> дизайн-проект
+                    </button>
+
+                    <button x-on:click="activeTab = 'tab4'" :class="{ 'active': activeTab === 'tab4' }" class="btn-tab">
+                        <strong class="duration-0">Авторский</strong> <br> дизайн-проект
+                    </button>
+
+
+                </div>
+                <!-- End: Nav -->
+
+                <!-- Tabs -->
+                <div 
+                    x-data="{isOpenModal: false}"
+                    class="md:mt-5" 
+                    x-show="activeTab === 'tab1'"
+                    x-transition:enter="transition ease-out duration-5000"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+
+                >
+                    <div class="flex items-center gap-10 sm:flex-col sm:gap-5">
+                        <div 
+                            class="lazy rounded-lg bg-cover min-w-[220px] min-h-[220px] sm:min-w-[280px] sm:min-h-[200px]" 
+                            data-bg="./assets/img/price_work/b3_img1.jpeg"
+                            x-show="activeTab === 'tab1'"
+                        >
+                        </div>
+                        <div class="">
+                            <h4 class="text-accent pb-5 text-2xl font-semibold sm:pb-2">Технический дизайн-проект</h4>
+                            <p class="text-medium text-white mb-5 leading-normal">Комплекс рабочей документации, которая включает в себя готовое планировочное решение и полный набор чертежей</p>
+                            <p class="text-medium text-white opacity-50 leading-normal">(план демонтажа, монтажа стен, мебели 
+                                и оборудования, схема открывания дверей и т.д.)</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-11 rounded-lg p-8 xl:p-4 border border-border-icon flex gap-5  sm:mt-5 sm:p-2">
+                        <div class="flex justify-between items-center gap-5 sm:flex-col">
+                            
+                            <div class="flex items-center gap-5 bg-blur backdrop-blur-sm rounded-lg border border-[#3D3531] sm:w-full">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.1875 9.375V25H14.0625V28.125H17.1875V31.25H14.0625V34.375H17.1875V40.625H20.3125V34.375H28.125V31.25H20.3125V28.125H29.6875C34.8438 28.125 39.0625 23.9062 39.0625 18.75C39.0625 13.5938 34.8438 9.375 29.6875 9.375H17.1875ZM20.3125 12.5H29.6875C33.1547 12.5 35.9375 15.2828 35.9375 18.75C35.9375 22.2172 33.1547 25 29.6875 25H20.3125V12.5Z" fill="white"/>
+                                        </svg>                                                                                    
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug pr-5">
+                                    <div class="">Стоимость:</div>
+                                    <div class="text-accent">от 1 400 руб/м2</div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <button 
+                                class="btn sm:text-left sm:h-[70px] sm:font-semibold"
+                                @click="isModalShow = true; modalTitle = 'Заказать технический дизайн-проект'"
+
+                                >Заказать дизайн-проект</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div 
+                    x-data="{isOpenModal: false}"
+                    class="md:mt-5" 
+                    x-show="activeTab === 'tab2'"
+                    x-transition:enter="transition ease-out duration-5000"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                >
+                    <div class="flex items-center gap-10 sm:flex-col sm:gap-5">
+                        <div 
+                            class="lazy rounded-lg bg-cover min-w-[220px] min-h-[220px]  sm:min-w-[280px] sm:min-h-[200px]" 
+                            data-bg="./assets/img/price_work/b3_img2.jpg"
+                        >
+                        </div>
+                        <div class="">
+                            <h4 class="text-accent pb-5 text-2xl font-semibold sm:pb-2">Оптимальный дизайн-проект</h4>
+                            <p class="text-medium text-white mb-5 leading-normal">Включает в себя все компоненты технического дизайн-проекта, а также коллажи будущего интерьера. На всех этапах идёт сопровождение проекта и консультации по технической части.</p>
+                        </div>
+                    </div>
+
+                    <div class=" mt-11 rounded-lg p-8 border border-border-icon flex gap-5 sm:mt-5 sm:p-2">
+                        <div class="flex justify-between items-center gap-5 sm:flex-col">
+                            
+                            <div class="flex items-center gap-5 bg-blur backdrop-blur-sm rounded-lg border border-[#3D3531] sm:w-full">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.1875 9.375V25H14.0625V28.125H17.1875V31.25H14.0625V34.375H17.1875V40.625H20.3125V34.375H28.125V31.25H20.3125V28.125H29.6875C34.8438 28.125 39.0625 23.9062 39.0625 18.75C39.0625 13.5938 34.8438 9.375 29.6875 9.375H17.1875ZM20.3125 12.5H29.6875C33.1547 12.5 35.9375 15.2828 35.9375 18.75C35.9375 22.2172 33.1547 25 29.6875 25H20.3125V12.5Z" fill="white"/>
+                                        </svg>                                                                                    
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug pr-5">
+                                    <div class="">Стоимость:</div>
+                                    <div class="text-accent">от 2 000 руб/м2</div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <button 
+                                class="btn sm:text-left sm:h-[70px] sm:font-semibold"
+                                @click="isModalShow = true; modalTitle = 'Заказать оптимальный дизайн-проект'"
+                                >Заказать дизайн-проект</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div 
+                    x-data="{isOpenModal: false}"
+                    class="md:mt-5" 
+                    x-show="activeTab === 'tab3'"
+                    x-transition:enter="transition ease-out duration-5000"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                >
+                    <div class="flex items-center gap-10 sm:flex-col sm:gap-5">
+                        <div 
+                        class="lazy rounded-lg bg-cover min-w-[220px] min-h-[220px]  sm:min-w-[280px] sm:min-h-[200px]" 
+                        data-bg="./assets/img/price_work/b3_img3.jpeg"
+                        >
+                        </div>
+                        <div class="">
+                            <h4 class="text-accent pb-5 text-2xl font-semibold sm:pb-2">Полный дизайн-проект</h4>
+                            <p class="text-medium text-white mb-5 leading-normal">Включает в себя все компоненты оптимального дизайн-проекта, а также полную разверску всех помещений, 3D – визуализацию, 360 панораму каждой комнаты и комплектацию чистовыми материалами.</p>
+                        </div>
+                    </div>
+
+                    <div class=" mt-11 rounded-lg p-8 border border-border-icon flex gap-5 sm:mt-5 sm:p-2">
+                        <div class="flex justify-between items-center gap-5 sm:flex-col">
+                            
+                            <div class="flex items-center gap-5 bg-blur backdrop-blur-sm rounded-lg border border-[#3D3531] sm:w-full">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.1875 9.375V25H14.0625V28.125H17.1875V31.25H14.0625V34.375H17.1875V40.625H20.3125V34.375H28.125V31.25H20.3125V28.125H29.6875C34.8438 28.125 39.0625 23.9062 39.0625 18.75C39.0625 13.5938 34.8438 9.375 29.6875 9.375H17.1875ZM20.3125 12.5H29.6875C33.1547 12.5 35.9375 15.2828 35.9375 18.75C35.9375 22.2172 33.1547 25 29.6875 25H20.3125V12.5Z" fill="white"/>
+                                        </svg>                                                                                    
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug pr-5">
+                                    <div class="">Стоимость:</div>
+                                    <div class="text-accent">от 3 000 руб/м2</div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <button 
+                                class="btn sm:text-left sm:h-[70px] sm:font-semibold"
+                                @click="isModalShow = true; modalTitle = 'Заказать полный дизайн-проект'"
+                                >Заказать дизайн-проект</button>
+                            </div>
+
+                        </div>
+                    </div>
+    
+                </div>
+
+                <div 
+                    x-data="{isOpenModal: false}"
+                    class="md:mt-5" 
+                    x-show="activeTab === 'tab4'"
+                    x-transition:enter="transition ease-out duration-5000"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                >
+                    <div class="flex items-center gap-10 sm:flex-col sm:gap-5">
+                        <div 
+                        class="lazy rounded-lg bg-cover min-w-[220px] min-h-[220px]  sm:min-w-[280px] sm:min-h-[200px]" 
+                        data-bg="./assets/img/price_work/b3_img4.jpeg"
+                        >
+                        </div>
+                        <div class="">
+                            <h4 class="text-accent pb-5 text-2xl font-semibold sm:pb-2">Авторский дизайн-проект</h4>
+                            <p class="text-medium text-white mb-5 leading-normal">Включает в себя все компоненты полного дизайн-проекта, а также комплектацию С/У под ключ, комплектацию освещения, комплектацию мебели, комплектацию декором и авторский надзор (3-5 выездов).</p>
+                        </div>
+                    </div>
+
+                    <div class=" mt-11 rounded-lg p-8 border border-border-icon flex gap-5 sm:mt-5 sm:p-2">
+                        <div class="flex justify-between items-center gap-5 sm:flex-col">
+                            
+                            <div class="flex items-center gap-5 bg-blur backdrop-blur-sm rounded-lg border border-[#3D3531] sm:w-full">
+                                <div class="">
+                                    <!-- Icon -->
+                                    <div class="flex justify-center items-center border border-border-icon w-[3.75rem] h-[3.75rem] rounded">
+                                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.1875 9.375V25H14.0625V28.125H17.1875V31.25H14.0625V34.375H17.1875V40.625H20.3125V34.375H28.125V31.25H20.3125V28.125H29.6875C34.8438 28.125 39.0625 23.9062 39.0625 18.75C39.0625 13.5938 34.8438 9.375 29.6875 9.375H17.1875ZM20.3125 12.5H29.6875C33.1547 12.5 35.9375 15.2828 35.9375 18.75C35.9375 22.2172 33.1547 25 29.6875 25H20.3125V12.5Z" fill="white"/>
+                                        </svg>                                                                                    
+                                    </div>
+                                    <!-- End:Icon -->
+                                </div>
+                                <div class="text-beige font-semibold text-lg leading-snug pr-5">
+                                    <div class="">Стоимость:</div>
+                                    <div class="text-accent">от 4 200 руб/м2</div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <button 
+                                @click="isModalShow = true; modalTitle = 'Заказать авторский дизайн-проект'"
+                                class="btn sm:text-left sm:h-[70px] sm:font-semibold">Заказать дизайн-проект</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- End: Tabs -->
+            </div>
+        </div>
+    </section>
+    <!-- End:Price_work -->
+    
+
+    <!-- Modals -->
+    <div class="">
+        <div 
+        x-show="isModalShow" 
+        x-transition.duration.500ms
+        
+        class="fixed inset-0 flex items-center justify-center backdrop-blur-lg bg-black bg-opacity-50 z-50"
+        style="display: none"
+
+        x-init="$watch('isModalShow', value => {
+            if (value) {
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
+        })"
+
+        x-on:keydown.escape.window="isModalShow = false"
+        @click="isModalShow = false"
+        >
+            <div 
+                class="relative bg-popup w-full max-w-lg p-12 rounded-lg md:p-6 sm:p-2"
+                @click.stop
+                >
+                <button 
+                    class="absolute top-5 right-5 hover:rotate-180"
+                    @click="isModalShow = false"
+                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                
+                <h2 class="text-2xl text-gray-800 font-bold mb-5" x-text="modalTitle"></h2>
+                <h1 x-text="$store.bodyScrollxxxx"></h1>
+                <div class="">                    
+                    <form action="" method="POST">
+                        <div class="mb-4">
+                            <input 
+                            class="w-full p-5 rounded-lg border focus:outline-none" 
+                            type="text" 
+                            placeholder="Как вас зовут?"
+                            required=""
+                            >
+                        </div>
+                        <div class="mb-4">
+                            <input 
+                                class="w-full p-5 rounded-lg border focus:outline-none" 
+                                type="tel" 
+                                placeholder="Ваш номер телефона..."
+                                required=""
+                            >
+                        </div>
+                        <div class="mb-4">
+                            <button class="btn btn--submit w-full justify-center" type="submit">Отправить</button>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="check" required="" checked="">
+                                <p>
+                                    <i></i>
+                                    <span>Нажимая на кнопку “отправить” вы даёте своё согласие на обработку персональных данных</span>
+                                </p>
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End:Modals --> 
+    
+<script src="./assets/js/lazyload.min.js"></script>
+<script src="./assets/js/filepond.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="./assets/js/imask.min.js"></script>
+
+<script src="./assets/js/app.js?v=1.3"></script>
+</body>
+</html>

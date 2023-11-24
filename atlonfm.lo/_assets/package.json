@@ -1,0 +1,20 @@
+{
+  "name": "design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/assets/css/main.css -o ./css/style.css --watch",
+    "build": "npx tailwindcss -i ./src/assets/css/main.css -o ./css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maksim Tananin 2023г",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "imask": "^7.1.2"
+  }
+}

@@ -1,0 +1,10 @@
+Заголовок: 'ещё страница'
+blocks:
+      menu:
+      hero:
+      features:
+      portfolio-examples:
+      video-examples:
+Портфолио:
+      - 1
+      - 2

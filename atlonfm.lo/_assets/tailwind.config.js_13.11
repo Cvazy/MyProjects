@@ -1,0 +1,59 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,js}",
+    "./Секции/**/*.php",
+  ],
+  theme: {
+
+    screens: {
+      // '2xl':{'max': '1536px'},
+      xl: { max: '1170px' },
+      // lg: { max: '768px' },
+      md: { max: '980px' },
+      sm: { max: '680px' },
+    },
+
+
+    container: {
+      center: true,
+    },
+    extend: {
+      fontSize: {
+        'hero': '5rem',
+      },
+ 
+      colors: {
+        'light': '#F0E6E0',
+        'black': '#2D2D2D',
+
+        'gray-400': '#acacac',
+
+        'popup': '#F3F3F3',
+
+        'fixed-menu': 'rgba(18, 13, 10, 0.9)',
+
+        'accent': '#FBC110',
+        'border-icon': 'rgba(255, 255, 255, 0.2)',
+        'bg-opacity': 'rgba(38, 27, 19, 0.7)',
+        'white-08': 'rgba(255, 255, 255, 0.8)',
+        'white-05': 'rgba(255, 255, 255, 0.5)',
+        
+        'border-nav': '#30231C',
+        'beige': '#F0E6E0',
+
+        'blur': 'rgba(64, 44, 33, 0.4)',
+
+      },
+      
+      spacing: {
+      },
+
+      borderRadius: {
+      }
+    },
+  },
+  plugins: [],
+}
+
+      
