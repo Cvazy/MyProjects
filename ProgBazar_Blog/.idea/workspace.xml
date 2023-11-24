@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fda9528f-f403-4f2e-8186-df958735d27e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/media.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/coupon-close.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/coupon-close.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/coupon-copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/coupon-copy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/header-shadow.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/header-shadow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/components/slider-range.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/css/filepond.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/css/swiper-interesting.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Black.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Black.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Black.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BlackItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BlackItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BlackItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BoldItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BoldItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-BoldItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLight.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLight.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLight.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLightItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLightItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ExtraLightItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Heavy.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Heavy.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Heavy.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Heavy.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-HeavyItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-HeavyItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-HeavyItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-HeavyItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-LightItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-LightItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-LightItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-RegularItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-RegularItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-RegularItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-RegularItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBoldItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBoldItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-SemiBoldItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Thin.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Thin.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-Thin.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ThinItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ThinItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/Mont-ThinItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/fonts/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl1_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl2_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl3_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl4_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/advantages/b2_sl5_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/b1_redes_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/b2_redes_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/before_after/b6_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/before_after/b6_kn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/before_after/mob/sl_after_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/before_after/mob/sl_before_m.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/before_after/sl_after.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/before_after/sl_before.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/demonstration/b8_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/demonstration/b8_text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/demonstration/icon/str_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/designers/b5_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/designers/b5_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/designers/b5_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/designers/icon/hand.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/faq/gen_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/footer_icons/tel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/footer_icons/wa.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/header_01/b1_bg.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/header_01/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/icon/money.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/icon/penc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/icon/pl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/icon/str.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl1_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl1_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl1_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl1_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl1_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl2_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl2_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl2_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl2_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl2_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl3_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl3_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl3_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl3_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl3_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl4_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl4_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl4_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl4_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl4_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl5_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl5_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl5_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl5_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl5_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl6_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl6_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl6_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl6_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/interesting_work/sl6_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/map/icon/mp_lc.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/map/icon/mp_mail.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/map/icon/mp_ph.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/map/icon/mp_tm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/panorama/b9_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/panorama/b9_sl1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/play2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/price_work/b3_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/price_work/b3_img1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/price_work/b3_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/price_work/b3_img3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/price_work/b3_img4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/price_work/rub-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_1_1_mb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_1_1_tb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_2_1_mb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_2_1_tb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/image/state/b7_3_tb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/init.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/before-after.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/fancybox-init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/fancybox.umd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/faq-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/filepond.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/imask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/lazyload.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/js/swiper-intresting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/php-lib/Image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/php-lib/ImageTool.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/php-lib/Mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/css/filepond.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/css/main.css_13.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Black.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Black.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Black.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BlackItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BlackItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BlackItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BoldItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BoldItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-BoldItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLight.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLight.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLight.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLightItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLightItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ExtraLightItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Heavy.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Heavy.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Heavy.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Heavy.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-HeavyItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-HeavyItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-HeavyItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-HeavyItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-LightItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-LightItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-LightItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-RegularItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-RegularItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-RegularItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-RegularItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBoldItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBoldItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-SemiBoldItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Thin.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Thin.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-Thin.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ThinItalic.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ThinItalic.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/Mont-ThinItalic.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/fonts/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl1_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl2_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl3_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl4_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/advantages/b2_sl5_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/header_01/b1_bg.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/header_01/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/img_redez/b2_redes_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/price_work/b3_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/price_work/b3_img1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/price_work/b3_img2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/price_work/b3_img3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/price_work/b3_img4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/img/price_work/rub-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/js/filepond.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/js/imask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/assets/js/lazyload.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/companents/slider-range.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/tailwind.config.js_13.11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/bin/yaml-lint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/ClassLoader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/autoload_classmap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/autoload_files.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/autoload_namespaces.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/autoload_psr4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/autoload_real.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/autoload_static.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/composer/installed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/deprecation-contracts/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/deprecation-contracts/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/deprecation-contracts/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/deprecation-contracts/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/deprecation-contracts/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/deprecation-contracts/function.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/polyfill-ctype/Ctype.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/polyfill-ctype/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/polyfill-ctype/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/polyfill-ctype/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/polyfill-ctype/bootstrap80.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/polyfill-ctype/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Command/LintCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Dumper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Escaper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Exception/DumpException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Exception/ExceptionInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Exception/ParseException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Exception/RuntimeException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Inline.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Parser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Resources/bin/yaml-lint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Tag/TaggedValue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Unescaper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/Yaml.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/vendor/symfony/yaml/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/footer/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/header/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ВсеДизайнеры/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Карта/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_ico_1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_ico_2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_ico_3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_ico_4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_img-mb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/b9_img-tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии01/b10_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии01/b10_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии01/b10_img_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии01/b10_img_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии01/b10_img_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии01/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии02/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии02/image/b13_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии02/image/b13_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии03/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии03/image/b14_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии03/image/b14_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии03/image/b14_img_mob.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии03/image/b14_img_tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии04/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии04/image/b15_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии04/image/b15_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии04/image/b15_img2_mob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии05/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии05/image/b16_bg_02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии05/image/b16_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии05/image/b16_img_mob.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии05/image/b16_img_tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии06/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии06/image/b17_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии06/image/b17_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии06/image/b17_img_mob.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии07/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии07/image/b18_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии07/image/b18_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии07/image/b18_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии07/image/b18_img_mob.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии07/image/b18_img_tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/b19_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_1_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_2_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_3_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_4_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_5_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_6_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Критерии08/image/certificate/b19_img_7_f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/0-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/02-q8WoozjA4bw-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/03-A0-FpmAwhJY-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/05-xAq_pTB9BsA-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/06-x21nG9PBAPs-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/11-2ys9f-b9Zvw-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/1/16-DxhsYO6AMEM-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/02-7tIgmWFvEio-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/06-PC2y14t1ebI-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/09-6bL0QyOMdT4-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/1-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/11-OmXnkbbMLh8-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/14-Ip999RGkIOA-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/2/17-or7PBENrhNI-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/01-5t-7ZgmHogg-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/04-5KW9Gsga9WY-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/05-PA7m1P06w-0-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/07-CEeMB5KuY3w-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/08-NjzioVvoz5Y-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/09-ixj02uC7lJE-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/3/12-orDGZu-5M7o-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/01-iKsX1bQtO3k-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/03-RHHgSkFfj2U-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/04-jmcweNFWaoc-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/05-MvpfO4S00DU-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/08-bWK5kHCwwJM-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/09-kEnIwISaQ5w-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/4/11-054zWL7oRkA-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/01-5LUmJNiSzI4-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/08-2YIqRKBvnTQ-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/09-xvnqCeci7mA-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/10-BFSs-JGtwl0-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/12-cbPeZdGyfbg-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/16-Tz82Y4NlCRY-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/5/17-QXeof2PoH1s-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/0-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/01-3BAt2w1QFBk-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/02-IzIfwoPnhws-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/04-81JFu0j_10M-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/07-cuL2DFwxBMg-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/10-2KUDEBBisRw-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/6/11-suQYxClu_2U-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/0-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/02-BF0HCnLZSQw-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/04-gGAyorOGdv4-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/06-oEDOCEIbW90-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/08-lXvmTIwDbEY-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/15-kwn17bmc3KA-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/7/18-Zwz8fUjAT8Y-697x570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/1-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/2-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/3-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/4-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/5-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/6-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/8/7-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/1-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/2-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/3-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/4-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/5-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/6-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НашиПроекты/portfolio/9/7-697x570.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/НедавниеПроекты/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Панорама/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Партнеры/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Партнеры/image/b4_redes_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Партнеры/image/b4_redes_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Партнеры/image/b4_redes_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Партнеры/image/petrovich.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПервыйБлокСКалькулятором/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПреимуществаРаботы/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_bg_tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_bgs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_ico.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_lamp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/b7_svet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок1/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/b8_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/b8_bg_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/b8_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/b8_img-300x360.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-do/1do.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-do/3do.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-do/4do.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-do/5do.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ПримерБлок2/lud-posle/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/Реализованно500Проектов/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/РеальнаяДемонстрация/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоДругие/b2_redes_bg-mb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоДругие/b2_redes_bg-tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоДругие/b2_redes_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоДругие/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоДругие/posters/YouTube cover_client.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоДругие/posters/maxresdefault-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоЗаказчики/b2_redes_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоЗаказчики/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоЗаказчики/stars/irina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоЗаказчики/stars/letuchaya.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоЗаказчики/stars/youtube.niletto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/b2_redes_bg-mb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/b2_redes_bg-tb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/b2_redes_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СлайдерВидеоПримерыРабот/posters/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СравнениеДоПосле/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/СтоимостьРабот/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаДиректор/b3_redes_bg-mb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаДиректор/b3_redes_bg-tb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаДиректор/b3_redes_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаДиректор/b5_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаДиректор/b5_man.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаДиректор/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаОтзыв/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаОтзыв/image/b20_bg_new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ФормаОтзыв/image/b20_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/_assets/Секции/ЧастоЗадаваемыеВопросы/block.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/complect/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/complect/page.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/design/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/design/page.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/more/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/more/page.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/page.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/remont/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atlonfm.com/remont/page.yaml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2YSaGKewa4Tfoqb8Z6WVuY6no9S" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/79967/Desktop/MyProjects/ProgBazar_Blog&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\79967\Desktop\MyProjects\ProgBazar_Blog\assets\images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fda9528f-f403-4f2e-8186-df958735d27e" name="Changes" comment="" />
+      <created>1700521337494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700521337494</updated>
+      <workItem from="1700521338890" duration="5174000" />
+      <workItem from="1700557355780" duration="37084000" />
+      <workItem from="1700600304723" duration="769000" />
+      <workItem from="1700659655704" duration="2201000" />
+      <workItem from="1700783840573" duration="742000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,187 @@
+@media (min-width: 1170px) {
+    .container {
+        max-width: 1160px;
+    }
+}
+
+@media (min-width: 1171px) and (max-width: 1480px) {
+    .blog-navigator {
+        width: 240px;
+        right: 15px;
+    }
+
+    .blog-coupon {
+        width: 250px;
+        background-size: contain;
+    }
+
+    .coupon__wrapper {
+        padding: 15px 15px 30px;
+    }
+}
+
+@media (max-width: 1170px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        max-width: 980px;
+    }
+
+    .blog-card {
+        width: auto;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        gap: 0.6rem;
+    }
+
+    .swiper-slide {
+        width: 550px !important;
+    }
+
+    .nav-title {
+        gap: 0.5rem;
+    }
+
+    .blog-navigator {
+        display: none;
+    }
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .blog-info {
+        order: -1;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    .blog-details__wrapper,
+    .blog-card__top-img,
+    .detail-blog-card {
+        max-width: 100%;
+    }
+
+    .w-700 {
+        width: 100% !important;
+    }
+
+    .detail-blog, .w-full {
+        width: 100%;
+    }
+}
+
+@media (max-width: 980px) {
+    .container {
+        max-width: 670px;
+    }
+
+    .categories__wrapper {
+        width: 80%;
+    }
+
+    .blog-info {
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .blog-info p {
+        margin: 0;
+    }
+}
+
+@media (max-width: 680px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 85%;
+    }
+
+    .header__wrapper {
+        padding: 20px 10px;
+    }
+
+    .categories__wrapper {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        width: 100% !important;
+    }
+
+    .nav-watch {
+        display: none;
+    }
+
+    .nav-title span {
+        font-size: 0.7rem;
+    }
+
+    .nav-title .h-1 {
+        height: 0.7rem;
+    }
+
+    .card__wrapper {
+        padding: 20px 20px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after,
+    .swiper-button-next::before,
+    .swiper-button-prev::before {
+        display: none;
+    }
+
+    .swiper-pagination {
+        display: block !important;
+    }
+
+    .nav-up-left {
+        font-size: 0.9rem;
+        padding-left: 1.2rem;
+    }
+
+    .nav-up-left::before {
+        width: 0.9rem;
+    }
+
+    .swiper-wrapper {
+        gap: 0
+    }
+}
+
+@media (max-width: 460px) {
+    .header-bread-crumbs {
+        display: none;
+    }
+
+    .logo__wrapper {
+        width: 80%;
+    }
+
+    .slogan {
+        font-size: 0.7rem;
+    }
+
+    .shop-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .date-redaction {
+        padding-bottom: 1rem;
+    }
+}
