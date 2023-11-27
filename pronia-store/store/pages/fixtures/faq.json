@@ -1,0 +1,119 @@
+[
+  {
+    "model": "pages.faq",
+    "pk": 1,
+    "fields": {
+      "question": "Before you get started",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": false
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 2,
+    "fields": {
+      "question": "Compatibility with premium plugins",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": false
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 3,
+    "fields": {
+      "question": "Install theme demo contents",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": false
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 4,
+    "fields": {
+      "question": "Translation and localization services",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": false
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 5,
+    "fields": {
+      "question": "Live chat support",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": false
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 11,
+    "fields": {
+      "question": "Changing the timezone",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 12,
+    "fields": {
+      "question": "Developer documentation",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 13,
+    "fields": {
+      "question": "Connnection social media channels",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 14,
+    "fields": {
+      "question": "Optimize theme speed & perfomance",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 15,
+    "fields": {
+      "question": "Fully responsive",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 16,
+    "fields": {
+      "question": "Translation and localization services",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 17,
+    "fields": {
+      "question": "Live chat support",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  },
+  {
+    "model": "pages.faq",
+    "pk": 18,
+    "fields": {
+      "question": "RTL Support now",
+      "answer": "Nulla imperdiet odio tempor nisl vulputate scelerisque. Fusce interdum ultricies convallis. Vivamus efficitur purus eu elit scelerisque blandit. Nullam viverra est quis erat fringilla, at rutrum sem lacinia.",
+      "payment": true
+    }
+  }
+]

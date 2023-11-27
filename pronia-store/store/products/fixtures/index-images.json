@@ -1,0 +1,1 @@
+[{"model": "products.indeximage", "pk": 6, "fields": {"main_item": 1, "image": "main_images/1.webp"}}, {"model": "products.indeximage", "pk": 7, "fields": {"main_item": 1, "image": "main_images/2.webp"}}, {"model": "products.indeximage", "pk": 8, "fields": {"main_item": 1, "image": "main_images/3.webp"}}]

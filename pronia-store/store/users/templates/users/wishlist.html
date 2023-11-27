@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Pronia - Wishlist{% endblock %}
+
+{% block main %}
+  <main class="main-content">
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="{% static 'images/breadcrumb/bg/1-1-1919x388.jpg' %}">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-12">
+            <div class="breadcrumb-item">
+              <h2 class="breadcrumb-heading">Wishlist Page</h2>
+              <ul>
+                <li>
+                  <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>Wishlist</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wishlist-area section-space-y-axis-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <form action="javascript:void(0)">
+              <div class="table-content table-responsive">
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th class="product_remove">remove</th>
+                    <th class="product-thumbnail">images</th>
+                    <th class="cart-product-name">Product</th>
+                    <th class="product-price">Unit Price</th>
+                    <th class="product-stock-status">Stock Status</th>
+                    <th class="cart_btn">add to cart</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for item in wishlist %}
+                    <tr>
+                      <td class="product_remove">
+                        <a href="{% url 'shop:wishlist_remove' item.product.id %}">
+                          <i class="pe-7s-close" data-tippy="Remove" data-tippy-inertia="true"
+                            data-tippy-animation="shift-away" data-tippy-delay="50"
+                            data-tippy-arrow="true" data-tippy-theme="sharpborder"></i>
+                        </a>
+                      </td>
+
+                      <td class="product-thumbnail">
+                        <a href="{% url 'shop:product' item.product.name %}">
+                          <img src="{{ item.product.image.url }}" alt="Wishlist Thumbnail">
+                        </a>
+                      </td>
+
+                      <td class="product-name">
+                        <a href="{% url 'shop:product' item.product.name %}">
+                          {{ item.product.name }}
+                        </a>
+                      </td>
+
+                      <td class="product-price"><span class="amount">${{ item.product.price }}</span></td>
+
+                      <td class="product-stock-status">
+                        <span class="in-stock">
+                        {% if item.product.stock == 'True' %}
+                          In stock
+                        {% else %}
+                          Out Stock
+                        {% endif %}
+                      </span>
+                      </td>
+
+                      <td class="cart_btn">
+                        <a href="{% url 'shop:basket_add' item.product.id %}">
+                          Add to cart
+                        </a>
+                      </td>`
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

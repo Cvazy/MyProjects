@@ -1,0 +1,1 @@
+[{"model": "products.wishlist", "pk": 1, "fields": {"user": 1, "product": 8}}, {"model": "products.wishlist", "pk": 4, "fields": {"user": 1, "product": 6}}]

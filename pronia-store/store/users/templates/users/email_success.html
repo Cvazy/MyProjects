@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}Pronia - Email Success{% endblock %}
+
+{% block main %}
+  <main class="main-content">
+    <div class="login-register-area section-space-y-axis-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div>
+              <div class="login-form" style="display: flex;align-items: center;flex-direction: column;text-align: center;">
+                <h4 class="login-title">Email Success</h4>
+                <div class="row">
+                  <div class="col-md-8" style="width: 100%;">
+                    <div class="check-box" style="float: none;margin: 0;">
+                      Email has been successfully confirmed
+                    </div>
+                  </div>
+                  <div class="col-lg-12 pt-5">
+                    <a href="{% url 'users:login' %}">
+                      <button class="btn btn-custom-size lg-size btn-pronia-primary">Continue</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}

@@ -1,0 +1,1 @@
+[{"model": "products.achievements", "pk": 1, "fields": {"count": 150, "name": "Projects"}}, {"model": "products.achievements", "pk": 2, "fields": {"count": 359, "name": "Clients"}}, {"model": "products.achievements", "pk": 3, "fields": {"count": 251, "name": "Rating"}}, {"model": "products.achievements", "pk": 4, "fields": {"count": 110, "name": "Award"}}]

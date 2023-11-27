@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %} {% endblock %}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}"/>
+
+  {% include 'base/css-styles.html' %}
+</head>
+
+<body>
+<div class="preloader-activate preloader-active open_tm_preloader">
+  <div class="preloader-area-wrap">
+    <div class="spinner d-flex justify-content-center align-items-center h-100">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+</div>
+
+<div class="main-wrapper">
+  {% include 'base/header.html' %}
+
+  {% block main %} {% endblock %}
+
+  {% include 'base/footer.html' %}
+
+  <a class="scroll-to-top" href="">
+    <i class="fa fa-angle-double-up"></i>
+  </a>
+</div>
+
+{% include 'base/js-scripts.html' %}
+</body>
+
+</html>

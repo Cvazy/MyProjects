@@ -1,0 +1,145 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Pronia - Cart{% endblock %}
+
+{% block main %}
+  {% if not baskets %}
+    <div class="breadcrumb-area breadcrumb-height" data-bg-image="{% static 'images/breadcrumb/bg/1-1-1919x388.jpg' %}">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-12">
+            <div class="breadcrumb-item">
+              <h2 class="breadcrumb-heading">Cart is empty</h2>
+              <ul>
+                <li>
+                  <a href="{% url 'products:index' %}">Go shopping</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <main class="main-content">
+      <div class="breadcrumb-area breadcrumb-height"
+        data-bg-image="{% static 'images/breadcrumb/bg/1-1-1919x388.jpg' %}">
+        <div class="container h-100">
+          <div class="row h-100">
+            <div class="col-lg-12">
+              <div class="breadcrumb-item">
+                <h2 class="breadcrumb-heading">Cart Page</h2>
+                <ul>
+                  <li>
+                    <a href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li>Cart Page</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-area section-space-y-axis-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <form action="javascript:void(0)">
+                <div class="table-content table-responsive">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th class="product_remove">Remove</th>
+                      <th class="product-thumbnail">Image</th>
+                      <th class="cart-product-name">Product</th>
+                      <th class="product-price">Unit Price</th>
+                      <th class="product-quantity">Quantity</th>
+                      <th class="product-subtotal">Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for basket in baskets %}
+                      <tr>
+                        <td class="product_remove">
+                          <a href="{% url 'shop:basket_remove' basket.id %}">
+                            <i class="pe-7s-close" data-tippy="Remove" data-tippy-inertia="true"
+                              data-tippy-animation="shift-away" data-tippy-delay="50"
+                              data-tippy-arrow="true" data-tippy-theme="sharpborder">
+                            </i>
+                          </a>
+                        </td>
+                        <td class="product-thumbnail">
+                          <a href="{% url 'shop:product' basket.product.name %}">
+                            <img src="{{ basket.product.image.url }}" alt="Cart Thumbnail">
+                          </a>
+                        </td>
+                        <td class="product-name">
+                          <a href="{% url 'shop:product' basket.product.name %}">{{ basket.product.name }}</a></td>
+                        <td class="product-price"><span class="amount">${{ basket.product.price }}</span></td>
+                        <td class="quantity">
+                          <div class="input-group mb-3 inp-style">
+                            <div class="input-group-prepend">
+                              <a href="{% url 'shop:basket_minus' basket.product.id %}">
+                                <button class="btn btn-outline-primary js-btn-minus" type="button">−</button>
+                              </a>
+                            </div>
+                            <input
+                              type="text"
+                              class="form-control text-center"
+                              value="{{ basket.quantity }}"
+                              placeholder=""
+                              aria-label="Example text with button addon"
+                              aria-describedby="button-addon1"
+                            >
+                            <div class="input-group-append">
+                              <a href="{% url 'shop:basket_add' basket.product.id %}">
+                                <button class="btn btn-outline-primary js-btn-plus" type="button">+</button>
+                              </a>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="product-subtotal"><span class="amount">${{ basket.sum }}</span></td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="coupon-all">
+                      <div class="coupon">
+                        <input id="coupon_code"
+                          class="input-text"
+                          name="coupon_code"
+                          value=""
+                          placeholder="Coupon code"
+                          type="text">
+                        <input class="button mt-xxs-30" name="apply_coupon" value="Apply coupon" type="submit">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5 ml-auto">
+                    <div class="cart-page-total">
+                      <h2>Cart totals</h2>
+                      <ul>
+                        <li>Total Quantity <span>{{ baskets.total_quantity }}</span></li>
+                        <li>Subtotal <span>${{ baskets.total_sum }}</span></li>
+                        <li>Total <span>${{ baskets.total_sum }}</span></li>
+                      </ul>
+                      <a href="{% url 'user:checkout' %}">Proceed to checkout</a>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  {% endif %}
+{% endblock %}
+
+<script src="{% static 'js/quantity.js' %}"></script>

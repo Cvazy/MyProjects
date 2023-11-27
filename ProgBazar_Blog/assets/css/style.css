@@ -28,6 +28,10 @@ a {
     text-decoration: none;
 }
 
+main {
+    overflow: auto;
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -74,9 +78,9 @@ header {
 }
 
 .slogan {
-    font-size: 1rem;
+    font-size: 14px;
     color: #808080;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .header-bread-crumbs__text {
@@ -152,9 +156,37 @@ main {
     transition: .5s;
 }
 
+.show-navigate {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.show-button {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.show-button svg {
+    stroke: #989898;
+    fill: #989898;
+}
+
+.active {
+    stroke: #151926 !important;
+    fill: #151926 !important;
+}
+
+.show-button svg:hover {
+    stroke: #151926;
+    fill: #151926;
+}
+
+.swiper-pagination {
+    display: none !important;
+}
+
 .swiper {
-    display: block;
-    overflow: hidden;
     padding-top: 2.5rem !important;
 }
 
@@ -168,6 +200,10 @@ main {
     gap: 1rem;
 }
 
+.justify-center {
+    justify-content: center;
+}
+
 .swiper-wrapper a {
     color: inherit;
 }
@@ -178,8 +214,21 @@ main {
     margin-left: auto;
 }
 
+.swiper-slide-list {
+    width: 380px !important;
+}
+
+.text-list {
+    font-size: 1.5rem;
+    line-height: 100%;
+}
+
+.swiper-slide-list-max {
+    max-width: 380px !important;
+}
+
 .swiper-pagination {
-    display: none !important;
+    bottom: -2rem !important;
 }
 
 .swiper-button-next,
@@ -187,14 +236,21 @@ main {
     margin-top: 1rem !important;
 }
 
+.swiper-button-next {
+    right: -100px !important;
+}
+
+.swiper-button-prev {
+    left: -100px !important;
+}
+
 .swiper-button-next::before,
 .swiper-button-prev::before {
     content: '';
     width: 40px;
     height: 40px;
-    background-color: white;
+    background-color: #929292;
     position: absolute;
-    border: 2px solid black;
     border-radius: 50%;
     z-index: 5;
 }
@@ -202,8 +258,9 @@ main {
 .swiper-button-next::after,
 .swiper-button-prev::after {
     z-index: 10;
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
     font-weight: 900;
+    color: white;
 }
 
 .blog-card, .detail-blog {
@@ -394,7 +451,7 @@ main {
     position: fixed;
     z-index: 10;
     bottom: 0;
-    right: 7%;
+    right: 10%;
     width: 300px;
     box-shadow: 10px -5px 10px #f0f0f5, -10px 0 10px #f0f0f5;
     border-radius: 10px;

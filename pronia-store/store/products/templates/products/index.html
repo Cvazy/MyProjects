@@ -1,0 +1,569 @@
+{% extends 'base/base.html' %}
+{% load static cache %}
+
+{% block title %}Pronia - Home{% endblock %}
+
+{% block main %}
+  <div class="slider-area">
+    <div class="swiper-container main-slider-2 swiper-arrow with-bg_white">
+      <div class="swiper-wrapper">
+        {% for picture in images %}
+          <div class="swiper-slide animation-style-02">
+            <div class="slide-inner style-2" data-bg-image="{% static 'images/slider/bg/2-1.jpg' %}">
+              {% cache 30 titles %}
+                {% for item in titles %}
+                  <div class="slide-content text-black">
+                    <h2 class="title">{{ item.title }} <br> {{ item.description }}</h2>
+                    <p class="short-desc">{{ item.dop_description }}</p>
+
+                    <div class="btn-wrap">
+                      <a class="btn btn-custom-size xl-size btn-pronia-primary" href="{% url 'shop:index' %}">Discover Now</a>
+                    </div>
+                  </div>
+
+                  <div class="slide-img">
+                    <img src="{{ picture.image.url }}" alt="Slide Image">
+                  </div>
+                {% endfor %}
+              {% endcache %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="slide-button-wrap">
+        <div class="slide-button-prev">
+          <i class="pe-7s-angle-left"></i>
+        </div>
+
+        <div class="slide-button-next">
+          <i class="pe-7s-angle-right"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-area banner-style-2 section-space-top-100">
+    <div class="container">
+      <div class="row g-y-30">
+        <div class="col-md-6">
+          <div class="banner-item img-hover-effect">
+            <div class="banner-img">
+              <img src="{{ big_banner.image.url }}" alt="Banner Image">
+            </div>
+            <div class="banner-content text-position-center">
+              <span class="collection">{{ big_banner.description }}</span>
+              <h3 class="title">{{ big_banner.name }}</h3>
+              <div class="button-wrap">
+                <a class="btn btn-custom-size btn-pronia-primary" href="{% url 'shop:index' %}">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="banner-wrap row g-y-30">
+            {% cache 30 banners %}
+              {% for banner in banners %}
+                <div class="col-12">
+                  <div class="banner-item img-hover-effect">
+                    <div class="banner-img">
+                      <img src="{{ banner.image.url }}" alt="Banner Image">
+                    </div>
+                    <div class="banner-content text-position-left">
+                      <span class="collection">{{ banner.description }}</span>
+                      <h3 class="title">{{ banner.name }}</h3>
+                      <div class="button-wrap">
+                        <a class="btn btn-custom-size sm-size btn-pronia-primary" href="{% url 'shop:index' %}">Shop Now</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endcache %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-area section-space-top-100 section-space-bottom-90">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title mb-0">Our Products</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="nav product-tab-nav tab-style-1" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="active"
+                id="featured-tab"
+                data-bs-toggle="tab"
+                href="#featured"
+                role="tab"
+                aria-controls="featured"
+                aria-selected="true">
+                Featured
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a id="bestseller-tab"
+                data-bs-toggle="tab"
+                href="#bestseller"
+                role="tab"
+                aria-controls="bestseller"
+                aria-selected="false">
+                Bestseller
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a id="latest-tab"
+                data-bs-toggle="tab"
+                href="#latest"
+                role="tab"
+                aria-controls="latest"
+                aria-selected="false">
+                Latest
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="featured" role="tabpanel" aria-labelledby="featured-tab">
+              <div class="product-item-wrap row">
+                {% cache 30 main_products %}
+                  {% for product in main_products %}
+                    <div class="col-xl-3 col-md-4 col-sm-6">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <a href="{% url 'shop:product' product.name %}">
+                            <img class="primary-img"
+                              src="{{ product.image.url }}"
+                              alt="Product Images">
+                          </a>
+                          <div class="product-add-action">
+                            <ul>
+                              <li>
+                                <a href="{% url 'shop:wishlist_add' product.id %}"
+                                  data-tippy="Add to wishlist"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-like"></i>
+                                </a>
+                              </li>
+                              <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
+                                <a href="#"
+                                  data-tippy="Quickview"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-look"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{% url 'shop:basket_add' product.id %}"
+                                  data-tippy="Add to cart"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-cart"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content">
+                          <a class="product-name" href="{% url 'shop:product' product.name %}">{{ product.name }}</a>
+                          <div class="price-box pb-1">
+                            <span class="new-price">${{ product.price }}</span>
+                          </div>
+                          <div class="rating-box">
+                            <ul>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endcache %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="bestseller" role="tabpanel" aria-labelledby="bestseller-tab">
+              <div class="product-item-wrap row">
+                {% cache 30 bestseller_products %}
+                  {% for product in bestseller_products %}
+                    <div class="col-xl-3 col-md-4 col-sm-6">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <a href="{% url 'shop:product' product.name %}">
+                            <img class="primary-img"
+                              src="{{ product.image.url }}"
+                              alt="Product Images">
+                          </a>
+                          <div class="product-add-action">
+                            <ul>
+                              <li>
+                                <a href="{% url 'shop:wishlist_add' product.id %}"
+                                  data-tippy="Add to wishlist"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-like"></i>
+                                </a>
+                              </li>
+                              <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
+                                <a href="#"
+                                  data-tippy="Quickview"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-look"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{% url 'shop:basket_add' product.id %}"
+                                  data-tippy="Add to cart"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-cart"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content">
+                          <a class="product-name" href="{% url 'shop:product' product.name %}">{{ product.name }}</a>
+                          <div class="price-box pb-1">
+                            <span class="new-price">${{ product.price }}</span>
+                          </div>
+                          <div class="rating-box">
+                            <ul>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endcache %}
+              </div>
+            </div>
+            <div class="tab-pane fade" id="latest" role="tabpanel" aria-labelledby="latest-tab">
+              <div class="product-item-wrap row">
+                {% cache 30 latest_products %}
+                  {% for product in latest_products %}
+                    <div class="col-xl-3 col-md-4 col-sm-6">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <a href="{% url 'shop:product' product.name %}">
+                            <img class="primary-img"
+                              src="{{ product.image.url }}"
+                              alt="Product Images">
+                          </a>
+                          <div class="product-add-action">
+                            <ul>
+                              <li>
+                                <a href="{% url 'shop:wishlist_add' product.id %}"
+                                  data-tippy="Add to wishlist"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-like"></i>
+                                </a>
+                              </li>
+                              <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
+                                <a href="#"
+                                  data-tippy="Quickview"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-look"></i>
+                                </a>
+                              </li>
+                              <li>
+                                <a href="{% url 'shop:basket_add' product.id %}"
+                                  data-tippy="Add to cart"
+                                  data-tippy-inertia="true"
+                                  data-tippy-animation="shift-away"
+                                  data-tippy-delay="50"
+                                  data-tippy-arrow="true"
+                                  data-tippy-theme="sharpborder">
+                                  <i class="pe-7s-cart"></i>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="product-content">
+                          <a class="product-name" href="{% url 'shop:product' product.name %}">{{ product.name }}</a>
+                          <div class="price-box pb-1">
+                            <span class="new-price">${{ product.price }}</span>
+                          </div>
+                          <div class="rating-box">
+                            <ul>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                              <li><i class="fa fa-star"></i></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endcache %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-with-counter">
+    <div class="banner-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="banner-boxshadow">
+              <div class="banner-item" data-bg-image="{% static 'images/banner/banner-video.jpg' %}">
+                <div class="popup-btn">
+                  <a class="popup-vimeo wave-btn" href="https://player.vimeo.com/video/172601404?autoplay=1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="icon">
+                      <i class="pe-7s-play"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="counter-area">
+      <div class="container">
+        <h2 class="counter-title">Lorem ipsum dolor sit amet, consectetur adipisicing <br> elit, sed do
+          <span>eiusmod tempor</span> incididunt.
+        </h2>
+        <div class="row">
+          {% cache 30 achievements %}
+            {% for achive in achievements %}
+              <div class="col-lg-3 col-md-4 col-6">
+              <div class="counter-item">
+                <div class="count-wrap">
+                  <h3 class="count mb-0" data-counterup-time="500">{{ achive.count }}</h3>
+                  <span class="prefix">+</span>
+                </div>
+                <h4 class="count-title mb-0">{{ achive.name }}</h4>
+              </div>
+            </div>
+            {% endfor %}
+          {% endcache %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-area section-space-top-100 section-space-bottom-90">
+    <div class="container">
+      <div class="row">
+        <div class="section-title-wrap without-tab">
+          <h2 class="section-title">New Products</h2>
+          <p class="section-desc">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+            roots in a piece of classical Latin literature
+          </p>
+        </div>
+        <div class="col-lg-12">
+          <div class="swiper-container product-slider">
+            <div class="swiper-wrapper">
+              {% cache 30 main_products %}
+                {% for product in main_products %}
+                  <div class="swiper-slide product-item">
+                    <div class="product-img">
+                      <a href="{% url 'shop:product' product.name %}">
+                        <img class="primary-img"
+                          src="{{ product.image.url }}"
+                          alt="Product Images">
+                      </a>
+                      <div class="product-add-action">
+                        <ul>
+                          <li>
+                            <a href="{% url 'shop:wishlist_add' product.id %}"
+                              data-tippy="Add to wishlist"
+                              data-tippy-inertia="true"
+                              data-tippy-animation="shift-away"
+                              data-tippy-delay="50"
+                              data-tippy-arrow="true"
+                              data-tippy-theme="sharpborder">
+                              <i class="pe-7s-like"></i>
+                            </a>
+                          </li>
+                          <li class="quuickview-btn" data-bs-toggle="modal" data-bs-target="#quickModal">
+                            <a href="#"
+                              data-tippy="Quickview"
+                              data-tippy-inertia="true"
+                              data-tippy-animation="shift-away"
+                              data-tippy-delay="50"
+                              data-tippy-arrow="true"
+                              data-tippy-theme="sharpborder">
+                              <i class="pe-7s-look"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="{% url 'shop:basket_add' product.id %}"
+                              data-tippy="Add to cart"
+                              data-tippy-inertia="true"
+                              data-tippy-animation="shift-away"
+                              data-tippy-delay="50"
+                              data-tippy-arrow="true"
+                              data-tippy-theme="sharpborder">
+                              <i class="pe-7s-cart"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="product-content">
+                      <a class="product-name" href="{% url 'shop:product' product.name %}">{{ product.name }}</a>
+                      <div class="price-box pb-1">
+                        <span class="new-price">${{ product.price }}</span>
+                      </div>
+                      <div class="rating-box">
+                        <ul>
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star"></i></li>
+                          <li><i class="fa fa-star"></i></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% endcache %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="banner-bg-image img-hover-effect" data-bg-image="{% static 'images/banner/banner.jpg' %}">
+            <div class="inner-content">
+              <span class="offer">Only Today</span>
+              <h2 class="title">Indoore Plants & Poot</h2>
+              <h3 class="discount">Up To <span>-50%</span> Off</h3>
+              <div class="button-wrap">
+                <a class="btn btn-custom-size btn-pronia-primary" href="{% url 'shop:index' %}">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-area section-space-top-100 section-space-bottom-95">
+    <div class="container-fluid px-10">
+      <div class="section-title-wrap">
+        <h2 class="section-title mb-7">What Say Client</h2>
+        <p class="section-desc mb-10">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+          roots in a piece of classical Latin literature
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="swiper-container testimonial-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide testimonial-item">
+            <div class="user-info mb-3">
+              <div class="user-shape-wrap">
+                <div class="user-img">
+                  <img src="{% static 'images/testimonial/user/1.webp' %}" alt="User Image">
+                </div>
+              </div>
+              <div class="user-content text-charcoal">
+                <h4 class="user-name mb-1">Phoenix Baker</h4>
+                <span class="user-occupation">Client</span>
+              </div>
+            </div>
+            <p class="user-comment mb-6">Lorem ipsum dolor sit amet, conse adipisic elit, sed do eiusmod
+              tempo
+              incididunt ut labore et dolore. magna
+            </p>
+          </div>
+          <div class="swiper-slide testimonial-item">
+            <div class="user-info mb-3">
+              <div class="user-shape-wrap">
+                <div class="user-img">
+                  <img src="{% static 'images/testimonial/user/2.webp' %}" alt="User Image">
+                </div>
+              </div>
+              <div class="user-content text-charcoal">
+                <h4 class="user-name mb-1">Phoenix Baker</h4>
+                <span class="user-occupation">Client</span>
+              </div>
+            </div>
+            <p class="user-comment mb-6">Lorem ipsum dolor sit amet, conse adipisic elit, sed do eiusmod
+              tempo
+              incididunt ut labore et dolore. magna
+            </p>
+          </div>
+          <div class="swiper-slide testimonial-item">
+            <div class="user-info mb-3">
+              <div class="user-shape-wrap">
+                <div class="user-img">
+                  <img src="{% static 'images/testimonial/user/3.webp' %}" alt="User Image">
+                </div>
+              </div>
+              <div class="user-content text-charcoal">
+                <h4 class="user-name mb-1">Phoenix Baker</h4>
+                <span class="user-occupation">Client</span>
+              </div>
+            </div>
+            <p class="user-comment mb-6">Lorem ipsum dolor sit amet, conse adipisic elit, sed do eiusmod
+              tempo
+              incididunt ut labore et dolore. magna
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-pagination without-absolute"></div>
+    </div>
+  </div>
+{% endblock %}
