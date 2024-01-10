@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    transition: .5s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+.bg-opacity-80 {
+    --tw-bg-opacity: 0.8;
+}
+
+.max-h-fit {
+    max-height: fit-content;
+}
+
+.input-focus {
+    font-size: 12px !important;
+    top: 0;
+}
+
+.max-h-card {
+    max-height: 80px;
+    padding-top: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+@media (max-width: 1023px) {
+    .input-focus {
+        font-size: 10px !important;
+    }
+}

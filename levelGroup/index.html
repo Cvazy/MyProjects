@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en"
+      xmlns:x-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <link rel="icon" type="image/png" href="src/images/Favicon1.png">
+  <link rel="stylesheet" href="public/styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <title>Level Звенигородская</title>
+</head>
+<body x-data="{ modalOpen: false, burgerOpen: false, loaded: false }" x-init="() => { window.addEventListener('load', () => { loaded = true; AOS.init(); }); }" class="bg-white font-main overflow-x-hidden">
+<div x-show="burgerOpen" class="bg-black fixed bg-opacity-60 z-30 top-0 right-0 bottom-0 left-0 w-full" id="blackout" style="transition: width 0s !important;"></div>
+
+<div x-show="modalOpen" class="bg-black z-[400] bg-opacity-60 fixed z-30 top-0 right-0 bottom-0 left-0 w-full" id="modalBg" style="transition: width 0s !important; backdrop-filter: blur(4px)"></div>
+
+<div x-show="modalOpen" class="cursor-pointer fixed z-[500] top-0 left-0 right-0 bottom-0 h-full flex items-center justify-center opacity-100 lg:gap-0" id="modal">
+  <button class="outline-0 border-0 p-0 flex justify-center items-center w-[40px] h-[40px] absolute top-[15px] right-[15px] cursor-pointer z-50" id="closeModal">
+    <div class="w-[24px] h-[20px] m-0 z-20 cursor-pointer relative">
+      <span class="bg-[#f7f7f7] block absolute opacity-100 h-[2px] top-[8px] left-0 w-full rotate-45"></span>
+      <span class="bg-[#f7f7f7] block absolute opacity-100 h-[2px] top-[8px] left-0 w-full -rotate-45"></span>
+    </div>
+  </button>
+
+  <div x-on:click.outside="modalOpen = false" class="max-md:w-[90%] flex items-center justify-center">
+    <div class="cursor-default hidden lg:block lg:w-1/3 lg:h-[64vh]">
+      <div class="bg-bg1 rounded-r-none rounded-[8px] w-full h-full bg-cover bg-center"></div>
+    </div>
+
+    <div class="cursor-default bg-[#f7f7f7] rounded-[8px] py-[30px] px-[20px] md:w-4/5 md:px-[3rem] md:relative lg:w-2/3 lg:h-[64vh] lg:rounded-l-none">
+      <h2 class="max-sm:w-full max-sm:mb-[20px] leading-[123%] text-[28px] text-[#2d2f33] mb-[40px] font-light w-4/5 md:text-[1.9rem] lg:w-full">
+        Оставьте заявку, чтобы получить больше инфомации о поекте
+      </h2>
+
+      <form method="post" class="w-full flex flex-col items-start">
+        <div class="mb-[20px] w-full">
+          <div x-data="{ isModalNameInputFocused: false, modalNameInput: '' }" class="relative overflow-hidden">
+            <input x-model="modalNameInput"
+                   x-on:focusin="isModalNameInputFocused = true"
+                   x-on:focusout="isModalNameInputFocused = modalNameInput !== '' ? true : false"
+                   class="w-full outline-0 bg-transparent border-t-0 border-x-0 px-[20px] pt-[26px] pb-[10px] h-[50px] font-light text-[12px] border border-solid border-[#d5d5d6] text-[#2d2f33]" type="text" name="name"  required>
+
+            <div x-bind:class="{ 'input-focus': isModalNameInputFocused || modalNameInput !== '' }"
+                 class="absolute text-nowrap w-10/12 pointer-events-none overflow-hidden text-ellipsis leading-normal opacity-50 left-0 text-[#2d2f33] h-[13px] top-[19px] text-[12px] font-light lg:text-[14px] lg:h-[20px]">
+              Имя
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-[20px] w-full">
+          <div x-data="{ isModalPhoneInputFocused: false, modalPhoneNumber: '' }" class="relative overflow-hidden">
+            <input x-model="modalPhoneNumber"
+                   x-on:focusin="isModalPhoneInputFocused = true"
+                   x-on:focusout="isModalPhoneInputFocused = modalPhoneNumber !== '' ? true : false"
+                   class="w-full outline-0 bg-transparent border-t-0 border-x-0 px-[20px] pt-[26px] pb-[10px] h-[50px] font-light text-[12px] border border-solid border-[#d5d5d6] text-[#2d2f33]" type="tel" name="phone" pattern="[0-9]{10}" maxlength="18" minlength="18" required oninput="formatPhoneNumber(this)">
+
+            <div x-bind:class="{ 'input-focus': isModalPhoneInputFocused || modalPhoneNumber !== '' }"
+                 class="absolute text-nowrap w-10/12 pointer-events-none overflow-hidden text-ellipsis leading-normal opacity-50 left-0 text-[#2d2f33] h-[13px] top-[19px] text-[12px] font-light lg:text-[14px] lg:h-[20px]">
+              Телефон
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="flex justify-center items-center bg-[#1c1c1c] rounded-[30px] text-white h-[50px] px-[50px] font-normal outline-0 hover:bg-[#3f4246] w-fit">
+          Отправить
+        </button>
+      </form>
+
+      <div class="max-sm:w-full max-md:mt-[20px] w-3/5 text-[#9a9a9a] text-[12px] leading-[17px] font-light mt-[30px] lg:text-[13px] 2xl:w-[50%]">
+        Нажимая на кнопку «Отправить», вы соглашаетесь с условиями
+        <a href="#" class="text-[12px] text-[#9a9a9a] border-b-[1px] border-solid border-[#9a9a9a] lg:text-[13px]">
+          политики конфиденциальности
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header x-bind:class="{ 'max-w-[320px]': burgerOpen, 'max-w-0': !burgerOpen }" class="fixed z-[200] bg-white top-0 right-0 bottom-0 overflow-hidden w-full lg:hidden" style="transition: max-width 0.3s ease-in-out">
+  <button x-on:click="burgerOpen = false" class="outline-0 bg-white border-0 p-0 flex justify-center items-center w-[40px] h-[40px] absolute top-[5px] right-[5px] cursor-pointer z-50 lg:hidden" id="closeMenu">
+    <div class="w-[24px] h-[20px] m-0 z-20 cursor-pointer relative">
+      <span class="bg-[#2d2f33] block absolute opacity-100 h-[2px] top-[8px] left-0 w-full rotate-45"></span>
+      <span class="bg-[#2d2f33] block absolute opacity-100 h-[2px] top-[8px] left-0 w-full -rotate-45"></span>
+    </div>
+  </button>
+
+  <div class="text-left px-[25px] pt-[42px] pb-[25px] box-border justify-between relative h-auto min-h-full flex flex-col lg:flex-row lg:pt-[25px] lg:min-h-fit lg:items-center">
+    <div class="text-left lg:flex lg:h-fit lg:items-center lg:w-[66%] lg:justify-between">
+      <div class="mb-[25px] lg:m-0">
+        <a href="#" class="text-[#21394a] text-[18px] font-bold decoration-0">
+          <div class="text-[#21394a] text-[18px] font-semibold decoration-0 leading-[123%]">
+            Level Звенигородская
+          </div>
+        </a>
+      </div>
+
+      <nav>
+        <ul role="list" class="mx-0 mt-0 mb-[10px] p-0 list-none lg:flex lg:gap-5 lg:items-center lg:m-0">
+          <li class="clear-both px-0 pt-0 pb-[5px] m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#about" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              О Проекте
+            </a>
+          </li>
+
+          <li class="clear-both px-0 py-[5px] m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#place" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              Расположение
+            </a>
+          </li>
+
+          <li class="clear-both px-0 py-[5px] m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#plus" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              Преимущества
+            </a>
+          </li>
+
+          <li class="clear-both px-0 pt-[5px] pb-0 m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#contact" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <button type="button" x-on:click="modalOpen = true" class="text-white bg-[#1c1c1c] w-fit font-normal rounded-[30px] px-[40px] py-[20px] outline-0 hover:opacity-80 lg:h-fit lg:py-[5px]">
+      Заказать звонок
+    </button>
+  </div>
+</header>
+
+<header class="hidden lg:block fixed max-w-[320px] z-[200] bg-white top-0 right-0 bottom-0 overflow-hidden w-full lg:max-w-full lg:h-fit">
+  <div class="text-left px-[25px] pt-[42px] pb-[25px] box-border justify-between relative h-auto min-h-full flex flex-col lg:flex-row lg:pt-[25px] lg:min-h-fit lg:items-center">
+    <div class="text-left lg:flex lg:h-fit lg:items-center lg:w-full lg:justify-between">
+      <div class="mb-[25px] lg:m-0">
+        <a href="#" class="text-[#21394a] text-[18px] font-bold decoration-0">
+          <div class="text-[#21394a] text-[18px] font-semibold decoration-0 leading-[123%]">
+            Level Звенигородская
+          </div>
+        </a>
+      </div>
+
+      <nav>
+        <ul role="list" class="mx-0 mt-0 mb-[10px] p-0 list-none lg:flex lg:gap-5 lg:items-center lg:m-0">
+          <li class="clear-both px-0 pt-0 pb-[5px] m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#about" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              О Проекте
+            </a>
+          </li>
+
+          <li class="clear-both px-0 py-[5px] m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#place" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              Расположение
+            </a>
+          </li>
+
+          <li class="clear-both px-0 py-[5px] m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#plus" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              Преимущества
+            </a>
+          </li>
+
+          <li class="clear-both px-0 pt-[5px] pb-0 m-0 text-[#2d2f33] block text-[16px] lg:p-0">
+            <a href="#contact" class="text-[#2d2f33] mb-[15px] outline-0 text-[14px] font-normal hover:opacity-80">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button type="button" x-on:click="modalOpen = true" class="text-white bg-[#1c1c1c] w-fit font-normal rounded-[30px] px-[30px] outline-0 hover:opacity-80 h-[40px] py-[8px] text-[14px]">
+        Заказать звонок
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="w-full h-[100vh] bg-black absolute bg-opacity-20 flex justify-center items-center">
+    <div class="w-full text-center" x-data="{ loaded: false }" x-on:load.window="loaded = true" :class="{ 'opacity-0': !loaded, 'opacity-100': loaded }">
+      <h1 class="py-[24px] px-[10px] text-white font-medium text-[30px] leading-[30px] tracking-[1px] md:text-[68px] md:leading-[117%] lg:leading-[100%] xl:text-[110px]" data-aos-once="true" data-aos-delay="500" data-aos="zoom-in">
+        L&nbsp;E&nbsp;V&nbsp;E&nbsp;L
+        <br>
+        Звенигородская
+      </h1>
+
+      <div class="flex w-full justify-center items-center gap-2 flex-wrap mt-[45px]">
+        <a href="#about" data-action="first" class="flex justify-center items-center bg-[#1c1c1c] rounded-[30px] text-white h-[60px] px-[30px] font-normal outline-0 hover:bg-[#3f4246] md:px-[50px] xl:px-[70px]" data-aos-once="true" data-aos="zoom-in" data-aos-delay="1000">
+          О проекте
+        </a>
+
+        <button type="button" x-on:click="modalOpen = true" data-action="second" class="flex justify-center items-center bg-white rounded-[30px] text-[#1c1c1c] h-[60px] px-[30px] font-normal outline-0 hover:bg-[#3f4246] hover:text-white openModal md:px-[70px]" data-aos-once="true" data-aos="zoom-in" data-aos-delay="1500">
+          Получить предложение
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div x-data="{ loaded: false }" x-on:load.window="loaded = true" :class="{ 'opacity-0': !loaded, 'opacity-100': loaded }" class="w-full h-[100vh] bg-main-content bg-center bg-cover">
+    <button x-on:click="burgerOpen = true" class="fixed top-[15px] right-[15px] bg-[#d5d5d6] rounded-full w-[48px] h-[48px] flex items-center justify-center z-[100] lg:hidden">
+      <div class="w-[23px] h-[22px] flex flex-col items-end justify-center gap-1 cursor-pointer" id="burger">
+        <span class="bg-[#2d2f33] block h-[2px] w-[22px]"></span>
+        <span class="bg-[#2d2f33] block h-[2px] w-[22px]"></span>
+        <span class="bg-[#2d2f33] block h-[2px] w-[15px]"></span>
+      </div>
+    </button>
+  </div>
+
+  <div class="pt-[90px] pb-[45px] w-full md:px-[4rem] lg:px-[6rem] xl:flex xl:justify-center" id="about">
+    <div class="w-full px-[20px] text-left xl:w-[60%]">
+      <h2 data-aos-once="true" data-aos="fade-down" class="leading-[123%] text-[28px] text-[#2d2f33] mb-[40px] font-light md:text-[60px] lg:text-[40px]">
+        О проекте
+      </h2>
+
+      <div class="flex flex-col gap-5">
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Проект Level Звенигородская представляет собой многофункциональный
+          комплекс площадью 82&nbsp;947м<sup>2</sup>.
+          Проект предусматривает закрытый парк между корпусами с&nbsp;игровыми зонами,
+          коммерческими помещениями на&nbsp;первых этажах, а&nbsp;также двухуровневый паркинг.
+        </p>
+
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Cтроительство планируется на земельном участке между Карамышевской
+          набережной и Звенигородским шоссе в Москве. Район обладает уникальным
+          расположением рядом с зелеными рекреационными зонами и будет обеспечивать
+          удобный выезд на Звенигородское шоссе и будущую станцию метро «Звенигородская».
+        </p>
+
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Проект будет создан с использованием пластического градиента и
+          выразительного орнаментального рисунка в архитектурном решении.
+          Фасады комплекса будут оформлены в параметрическом стиле с динамичными
+          объемами и декоративными «рамками», придающими зданию скульптурный характер.
+          Цветовая палитра, включающая оттенки серого, создаст уникальный выразительный силуэт комплекса.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full flex flex-col items-center pb-[60px] md:px-[4rem]">
+    <ul role="list" class="m-0 px-0 pt-0 pb-[30px] list-none w-full lg:flex lg:flex-wrap lg:gap-5 lg:justify-between xl:w-[90%]">
+      <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="0" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+        <div class="text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[48px] lg:text-[42px]">
+          2
+        </div>
+
+        <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+        <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[14px]">
+          Количество корпусов
+        </div>
+      </li>
+
+      <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="200" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+        <div class="text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[48px] lg:text-[42px]">
+          48-64
+        </div>
+
+        <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+        <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[14px]">
+          Количество этажей
+        </div>
+      </li>
+
+      <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="400" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+        <div class="text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[48px] lg:text-[42px]">
+          1114
+        </div>
+
+        <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+        <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[14px]">
+          Количество квартир
+        </div>
+      </li>
+
+      <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="600" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+        <div class="text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[48px] lg:text-[42px]">
+          17,5 - 117 м <sup>2</sup>
+        </div>
+
+        <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+        <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[14px]">
+          Площадь квартир
+        </div>
+      </li>
+
+      <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="800" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+        <div class="text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[48px] lg:text-[42px]">
+          367
+        </div>
+
+        <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+        <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[14px]">
+          Количество машино-мест
+        </div>
+      </li>
+
+      <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="1000" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+        <div class="text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[48px] lg:text-[42px]">
+          Комфорт+
+        </div>
+
+        <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+        <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[14px]">
+          Класс жилья
+        </div>
+      </li>
+    </ul>
+
+    <button data-aos-once="true" data-aos="fade-down" type="button" x-on:click="modalOpen = true" class="test relative font-medium flex justify-center items-center bg-[#1c1c1c] rounded-[30px] text-white h-[60px] px-[30px] font-normal outline-0 hover:bg-[#3f4246] mt-[60px] w-fit openModal md:px-[50px]">
+      Получить предложение
+    </button>
+  </div>
+
+  <div class="w-full rounded-[10px] lg:px-[2rem] flex justify-center" data-aos-once="true" data-aos="zoom-out">
+    <img class="w-[95%] rounded-[10px] lg:w-[83%]" src="src/images/img-block.jpeg" alt="Image">
+  </div>
+
+  <div class="pt-[90px] pb-[45px] w-full md:px-[4rem]" id="place">
+    <div class="w-full px-[20px] text-left xl:flex xl:flex-col xl:items-center">
+      <h2 class="leading-[123%] text-[28px] text-[#2d2f33] mb-[40px] font-light md:text-[60px] lg:text-[40px] lg:px-[6rem] xl:pl-[20px] xl:w-[60%]" data-aos-once="true" data-aos="fade-down">
+        Расположение
+      </h2>
+
+      <div class="flex flex-col gap-5 lg:px-[6rem] xl:w-[60%] xl:px-[20px]">
+        <p class="leading-[140%] text-[14px] text-[#3f4246] font-medium" data-aos-once="true" data-aos="fade-down">
+          Адрес: 3-й Силикатный проезд, вл.6
+        </p>
+
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Две ближайшие станции, «Народного ополчения» (БКЛ) и «Хорошёво» (МЦК),
+          находятся в 18 минутах ходьбы. По завершении первого этапа строительства,
+          планируется открытие станции метро «Звенигородская» Рублево-Архангельской линии
+          всего в 5 минутах ходьбы от проекта. Водители смогут легко добраться до ТТК за 4 минуты,
+          Садового кольца за 8 минут и Кремля за 15 минут.
+        </p>
+
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Расположение в престижном районе, граничащем с центральным округом,
+          обеспечивает удобный доступ к ведущим культурным и инфраструктурным объектам.
+          В ближайшем окружении находятся Музей русского импрессионизма, дворец спорта
+          «МЕГАСПОРТ», Московский зоопарк и другие знаковые места.
+        </p>
+
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Level Звенигородская займет центральное положение в живописном районе
+          «Хорошёво-Мневники», одном из самых экологически чистых и престижных районов
+          Северо-Западного округа Москвы. В пределах 12 минут езды от комплекса
+          расположено 11 парковых зон общей площадью 1000 га, включая «Ходынское поле»,
+          «Серебряный бор» и «Красная Пресня».
+        </p>
+
+        <p class="leading-[140%] text-[16px] text-[#818285] font-normal" data-aos-once="true" data-aos="fade-down">
+          Комплекс будет расположен в окружении качественных образовательных учреждений.
+          В пешей доступности и в 10−15 минутах езды на автомобиле более 25 детских садов,
+          около 20 школ и 10 вузов, включая международный детский сад One!
+          International School, Курчатовскую школу, Школу №1560 «Лидер» и Финансовый университет при Правительстве РФ.
+        </p>
+      </div>
+
+      <ul role="list" class="m-0 px-0 py-[30px] list-none w-full lg:flex lg:flex-wrap lg:gap-5 lg:justify-between xl:w-[90%]">
+        <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="0" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+          <div class="flex items-center justify-center gap-5 text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[42px]">
+            <div class="w-[35px] h-[35px]">
+              <img src="src/images/walking_man.png" alt="Man">
+            </div>
+            5 минут
+          </div>
+
+          <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+          <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[16px]">
+            ст.м. «Звенигородская» (с 2025 года)
+          </div>
+        </li>
+
+        <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="200" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+          <div class="flex items-center gap-5 justify-center text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[42px]">
+            <div class="w-[35px] h-[35px]">
+              <img src="src/images/walking_man.png" alt="Man">
+            </div>
+            18 минут
+          </div>
+
+          <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+          <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[16px]">
+            ст.м. «Народного ополчения» (БКЛ)
+          </div>
+        </li>
+
+        <li data-aos="zoom-in" data-aos-once="true" data-aos-delay="400" class="px-[20px] w-full max-w-full m-0 block float-none lg:w-[31%]">
+          <div class="flex items-center gap-5 justify-center text-[36px] text-center pt-[8px] pb-[6px] text-[#2d2f33] leading-[123%] font-light md:text-[42px]">
+            <div class="w-[35px] h-[35px]">
+              <img src="src/images/walking_man.png" alt="Man">
+            </div>
+            18 минут
+          </div>
+
+          <hr class="my-[14px] border border-solid border-[#2d2f33] opacity-20">
+
+          <div class="text-[12px] text-center pt-[4px] pb-[6px] text-[#2d2f33] leading-[110%] font-normal md:text-[16px]">
+            ст.м.«Хорошёво» (МЦК)
+          </div>
+        </li>
+      </ul>
+
+      <div class="grayscale xl:w-[90%]" data-aos-once="true" data-aos="zoom-out">
+        <iframe class="w-full" src="https://yandex.ru/map-widget/v1/?um=constructor%3Ade1af9c1b4bd14f0a85c9de09f9ef2b0df1603b2b8e95696ffcb4dd2a8a9c3b6&amp;source=constructor" width="1002" height="635" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="pb-[90px] flex flex-col items-center md:px-[4rem]" id="plus">
+    <div class="pt-[90px] pb-[45px] w-full xl:flex xl:justify-center">
+      <div class="w-full px-[20px] text-left md:px-[4rem] lg:px-0 xl:w-[87%]">
+        <h2 data-aos-once="true" data-aos="fade-down" class="leading-[123%] text-[28px] text-[#2d2f33] mb-[40px] font-light md:text-[60px] lg:text-[40px]">
+          Преимущества
+        </h2>
+
+
+        <div x-data="{
+          blocks: {
+            block1: false,
+            block2: false,
+            block3: false,
+            block4: false,
+            block5: false,
+            block6: false,
+            block7: false,
+            block8: false,
+          }
+        }" class="flex flex-col gap-5 lg:flex-row lg:w-full lg:flex-wrap lg:justify-between">
+          <div x-on:mouseover="blocks.block1 = true" x-on:mouseout="blocks.block1 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="0" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Уникальная архитектура
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block1 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block1 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  от студии Станислава Михаловского
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg1 rounded-[20px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block2 = true" x-on:mouseout="blocks.block2 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="200" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Закрытый благоустроенный двор
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block2 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block2 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  площадью 0,45 га
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg2 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block3 = true" x-on:mouseout="blocks.block3 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="400" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Вдохновляющие виды
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block3 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block3 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  на реку, город и Москва-Сити
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg3 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block4 = true" x-on:mouseout="blocks.block4 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="600" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Удобная транспортная развязка
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block4 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block4 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  4мин до ТТК, 8мин до Садового кольца, 15мин до МКАДа или Кремля
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg4 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block5 = true" x-on:mouseout="blocks.block5 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="800" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Подземный паркинг
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block5 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block5 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  на 376 машино-мест
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg5 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block6 = true" x-on:mouseout="blocks.block6 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="1000" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Собственная инфраструктура
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block6 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block6 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  магазины, кафе и супермаркет
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg6 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block7 = true" x-on:mouseout="blocks.block7 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="1200" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Планировочные решения
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block7 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block7 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  более 15 типов планировок
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg7 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+
+          <div x-on:mouseover="blocks.block8 = true" x-on:mouseout="blocks.block8 = false" data-aos="zoom-in" data-aos-once="true" data-aos-delay="1400" class="advantage relative h-[80vh] md:h-[140vh] lg:w-[23%] lg:h-[50vh]">
+            <div class="bg-black rounded-[20px] bg-opacity-40 flex items-end pb-[50px] w-full h-full absolute">
+              <div class="px-[20px] md:w-full md:px-[35px] lg:px-[20px]">
+                <div>
+                  <div class="text-left text-[20px] font-medium leading-[110%] text-white py-[15px] lg:text-[20px] lg:font-semibold">
+                    Три варианта отделки
+                  </div>
+
+                  <div class="h-[1px] bg-white opacity-80 w-full"></div>
+                </div>
+
+                <div x-bind:class="{ 'max-h-card': blocks.block8 || window.innerWidth < 1024, 'lg:max-h-0': !blocks.block8 }" class="desc text-[16px] leading-[110%] text-white font-light md:overflow-hidden max-lg:pt-[15px]">
+                  Без отделки, white box и дизайнерская
+                </div>
+              </div>
+            </div>
+            <div class="bg-bg8 rounded-[10px] w-full h-full bg-cover bg-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button data-aos-once="true" data-aos="zoom-in" type="button" x-on:click="modalOpen = true" class="flex justify-center items-center bg-[#1c1c1c] rounded-[30px] text-white h-[60px] px-[30px] font-normal outline-0 hover:bg-[#3f4246] w-fit openModal md:px-[50px]">
+      Получить предложение
+    </button>
+  </div>
+
+  <div class="w-full rounded-[10px] lg:px-[2rem] flex justify-center" data-aos-once="true" data-aos="zoom-out">
+    <img class="w-[95%] rounded-[10px] lg:w-[83%]" src="src/images/img-block2.jpeg" alt="Image">
+  </div>
+</main>
+
+<footer class="xl:flex xl:flex-col xl:items-center">
+  <div class="mt-[30px] px-[20px] pb-[60px] md:px-[4rem] lg:flex lg:gap-0 lg:flex-row-reverse xl:w-[79%] xl:px-0" data-aos-once="true" data-aos="fade-down">
+    <div class="bg-[#f7f7f7] rounded-l-none rounded-r-[10px] py-[30px] px-[20px] lg:w-3/4">
+      <h2 class="leading-[123%] text-[28px] text-[#2d2f33] mb-[40px] font-light w-4/5 md:text-[36px] lg:w-full md:text-[40px]">
+        Оставьте заявку, чтобы получить больше инфомации о поекте
+      </h2>
+
+      <form method="post" class="w-full flex flex-col items-start">
+        <div class="mb-[20px] w-full">
+          <div x-data="{ isNameInputFocused: false, NameInput: ''  }" class="relative overflow-hidden">
+            <input x-model="NameInput"
+                   x-on:focusin="isNameInputFocused = true"
+                   x-on:focusout="isNameInputFocused = NameInput !== '' ? true : false"
+                   class="w-full outline-0 bg-transparent border-t-0 border-x-0 px-[20px] pt-[26px] pb-[10px] h-[50px] font-light text-[12px] border border-solid border-[#d5d5d6] text-[#2d2f33] lg:text-[14px]" type="text" name="name" required>
+
+            <div x-bind:class="{'input-focus': isNameInputFocused || NameInput !== '' }"
+                 class="absolute text-nowrap w-10/12 pointer-events-none overflow-hidden text-ellipsis leading-normal opacity-50 left-0 text-[#2d2f33] h-[13px] top-[19px] text-[12px] font-light lg:text-[14px] lg:h-[20px]">
+              Имя
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-[20px] w-full">
+          <div x-data="{ isPhoneInputFocused: false, phoneNumber: '' }" class="relative overflow-hidden">
+            <input x-model="phoneNumber"
+                   x-on:focusin="isPhoneInputFocused = true"
+                   x-on:focusout="isPhoneInputFocused = phoneNumber !== '' ? true : false"
+                   class="w-full outline-0 bg-transparent border-t-0 border-x-0 px-[20px] pt-[26px] pb-[10px] h-[50px] font-light text-[12px] border border-solid border-[#d5d5d6] text-[#2d2f33] lg:text-[14px]"
+                   type="tel"
+                   name="phone"
+                   pattern="[0-9]{10}"
+                   maxlength="18"
+                   minlength="18"
+                   required
+                   oninput="formatPhoneNumber(this)">
+
+            <div x-bind:class="{ 'input-focus': isPhoneInputFocused || phoneNumber !== '' }"
+                 class="absolute text-nowrap w-10/12 pointer-events-none overflow-hidden text-ellipsis leading-normal opacity-50 left-0 text-[#2d2f33] h-[13px] top-[19px] text-[12px] font-light lg:text-[14px] lg:h-[20px]">
+              Телефон
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="flex justify-center items-center bg-[#1c1c1c] rounded-[30px] text-white h-[50px] px-[50px] font-normal outline-0 hover:bg-[#3f4246] w-fit">
+          Отправить
+        </button>
+      </form>
+
+      <div class="w-3/5 text-[#9a9a9a] text-[12px] leading-[17px] font-light mt-[45px] lg:text-[13px] lg:mt-[20px] 2xl:w-[40%]">
+        Нажимая на кнопку «Отправить», вы соглашаетесь с условиями
+        <a href="#" class="text-[12px] text-[#9a9a9a] border-b-[1px] border-solid border-[#9a9a9a] lg:text-[13px]">
+          политики конфиденциальности
+        </a>
+      </div>
+    </div>
+
+    <div class="h-[80vh] md:h-[140vh] lg:h-[90vh] lg:w-1/4 lg:h-auto">
+      <div class="bg-bg1 rounded-r-none rounded-l-[10px] w-full h-full bg-cover bg-center"></div>
+    </div>
+  </div>
+
+  <div class="bg-[#f7f7f7] py-[15px] xl:w-full" id="contact" data-aos-once="true" data-aos="fade-down">
+    <div class="py-[35px] flex flex-col gap-5 lg:flex-row lg:px-[3rem] lg:justify-between lg:items-center">
+      <div class="w-full px-[20px] pb-[10px] text-center lg:w-[40%] lg:text-left lg:p-0">
+        <a href="/" class="text-[#2d2f33] font-bold text-[24px]">
+          Level Звенигородская
+        </a>
+      </div>
+
+      <div class="text-center text-[10px] lg:text-right">
+        <span class="font-medium text-[#2d2f33]">
+          КОНТАКТЫ
+          <br><br>
+          <span class="text-[#3f4246cc]">
+            zvenigorodskaya-level.ru © 2023.
+          </span>
+          <br>
+          <span class="text-[#3f4246cc]">
+            3-й Силикатный проезд, вл.6
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+    function formatPhoneNumber(input) {
+        let phoneNumber = input.value.replace(/\D/g, '');
+
+        if (!phoneNumber.startsWith('7')) {
+            phoneNumber = '7' + phoneNumber;
+        }
+
+        let formattedPhoneNumber = '';
+
+        if (phoneNumber.length > 1) {
+            formattedPhoneNumber += '+7 (' + phoneNumber.substring(1, 4);
+        }
+
+        if (phoneNumber.length >= 5) {
+            formattedPhoneNumber += ') ' + phoneNumber.substring(4, 7);
+        }
+
+        if (phoneNumber.length >= 8) {
+            formattedPhoneNumber += '-' + phoneNumber.substring(7, 9);
+        }
+
+        if (phoneNumber.length >= 10) {
+            formattedPhoneNumber += '-' + phoneNumber.substring(9, 11);
+        }
+
+        input.value = formattedPhoneNumber;
+    }
+</script>
+</body>
+</html>
