@@ -1,0 +1,44 @@
+@media (max-width: 680px) {
+    body {
+        background-color: #69b3e9a6;
+    }
+
+    .info,
+    .bg-circle,
+    .small-circle,
+    .num-6 {
+        display: none;
+    }
+
+    .calculator {
+        width: 100%;
+        height: 80%;
+    }
+
+    .expression {
+        height: 1.5rem;
+    }
+
+    .sqr {
+        font-size: 1.5rem;
+        padding: 10px 0;
+    }
+
+    .calc_bottom,
+    .button-nums {
+        gap: .7rem;
+    }
+
+    .calc_top {
+        padding-top: 0;
+        gap: 2rem;
+    }
+
+    .expression__wrapper {
+        font-size: 1.2rem;
+    }
+
+    .result p {
+        font-size: 2rem;
+    }
+}
