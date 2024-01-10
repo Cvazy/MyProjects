@@ -1,0 +1,117 @@
+html {
+    height: -webkit-fill-available;
+}
+
+* {
+    transition: 0.3s ease-in-out;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    background: #FFD600;
+}
+body::-webkit-scrollbar-track {
+    background: #4f0377;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+input:focus-visible {
+    outline: none !important;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.bg-main {
+    background-image: url("../img/main-bg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-main-color {
+    background-color: #FFD600;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.pagination-size {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+}
+
+.py-11 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-48 {
+    width: 48%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-32 {
+    width: 32%;
+}
+
+.h-50vh {
+    height: 50vh;
+}
+
+.top-35px {
+    top: 35px;
+}
+
+.top-15px {
+    top: 15px;
+}
+
+.top-8px {
+    top: 8px;
+}
+
+.end-20px {
+    right: 20px;
+}
+
+.end-15px {
+    right: 15px;
+}
+
+.mh-0 {
+    max-height: 0;
+}
+
+.mh-max-200px {
+    max-height: 200px;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.z-5 {
+    z-index: 5;
+}
+
+.fs-sm {
+    font-size: 0.8rem;
+}

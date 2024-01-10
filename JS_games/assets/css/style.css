@@ -13,6 +13,10 @@ body {
     background-color: #9FD6FE;
 }
 
+a {
+    text-decoration: none;
+}
+
 main {
     width: 100%;
     height: 100vh;
@@ -37,6 +41,52 @@ main {
     width: 100%;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choose {
+    background-color: white;
+    border-radius: 2.5rem;
+    border: 3px solid #2CA8FF;
+}
+
+.choose__wrapper {
+    padding: 30px 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.choose__btns {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cho_btn {
+    background-color: #2CA8FF;
+    border-radius: 10px;
+    padding: 15px 10px;
+    width: 40%;
+}
+
+.cho_btn:hover {
+    background-color: #9FD6FE;
+}
+
+.cho_btn__wrapper {
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
 .logo {
     margin-bottom: 2.5rem;
 }
@@ -55,6 +105,15 @@ main {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+.article__btn {
+    border: none;
+    cursor: pointer;
+}
+
+.article__btn:hover {
+    transform: scale(110%);
 }
 
 h1 {
@@ -256,6 +315,53 @@ h1 {
     border-radius: 10px;
 }
 
+.tic-tac {
+    height: 699px;
+    width: 699px;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.tic-tac__row {
+    display: flex;
+    width: 100%;
+    height: 233px;
+    border-bottom: 2px solid white;
+}
+
+.tic-tac__element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: inherit;
+    width: 233px;
+    height: 233px;
+    border: none;
+    border-right: 2px solid white;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.tic-tac__element:hover {
+    background-color: #494949;
+}
+
+.tic-tac__element:last-child {
+    border-right: none;
+}
+
+.tic-tac__element img {
+    width: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
 .rotate-130 {
     transform: rotate(130deg);
 }
@@ -318,49 +424,4 @@ h1 {
 
 .bottom-10 {
     bottom: 10%;
-}
-
-@media (max-width: 680px) {
-    body {
-        background-color: #69b3e9a6;
-    }
-
-    .info,
-    .bg-circle,
-    .small-circle,
-    .num-6 {
-        display: none;
-    }
-
-    .calculator {
-        width: 100%;
-        height: 80%;
-    }
-
-    .expression {
-        height: 1.5rem;
-    }
-
-    .sqr {
-        font-size: 1.5rem;
-        padding: 10px 0;
-    }
-
-    .calc_bottom,
-    .button-nums {
-        gap: .7rem;
-    }
-
-    .calc_top {
-        padding-top: 0;
-        gap: 2rem;
-    }
-
-    .expression__wrapper {
-        font-size: 1.2rem;
-    }
-
-    .result p {
-        font-size: 2rem;
-    }
 }

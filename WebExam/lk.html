@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.ico">
+  <title>Tenloc - Личный кабинет</title>
+</head>
+<body class="d-flex flex-column justify-content-between mh-100 h-100">
+
+<div id="smooth" class="z-10 position-fixed bg-black bg-opacity-50 d-none justify-content-center align-items-center h-100 w-100">
+  <div class="position-relative p-4 bg-white rounded-4 d-none w-40" id="seeEvent">
+    <div role="button" data-action="closeModal" class="position-absolute end-15px top-15px">
+      <img width="20" src="assets/img/close.svg" alt="Close">
+    </div>
+
+    <p class="fw-medium fs-5">
+      Заявка номер <span class="fw-medium" data-span="travelNumber"></span>
+    </p>
+
+    <p>
+      ФИО гида: <span class="fw-medium" data-span="travelGidFio">Иванов Иван Иванович</span>
+    </p>
+
+    <p>
+      Название маршрута: <span class="fw-medium" data-span="travelName"></span>
+    </p>
+
+    <p>
+      Дата экскурсии: <span class="fw-medium" data-span="travelDate"></span>
+    </p>
+
+    <p>
+      Время начала: <span class="fw-medium" data-span="travelTimeStart">12:40</span>
+    </p>
+
+    <p>
+      Продолжительность: <span class="fw-medium" data-span="travelDuration">1 час</span>
+    </p>
+
+    <p>
+      Количество человек: <span class="fw-medium" data-span="travelQntPeople">4</span>
+    </p>
+
+    <p class="fw-medium fs-5">
+      Дополнительные опции
+    </p>
+
+    <p class="mb-0 mt-2">
+      Легкие закуски и горячие напитки
+    </p>
+
+    <p class="fs-sm m-0">
+      Увеличивают стоимость на 1000 рублей за каждого посетителя.
+    </p>
+
+    <p class="mb-0 mt-2">
+      Сопровождение сурдопереводчика
+    </p>
+
+    <p class="fs-sm m-0">
+      Увеличивает стоимость на 15%, если посетителей от 1 до 5, на 25%, если от 5 до 10.
+    </p>
+
+    <p class="fw-medium fs-5 mb-0 mt-2">
+      Итоговая стоимость: <span class="fw-medium" data-span="travelCost"></span><span class="fw-medium"> ₽</span>
+    </p>
+  </div>
+
+  <div class="position-relative p-4 bg-white rounded-4 d-none w-40" id="editEvent">
+    <div role="button" data-action="closeModal" class="position-absolute end-15px top-15px">
+      <img width="20" src="assets/img/close.svg" alt="Close">
+    </div>
+
+    <p class="fw-medium fs-5">
+      Редактирование заявки
+    </p>
+
+    <p>
+      ФИО гида: <span class="fw-medium">Иванов Иван Иванович</span>
+    </p>
+
+    <p>
+      Название маршрута: <span class="fw-medium">Кремль</span>
+    </p>
+
+    <form class="d-flex flex-column gap-3" method="post">
+      <div class="d-flex flex-wrap justify-content-between gap-2">
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Дата экскурсии:
+            <input class="ps-2 py-1" type="date" name="editDateEvent" required>
+          </label>
+        </div>
+
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Время начала:
+            <input class="ps-2 py-1" type="time" name="editTimeStartEvent" value="12:40" required>
+          </label>
+        </div>
+
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Длительность:
+            <input class="ps-2 py-1" type="text" disabled name="durationEvent" value="1 час">
+          </label>
+        </div>
+
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Кол-во людей:
+            <input class="ps-2 py-1" type="number" name="qntPeoples" value="1" required>
+          </label>
+        </div>
+      </div>
+
+      <p class="fs-5 m-0">
+        Дополнительные опции
+      </p>
+
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div class="w-48 d-flex flex-column gap-2">
+          <label class="d-flex align-items-center gap-2 w-100 user-select-none lh-sm">
+            <input type="checkbox" name="optionOne">
+            Легкие закуски и горячие напитки
+          </label>
+
+          <p class="fs-sm m-0">
+            Увеличивают стоимость на 1000 рублей за каждого посетителя.
+          </p>
+        </div>
+
+        <div class="w-48 d-flex flex-column gap-2">
+          <label class="d-flex justify-content-end align-items-center gap-2 w-100 user-select-none lh-sm">
+            <input type="checkbox" name="optionTwo">
+            Сопровождение сурдопереводчика
+          </label>
+
+          <p class="fs-sm m-0">
+            Увеличивает стоимость на 15%, если посетителей от 1 до 5, на 25%, если от 5 до 10.
+          </p>
+        </div>
+      </div>
+
+      <p class="fs-5 m-0">
+        Итоговая стоимость: <span class="fw-medium" id="cost">4580</span><span class="fw-medium"> ₽</span>
+      </p>
+
+      <div class="d-flex justify-content-between align-items-center gap-2">
+        <button data-action="closeModal" role="button" type="button" class="text-center text-black bg-black bg-opacity-25 border-0 px-3 py-2 rounded-5 w-48">
+          Отменить
+        </button>
+
+        <button role="button" type="submit" class="text-center text-black bg-main-color border-0 px-3 py-2 rounded-5 w-48">
+          Редактировать
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="position-relative p-4 bg-white rounded-4 d-none w-40" id="deleteEvent">
+    <div role="button" data-action="closeModal" class="position-absolute end-15px top-15px">
+      <img width="20" src="assets/img/close.svg" alt="Close">
+    </div>
+
+    <p class="fw-medium fs-5">
+      Удаление заявки
+    </p>
+
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <button data-action="closeModal" role="button" type="button" class="text-center text-black bg-black bg-opacity-25 border-0 px-3 py-2 rounded-5 w-48">
+        Отменить
+      </button>
+
+      <button role="button" data-action="deleteTravel" type="button" class="text-center text-black bg-main-color border-0 px-3 py-2 rounded-5 w-48">
+        Удалить
+      </button>
+    </div>
+  </div>
+</div>
+
+<header class="position-sticky top-0 z-5 h-auto bg-white">
+  <div class="px-5 py-3 d-flex justify-content-center">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <div class="d-flex gap-3 position-relative">
+        <a href="index.html">
+          <img src="assets/img/logo.svg" alt="Logo">
+        </a>
+      </div>
+
+      <a href="lk.html" class="d-flex align-items-center gap-2 text-decoration-none">
+        <span class="text-black fw-medium">
+          Личный кабинет
+        </span>
+
+        <div>
+          <img width="24" src="assets/img/lk.svg" alt="Profile">
+        </div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="d-flex flex-column align-items-center pt-4 pb-5">
+  <div class="w-85 d-flex flex-column gap-5">
+    <div id="places" class="d-flex flex-column gap-4">
+      <h2 class="fw-bolder mb-0" data-aos="zoom-in" data-aos-once="true">
+        Список пешеходных маршрутов
+      </h2>
+
+      <div class="d-flex flex-column gap-4 align-items-center">
+        <table class="table">
+          <thead data-aos="zoom-in" data-aos-once="true">
+          <tr>
+            <th scope="col" class="text-start">№</th>
+            <th scope="col" class="text-center">Название</th>
+            <th scope="col" class="text-center">Дата</th>
+            <th scope="col" class="text-center">Стоимость</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelNumber">1</td>
+            <td class="text-center" data-row="travelName">Кремль</td>
+            <td class="text-center" data-row="travelDate">17.01.2024</td>
+            <td class="text-center"><span data-row="travelCost">4580</span> ₽</td>
+            <td class="w-25">
+              <div class="d-flex gap-3 justify-content-end">
+                <div role="button" data-action="seeItem" onclick="modalSeeTravel(this)">
+                  <img width="32" src="assets/img/eye.svg" alt="Eye">
+                </div>
+
+                <div role="button" data-action="editItem" onclick="modalEditTravel(this)">
+                  <img width="32" src="assets/img/edit.svg" alt="Edit">
+                </div>
+
+                <div role="button" data-action="deleteItem" onclick="modalDeleteTravel(this)">
+                  <img width="32" src="assets/img/delete.svg" alt="Delete">
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelNumber">2</td>
+            <td class="text-center" data-row="travelName">Воробьёвы горы</td>
+            <td class="text-center" data-row="travelDate">22.01.2024</td>
+            <td class="text-center"><span data-row="travelCost">4580</span> ₽</td>
+            <td class="w-25">
+              <div class="d-flex gap-3 justify-content-end">
+                <div role="button" data-action="seeItem" onclick="modalSeeTravel(this)">
+                  <img width="32" src="assets/img/eye.svg" alt="Eye">
+                </div>
+
+                <div role="button" data-action="editItem" onclick="modalEditTravel(this)">
+                  <img width="32" src="assets/img/edit.svg" alt="Edit">
+                </div>
+
+                <div role="button" data-action="deleteItem" onclick="modalDeleteTravel(this)">
+                  <img width="32" src="assets/img/delete.svg" alt="Delete">
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelNumber">3</td>
+            <td class="text-center" data-row="travelName">ВДНХ</td>
+            <td class="text-center" data-row="travelDate">27.01.2024</td>
+            <td class="text-center"><span data-row="travelCost">4580</span> ₽</td>
+            <td class="w-25">
+              <div class="d-flex gap-3 justify-content-end">
+                <div role="button" data-action="seeItem" onclick="modalSeeTravel(this)">
+                  <img width="32" src="assets/img/eye.svg" alt="Eye">
+                </div>
+
+                <div role="button" data-action="editItem" onclick="modalEditTravel(this)">
+                  <img width="32" src="assets/img/edit.svg" alt="Edit">
+                </div>
+
+                <div role="button" data-action="deleteItem" onclick="modalDeleteTravel(this)">
+                  <img width="32" src="assets/img/delete.svg" alt="Delete">
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelNumber">4</td>
+            <td class="text-center" data-row="travelName">Парк Горькова</td>
+            <td class="text-center" data-row="travelDate">07.02.2024</td>
+            <td class="text-center"><span data-row="travelCost">4580</span> ₽</td>
+            <td class="w-25">
+              <div class="d-flex gap-3 justify-content-end">
+                <div role="button" data-action="seeItem" onclick="modalSeeTravel(this)">
+                  <img width="32" src="assets/img/eye.svg" alt="Eye">
+                </div>
+
+                <div role="button" data-action="editItem" onclick="modalEditTravel(this)">
+                  <img width="32" src="assets/img/edit.svg" alt="Edit">
+                </div>
+
+                <div role="button" data-action="deleteItem" onclick="modalDeleteTravel(this)">
+                  <img width="32" src="assets/img/delete.svg" alt="Delete">
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelNumber">5</td>
+            <td class="text-center" data-row="travelName">Лужники</td>
+            <td class="text-center" data-row="travelDate">19.02.2024</td>
+            <td class="text-center"><span data-row="travelCost">4580</span> ₽</td>
+            <td class="w-25">
+              <div class="d-flex gap-3 justify-content-end">
+                <div role="button" data-action="seeItem" onclick="modalSeeTravel(this)">
+                  <img width="32" src="assets/img/eye.svg" alt="Eye">
+                </div>
+
+                <div role="button" data-action="editItem" onclick="modalEditTravel(this)">
+                  <img width="32" src="assets/img/edit.svg" alt="Edit">
+                </div>
+
+                <div role="button" data-action="deleteItem" onclick="modalDeleteTravel(this)">
+                  <img width="32" src="assets/img/delete.svg" alt="Delete">
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <div class="d-flex gap-2" data-aos="zoom-in" data-aos-once="true">
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" src="assets/img/arrow3.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" src="assets/img/arrow.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">1</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">2</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">3</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" class="rotate-180" src="assets/img/arrow.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" class="rotate-180" src="assets/img/arrow3.svg" alt="Arrow">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-white px-5 border-top border-1 border-black border-opacity-10 pb-3">
+  <div class="d-flex justify-content-between gap-2 align-items-center">
+    <div class="d-flex flex-column gap-3 justify-content-start w-25">
+      <a href="index.html">
+        <img src="assets/img/logo.svg" alt="Logo">
+      </a>
+
+      <span class="text-black text-start">
+        Скачайте <br> наше приложение
+      </span>
+
+      <div class="d-flex gap-2">
+        <a href="#" class="d-block">
+          <img src="assets/img/appStore.svg" alt="AppStore">
+        </a>
+
+        <a href="#" class="d-block">
+          <img src="assets/img/googlePlay.svg" alt="AppStore">
+        </a>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="m-0 list-unstyled d-flex flex-column gap-2 p-4 rounded-4">
+        <li>
+          <a href="#about" class="d-block text-black text-decoration-none text-end">
+            О нас
+          </a>
+        </li>
+
+        <li>
+          <a href="#whyWe" class="d-block text-black text-decoration-none text-end">
+            Преимущества
+          </a>
+        </li>
+
+        <li>
+          <a href="#map" class="d-block text-black text-decoration-none text-end">
+            Карта стартов
+          </a>
+        </li>
+
+        <li>
+          <a href="#places" class="d-block text-black text-decoration-none text-end">
+            Маршруты
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/options.js"></script>
+<script src="assets/js/modalLk.js"></script>
+</body>
+</html>

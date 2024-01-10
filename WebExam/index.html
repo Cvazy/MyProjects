@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" href="assets/img/favicon.ico">
+  <title>Tenloc - Экскурсии по Москве</title>
+</head>
+<body>
+
+<div id="smooth" class="z-10 position-fixed bg-black bg-opacity-50 d-none justify-content-center align-items-center h-100 w-100">
+  <div class="position-relative p-5 bg-white rounded-4 d-none" id="chooseStart">
+    <div role="button" data-action="closeModal" class="position-absolute end-15px top-15px">
+      <img width="20" src="assets/img/close.svg" alt="Close">
+    </div>
+
+    <p class="fw-medium fs-5">
+      Список доступных стартов
+    </p>
+
+    <div class="d-flex flex-column gap-3" data-info="places">
+      <button type="button" class="text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        Воробьёвы горы
+      </button>
+
+      <button type="button" class="text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        ВДНХ
+      </button>
+
+      <button type="button" class="text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        Кремль
+      </button>
+
+      <button type="button" class="text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        Парк Горькова
+      </button>
+    </div>
+  </div>
+
+  <div class="position-relative p-5 bg-white rounded-4 d-none" id="chooseDate">
+    <div role="button" data-action="closeModal" class="position-absolute end-15px top-15px">
+      <img width="20" src="assets/img/close.svg" alt="Close">
+    </div>
+
+    <p class="fw-medium fs-5">
+      Список доступных дат для маршрута "<span data-span="selectPlace"></span>"
+    </p>
+
+    <div class="d-flex flex-wrap gap-3" data-info="date">
+      <button type="button" class="w-48 text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        18.01.2024
+      </button>
+
+      <button type="button" class="w-48 text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        24.01.2024
+      </button>
+
+      <button type="button" class="w-48 text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        02.02.2024
+      </button>
+
+      <button type="button" class="w-48 text-start text-black bg-main-color border-0 px-3 py-1 rounded-3">
+        24.02.2024
+      </button>
+    </div>
+  </div>
+
+  <div class="position-relative p-4 bg-white rounded-4 d-none w-40" id="confirmEvent">
+    <div role="button" data-action="closeModal" class="position-absolute end-15px top-15px">
+      <img width="20" src="assets/img/close.svg" alt="Close">
+    </div>
+
+    <p class="fw-medium fs-5">
+      Оформление заявки
+    </p>
+
+    <p>
+      ФИО гида: <span class="fw-medium" data-span="selectGid"></span>
+    </p>
+
+    <p>
+      Название маршрута: <span class="fw-medium" data-span="selectPlace"></span>
+    </p>
+
+    <form class="d-flex flex-column gap-3" method="post">
+      <div class="d-flex flex-wrap justify-content-between gap-2">
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Дата экскурсии:
+            <input class="ps-2 py-1" type="date" name="dateEvent" required>
+          </label>
+        </div>
+
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Время начала:
+            <input class="ps-2 py-1" type="time" name="timeStartEvent" required>
+          </label>
+        </div>
+
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Длительность:
+            <input class="ps-2 py-1" type="text" disabled name="durationEvent" value="1 час">
+          </label>
+        </div>
+
+        <div class="w-32">
+          <label class="d-flex flex-column gap-1">
+            Кол-во людей:
+            <input class="ps-2 py-1" type="number" name="qntPeoples" value="1" required>
+          </label>
+        </div>
+      </div>
+
+      <p class="fs-5 m-0">
+        Дополнительные опции
+      </p>
+
+      <div class="d-flex justify-content-between align-items-start gap-2">
+        <div class="w-48 d-flex flex-column gap-2">
+          <label class="d-flex align-items-center gap-2 w-100 user-select-none lh-sm">
+            <input type="checkbox" name="optionOne">
+            Легкие закуски и горячие напитки
+          </label>
+
+          <p class="fs-sm m-0">
+            Увеличивают стоимость на 1000 рублей за каждого посетителя.
+          </p>
+        </div>
+
+        <div class="w-48 d-flex flex-column gap-2">
+          <label class="d-flex justify-content-end align-items-center gap-2 w-100 user-select-none lh-sm">
+            <input type="checkbox" name="optionTwo">
+            Сопровождение сурдопереводчика
+          </label>
+
+          <p class="fs-sm m-0">
+            Увеличивает стоимость на 15%, если посетителей от 1 до 5, на 25%, если от 5 до 10.
+          </p>
+        </div>
+      </div>
+
+      <p class="fs-5 m-0">
+        Итоговая стоимость: <span class="fw-medium" id="cost">4580</span><span class="fw-medium"> ₽</span>
+      </p>
+
+      <div class="d-flex justify-content-between align-items-center gap-2">
+        <button data-action="closeModal" role="button" type="button" class="text-center text-black bg-black bg-opacity-25 border-0 px-3 py-2 rounded-5 w-48">
+          Отменить
+        </button>
+
+        <button role="button" type="submit" class="text-center text-black bg-main-color border-0 px-3 py-2 rounded-5 w-48">
+          Подтвердить
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<header class="position-sticky top-0 z-5 h-auto bg-white">
+  <div class="px-5 py-3 d-flex justify-content-center">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <div class="d-flex gap-3 position-relative">
+        <a href="index.html">
+          <img src="assets/img/logo.svg" alt="Logo">
+        </a>
+
+        <div role="button" id="navButton" class="d-flex align-items-center gap-2 px-5 user-select-none">
+          <span class="text-black fw-medium">
+            Меню
+          </span>
+
+          <div>
+            <img width="16" src="assets/img/menu.svg" alt="Menu">
+          </div>
+        </div>
+
+        <nav id="navMenu" class="position-absolute end-0 top-35px mh-0 overflow-hidden z-3">
+          <ul class="m-0 list-unstyled d-flex flex-column gap-2 p-4 rounded-4 bg-main-color">
+            <li>
+              <a href="#about" class="d-block text-black text-decoration-none border-bottom border-1 pb-1 border-black border-opacity-50">
+                О нас
+              </a>
+            </li>
+
+            <li>
+              <a href="#whyWe" class="d-block text-black text-decoration-none border-bottom border-1 pb-1 border-black border-opacity-50">
+                Преимущества
+              </a>
+            </li>
+
+            <li>
+              <a href="#map" class="d-block text-black text-decoration-none border-bottom border-1 pb-1 border-black border-opacity-50">
+                Карта стартов
+              </a>
+            </li>
+
+            <li>
+              <a href="#places" class="d-block text-black text-decoration-none border-bottom border-1 pb-1 border-black border-opacity-50">
+                Маршруты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <a href="lk.html" class="d-flex align-items-center gap-2 text-decoration-none">
+        <span class="text-black fw-medium">
+          Личный кабинет
+        </span>
+
+        <div>
+          <img width="24" src="assets/img/lk.svg" alt="Profile">
+        </div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="d-flex flex-column align-items-center pt-4 pb-5">
+  <div class="w-85 d-flex flex-column gap-5">
+    <div class="position-relative" data-aos="zoom-in" data-aos-once="true">
+      <div class="position-absolute bg-black bg-opacity-50 w-100 h-100 rounded-4"></div>
+
+      <div class="bg-main w-100 d-flex flex-column align-items-center rounded-4 py-11 gap-4">
+        <div class="w-75 text-center z-2 d-flex flex-column gap-2 align-items-center">
+          <h1 class="text-white mb-0">
+            Поиск и бронирование маршрутов по Москве
+          </h1>
+
+          <div>
+            <img width="228" src="assets/img/swoosh.svg" alt="Swoosh">
+          </div>
+
+          <span class="text-white fw-medium">
+          Пешеходные туристические экскурсии по столице
+        </span>
+        </div>
+
+        <div id="searchForm" class="d-flex align-items-center justify-content-between bg-white rounded-5 p-3 w-85 z-3 user-select-none">
+          <div class="d-flex gap-4">
+            <div role="button" class="d-flex align-items-center pe-4 border-end border-1 border-black border-opacity-25" onclick="openModal(this)" data-block="chooseStart">
+              <div>
+                <img width="38" src="assets/img/start.svg" alt="Start">
+
+                <span>
+                  Выберите стартовую точку
+                </span>
+              </div>
+            </div>
+
+            <div role="button" class="d-flex align-items-center" onclick="openModal(this)" data-block="chooseDate">
+              <div>
+                <img width="38" src="assets/img/date.svg" alt="Date">
+
+                <span>
+                  Выберите дату
+                </span>
+              </div>
+            </div>
+          </div>
+
+<!--          <input name="chooseStart" type="hidden" required>-->
+<!--          <input name="chooseDate" type="hidden" required>-->
+
+          <button id="searchGidsBtn" role="button" disabled class="d-flex align-items-center gap-2 text-center bg-main-color border-0 px-3 py-2 rounded-5" onclick="scrollToGids()">
+            <div class="d-flex">
+              <img width="15" src="assets/img/loup.svg" alt="Loup">
+            </div>
+
+            <span class="text-black">
+              Найти
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="whyWe" class="d-flex flex-column gap-4">
+      <h2 class="fw-bolder mb-0">
+        Почему именно мы?
+      </h2>
+
+      <div class="d-flex gap-2 flex-wrap justify-content-center">
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+
+        <div class="d-flex flex-column gap-1 text-center align-items-center">
+          <div class="bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="48" src="assets/img/star.svg" alt="Image">
+          </div>
+
+          <span class="fw-medium">
+            Достоинство
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div id="about" class="d-flex flex-column gap-4">
+      <h2 class="fw-bolder mb-0" data-aos="zoom-in" data-aos-once="true">
+        О нас
+      </h2>
+
+      <p class="fw-medium m-0" data-aos="zoom-in" data-aos-once="true">
+        Наша компания - это команда профессионалов, специализирующаяся на поиске и бронировании маршрутов по удивительному городу Москве. Мы стремимся сделать путешествие по столице России незабываемым и удобным для каждого нашего клиента.
+        <br> <br>
+        Мы предлагаем индивидуальные маршруты, адаптированные под ваши предпочтения и интересы. Наша команда тщательно отбирает лучшие достопримечательности, рестораны, музеи и другие места, чтобы каждый маршрут был запоминающимся и уникальным.
+        <br> <br>
+        Мы уделяем особое внимание качеству обслуживания и комфорту наших клиентов. Наша цель - сделать ваше путешествие по Москве беззаботным и полным впечатлений.
+        <br> <br>
+        Присоединяйтесь к нам, чтобы открыть для себя всю красоту и богатство Москвы с нашей помощью!
+      </p>
+    </div>
+
+    <div id="map" class="d-flex flex-column gap-4">
+      <h2 class="fw-bolder mb-0" data-aos="zoom-in" data-aos-once="true">
+        Карта точек начала маршрутов
+      </h2>
+
+      <div data-aos="zoom-in" data-aos-once="true">
+        <iframe class="w-100 h-50vh" src="https://yandex.ru/map-widget/v1/?um=constructor%3A24af3cea1eb08db30dc5600887f5e7aae4e8e3612c2003f1f1e6f0281ccc25e6&amp;source=constructor" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <div id="places" class="d-flex flex-column gap-4">
+      <h2 class="fw-bolder mb-0" data-aos="zoom-in" data-aos-once="true">
+        Список пешеходных маршрутов
+      </h2>
+
+      <div class="position-relative w-50" data-aos="zoom-in" data-aos-once="true">
+        <input class="border-black border-opacity-25 rounded-5 px-3 py-2 w-100 text-black text-opacity-50" style="border-style: solid" type="text" name="search_by_name" oninput="searchRows(this, 'travelName')" placeholder="Поиск по названию">
+
+        <img class="position-absolute end-20px top-8px" width="24" src="assets/img/loup-gray.svg" alt="Loup">
+      </div>
+
+      <div class="d-flex flex-column gap-4 align-items-center">
+        <table class="table">
+          <thead data-aos="zoom-in" data-aos-once="true">
+          <tr>
+            <th scope="col" class="text-start">Название</th>
+            <th scope="col" class="text-center">Описание</th>
+            <th scope="col" class="text-center">Основные объекты</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelName">Кремль</td>
+            <td class="text-center">Описание</td>
+            <td class="text-center">Основные объекты</td>
+            <td class="text-end">
+              <button onclick="scrollToGidsWithText(this)" data-action="choosePlace" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelName">Воробьёвы горы</td>
+            <td class="text-center">Описание</td>
+            <td class="text-center">Основные объекты</td>
+            <td class="text-end">
+              <button onclick="scrollToGidsWithText(this)" data-action="choosePlace" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="travelName">ВДНХ</td>
+            <td class="text-center">Описание</td>
+            <td class="text-center">Основные объекты</td>
+            <td class="text-end">
+              <button onclick="scrollToGidsWithText(this)" data-action="choosePlace" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <div class="d-flex gap-2" data-aos="zoom-in" data-aos-once="true">
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" src="assets/img/arrow3.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" src="assets/img/arrow.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">1</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">2</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">3</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" class="rotate-180" src="assets/img/arrow.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" class="rotate-180" src="assets/img/arrow3.svg" alt="Arrow">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gids" class="d-none flex-column gap-4">
+      <h2 class="fw-bolder mb-0" data-aos="zoom-in" data-aos-once="true">
+        Список доступных гидов по маршруту "<span data-span="selectPlace"></span>"
+      </h2>
+
+      <div class="d-flex justify-content-between align-items-center gap-2" data-aos="zoom-in" data-aos-once="true">
+        <div class="position-relative w-50">
+          <input class="border-black border-opacity-25 rounded-5 px-3 py-2 w-100 text-black text-opacity-50" style="border-style: solid" type="text" name="search_by_fio" oninput="searchRows(this, 'gidFio')" placeholder="Поиск по ФИО">
+
+          <img class="position-absolute end-20px top-8px" width="24" src="assets/img/loup-gray.svg" alt="Loup">
+        </div>
+
+        <div class="d-flex gap-2 align-items-center justify-content-end">
+          <span class="fw-medium">
+            Опыт работы
+          </span>
+
+          <input class="border-black border-opacity-25 rounded-5 px-3 py-2 text-black text-opacity-50 w-25" style="border-style: solid" type="number" name="experience_by" oninput="searchByTo(this, 'by')" placeholder="От">
+
+          <input class="border-black border-opacity-25 rounded-5 px-3 py-2 text-black text-opacity-50 w-25" style="border-style: solid" type="number" name="experience_to" oninput="searchByTo(this, 'to')" placeholder="До">
+        </div>
+      </div>
+
+      <div class="d-flex flex-column gap-4 align-items-center">
+        <table class="table">
+          <thead data-aos="zoom-in" data-aos-once="true">
+          <tr>
+            <th scope="col" class="text-start">ФИО</th>
+            <th scope="col" class="text-center">Языки</th>
+            <th scope="col" class="text-center">Опыт работы</th>
+            <th scope="col" class="text-center">Стоимость услуг</th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="gidFio">Трофимов Трофим Трофимович</td>
+            <td class="text-center">Русский, Английский</td>
+            <td class="text-center" data-row="stage">3 года</td>
+            <td class="text-center">3000 ₽ / час</td>
+            <td class="text-end">
+              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="gidFio">Ивашкин Дмитрий Борисович</td>
+            <td class="text-center">Русский, Английский</td>
+            <td class="text-center" data-row="stage">5 года</td>
+            <td class="text-center">3000 ₽ / час</td>
+            <td class="text-end">
+              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="gidFio">Андреев Андрей Андреевич</td>
+            <td class="text-center">Русский, Английский</td>
+            <td class="text-center" data-row="stage">10 года</td>
+            <td class="text-center">3000 ₽ / час</td>
+            <td class="text-end">
+              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="gidFio">Павлов Павел Павлович</td>
+            <td class="text-center">Русский, Английский</td>
+            <td class="text-center" data-row="stage">1 год</td>
+            <td class="text-center">3000 ₽ / час</td>
+            <td class="text-end">
+              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+
+          <tr data-aos="zoom-in" data-aos-once="true">
+            <td class="text-start" data-row="gidFio">Иванов Иван Иванович</td>
+            <td class="text-center">Русский, Английский</td>
+            <td class="text-center" data-row="stage">15 года</td>
+            <td class="text-center">3000 ₽ / час</td>
+            <td class="text-end">
+              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
+                Выбрать
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <div class="d-flex gap-2" data-aos="zoom-in" data-aos-once="true">
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" src="assets/img/arrow3.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" src="assets/img/arrow.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">1</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">2</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">3</div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" class="rotate-180" src="assets/img/arrow.svg" alt="Arrow">
+          </div>
+
+          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
+            <img width="24" class="rotate-180" src="assets/img/arrow3.svg" alt="Arrow">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="bg-white px-5 border-top border-1 border-black border-opacity-10 pb-3">
+  <div class="d-flex justify-content-between gap-2 align-items-center">
+    <div class="d-flex flex-column gap-3 justify-content-start w-25">
+      <a href="index.html">
+        <img src="assets/img/logo.svg" alt="Logo">
+      </a>
+
+      <span class="text-black text-start">
+        Скачайте <br> наше приложение
+      </span>
+
+      <div class="d-flex gap-2">
+        <a href="#" class="d-block">
+          <img src="assets/img/appStore.svg" alt="AppStore">
+        </a>
+
+        <a href="#" class="d-block">
+          <img src="assets/img/googlePlay.svg" alt="AppStore">
+        </a>
+      </div>
+    </div>
+
+    <nav>
+      <ul class="m-0 list-unstyled d-flex flex-column gap-2 p-4 rounded-4">
+        <li>
+          <a href="#about" class="d-block text-black text-decoration-none text-end">
+            О нас
+          </a>
+        </li>
+
+        <li>
+          <a href="#whyWe" class="d-block text-black text-decoration-none text-end">
+            Преимущества
+          </a>
+        </li>
+
+        <li>
+          <a href="#map" class="d-block text-black text-decoration-none text-end">
+            Карта стартов
+          </a>
+        </li>
+
+        <li>
+          <a href="#places" class="d-block text-black text-decoration-none text-end">
+            Маршруты
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/dropMenu.js"></script>
+<script src="assets/js/modalSearch.js"></script>
+<script src="assets/js/confirmModal.js"></script>
+<script src="assets/js/searching.js"></script>
+<script src="assets/js/different.js"></script>
+<script src="assets/js/options.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+</html>
