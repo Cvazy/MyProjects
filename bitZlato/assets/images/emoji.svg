@@ -1,0 +1,33 @@
+<!-- icon666.com - MILLIONS vector ICONS FREE -->
+<svg fill="none" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#e07438">
+        <path d="m380 20h240v40h-240z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m300 100v-40h80v40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m220 140v-40h80v40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m180 180v-40h40v40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m140 220v-40h40v40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m100 300v-80h40v80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m60 380v-80h40v80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m60 380v80h-40v-80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m700 100h-80v-40h80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m780 140h-80v-40h80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m820 180h-40v-40h40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m860 220h-40v-40h40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m900 300h-40v-80h40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m940 380h-40v-80h40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+        <path d="m980 380h-40v80h40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    </g>
+    <path d="m380 60h240v40h80v40h80v40h40v40h40v80h40v80h40v240h-40v80h-40v80h-40v40h-40v40h-80v40h-80v40h-240v-40h-80v-40h-80v-40h-40v-40h-40v-80h-40v-80h-40v-240h40v-80h40v-80h40v-40h40v-40h80v-40h80z"
+          fill="#edab50" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m300 340h80v-40h-80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m700 340h-80v-40h80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m60 540h40v80h-40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m900 620v80h-40v80h-40v40h-40v40h-80v40h-80v40h-240v-40h-80v-40h-80v-40h-40v-40h-40v-80h-40v-80h40v40h40v40h40v40h40v40h80v40h320v-40h80v-40h40v-40h40v-40h40v-40z"
+          fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m900 620v-80h40v80z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m300 580h-40v40h40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m700 580h40v40h-40z" fill="#e07438" style="fill: rgb(230, 218, 117);"></path>
+    <path d="m380 340h-80v160h80z" fill="#c64524" style="fill: rgb(0, 0, 0);"></path>
+    <path d="m620 340h80v160h-80z" fill="#c64524" style="fill: rgb(0, 0, 0);"></path>
+    <path d="m700 580h-400v40h400z" fill="#c64524" style="fill: rgb(0, 0, 0);"></path>
+</svg>

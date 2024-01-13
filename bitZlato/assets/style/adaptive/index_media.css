@@ -1,0 +1,874 @@
+@media (max-width: 1919.95px) {
+    .info-block {
+        width: 280px;
+    }
+
+    .info-block__top,
+    .info-block__bottom {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .settings {
+        display: none;
+    }
+}
+
+@media (max-width: 1379px) {
+    .report__btn {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1279px) {
+    .modal {
+        width: 32%;
+    }
+
+    .sidebar,
+    .info-block {
+        display: none;
+    }
+
+    .sidebar {
+        position: absolute;
+        z-index: 10;
+        margin: 0 20px;
+    }
+
+    #filterForm {
+        width: 100%;
+        padding: 0 15px;
+        margin-top: 2rem;
+    }
+
+    .submit_btn {
+        width: 100%;
+        margin: 0;
+    }
+
+    .sidebar__wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .sidebar__close {
+        display: block;
+        width: 25px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        cursor: pointer;
+    }
+
+    .sidebar__item {
+        width: 50%;
+    }
+
+    .searching__input input {
+        width: 85%;
+    }
+
+    .sidebar__select {
+        width: 33%;
+    }
+
+    .order-n1 {
+        order: -1;
+    }
+
+    .filter {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header__logo a {
+        margin-left: 32px;
+        margin-right: 30px;
+    }
+
+    .main-wallet__wrapper {
+        flex-direction: column;
+    }
+
+    .main-wallet__wrapper .create__left,
+    .main-wallet__wrapper .create__right {
+        width: 100%;
+    }
+
+    .auth-user {
+        margin-right: 32px;
+    }
+
+    .token_nav li {
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 60px 32px 32px;
+    }
+
+    .block {
+        display: block !important;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+    .main-content {
+        margin-left: 30px;
+    }
+}
+
+@media (min-width: 1060px) and (max-width: 1129px) {
+    .trade-block {
+        width: 48%;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1060px) {
+    .main_trade__wrapper,
+    .trade__nav {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .md-flex div,
+    .trade-element {
+        font-size: 12px;
+    }
+
+    .wallet_nav {
+        flex-direction: column;
+    }
+
+    .my_wallet {
+        width: auto !important;
+        margin: 4rem 1rem 2rem 1rem !important;
+    }
+
+    .chat {
+        left: -0.5px;
+    }
+}
+
+@media (max-width: 959px) {
+    .header__wrapper {
+        padding-right: 16px;
+        justify-content: space-between;
+        z-index: 1100;
+        position: fixed;
+    }
+
+    .header__logo a {
+        margin-left: 16px;
+        margin-right: 28px;
+    }
+
+    .auth-user {
+        margin-right: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .login {
+        min-width: 0;
+    }
+
+    .profile {
+        margin-top: 3.5rem;
+    }
+
+    .main-content {
+        margin-right: 0;
+    }
+
+    .mark-all {
+        font-size: 12px;
+        letter-spacing: -0.3px;
+    }
+
+    .selling span {
+        font-size: 14px;
+    }
+
+    .selling__img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .selling__item-left,
+    .selling__item-right span {
+        font-size: 12px;
+    }
+
+    .mr-10 {
+        margin-right: 6px;
+    }
+
+    .mt-50 {
+        margin-top: 50px;
+    }
+
+    .board-nav {
+        width: calc(100vw - 40px);
+    }
+
+    .board-nav__items {
+        display: flex;
+        padding: 19px 16px;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    .board-nav__items a {
+        font-size: 14px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dashboard {
+        margin: 0 16px;
+    }
+
+    .md-m-0 {
+        margin: 0;
+    }
+
+    .sidebar {
+        margin: 0 auto;
+    }
+
+    .sidebar__wrapper {
+        border-radius: 0;
+    }
+
+    .title__text {
+        font-size: 18px;
+    }
+
+    .refresh__btn {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+    }
+
+    .refresh__text,
+    .list__navigation,
+    .nav__wrapper,
+    .language,
+    .all-pages:first-child,
+    .all-pages:last-child {
+        display: none;
+    }
+
+    .md-flex {
+        display: flex !important;
+    }
+
+    .t-btn__left {
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        transform: translate(-50%, -50%);
+    }
+
+    .dashboard__item {
+        height: auto;
+        padding: 24px 22px;
+        flex-wrap: wrap;
+    }
+
+    .desc-text {
+        display: block;
+        margin-bottom: 4px;
+        padding-right: 0;
+    }
+
+    .trader__wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0;
+    }
+
+    .trader,
+    .paymethod,
+    .rate,
+    .limits {
+        width: 50%;
+        text-align: right;
+    }
+
+    .rate {
+        text-align: left;
+    }
+
+    .rate,
+    .limits {
+        margin-top: 20px;
+    }
+
+    .circle-name {
+        gap: 20px;
+    }
+
+    .actions {
+        width: 100% !important;
+        margin-top: 18px;
+    }
+
+    .pagination__wrapper {
+        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .all-pages {
+        width: 100%;
+        margin-top: 24px;
+    }
+
+    .all-pages .rotate-90,
+    .all-pages .rotate-n90 {
+        width: 24px;
+        min-width: 24px;
+        background: none;
+    }
+
+    .pages-nav {
+        top: 0;
+        right: 0;
+        position: absolute;
+        background: none;
+    }
+
+    .wallet {
+        margin: 4rem 0 3rem 3rem;
+    }
+
+    .table__item .trader {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .text-right {
+        text-align: right !important;
+    }
+
+    .profile__blocks-left {
+        width: 45%;
+    }
+
+    footer {
+        padding: 40px 24px;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    .footer__title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .bells {
+        margin-top: 4.5rem;
+    }
+
+    .md_hidden {
+        display: none !important;
+    }
+
+    .main_trade__wrapper,
+    .trade__nav {
+        padding: 0 1.5rem;
+    }
+
+    .trade__nav {
+        margin-top: 4rem;
+    }
+
+    .main_create__wrapper {
+        width: 90%;
+    }
+
+    .modal-mt {
+        margin-top: 70px;
+    }
+
+    .footer__title .sidebar__arrow {
+        display: block;
+    }
+
+    .footer__block:first-child {
+        margin-bottom: 40px;
+    }
+
+    .footer__block:nth-child(n+2) {
+        margin-bottom: 8px;
+    }
+
+    .footer__block .mb-32 {
+        margin-bottom: 24px;
+    }
+
+    .footer_circles {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    .modal {
+        position: relative;
+        top: -15%;
+        width: 40%;
+    }
+
+    .info__wrapper {
+        flex-direction: column;
+    }
+
+    .my-advert__left {
+        margin-top: 1rem;
+    }
+
+    .flex-col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my-advert__right {
+        position: relative;
+        order: 10;
+        margin: 0;
+        width: 100%;
+    }
+
+    .trade-block,
+    .purchase,
+    .my-advert__left {
+        width: 100%;
+    }
+
+    .modal-mt {
+        margin-top: 200px;
+    }
+
+    .md-flex, .card {
+        display: none !important;
+    }
+
+    .trades__list {
+        margin-top: 1.5rem;
+    }
+
+    .trade__item__wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .trade__item {
+        padding: 20px;
+    }
+
+    .trade-element {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        text-align: right;
+        text-wrap: wrap;
+    }
+
+    .trade-element span,
+    .account-element span {
+        display: block;
+        text-align: left;
+    }
+}
+
+@media (max-width: 800px) {
+    .sidebar__select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .bells {
+        right: 0;
+        width: 100%;
+    }
+
+    .triangle {
+        right: 65px;
+    }
+
+    .profile {
+        right: 15%;
+    }
+
+    .trade-info {
+        padding: 15px 20px;
+    }
+
+    .inputs__wrapper label input {
+        width: 125px;
+    }
+
+    .buy_link {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .report__btn {
+        padding: 13px;
+    }
+
+    .main_create__wrapper {
+        margin: 2rem 0 3rem 1.5rem;
+    }
+
+    .my-trade__wrapper {
+        width: 94%;
+        margin: 2rem 1.5rem 3rem 1.5rem;
+    }
+
+    .crate__wrapper {
+        flex-direction: column;
+    }
+
+    .create__left,
+    .create__right,
+    .summary_wrapper,
+    .profile__blocks-left,
+    .profile__blocks-right,
+    .withdrawal {
+        width: 100%;
+    }
+
+    .create__right,
+    .profile__blocks-right {
+        order: -1;
+    }
+
+    .order-10 {
+        order: 10;
+    }
+
+    .start-adverts {
+        margin-top: 1.75rem;
+    }
+
+    .wallet {
+        margin: 4rem 0 3rem 1.5rem;
+        width: 93%;
+    }
+
+    .trade__nav-left {
+        gap: 1rem;
+    }
+
+    .trade__nav-left a,
+    .trade__nav-right span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 620px) {
+    .trade__nav-right {
+        gap: 12px;
+    }
+
+    .black-arrow {
+        width: 5px;
+        height: 4px;
+    }
+
+    .new-advert span {
+        font-size: 12px;
+    }
+
+    .new-advert__img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .new-advert {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header__logo a {
+        margin-right: 16px;
+    }
+
+    .modal {
+        width: 60%;
+    }
+
+    .trade__nav-right {
+        width: 100%;
+    }
+
+    .chat {
+        width: auto;
+        height: 50vh;
+    }
+
+    .auth-user {
+        gap: 13px;
+    }
+
+    .profile {
+        margin-top: 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        right: 0;
+        border-radius: 0;
+    }
+
+    .profile__wrapper {
+        padding: 20px 40px;
+    }
+
+    .profile__list li a {
+        font-size: 14px;
+    }
+
+    .close-profile {
+        display: block;
+        width: 20px;
+        position: absolute;
+        right: 5%;
+        top: 10%;
+    }
+
+    .nickname {
+        display: none;
+    }
+
+    .trade__nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .trade__nav-left {
+        gap: 1rem;
+    }
+
+    .inputs__wrapper {
+        gap: 0.8rem;
+    }
+
+    .money {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .finish_sum {
+        flex-direction: column;
+    }
+
+    .trade-info {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 15px;
+        max-height: 125px;
+        height: auto;
+    }
+
+    .inputs__wrapper label input,
+    .trade-info__right,
+    .trade-info__left,
+    .sidebar__item,
+    .inputs__wrapper,
+    .sum__wrapper,
+    .convert_sum {
+        width: 100%;
+    }
+
+    .trade-info__left {
+        gap: 1rem;
+    }
+
+    .inputs__wrapper label {
+        width: 45%;
+    }
+
+    .trade-info__right a {
+        width: 100%;
+    }
+
+    .report__btn {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .token_nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .my-trade__wrapper {
+        margin: 2rem 1.5rem 3rem 1rem;
+        width: 90%;
+    }
+
+    .table__item .trader {
+        font-size: 12px;
+    }
+
+    .wallet__item-text {
+        font-size: 12px;
+        white-space: normal;
+    }
+
+    .sm-fz-12px {
+        font-size: 12px;
+    }
+
+    .sm-profile {
+        width: 100%;
+        padding: 1rem;
+        margin: 2.5rem 0 0 0;
+    }
+
+    .w-60 {
+        width: 60%;
+    }
+
+    .select_wallet {
+        width: 60%;
+        float: right;
+    }
+}
+
+@media (max-width: 510px) {
+    .selling__item-right {
+        justify-content: end;
+    }
+
+    .create_address {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .create_link {
+        padding: 0;
+    }
+
+    .selling__options {
+        max-width: 12.2rem;
+        flex-direction: row;
+    }
+
+    .selling__block__wrapper {
+        position: relative;
+        padding: 45px 20px 20px 20px;
+    }
+
+    .options__wrapper {
+        display: flex;
+        height: fit-content;
+        align-items: center;
+        position: absolute;
+        right: 1rem;
+        top: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .modal {
+        width: 80%;
+    }
+
+    .modal-mt {
+        margin-top: 230px;
+    }
+
+    .auth-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .header-link {
+        font-size: 12px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .heading,
+    .create-advert__btn {
+        text-align: center;
+        width: 100%;
+    }
+
+    .deal__details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gap-6 {
+        gap: 6px !important;
+    }
+
+    .sm-column {
+        flex-direction: column;
+    }
+
+    .sm-w-full {
+        width: 100% !important;
+    }
+
+    .sm-mt-0 {
+        margin-top: 0;
+    }
+
+    .sell_option {
+        width: 4.5rem;
+        font-size: 12px;
+    }
+
+    .selling__options {
+        max-width: 9.2rem;
+    }
+}
+
+@media (max-width: 325px) {
+    .mob-nav {
+        padding: 20px 10px;
+    }
+
+    .trade-block {
+        padding: 20px 15px;
+    }
+}

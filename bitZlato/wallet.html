@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <link rel="icon"
+        href="assets/favicon.ico">
+  <link rel="stylesheet"
+        href="assets/style/main/main.css">
+  <link rel="stylesheet"
+        href="assets/style/adaptive/index_media.css">
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+  <title>BitZlato - Wallet</title>
+</head>
+<body>
+<header>
+  <div class="header__wrapper">
+    <div class="header-left">
+      <div class="header__logo">
+        <a href="index.html">
+          <svg height="22"
+               viewBox="0 0 102 22"
+               width="102"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="m4.12.472v7.902a5.888 5.888 0 0 1 3.964-1.49l-.008.009c4.303 0 7.185 3.314 7.185 7.539s-2.88 7.568-7.185 7.568a5.888 5.888 0 0 1 -3.964-1.49v1.243h-4.112v-21.28h4.12zm90.322 6.644c4.302 0 7.558 3.265 7.558 7.423 0 4.16-3.251 7.457-7.558 7.457s-7.558-3.294-7.558-7.457 3.254-7.423 7.558-7.423zm-28.746 0a5.937 5.937 0 0 1 3.742 1.284l.224.186v-1.432h4.118v14.6h-4.118v-1.227a5.948 5.948 0 0 1 -3.966 1.469c-4.305 0-7.186-3.298-7.186-7.457 0-4.158 2.883-7.423 7.186-7.423zm-18.08 0v3.884l-6.465 6.889h6.761v3.852h-11.54v-3.852l6.473-6.89h-6.07v-3.882h10.84zm-25.02 0v14.625h-4.12v-14.625zm31.944-6.74v15.364s-.055 1.255.504 1.82c.3.33.731.507 1.174.48h1.956v3.64h-3.933c-.185-.008-1.478-.105-2.772-1.413-1.119-1.13-1.119-2.825-1.119-2.825l-.002-17.067h4.192zm26.622 1.679v5.385h3.319v3.475l-3.32.058v4.764s0 1.164.56 1.729c.288.327.686.532 1.117.576h1.952v3.639h-3.774c-.198-.007-1.632-.101-2.93-1.413-1.118-1.13-1.118-2.825-1.118-2.825v-14.44zm-50.845 0v5.385h3.32v3.475l-3.32.058v4.764s0 1.164.56 1.729c.287.327.686.532 1.116.576h1.957v3.639h-3.936c-.185-.008-1.478-.105-2.772-1.413-1.03-1.04-1.112-2.557-1.118-2.793v-14.472zm64.125 8.684c-2.231 0-3.53 1.646-3.53 3.8s1.301 3.801 3.53 3.801c2.231 0 3.532-1.657 3.532-3.8 0-2.144-1.3-3.801-3.532-3.801zm-28.312-.002c-2.198 0-3.5 1.657-3.5 3.8 0 2.144 1.302 3.801 3.5 3.803 2.231 0 3.532-1.649 3.532-3.803s-1.301-3.8-3.532-3.8zm-58.48-.174c-2.2 0-3.53 1.68-3.53 3.86 0 2.181 1.301 3.861 3.53 3.861 2.192 0 3.493-1.673 3.493-3.86 0-2.188-1.292-3.861-3.493-3.861zm13.853-10.367a2.534 2.534 0 0 1 1.538 2.356c-.002 1.387-1.115 2.512-2.487 2.514a2.505 2.505 0 0 1 -2.33-1.555 2.553 2.553 0 0 1 .54-2.769 2.486 2.486 0 0 1 2.739-.546z"
+                  fill="#fff"></path>
+          </svg>
+        </a>
+
+        <div class="burger">
+          <button type="button"
+                  class="burger__btn">
+            <span class="span burger__line"></span>
+            <span class="span burger__line"></span>
+            <span class="span burger__line"></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="nav__wrapper">
+        <ul class="navigation">
+          <li>
+            <a href="#"
+               class="header-link">P2P</a>
+          </li>
+
+          <li>
+            <a href="#"
+               class="header-link">Exchange</a>
+          </li>
+
+          <li>
+            <a href="#"
+               class="header-link">Payment Gateway</a>
+          </li>
+
+          <li>
+            <a href="#"
+               class="header-link">FAQ</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="language">
+        <button type="button"
+                class="language__btn">en
+        </button>
+
+        <ul class="languages__list hidden">
+          <li>ru</li>
+          <li class="lg__active">en</li>
+          <li>tg</li>
+        </ul>
+      </div>
+
+      <div class="auth-user">
+        <div class="auth__item">
+          <div class="auth-icon">
+            <img src="assets/images/profile.svg" alt="Profile">
+          </div>
+
+          <span class="nickname">BCNbound</span>
+        </div>
+
+        <div class="auth-icon">
+          <img src="assets/images/speed.svg" alt="Speed">
+        </div>
+
+        <div class="auth-icon" id="bell">
+          <img src="assets/images/bell.svg" alt="Bell">
+          <div class="notify"></div>
+        </div>
+
+        <div class="auth-icon">
+          <img src="assets/images/exit.svg" alt="Exit">
+        </div>
+      </div>
+
+      <div class="login" style="display: none">
+        <a href="logIn.html"
+           class="header-link">Login</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="profile">
+      <div class="profile__wrapper">
+        <div class="close-profile">
+          <img src="assets/images/close.svg" alt="Close">
+        </div>
+        <ul class="profile__list">
+          <li>
+            <a href="myWallet.html">
+              My wallets
+            </a>
+          </li>
+
+          <li>
+            <a href="myProfile.html">
+              My profile
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Referral
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Telegram
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Reports
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              Trader Workspace
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bells hidden">
+      <div class="bells__wrapper">
+        <div class="triangle"></div>
+
+        <div class="mark-all__wrapper">
+          <div class="mark-all">
+            <span>Mark everything as read</span>
+          </div>
+        </div>
+
+        <div class="bells__list">
+          <a href="selling.html">
+            <div class="bell__item">
+              <p class="bell-time">
+                Nov 21, 2020 12:54 PM
+              </p>
+
+              <p class="bell-massage">
+                New trade id #5824880
+              </p>
+            </div>
+          </a>
+
+          <div class="bell__item reading">
+            <p class="bell-time">
+              Nov 21, 2020 12:43 PM
+            </p>
+
+            <p class="bell-massage">
+              Trade status has been changed #5824880
+            </p>
+          </div>
+
+          <div class="bell__item reading">
+            <p class="bell-time">
+              Nov 21, 2020 12:41 PM
+            </p>
+
+            <p class="bell-massage">
+              Trade status has been changed #5824880
+            </p>
+          </div>
+
+          <div class="bell__item reading">
+            <p class="bell-time">
+              Nov 17, 2020 7:43 PM
+            </p>
+
+            <p class="bell-massage">
+              New massage from user BubasExchange
+            </p>
+          </div>
+
+          <div class="bell__item reading">
+            <p class="bell-time">
+              Nov 11, 2020 12:54 PM
+            </p>
+
+            <p class="bell-massage">
+              New trade id #58124880
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="mob-nav">
+        <nav class="nav__wrapper block">
+          <ul class="navigation mob__navigation">
+            <li>
+              <a href="#"
+                 class="header-link">P2P</a>
+            </li>
+
+            <li>
+              <a href="#"
+                 class="header-link">Exchange</a>
+            </li>
+
+            <li>
+              <a href="#"
+                 class="header-link">Payment Gateway</a>
+            </li>
+
+            <li>
+              <a href="#"
+                 class="header-link">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="wrap">
+        <div class="main_create__wrapper wallet">
+          <h1>Wallet</h1>
+
+          <div class="main-wallet__wrapper">
+            <div class="create__left">
+              <div class="dashboard md-m-0">
+                <div class="dashboard__list">
+                  <div class="list__navigation justify-start h-35px md-flex">
+                    <div class="list__navigation__item w-33 fz-12">
+                      Balance
+                    </div>
+
+                    <div class="list__navigation__item w-33 fz-12">
+                      Equivalent
+                    </div>
+
+                    <div class="list__navigation__item w-33 fz-12">
+                      Blocked
+                    </div>
+                  </div>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0.00323921 BTC
+                      </div>
+
+                      <div class="wallet__item-text">
+                        1712 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 BTC
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        16.70494724 USDT
+                      </div>
+
+                      <div class="wallet__item-text">
+                        474 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 USDT
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        1197.37243487 DOGE
+                      </div>
+
+                      <div class="wallet__item-text">
+                        112 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 DOGE
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+                    </div>
+                  </a>
+
+                  <a href="walletDetails.html">
+                    <div class="dashboard__item wallet__item justify-start">
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 UAH
+                      </div>
+
+                      <div class="wallet__item-text">
+                        0 ETH
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="create__right order-10">
+              <h3 class="statistic__title">Bitzlato wallet statistics</h3>
+              <div class="dashboard__list table-wallet">
+                <div class="list__navigation h-35px py-0 px-12">
+                  <div class="list__navigation__item black fz-12 w-13">
+                    code
+                  </div>
+
+                  <div class="list__navigation__item black fz-12 w-13">
+                    withdrawal fee
+                  </div>
+
+                  <div class="list__navigation__item black fz-12 w-13">
+                    withdrawals
+                  </div>
+
+                  <div class="list__navigation__item black fz-12 w-13">
+                    min withdrawal
+                  </div>
+
+                  <div class="list__navigation__item black fz-12 w-13">
+                    withdraw enabled
+                  </div>
+
+                  <div class="list__navigation__item black fz-12 w-13">
+                    deposit enabled
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    BTC
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    0.00022
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    169
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0.00000592
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    ETH
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    0.005
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    6
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0.02
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    LTC
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    0.001
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    2
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0.00000546
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    USDT
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    8
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    1
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0.01
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    USDC
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    25
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    0
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    DASH
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    0.001
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    0
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0.00000546
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    DOGE
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    1
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    0
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    1
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    DOGE
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    0.0002
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    0
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    1
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+
+                <div class="dashboard__item table__item">
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">code</div>
+                    BCH
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdrawal fee</div>
+                    0.0002
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdrawals</div>
+                    0
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">min withdrawal</div>
+                    0.00000546
+                  </div>
+
+                  <div class="trader">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+
+                  <div class="trader text-right">
+                    <div class="desc-text sm-fz-12px">withdraw enabled</div>
+                    Yes
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer__block">
+    <div class="mb-32">
+      <svg height="22"
+           viewBox="0 0 102 22"
+           width="102"
+           xmlns="http://www.w3.org/2000/svg">
+        <path d="m4.12.472v7.902a5.888 5.888 0 0 1 3.964-1.49l-.008.009c4.303 0 7.185 3.314 7.185 7.539s-2.88 7.568-7.185 7.568a5.888 5.888 0 0 1 -3.964-1.49v1.243h-4.112v-21.28h4.12zm90.322 6.644c4.302 0 7.558 3.265 7.558 7.423 0 4.16-3.251 7.457-7.558 7.457s-7.558-3.294-7.558-7.457 3.254-7.423 7.558-7.423zm-28.746 0a5.937 5.937 0 0 1 3.742 1.284l.224.186v-1.432h4.118v14.6h-4.118v-1.227a5.948 5.948 0 0 1 -3.966 1.469c-4.305 0-7.186-3.298-7.186-7.457 0-4.158 2.883-7.423 7.186-7.423zm-18.08 0v3.884l-6.465 6.889h6.761v3.852h-11.54v-3.852l6.473-6.89h-6.07v-3.882h10.84zm-25.02 0v14.625h-4.12v-14.625zm31.944-6.74v15.364s-.055 1.255.504 1.82c.3.33.731.507 1.174.48h1.956v3.64h-3.933c-.185-.008-1.478-.105-2.772-1.413-1.119-1.13-1.119-2.825-1.119-2.825l-.002-17.067h4.192zm26.622 1.679v5.385h3.319v3.475l-3.32.058v4.764s0 1.164.56 1.729c.288.327.686.532 1.117.576h1.952v3.639h-3.774c-.198-.007-1.632-.101-2.93-1.413-1.118-1.13-1.118-2.825-1.118-2.825v-14.44zm-50.845 0v5.385h3.32v3.475l-3.32.058v4.764s0 1.164.56 1.729c.287.327.686.532 1.116.576h1.957v3.639h-3.936c-.185-.008-1.478-.105-2.772-1.413-1.03-1.04-1.112-2.557-1.118-2.793v-14.472zm64.125 8.684c-2.231 0-3.53 1.646-3.53 3.8s1.301 3.801 3.53 3.801c2.231 0 3.532-1.657 3.532-3.8 0-2.144-1.3-3.801-3.532-3.801zm-28.312-.002c-2.198 0-3.5 1.657-3.5 3.8 0 2.144 1.302 3.801 3.5 3.803 2.231 0 3.532-1.649 3.532-3.803s-1.301-3.8-3.532-3.8zm-58.48-.174c-2.2 0-3.53 1.68-3.53 3.86 0 2.181 1.301 3.861 3.53 3.861 2.192 0 3.493-1.673 3.493-3.86 0-2.188-1.292-3.861-3.493-3.861zm13.853-10.367a2.534 2.534 0 0 1 1.538 2.356c-.002 1.387-1.115 2.512-2.487 2.514a2.505 2.505 0 0 1 -2.33-1.555 2.553 2.553 0 0 1 .54-2.769 2.486 2.486 0 0 1 2.739-.546z"
+              fill="#fff"></path>
+      </svg>
+
+      <div class="footer_circles">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               width="36"
+               height="36"
+               viewBox="0 0 36 36">
+            <defs>
+              <path id="vkA"
+                    d="M11.094 11.268s.365-.04.55-.236c.172-.181.166-.521.166-.521s-.022-1.59.73-1.825c.74-.231 1.693 1.538 2.703 2.218.763.513 1.342.4 1.342.4l2.699-.036s1.41-.085.742-1.175c-.056-.09-.39-.805-2.006-2.278-1.693-1.541-1.466-1.292.572-3.96 1.24-1.623 1.738-2.614 1.583-3.038-.148-.405-1.061-.298-1.061-.298l-3.038.019s-.226-.031-.393.067c-.163.097-.268.32-.268.32s-.481 1.257-1.122 2.326c-1.353 2.254-1.894 2.373-2.115 2.234-.514-.327-.386-1.312-.386-2.011 0-2.185.338-3.097-.657-3.332-.331-.08-.574-.13-1.418-.14-1.084-.01-2.002.005-2.521.254-.347.166-.613.536-.45.558.2.026.655.12.896.442.31.416.3 1.35.3 1.35s.179 2.572-.417 2.89c-.41.22-.971-.227-2.178-2.272-.617-1.048-1.084-2.206-1.084-2.206S4.173.8 4.012.685C3.818.544 3.546.5 3.546.5L.659.519S.225.53.066.716C-.075.88.055 1.22.055 1.22s2.26 5.19 4.82 7.807c2.347 2.397 5.01 2.24 5.01 2.24h1.209z"></path>
+            </defs>
+            <g fill="none"
+               fill-rule="evenodd">
+              <path fill="#FFF"
+                    fill-opacity=".1"
+                    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"></path>
+              <g transform="translate(8 13)">
+                <mask id="vkB"
+                      fill="#fff">
+                  <use xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                </mask>
+                <use fill="#878FA4"
+                     xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                <g fill="#FFF"
+                   mask="url(#vkB)">
+                  <path d="M-2-7h24v24H-2z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               width="36"
+               height="36"
+               viewBox="0 0 36 36">
+            <defs>
+              <path id="vkA"
+                    d="M11.094 11.268s.365-.04.55-.236c.172-.181.166-.521.166-.521s-.022-1.59.73-1.825c.74-.231 1.693 1.538 2.703 2.218.763.513 1.342.4 1.342.4l2.699-.036s1.41-.085.742-1.175c-.056-.09-.39-.805-2.006-2.278-1.693-1.541-1.466-1.292.572-3.96 1.24-1.623 1.738-2.614 1.583-3.038-.148-.405-1.061-.298-1.061-.298l-3.038.019s-.226-.031-.393.067c-.163.097-.268.32-.268.32s-.481 1.257-1.122 2.326c-1.353 2.254-1.894 2.373-2.115 2.234-.514-.327-.386-1.312-.386-2.011 0-2.185.338-3.097-.657-3.332-.331-.08-.574-.13-1.418-.14-1.084-.01-2.002.005-2.521.254-.347.166-.613.536-.45.558.2.026.655.12.896.442.31.416.3 1.35.3 1.35s.179 2.572-.417 2.89c-.41.22-.971-.227-2.178-2.272-.617-1.048-1.084-2.206-1.084-2.206S4.173.8 4.012.685C3.818.544 3.546.5 3.546.5L.659.519S.225.53.066.716C-.075.88.055 1.22.055 1.22s2.26 5.19 4.82 7.807c2.347 2.397 5.01 2.24 5.01 2.24h1.209z"></path>
+            </defs>
+            <g fill="none"
+               fill-rule="evenodd">
+              <path fill="#FFF"
+                    fill-opacity=".1"
+                    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"></path>
+              <g transform="translate(8 13)">
+                <mask id="vkB"
+                      fill="#fff">
+                  <use xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                </mask>
+                <use fill="#878FA4"
+                     xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                <g fill="#FFF"
+                   mask="url(#vkB)">
+                  <path d="M-2-7h24v24H-2z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               width="36"
+               height="36"
+               viewBox="0 0 36 36">
+            <defs>
+              <path id="vkA"
+                    d="M11.094 11.268s.365-.04.55-.236c.172-.181.166-.521.166-.521s-.022-1.59.73-1.825c.74-.231 1.693 1.538 2.703 2.218.763.513 1.342.4 1.342.4l2.699-.036s1.41-.085.742-1.175c-.056-.09-.39-.805-2.006-2.278-1.693-1.541-1.466-1.292.572-3.96 1.24-1.623 1.738-2.614 1.583-3.038-.148-.405-1.061-.298-1.061-.298l-3.038.019s-.226-.031-.393.067c-.163.097-.268.32-.268.32s-.481 1.257-1.122 2.326c-1.353 2.254-1.894 2.373-2.115 2.234-.514-.327-.386-1.312-.386-2.011 0-2.185.338-3.097-.657-3.332-.331-.08-.574-.13-1.418-.14-1.084-.01-2.002.005-2.521.254-.347.166-.613.536-.45.558.2.026.655.12.896.442.31.416.3 1.35.3 1.35s.179 2.572-.417 2.89c-.41.22-.971-.227-2.178-2.272-.617-1.048-1.084-2.206-1.084-2.206S4.173.8 4.012.685C3.818.544 3.546.5 3.546.5L.659.519S.225.53.066.716C-.075.88.055 1.22.055 1.22s2.26 5.19 4.82 7.807c2.347 2.397 5.01 2.24 5.01 2.24h1.209z"></path>
+            </defs>
+            <g fill="none"
+               fill-rule="evenodd">
+              <path fill="#FFF"
+                    fill-opacity=".1"
+                    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"></path>
+              <g transform="translate(8 13)">
+                <mask id="vkB"
+                      fill="#fff">
+                  <use xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                </mask>
+                <use fill="#878FA4"
+                     xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                <g fill="#FFF"
+                   mask="url(#vkB)">
+                  <path d="M-2-7h24v24H-2z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               width="36"
+               height="36"
+               viewBox="0 0 36 36">
+            <defs>
+              <path id="vkA"
+                    d="M11.094 11.268s.365-.04.55-.236c.172-.181.166-.521.166-.521s-.022-1.59.73-1.825c.74-.231 1.693 1.538 2.703 2.218.763.513 1.342.4 1.342.4l2.699-.036s1.41-.085.742-1.175c-.056-.09-.39-.805-2.006-2.278-1.693-1.541-1.466-1.292.572-3.96 1.24-1.623 1.738-2.614 1.583-3.038-.148-.405-1.061-.298-1.061-.298l-3.038.019s-.226-.031-.393.067c-.163.097-.268.32-.268.32s-.481 1.257-1.122 2.326c-1.353 2.254-1.894 2.373-2.115 2.234-.514-.327-.386-1.312-.386-2.011 0-2.185.338-3.097-.657-3.332-.331-.08-.574-.13-1.418-.14-1.084-.01-2.002.005-2.521.254-.347.166-.613.536-.45.558.2.026.655.12.896.442.31.416.3 1.35.3 1.35s.179 2.572-.417 2.89c-.41.22-.971-.227-2.178-2.272-.617-1.048-1.084-2.206-1.084-2.206S4.173.8 4.012.685C3.818.544 3.546.5 3.546.5L.659.519S.225.53.066.716C-.075.88.055 1.22.055 1.22s2.26 5.19 4.82 7.807c2.347 2.397 5.01 2.24 5.01 2.24h1.209z"></path>
+            </defs>
+            <g fill="none"
+               fill-rule="evenodd">
+              <path fill="#FFF"
+                    fill-opacity=".1"
+                    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"></path>
+              <g transform="translate(8 13)">
+                <mask id="vkB"
+                      fill="#fff">
+                  <use xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                </mask>
+                <use fill="#878FA4"
+                     xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                <g fill="#FFF"
+                   mask="url(#vkB)">
+                  <path d="M-2-7h24v24H-2z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               width="36"
+               height="36"
+               viewBox="0 0 36 36">
+            <defs>
+              <path id="vkA"
+                    d="M11.094 11.268s.365-.04.55-.236c.172-.181.166-.521.166-.521s-.022-1.59.73-1.825c.74-.231 1.693 1.538 2.703 2.218.763.513 1.342.4 1.342.4l2.699-.036s1.41-.085.742-1.175c-.056-.09-.39-.805-2.006-2.278-1.693-1.541-1.466-1.292.572-3.96 1.24-1.623 1.738-2.614 1.583-3.038-.148-.405-1.061-.298-1.061-.298l-3.038.019s-.226-.031-.393.067c-.163.097-.268.32-.268.32s-.481 1.257-1.122 2.326c-1.353 2.254-1.894 2.373-2.115 2.234-.514-.327-.386-1.312-.386-2.011 0-2.185.338-3.097-.657-3.332-.331-.08-.574-.13-1.418-.14-1.084-.01-2.002.005-2.521.254-.347.166-.613.536-.45.558.2.026.655.12.896.442.31.416.3 1.35.3 1.35s.179 2.572-.417 2.89c-.41.22-.971-.227-2.178-2.272-.617-1.048-1.084-2.206-1.084-2.206S4.173.8 4.012.685C3.818.544 3.546.5 3.546.5L.659.519S.225.53.066.716C-.075.88.055 1.22.055 1.22s2.26 5.19 4.82 7.807c2.347 2.397 5.01 2.24 5.01 2.24h1.209z"></path>
+            </defs>
+            <g fill="none"
+               fill-rule="evenodd">
+              <path fill="#FFF"
+                    fill-opacity=".1"
+                    d="M36 18c0 9.941-8.059 18-18 18S0 27.941 0 18 8.059 0 18 0s18 8.059 18 18"></path>
+              <g transform="translate(8 13)">
+                <mask id="vkB"
+                      fill="#fff">
+                  <use xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                </mask>
+                <use fill="#878FA4"
+                     xlink:href="/web/20200812225701im_/https://bitzlato.com/p2p/#vkA"></use>
+                <g fill="#FFF"
+                   mask="url(#vkB)">
+                  <path d="M-2-7h24v24H-2z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg enable-background="new 0 0 36 36"
+               viewBox="0 0 36 36"
+               width="36"
+               height="36"
+               xmlns="http://www.w3.org/2000/svg">
+            <g fill="#fff">
+              <circle cx="18"
+                      cy="18"
+                      opacity=".1"
+                      r="18"></circle>
+              <path d="m26.3 18.6c-.6-.8-1.4-1.3-2.6-1.5 1.5-.8 2.1-2 2-3.9 0-.6-.2-1.2-.5-1.7s-.7-.9-1.2-1.2-1.1-.5-1.7-.7c-.7-.2-1.4-.3-2.1-.3v-3.7h-2.3v3.7c-.4 0-1 0-1.8 0v-3.7h-2.3v3.8c-.3 0-.8 0-1.4 0h-3.4v2.4h1.7c.8 0 1.2.3 1.3 1v4.3h.2-.2v6c-.1.5-.4.8-.9.8h-1.6l-.5 2.7h3 .8.8v3.8h2.3v-3.8h1.8v3.7h2.3v-3.8c.7 0 1.4-.1 2.2-.2.6-.1 1.2-.3 1.8-.5.5-.2 1-.5 1.4-.9s.7-.8 1-1.3c.3-.6.4-1.2.5-1.9.2-1.3-.1-2.3-.6-3.1zm-10.3-6.6h.6.8.9c.3 0 .6.1.9.1.3.1.6.1.8.2.3.1.5.2.7.4s.3.4.4.6c.1.3.2.6.2.9s0 .5-.1.8c-.1.2-.2.4-.4.6-.2.1-.4.3-.5.4-.2.1-.5.2-.7.3-.3.1-.5.1-.8.2-.3 0-.5.1-.8.1s-.6 0-.7 0c-.2 0-.4 0-.7 0h-.6zm6.3 10.1c-.2.4-.5.8-.9 1-.2.1-.5.2-.7.3-.3.1-.5.2-.8.2-.3.1-.6.1-.9.1s-.5 0-.9.1-.6 0-.8 0-.4 0-.7 0h-.6v-5.1h.7 1 1c.4 0 .7.1 1.1.1.3.1.7.2 1 .3s.6.3.9.4c.2.2.4.4.5.7.3.7.3 1.4.1 1.9z"></path>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-auto">
+      <div class="white fz-14">
+        © 2020 Bitzlato
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__block mb-26">
+    <div class="flex-1">
+      <div class="footer__title">
+        Products
+        <span class="sidebar__arrow"></span>
+      </div>
+
+      <ul class="footer__ul md_hidden">
+        <li>
+          <a href="#"
+             class="footer__link">
+            P2P-exchange
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Exchange
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Wallet
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Merchant
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Demo account
+          </a>
+        </li>
+
+        <li class="mb-0">
+          <a href="#"
+             class="footer__link">
+            Trader Workspace
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__block mb-26">
+    <div class="flex-1">
+      <div class="footer__title">
+        Company
+        <span class="sidebar__arrow"></span>
+      </div>
+
+      <ul class="footer__ul md_hidden">
+        <li>
+          <a href="#"
+             class="footer__link">
+            About the company
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Blog
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Changelog
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Platform reviews
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Referral program
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Commissions
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Terms of Service
+          </a>
+        </li>
+
+        <li class="mb-0">
+          <a href="#"
+             class="footer__link">
+            Security policy
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__block mb-26">
+    <div class="flex-1">
+      <div class="footer__title">
+        HELP AND SUPPORT
+        <span class="sidebar__arrow"></span>
+      </div>
+
+      <ul class="footer__ul md_hidden">
+        <li>
+          <a href="#"
+             class="footer__link">
+            How to secure yourself
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Forum
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Account Verification
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Support in Telegram
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Support
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Wallet stats
+          </a>
+        </li>
+
+        <li>
+          <a href="#"
+             class="footer__link">
+            Instructions
+          </a>
+        </li>
+
+        <li class="mb-0">
+          <a href="#"
+             class="footer__link">
+            Documentation API
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script/main.js"></script>
+<script src="assets/script/languages.js"></script>
+<script src="assets/script/burger.js"></script>
+<script src="assets/script/auth_user.js"></script>
+</body>
+</html>
