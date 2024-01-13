@@ -88,33 +88,33 @@
       Название маршрута: <span class="fw-medium" data-span="selectPlace"></span>
     </p>
 
-    <form class="d-flex flex-column gap-3" method="post">
+    <form id="addOrderForm" class="d-flex flex-column gap-3" method="post">
       <div class="d-flex flex-wrap justify-content-between gap-2">
         <div class="w-32">
           <label class="d-flex flex-column gap-1">
             Дата экскурсии:
-            <input class="ps-2 py-1" type="date" name="dateEvent" required>
+            <input class="ps-2 py-1" type="date" name="date" required>
           </label>
         </div>
 
         <div class="w-32">
           <label class="d-flex flex-column gap-1">
             Время начала:
-            <input class="ps-2 py-1" type="time" name="timeStartEvent" required>
+            <input class="ps-2 py-1" type="time" name="time" required>
           </label>
         </div>
 
         <div class="w-32">
           <label class="d-flex flex-column gap-1">
             Длительность:
-            <input class="ps-2 py-1" type="text" disabled name="durationEvent" value="1 час">
+            <input class="ps-2 py-1" type="text" onkeydown="return false" name="duration" value="1 час">
           </label>
         </div>
 
         <div class="w-32">
           <label class="d-flex flex-column gap-1">
             Кол-во людей:
-            <input class="ps-2 py-1" type="number" name="qntPeoples" value="1" required>
+            <input class="ps-2 py-1" type="number" min="1" name="persons" value="1" required>
           </label>
         </div>
       </div>
@@ -126,7 +126,7 @@
       <div class="d-flex justify-content-between align-items-start gap-2">
         <div class="w-48 d-flex flex-column gap-2">
           <label class="d-flex align-items-center gap-2 w-100 user-select-none lh-sm">
-            <input type="checkbox" name="optionOne">
+            <input type="checkbox" name="optionOne" value="0">
             Легкие закуски и горячие напитки
           </label>
 
@@ -137,7 +137,7 @@
 
         <div class="w-48 d-flex flex-column gap-2">
           <label class="d-flex justify-content-end align-items-center gap-2 w-100 user-select-none lh-sm">
-            <input type="checkbox" name="optionTwo">
+            <input type="checkbox" name="optionTwo" value="0">
             Сопровождение сурдопереводчика
           </label>
 
@@ -147,8 +147,12 @@
         </div>
       </div>
 
+      <input type="hidden" value="4373" name="price">
+      <input type="hidden" value="" name="route_id">
+      <input type="hidden" value="" name="guide_id">
+
       <p class="fs-5 m-0">
-        Итоговая стоимость: <span class="fw-medium" id="cost">4580</span><span class="fw-medium"> ₽</span>
+        Итоговая стоимость: <span class="fw-medium" id="cost">4373</span><span class="fw-medium"> ₽</span>
       </p>
 
       <div class="d-flex justify-content-between align-items-center gap-2">
@@ -498,40 +502,7 @@
             <th scope="col"></th>
           </tr>
           </thead>
-          <tbody>
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="travelName">Кремль</td>
-            <td class="text-center">Описание</td>
-            <td class="text-center">Основные объекты</td>
-            <td class="text-end">
-              <button onclick="scrollToGidsWithText(this)" data-action="choosePlace" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="travelName">Воробьёвы горы</td>
-            <td class="text-center">Описание</td>
-            <td class="text-center">Основные объекты</td>
-            <td class="text-end">
-              <button onclick="scrollToGidsWithText(this)" data-action="choosePlace" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="travelName">ВДНХ</td>
-            <td class="text-center">Описание</td>
-            <td class="text-center">Основные объекты</td>
-            <td class="text-end">
-              <button onclick="scrollToGidsWithText(this)" data-action="choosePlace" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-          </tbody>
+          <tbody id="mainEventList"></tbody>
         </table>
 
         <div class="d-flex gap-2" data-aos="zoom-in" data-aos-once="true">
@@ -543,11 +514,7 @@
             <img width="24" src="assets/img/arrow.svg" alt="Arrow">
           </div>
 
-          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">1</div>
-
-          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">2</div>
-
-          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">3</div>
+          <div class="d-flex gap-2" id="routerPagination"></div>
 
           <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
             <img width="24" class="rotate-180" src="assets/img/arrow.svg" alt="Arrow">
@@ -594,67 +561,7 @@
             <th scope="col"></th>
           </tr>
           </thead>
-          <tbody>
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="gidFio">Трофимов Трофим Трофимович</td>
-            <td class="text-center">Русский, Английский</td>
-            <td class="text-center" data-row="stage">3 года</td>
-            <td class="text-center">3000 ₽ / час</td>
-            <td class="text-end">
-              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="gidFio">Ивашкин Дмитрий Борисович</td>
-            <td class="text-center">Русский, Английский</td>
-            <td class="text-center" data-row="stage">5 года</td>
-            <td class="text-center">3000 ₽ / час</td>
-            <td class="text-end">
-              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="gidFio">Андреев Андрей Андреевич</td>
-            <td class="text-center">Русский, Английский</td>
-            <td class="text-center" data-row="stage">10 года</td>
-            <td class="text-center">3000 ₽ / час</td>
-            <td class="text-end">
-              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="gidFio">Павлов Павел Павлович</td>
-            <td class="text-center">Русский, Английский</td>
-            <td class="text-center" data-row="stage">1 год</td>
-            <td class="text-center">3000 ₽ / час</td>
-            <td class="text-end">
-              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-
-          <tr data-aos="zoom-in" data-aos-once="true">
-            <td class="text-start" data-row="gidFio">Иванов Иван Иванович</td>
-            <td class="text-center">Русский, Английский</td>
-            <td class="text-center" data-row="stage">15 года</td>
-            <td class="text-center">3000 ₽ / час</td>
-            <td class="text-end">
-              <button data-action="chooseEvent" role="button" type="button" class="text-center text-black bg-main-color border-0 px-3 py-1 rounded-5" onclick="openConfirmModal(this)">
-                Выбрать
-              </button>
-            </td>
-          </tr>
-          </tbody>
+          <tbody id="mainGuidesList"></tbody>
         </table>
 
         <div class="d-flex gap-2" data-aos="zoom-in" data-aos-once="true">
@@ -666,11 +573,7 @@
             <img width="24" src="assets/img/arrow.svg" alt="Arrow">
           </div>
 
-          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">1</div>
-
-          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">2</div>
-
-          <div role="button" class="pagination-size bg-main-color p-2 rounded-circle fw-medium d-flex justify-content-center align-items-center">3</div>
+          <div class="d-flex gap-2" id="guidesPagination"></div>
 
           <div role="button" class="pagination-size bg-main-color p-2 rounded-circle d-flex justify-content-center align-items-center">
             <img width="24" class="rotate-180" src="assets/img/arrow.svg" alt="Arrow">
@@ -739,9 +642,13 @@
 
 <script src="assets/js/dropMenu.js"></script>
 <script src="assets/js/modalSearch.js"></script>
+<script src="assets/js/getRouters.js"></script>
+<script src="assets/js/getPagination.js"></script>
+<script src="assets/js/getGids.js"></script>
 <script src="assets/js/confirmModal.js"></script>
 <script src="assets/js/searching.js"></script>
 <script src="assets/js/different.js"></script>
+<script src="assets/js/addOrder.js"></script>
 <script src="assets/js/options.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>

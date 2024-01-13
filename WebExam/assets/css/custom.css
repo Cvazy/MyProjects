@@ -115,3 +115,7 @@ input[type='number']::-webkit-inner-spin-button {
 .fs-sm {
     font-size: 0.8rem;
 }
+
+.text-justify {
+    text-align: justify;
+}

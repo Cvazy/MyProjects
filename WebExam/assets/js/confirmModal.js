@@ -10,6 +10,9 @@ function openConfirmModal(btn) {
         })
     })
 
+    const inputGuideId = document.querySelector('[name="guide_id"]')
+    inputGuideId.value = btn.getAttribute('data-guide')
+
     const gidFio = btn.parentElement.parentElement.querySelector('[data-row="gidFio"]').textContent.trim()
 
     selectedGid.textContent = gidFio

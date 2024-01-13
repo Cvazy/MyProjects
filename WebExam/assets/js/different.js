@@ -12,6 +12,8 @@ function scrollToGids() {
 
 function scrollToGidsWithText(btn) {
     const inputTravel = btn.parentElement.parentElement.querySelector('[data-row="travelName"]').textContent.trim()
+    const inputRouteId = document.querySelector('[name="route_id"]')
+    inputRouteId.value = btn.getAttribute('data-route')
 
     innerSpan(inputTravel)
 
