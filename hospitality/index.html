@@ -1,0 +1,3785 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/base.css">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <title>Hospitality - Главная страница</title>
+</head>
+<body>
+
+<div class="mobile" data-mobail-block="navigation">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top relative">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <a href="index.html">
+            <img src="assets/images/mobile-dark-logo.svg" alt="Dark Logotype">
+          </a>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action back_arrow">
+            <img src="assets/images/icons/arrow-left.svg" alt="Back">
+          </button>
+
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper up-layer">
+        <ul class="mobile_nav">
+          <li onclick="mobileMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Отели
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              О компании
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_mobile_nav">
+        <ul class="mobile_nav">
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              Москва
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              Самара
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              Санкт-Петербург
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              Воронеж
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="not-decor-link mb-nav_text">
+              Сочи
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Самое важное про текущую ситуацию:
+          <br>
+          <span class="border-underline-dark mt-4px">
+              <a href="#" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+          <br>
+
+          <div class="mt-12px">
+            <a class="text-dark not-decor-link text-medium" href="tel:+78822345300">
+              +7(882) 23-45-300
+            </a>
+          </div>
+        </p>
+      </div>
+
+      <a href="#" class="d-block w-full btn btn__mobile not-decor-link">
+        Сдать жильё
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="visitors">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Посетители
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full mobile_nav_wrapper">
+        <div class="popup_block choose_people mobile_choose_people">
+          <div class="choose_people__wrapper p-0-imp">
+            <div class="choose_people__item">
+              <div class="choose_people__item-text">
+                <p class="m-0 top-text text-medium">
+                  Взрослые
+                </p>
+
+                <p class="m-0 bottom-text">
+                  Старше 12 лет
+                </p>
+              </div>
+
+              <div class="choose_people__item-btn">
+                <button type="button" class="minus_adults">
+                  <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                </button>
+
+                <p class="m-0 people_qnt" id="mobile_adults">2</p>
+                <input type="hidden" min="1" name="qnt_adults" value="2">
+
+                <button type="button" class="plus_adults">
+                  <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                </button>
+              </div>
+            </div>
+
+            <div class="choose_people__item">
+              <div class="choose_people__item-text">
+                <p class="m-0 top-text text-medium">
+                  Дети
+                </p>
+
+                <p class="m-0 bottom-text">
+                  До 12 лет
+                </p>
+              </div>
+
+              <div class="choose_people__item-btn">
+                <button type="button" class="minus_child">
+                  <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                </button>
+
+                <p class="m-0 people_qnt" id="mobile_child">0</p>
+                <input type="hidden" name="qnt_child" value="0">
+
+                <button type="button" class="plus_child">
+                  <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="mobile_visitors_btns">
+        <button class="text-dark flex-grow btn btn__clear justify-center" onclick="cleanPeopleInput()">
+          Очистить
+        </button>
+
+        <button class="flex-grow btn btn__mobile justify-center navClose">
+          Применить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="searching">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Город
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="input__item mobile_nav_wrapper">
+        <input autocomplete="off" class="input__item-mobile" type="text" name="town_mobile" placeholder="Куда">
+
+        <img class="input__item_img mb-icon-left" src="assets/images/icons/location.svg" alt="Location">
+
+        <img id="cleanInputSearch" class="input__item_arrow mb-icon-right" src="assets/images/icons/mobile-close.svg" alt="Close">
+
+        <div class="popup_block mobile-town-list">
+          <div class="search_name__wrapper">
+            <div class="finding_item">
+              Санкт-Петербург
+            </div>
+
+            <div class="finding_item">
+              Сыктывкар
+            </div>
+
+            <div class="finding_item">
+              Сызрань
+            </div>
+
+            <div class="finding_item nothing_search-mobile d-none">
+              Ничего не найдено
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="mobile_visitors_btns">
+        <button class="flex-grow btn btn__mobile justify-center navClose">
+          Найти
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="calendar">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Период
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full mobile_nav_wrapper" id="mobileCalendar"></div>
+
+      <div class="mobile__menu-bottom">
+        <div class="mobile_visitors_btns">
+          <button class="flex-grow btn btn__mobile justify-center navClose">
+            Применить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="w-full">
+    <div class="header__wrapper">
+      <div class="header_left">
+        <p class="text-light-grey m-0">
+          Самое важное про текущую ситуацию:
+
+          <span class="border-underline" id="headerUnderline">
+              <a href="#" data-text="header" class="text-white text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" data-text="header" class="text-white text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="flex-items-center text-medium gap-2">
+        <p class="text-light-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+        </p>
+
+        <div>
+          <a data-text="header" class="text-white not-decor-link" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="w-full">
+    <div class="header__wrapper">
+      <div class="flex-items-center gap-4">
+        <a href="index.html">
+          <img id="mainLogo" src="assets/images/logo.svg" alt="Logotype">
+          <img id="mainDarkLogo" style="display: none" src="assets/images/dark-logo.svg" alt="Logotype">
+        </a>
+
+        <nav>
+          <ul class="navigation_list gap-3">
+            <li class="navigation_list__item relative">
+              <a class="text-white not-decor-link" href="#">
+                <div class="drop_menu" id="hotel">
+                  <p class="text-white m-0 lh-20" data-text="header">
+                    Отели
+                  </p>
+
+                  <img id="dropMenuArrow" src="assets/images/icons/arrow_down.svg" alt="Arrow Down">
+
+                  <img id="dropMenuDarkArrow" style="display: none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow Down">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Москва
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Сочи
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Санкт-Петербург
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Казань
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Нижний Новгород
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Екатеринбург
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Калининград
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Самара
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Адлер
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Ярославль
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Воронеж
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Краснодар
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Новосибирск
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Тула
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Владивосток
+                      </a>
+
+                      <a href="#" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Уфа
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="#" data-text="header" class="text-white not-decor-link lh-20">
+                О компании
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="#" data-text="header" class="text-white not-decor-link lh-20">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex-items-center gap-3">
+        <div>
+          <a href="#" data-text="header" class="text-white text-medium not-decor-link">
+            Сдать жильё
+          </a>
+        </div>
+
+        <div>
+          <a href="#" class="not-decor-link btn btn__login">
+            Войти
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile_top_header">
+  <div class="mobile_top_header__logo">
+    <a href="index.html">
+      <img id="mobileLogo" src="assets/images/mobile-logo.svg" alt="Logotype">
+      <img id="mobileDarkLogo" style="display: none" src="assets/images/mobile-dark-logo.svg" alt="Logotype">
+    </a>
+  </div>
+
+  <div class="mobile_top_header__menu">
+    <button type="button" class="mb_action">
+      <img id="profile" src="assets/images/icons/profile_icon.svg" alt="Profile">
+
+      <img id="darkProfile" style="display: none" src="assets/images/icons/dark_profile_icon.svg" alt="Profile">
+    </button>
+
+    <button type="button" class="mb_action" id="burger">
+      <img src="assets/images/icons/burger.svg" alt="Burger">
+
+      <img style="display: none" src="assets/images/icons/dark_burger.svg" alt="Burger">
+    </button>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <div class="header_bg" id="start">
+      <div class="under_header">
+        <h1 class="text-white text-center text-medium">
+          Забронируйте жильё для отдыха или поездки
+        </h1>
+
+        <div class="under_header__block">
+          <form class="search_form" method="post">
+            <div class="checkbox_block">
+              <div class="toggle-pill-color">
+                <input type="checkbox" id="business-trip" name="business_trip">
+                <label for="business-trip"></label>
+
+                <span class="text-white">
+              Еду в командировку
+            </span>
+              </div>
+            </div>
+
+            <div class="params_inputs">
+              <div class="params_inputs__wrapper">
+                <div class="input__item" id="searching">
+                  <input autocomplete="off" class="search_town" type="text" name="town" id="search_town" placeholder="Куда">
+
+                  <img class="input__item_img" src="assets/images/icons/location.svg" alt="Location">
+
+                  <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                  <div class="popup_block search_name" id="select_town">
+                    <div class="search_name__wrapper">
+                      <div class="finding_item">
+                        Санкт-Петербург
+                      </div>
+
+                      <div class="finding_item">
+                        Сыктывкар
+                      </div>
+
+                      <div class="finding_item">
+                        Сызрань
+                      </div>
+
+                      <div class="finding_item nothing_search d-none">
+                        Ничего не найдено
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input__item" id="calendar">
+                  <input id="search_date" autocomplete="off" name="select_period" type="text" placeholder="Когда">
+
+                  <img class="input__item_img" src="assets/images/icons/calendar.svg" alt="Calendar">
+
+                  <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+
+                <div class="input__item" id="visitors">
+                  <div class="test" id="search_people">
+                    <p class="m-0 text-dark text-medium base-text">
+                      <span id="test_adults_qnt">2</span> взрослых
+                    </p>
+
+                    <p id="childCount" class="d-none m-0 text-dark text-medium base-text">
+                      <span id="test_child_qnt">0</span> детей
+                    </p>
+                  </div>
+
+                  <img class="input__item_img" src="assets/images/icons/profile.svg" alt="Profile">
+
+                  <img class="input__item_delete" src="assets/images/icons/close-square.svg" alt="Close" onclick="cleanPeopleInput()">
+
+                  <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                  <div class="popup_block choose_people" id="choose_people">
+                    <div class="choose_people__wrapper">
+                      <div class="choose_people__item">
+                        <div class="choose_people__item-text">
+                          <p class="m-0 top-text text-medium">
+                            Взрослые
+                          </p>
+
+                          <p class="m-0 bottom-text">
+                            Старше 12 лет
+                          </p>
+                        </div>
+
+                        <div class="choose_people__item-btn">
+                          <button type="button" class="minus_adults">
+                            <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                          </button>
+
+                          <p class="m-0 people_qnt" id="desktop_adults">2</p>
+                          <input type="hidden" min="1" name="qnt_adults" value="2">
+
+                          <button type="button" class="plus_adults">
+                            <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="choose_people__item">
+                        <div class="choose_people__item-text">
+                          <p class="m-0 top-text text-medium">
+                            Дети
+                          </p>
+
+                          <p class="m-0 bottom-text">
+                            До 12 лет
+                          </p>
+                        </div>
+
+                        <div class="choose_people__item-btn">
+                          <button type="button" class="minus_child">
+                            <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                          </button>
+
+                          <p class="m-0 people_qnt" id="desktop_child">0</p>
+                          <input type="hidden" name="qnt_child" value="0">
+
+                          <button type="button" class="plus_child">
+                            <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" id="submitMainBtn" class="btn btn__search base-text">
+                Найти жильё
+              </button>
+            </div>
+          </form>
+
+          <div class="achievements">
+            <div class="achievements__item">
+              <h3>14+</h3>
+
+              <p class="m-0">лет на рынке</p>
+            </div>
+
+            <div class="achievements__item">
+              <h3>1217</h3>
+
+              <p class="m-0">городов присутствия</p>
+            </div>
+
+            <div class="achievements__item">
+              <h3>362 155</h3>
+
+              <p class="m-0">вариантов жилья</p>
+            </div>
+
+            <div class="achievements__item">
+              <h3>56 256</h3>
+
+              <p class="m-0">довольных гостей</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_block">
+      <h2 class="container_block__title">
+        Откройте для себя Россию
+      </h2>
+
+      <p class="container_block__description">
+        Бронируйте отели и другие варианты размещения по выгодным ценам
+      </p>
+
+      <div class="travels">
+        <div class="travels__wrapper big_cards_wrapper">
+          <div class="travels__wrapper-item big_card" style="background: url('assets/images/towns/Moscow.jpg')">
+            <a href="#" class="not-decor-link md-shadow">
+              <div class="travel_container">
+                <div class="travel_container__block">
+                  <h4>Москва</h4>
+
+                  <p class="m-0">3098 вариантов</p>
+
+                  <p>от 1240 ₽</p>
+                </div>
+
+                <div class="travel_container__block">
+                  <img src="assets/images/icons/white_arrow.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="travels__wrapper-item big_card" style="background: url('assets/images/towns/StPeterburg.jpg')">
+            <a href="#" class="not-decor-link md-shadow">
+              <div class="travel_container">
+                <div class="travel_container__block">
+                  <h4>Санкт-Петербург</h4>
+
+                  <p class="m-0">3098 вариантов</p>
+
+                  <p>от 1240 ₽</p>
+                </div>
+
+                <div class="travel_container__block">
+                  <img src="assets/images/icons/white_arrow.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="travels__wrapper-item big_card" style="background: url('assets/images/towns/Sochi.jpg')">
+            <a href="#" class="not-decor-link md-shadow">
+              <div class="travel_container">
+                <div class="travel_container__block">
+                  <h4>Сочи</h4>
+
+                  <p class="m-0">3098 вариантов</p>
+
+                  <p>от 1240 ₽</p>
+                </div>
+
+                <div class="travel_container__block">
+                  <img src="assets/images/icons/white_arrow.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="travels__wrapper-item big_card" style="background: url('assets/images/towns/Kazan.jpg')">
+            <a href="#" class="not-decor-link md-shadow">
+              <div class="travel_container">
+                <div class="travel_container__block">
+                  <h4>Казань</h4>
+
+                  <p class="m-0">3098 вариантов</p>
+
+                  <p>от 1240 ₽</p>
+                </div>
+
+                <div class="travel_container__block">
+                  <img src="assets/images/icons/white_arrow.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="travels__wrapper medium-cards_wrapper">
+          <a href="#" class="flex-grow not-decor-link">
+            <div class="card_with_bg medium-card">
+              <div class="card_with_bg__wrapper">
+                <div class="card_image">
+                  <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                </div>
+
+                <div class="card_description">
+                  <div class="card_description__wrapper">
+                    <h5>Новосибирск</h5>
+
+                    <p>
+                      <span class="text-main-gray">от</span>
+                      1240 ₽
+                    </p>
+                  </div>
+
+                  <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                    <div class="mark">
+                      <div>
+                        <img src="assets/images/icons/star.svg" alt="Star">
+                      </div>
+
+                      <p class="text-medium">
+                        9.2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="flex-grow not-decor-link">
+            <div class="card_with_bg medium-card">
+              <div class="card_with_bg__wrapper">
+                <div class="card_image">
+                  <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                </div>
+
+                <div class="card_description">
+                  <div class="card_description__wrapper">
+                    <h5>Владивосток</h5>
+
+                    <p>
+                      <span class="text-main-gray">от</span>
+                      1240 ₽
+                    </p>
+                  </div>
+
+                  <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                    <div class="mark">
+                      <div>
+                        <img src="assets/images/icons/star.svg" alt="Star">
+                      </div>
+
+                      <p class="text-medium">
+                        9.2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="#" class="flex-grow not-decor-link">
+            <div class="card_with_bg medium-card">
+              <div class="card_with_bg__wrapper">
+                <div class="card_image">
+                  <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                </div>
+
+                <div class="card_description">
+                  <div class="card_description__wrapper">
+                    <h5>Уфа</h5>
+
+                    <p>
+                      <span class="text-main-gray">от</span>
+                      1240 ₽
+                    </p>
+                  </div>
+
+                  <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                    <div class="mark">
+                      <div>
+                        <img src="assets/images/icons/star.svg" alt="Star">
+                      </div>
+
+                      <p class="text-medium">
+                        9.2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="travels__wrapper small-cards">
+          <div class="small-cards_wrapper swiper-wrapper">
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Kazan2.jpg" alt="Kazan" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Казань</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/NNovgorod.jpg" alt="Novgorod" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Нижний новгород</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Ekb.jpg" alt="Ekaterinburg" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Екатеринбург</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Kaliningrad.jpg" alt="Kaliningrad" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Калининград</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Samara.jpg" alt="Samara" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Самара</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Adler.jpg" alt="Adler" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Адлер</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Voroneg.jpg" alt="Voroneg" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Воронеж</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg small-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture small_image" src="assets/images/towns/Krasnodar.jpg" alt="Krasnodar" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-5px-imp">
+                    <div class="card_description__wrapper small_card_description gap-5px-imp">
+                      <h5 class="text-nowrap">Краснодар</h5>
+
+                      <p class="small_desc">
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                    <span class="text-main-gray text-normal">
+                      3098 вариантов
+                    </span>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="m-0 text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container_block">
+      <div class="sending_email">
+        <div class="sending_email__wrapper">
+          <div class="sending_email-left">
+            <div class="sending_email__title">
+              <h2 class="container_block__title">
+                Всё новое <br> и классное - вам
+              </h2>
+
+              <p class="m-0-imp container_block__description">
+                Оставьте свою почту, а мы дадим знать, когда <br class="sm-none">
+                появится что-то новое и классное. Делимся только <br class="sm-none">
+                самыми крутыми акциями!
+              </p>
+            </div>
+
+            <div class="sending_email__form">
+              <form class="subscribe" method="post" action="#">
+                <div class="subscribe__input">
+                  <input autocomplete="off" id="email" type="email" name="email" placeholder="Ваша почта">
+                  <div id="emailError"></div>
+                </div>
+
+                <button type="submit" class="btn btn__search p-23-10 base-text">
+                  Подписаться
+                </button>
+              </form>
+
+              <p class="conf_polite">
+                Нажимая кнопку, вы принимаете условия
+                <a href="#" class="not-decor-link text-main-col">
+                  Пользовательского соглашения
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="sending_email-right">
+            <img src="assets/images/background/sending.jpg" alt="Sending Email" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_block">
+      <div class="popular_offer">
+        <h2 class="container_block__title">
+          Популярные предложения
+        </h2>
+
+        <nav class="popular_offer__navigation">
+          <ul class="carusel swiper-wrapper">
+            <li class="carusel__item carusel__item-active swiper-slide" data-carusel-block="Krasnodar">
+              Краснодарский край
+            </li>
+
+            <li class="carusel__item swiper-slide" data-carusel-block="Krim">
+              Крым
+            </li>
+
+            <li class="carusel__item swiper-slide" data-carusel-block="Kavkaz">
+              Кавказские минеральные воды
+            </li>
+
+            <li class="carusel__item swiper-slide" data-carusel-block="Podmoskovie">
+              Подмосковье
+            </li>
+          </ul>
+        </nav>
+
+        <div class="popular_offer__wrapper main-popular w-full">
+          <div class="travels__wrapper swiper-wrapper swiper_trips" data-block-offer="Krasnodar">
+            <a href="#" class=" swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class=" swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class=" swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Краснодар, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="travels__wrapper d-none-imp swiper_trips" data-block-offer="Krim">
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/hotels/hotel1.jpg" alt="Hotel" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/hotels/hotel2.jpg" alt="Hotel" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/hotels/hotel3.jpg" alt="Hotel" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Крым, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="travels__wrapper d-none-imp swiper_trips" data-block-offer="Kavkaz">
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Кавказ, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          9.7
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="travels__wrapper d-none-imp swiper_trips" data-block-offer="Podmoskovie">
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Novosib.jpg" alt="Novosibirsk" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Новосибирск</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Vladivostok.jpg" alt="Vladivostok" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Владивосток</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="d-none-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/towns/Ufa.jpg" alt="Ufa" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <h5>Уфа</h5>
+
+                      <p>
+                        <span class="text-main-gray">от</span>
+                        1240 ₽
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div class="flex-items-center">
+                          <img src="assets/images/icons/location.svg" alt="Location">
+                        </div>
+
+                        <div>
+                        <span class="text-main-gray text-normal">
+                          Подмосковье, курорт
+                        </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="text-medium">
+                          8.1
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <button type="button" id="loading_more" class="btn btn__loading_more">
+          Загрузить ещё
+        </button>
+
+        <a href="#" id="see_more" class="text-center not-decor-link btn btn__loading_more">
+          Смотреть больше
+        </a>
+      </div>
+    </div>
+
+    <div class="container_block">
+      <div class="why_we">
+        <h2 class="container_block__title">
+          Почему Hospitality
+        </h2>
+
+        <div class="why_we__wrapper">
+          <div class="why_we__item bg-white">
+            <h3 class="why_we__title">
+              Без переплат
+            </h3>
+
+            <p class="m-0 why_we__description">
+              У Hospitality нет наценок, стоимость устанавливают владельцы в своём личном кабинете.
+            </p>
+
+            <div class="why_we__icon">
+              <img src="assets/images/icons/why_we1.svg" alt="Icon">
+            </div>
+          </div>
+
+          <div class="why_we__item bg-white">
+            <h3 class="why_we__title">
+              Бесплатная отмена для повторного бронирования
+            </h3>
+
+            <p class="m-0 why_we__description">
+              Вы можете бесплатно отменить бронирование для повторного бронирования согласно правилам отмены.
+            </p>
+
+            <div class="why_we__icon">
+              <img src="assets/images/icons/why_we2.svg" alt="Icon">
+            </div>
+          </div>
+
+          <div class="why_we__item gap-32px-imp md-order-10">
+            <h3 class="why_we__title">
+              Мы обеспечиваем качественный подбор номеров отелей и гарантируем комфортные условия проживания.
+            </h3>
+
+            <a href="#start" class="not-decor-link btn btn__search">
+              Начать поиск
+            </a>
+          </div>
+
+          <div class="why_we__item bg-white">
+            <h3 class="why_we__title">
+              Надёжно
+            </h3>
+
+            <p class="m-0 why_we__description">
+              Всё жильё проверено. Hospitality выступает гарантом договорённостей сторон при бронировании.
+            </p>
+
+            <div class="why_we__icon">
+              <img src="assets/images/icons/why_we3.svg" alt="Icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_block">
+      <div class="popular_offer">
+        <h2 class="container_block__title">
+          Последние отзывы наших гостей
+        </h2>
+
+        <div class="popular_offer__wrapper reviews w-full">
+          <div class="travels__wrapper reviews__wrapper swiper-wrapper swiper_trips">
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/reviews/review1.jpg" alt="Review" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <p class="review_title">
+                        Отель "Family Holiday Hotel"
+                      </p>
+
+                      <span class="base-text text-main-gray">
+                        Казань, 2 гостя
+                      </span>
+
+                      <p class="text-ellipsis line-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div>
+                          <span class="text-main-gray base-text">
+                            Елена Середова, 18.11.2023
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="base-text">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/reviews/review2.jpg" alt="Review" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <p class="review_title">
+                        Отель "Family Holiday Hotel"
+                      </p>
+
+                      <span class="base-text text-main-gray">
+                        Казань, 2 гостя
+                      </span>
+
+                      <p class="text-ellipsis line-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div>
+                          <span class="text-main-gray base-text">
+                            Елена Середова, 18.11.2023
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="base-text">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/reviews/review3.jpg" alt="Review" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp">
+                    <div class="card_description__wrapper gap-5px-imp column-start">
+                      <p class="review_title">
+                        Отель "Family Holiday Hotel"
+                      </p>
+
+                      <span class="base-text text-main-gray">
+                        Казань, 2 гостя
+                      </span>
+
+                      <p class="text-ellipsis line-4">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="card_description__wrapper small_desc">
+                      <div class="flex-items-center gap-8px">
+                        <div>
+                          <span class="text-main-gray base-text">
+                            Елена Середова, 18.11.2023
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="mark">
+                        <div>
+                          <img src="assets/images/icons/star.svg" alt="Star">
+                        </div>
+
+                        <p class="base-text">
+                          9.2
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_block guests">
+      <div class="why_we bg-white guests__wrapper">
+        <div class="guests__title">
+          <h2 class="container_block__title">
+            Принимайте гостей <br> с Hospitality
+          </h2>
+
+          <p class="m-0 container_block__description">
+            Бронируйте отели и другие варианты размещения по выгодным ценам
+          </p>
+        </div>
+
+        <div class="why_we__wrapper">
+          <div class="why_we__item bg-blue">
+            <h3 class="why_we__title">
+              Простое управление
+            </h3>
+
+            <p class="m-0 why_we__description">
+              Благодаря адаптированному интерфейсу Hospitality для IOS и Android, вы работаете с заявками, ценами и переписываетесь с гостями вне зависимости от вашего месторасположения.
+            </p>
+
+            <div class="why_we__icon">
+              <img src="assets/images/icons/why_we1.svg" alt="Icon">
+            </div>
+          </div>
+
+          <div class="why_we__item bg-blue">
+            <h3 class="why_we__title">
+              Моментальное оповещение
+            </h3>
+
+            <p class="m-0 why_we__description">
+              Получайте моментальные сообщения о новых заявках на бронь, ответах гостей, напоминания о проставлении цен и других действиях на сайте. Оповещения принимайте с помощью смс, электронного письма и push-уведомления в приложении.
+            </p>
+
+            <div class="why_we__icon">
+              <img src="assets/images/icons/bell.svg" alt="Icon">
+            </div>
+          </div>
+
+          <div class="why_we__item bg-blue">
+            <h3 class="why_we__title">
+              Личный аккаунт-менеджер
+            </h3>
+
+            <p class="m-0 why_we__description">
+              С вами работает персональный менеджер, который помогает решить любые вопросы в размещении объекта на сайте, быстро регистрирует и грамотно оформляет, чтобы вы получали больше заявок
+              от гостей.
+            </p>
+
+            <div class="why_we__icon">
+              <img src="assets/images/icons/manager.svg" alt="Icon">
+            </div>
+          </div>
+
+          <div class="why_we__item gap-32px-imp md-order-10 md-pb-0">
+            <h3 class="why_we__title">
+              Присоединитесь к Hospitality и зарабатывайте, занимаясь
+              любимым делом!
+            </h3>
+
+            <a href="#start" class="not-decor-link btn btn__search">
+              Сдать жильё
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_block">
+      <div class="popular_offer">
+        <h2 class="container_block__title">
+          Новости
+        </h2>
+
+        <div class="popular_offer__wrapper news w-full">
+          <div class="travels__wrapper swiper-wrapper news__wrapper swiper_news">
+            <a href="#" class="swiper-slide h-auto-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper h-full">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/news/news1.jpg" alt="New" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp h-full justify-between">
+                    <div class="card_description__wrapper gap-5px-imp column-start h-full">
+                      <span class="base-text text-main-gray">
+                        18.11.2023
+                      </span>
+
+                      <h5>
+                        В аэропорту Дохи открылся живой сад
+                      </h5>
+
+                      <p class="text-ellipsis line-2 small-text-imp">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="news_info">
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/eye.svg" alt="Eye">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            217
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/clock.svg" alt="Clock">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            4 мин.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide h-auto-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper h-full">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/news/news2.jpg" alt="New" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp h-full justify-between">
+                    <div class="card_description__wrapper gap-5px-imp column-start h-full">
+                      <span class="base-text text-main-gray">
+                        18.11.2023
+                      </span>
+
+                      <h5>
+                        Праздник драконьих лодок пройдёт в Казани
+                      </h5>
+
+                      <p class="text-ellipsis line-2 small-text-imp">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="news_info">
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/eye.svg" alt="Eye">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            217
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/clock.svg" alt="Clock">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            4 мин.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide h-auto-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper h-full">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/news/news3.jpg" alt="New" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp h-full justify-between">
+                    <div class="card_description__wrapper gap-5px-imp column-start h-full">
+                      <span class="base-text text-main-gray">
+                        18.11.2023
+                      </span>
+
+                      <h5>
+                        В пустыне Саудовской Аравии зацвела дикая лаванда
+                      </h5>
+
+                      <p class="text-ellipsis line-2 small-text-imp">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="news_info">
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/eye.svg" alt="Eye">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            217
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/clock.svg" alt="Clock">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            4 мин.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="swiper-slide h-auto-imp flex-grow not-decor-link">
+              <div class="card_with_bg medium-card">
+                <div class="card_with_bg__wrapper h-full">
+                  <div class="card_image">
+                    <img class="card_image__picture medium_image" src="assets/images/news/news4.jpg" alt="New" loading="lazy">
+                  </div>
+
+                  <div class="card_description gap-20px-imp h-full justify-between">
+                    <div class="card_description__wrapper gap-5px-imp column-start h-full">
+                      <span class="base-text text-main-gray">
+                        18.11.2023
+                      </span>
+
+                      <h5>
+                        В ОАЭ отменили все ковид- ограничения на въезд
+                      </h5>
+
+                      <p class="text-ellipsis line-2 small-text-imp">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis deleniti dolorum ea eaque enim harum illo incidunt ipsam magni minima molestias numquam, odio possimus provident rerum sit veniam voluptate?
+                      </p>
+                    </div>
+
+                    <div class="news_info">
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/eye.svg" alt="Eye">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            217
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="flex-items-center gap-4px">
+                        <div>
+                          <img src="assets/images/icons/clock.svg" alt="Clock">
+                        </div>
+
+                        <div>
+                          <span class="text-main-gray base-text">
+                            4 мин.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#" class="text-center md-w-full not-decor-link btn btn__loading_more">
+          Все новости
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer_top">
+    <a href="index.html" class="d-block">
+      <img src="assets/images/dark-logo.svg" alt="Logotype" loading="lazy">
+    </a>
+
+    <a href="#" class="flex-items-center btn btn__login not-decor-link link__lg">
+      Сдать жильё
+    </a>
+  </div>
+
+  <div class="footer_center">
+    <p class="text-main-gray m-0 footer_text">
+      Hospitality.ru - часть Hospitality Holdings Inc., мирового лидера в сфере бронирования жилья и сопроводительных услуг.
+    </p>
+
+    <a href="#" class="w-full flex-items-center justify-center btn btn__login not-decor-link link__sm">
+      Сдать жильё
+    </a>
+
+    <nav class="footer_nav footer_center-lg">
+      <ul class="footer_nav__list">
+        <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+          Служба помощи
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Справочный раздел
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Контакты
+          </a>
+        </li>
+      </ul>
+
+      <ul class="footer_nav__list">
+        <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+          Гостям
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Как снять жилье
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Гарантии сервиса
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Вопросы и ответы
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Отзывы
+          </a>
+        </li>
+      </ul>
+
+      <ul class="footer_nav__list">
+        <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+          Хозяевам
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Сдать жилье
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Условия размещения
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Вопросы и ответы
+          </a>
+        </li>
+      </ul>
+
+      <ul class="footer_nav__list">
+        <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+          О нас
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            О компании
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            СМИ о нас
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Вакансии
+          </a>
+        </li>
+
+        <li class="footer_nav__list-item">
+          <a href="#" class="not-decor-link text-dark">
+            Блог
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="footer_center-sm">
+      <div class="sm_footer_nav">
+        <div class="sm_footer_nav__item">
+          <p class="m-0 text-dark base-text">
+            Служба помощи
+          </p>
+
+          <div>
+            <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+          </div>
+        </div>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Справочный раздел
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sm_footer_nav">
+        <div class="sm_footer_nav__item">
+          <p class="m-0 text-dark base-text">
+            Гостям
+          </p>
+
+          <div>
+            <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+          </div>
+        </div>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Как снять жилье
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Гарантии сервиса
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Отзывы
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sm_footer_nav">
+        <div class="sm_footer_nav__item">
+          <p class="m-0 text-dark base-text">
+            Хозяевам
+          </p>
+
+          <div>
+            <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+          </div>
+        </div>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Сдать жилье
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Условия размещения
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sm_footer_nav">
+        <div class="sm_footer_nav__item">
+          <p class="m-0 text-dark base-text">
+            О нас
+          </p>
+
+          <div>
+            <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+          </div>
+        </div>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              О компании
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              СМИ о нас
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вакансии
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Блог
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="social_network">
+      <p class="m-0 text-center text-main-gray text-nowrap text-medium with_we">
+        Будьте с нами
+      </p>
+
+      <div class="flex-items-center gap-12px">
+        <a href="#" class="not-decor-link d-block">
+          <img src="assets/images/networks/vk.svg" alt="VK" loading="lazy">
+        </a>
+
+        <a href="#" class="not-decor-link d-block">
+          <img src="assets/images/networks/tg.svg" alt="Telegram" loading="lazy">
+        </a>
+
+        <a href="#" class="not-decor-link d-block">
+          <img src="assets/images/networks/yt.svg" alt="Youtube" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer_bottom">
+    <div class="footer_bottom-top">
+      <div class="foot-top flex-items-center gap-32px-imp">
+        <a href="#" class="text-main-gray">
+          Политика обработки персональных данных
+        </a>
+
+        <a href="#" class="text-main-gray">
+          Правовая информация
+        </a>
+      </div>
+
+      <div class="foot-bottom flex-items-center gap-20px-imp">
+        <p class="text-main-gray m-0">
+          Принимаем к оплате:
+        </p>
+
+        <div class="flex-items-center gap-12px">
+          <div>
+            <img src="assets/images/payments/visa.svg" alt="Visa" loading="lazy">
+          </div>
+
+          <div>
+            <img src="assets/images/payments/no_know.svg" alt="Icon" loading="lazy">
+          </div>
+
+          <div>
+            <img src="assets/images/payments/mir.svg" alt="Mir" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer_bottom-bottom">
+      <p class="text-main-gray m-0">
+        © Hospitality.ru - бронирование гостиниц и квартир. Все права защищены.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let datePicker = null
+        let prevWindowWidth = window.innerWidth
+
+        function createOrUpdateFlatpickr() {
+            const windowWidth = window.innerWidth
+
+            if ((prevWindowWidth < 980 && windowWidth >= 980) || (prevWindowWidth >= 980 && windowWidth < 980)) {
+                if (datePicker !== null) {
+                    datePicker.destroy()
+                    datePicker = null
+                }
+            }
+
+            if (datePicker === null) {
+                datePicker = flatpickr("#search_date", {
+                    mode: "range",
+                    minDate: "today",
+                    locale: "ru",
+                    dateFormat: "d.m.Y",
+                    monthSelectorType: 'static',
+                    showMonths: windowWidth < 980 ? 1 : 2,
+                    closeOnSelect: windowWidth >= 980,
+                    position: "below left",
+                    nextArrow: `
+                    <button type="button" class="arrow-btn right-arrow">
+                        <img class="relative top-init" src="assets/images/icons/arrow-right.svg" alt="Right Arrow">
+                    </button>
+                `,
+                    prevArrow: `
+                    <button type="button" class="arrow-btn left-arrow">
+                        <img class="relative top-init" src="assets/images/icons/arrow-left.svg" alt="Left Arrow">
+                    </button>
+                `,
+                })
+            }
+
+            prevWindowWidth = windowWidth
+        }
+
+        createOrUpdateFlatpickr()
+
+        window.addEventListener('resize', createOrUpdateFlatpickr)
+    })
+
+</script>
+
+<script src="assets/scripts/headerScroll.js"></script>
+<script src="assets/scripts/mobileHeader.js"></script>
+<script src="assets/scripts/calendarCheckOpen.js"></script>
+<script src="assets/scripts/dropMenu.js"></script>
+<script src="assets/scripts/addFunctionAttributes.js"></script>
+<script src="assets/scripts/searching.js"></script>
+<script src="assets/scripts/closePopUpClick.js"></script>
+<script src="assets/scripts/mobileSearchTown.js"></script>
+<script src="assets/scripts/addSwiper.js"></script>
+<script src="assets/scripts/sendingEmail.js"></script>
+<script src="assets/scripts/loadingMore.js"></script>
+<script src="assets/scripts/popularOffer.js"></script>
+<script src="assets/scripts/footerNavigation.js"></script>
+
+</body>
+</html>
