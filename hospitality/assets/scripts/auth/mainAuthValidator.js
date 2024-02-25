@@ -1,0 +1,1 @@
+authFormValid(authForm)

@@ -23,7 +23,7 @@ mobileSearchTownInput.addEventListener('input', (e) => {
             if (!item.classList.contains('nothing_search-mobile')) {
                 mobileSearchTownInput.value = item.textContent.trim()
                 searchTownInput.value = item.textContent.trim()
-                mobileSearchTownInput.classList.remove('max-h-popup')
+                mobileTownsList.classList.remove('max-h-popup')
             }
         })
     })

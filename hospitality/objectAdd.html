@@ -1,0 +1,3570 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex" />
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="description" content="Create Object Page">
+  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/base.min.css">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=e2dd3cf5-7476-49d0-b880-4467e1101fec&lang=ru_RU" type="text/javascript" defer></script>
+  <script src="assets/scripts/account/objectAddress.js" type="text/javascript" defer></script>
+  <title>Hospitality - Создание объекта</title>
+</head>
+<body>
+
+<div class="mobile" data-mobail-block="navigation">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top relative">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <a href="index.html">
+            <img src="assets/images/logotypes/mobile-dark-logo.svg" alt="Dark Logotype">
+          </a>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action back_arrow">
+            <img src="assets/images/icons/arrow-left.svg" alt="Back">
+          </button>
+
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper up-layer">
+        <ul class="mobile_nav">
+          <li onclick="mobileMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Отели
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="not-decor-link mb-nav_text">
+              О компании
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="not-decor-link mb-nav_text">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_mobile_nav">
+        <ul class="mobile_nav">
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Москва
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Самара
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Санкт-Петербург
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Воронеж
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Сочи
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Самое важное про текущую ситуацию:
+          <br>
+          <span class="border-underline-dark mt-4px">
+              <a href="#" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+          <br>
+
+        <div class="mt-12px">
+          <a class="text-dark not-decor-link text-medium" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+        </p>
+      </div>
+
+      <a href="partnerPage.html" class="d-block w-full btn btn__mobile not-decor-link">
+        Сдать жильё
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="account">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Профиль
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper">
+        <ul class="mobile_nav">
+          <li>
+            <a href="myAccount.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/icons/profile_dark.svg" alt="Icon">
+              Личные данные
+            </a>
+          </li>
+
+          <li>
+            <a href="accountSecure.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/lock.svg" alt="Icon">
+              Пароль и безопасность
+            </a>
+          </li>
+
+          <li>
+            <a href="accountFavourites.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/heart_dark.svg" alt="Icon">
+              Избранные отели
+            </a>
+          </li>
+
+          <li>
+            <a href="accountOrders.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/history.svg" alt="Icon">
+              История заказов
+            </a>
+          </li>
+
+          <li class="rounded-none">
+            <a href="accountObjects.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/buildings.svg" alt="Icon">
+              Мои объекты
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <a href="#" class="not-decor-link mb-nav_text flex-items-center gap-8px text-red-imp">
+        <svg class="d-block" width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5333 12.1833L16.6667 10.05L14.5333 7.91667" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.1333 10.05H16.6083" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.79997 16.6667C6.11663 16.6667 3.1333 14.1667 3.1333 9.99999C3.1333 5.83333 6.11663 3.33333 9.79997 3.33333" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        Выйти
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="bg-white">
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="header_left">
+        <p class="text-light-grey m-0">
+          Самое важное про текущую ситуацию:
+
+          <span class="border-underline" id="headerUnderline">
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="flex-items-center text-medium gap-2">
+        <p class="text-light-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+        </p>
+
+        <div>
+          <a data-text="header" class="text-dark not-decor-link" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="flex-items-center gap-4">
+        <a href="index.html">
+          <img src="assets/images/logotypes/dark-logo.svg" loading="lazy" alt="Logotype">
+        </a>
+
+        <nav>
+          <ul class="navigation_list gap-3">
+            <li class="navigation_list__item relative">
+              <a class="not-decor-link" href="#">
+                <div class="drop_menu" id="hotel">
+                  <p class="hotel_text text-dark m-0 lh-20" data-text="header">
+                    Отели
+                  </p>
+
+                  <img src="assets/images/icons/arrow_down_dark.svg" loading="lazy" alt="Arrow Down" id="dropMenuArrow">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Москва
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Сочи
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Санкт-Петербург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Казань
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Нижний Новгород
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Екатеринбург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Калининград
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Самара
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Адлер
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Ярославль
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Воронеж
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Краснодар
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Новосибирск
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Тула
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Владивосток
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Уфа
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="about.html" data-text="header" class="text-dark not-decor-link lh-20">
+                О компании
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="contact.html" data-text="header" class="text-dark not-decor-link lh-20">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex-items-center gap-3 relative">
+        <div>
+          <a href="partnerPage.html" data-text="header" class="text-dark text-medium not-decor-link">
+            Сдать жильё
+          </a>
+        </div>
+
+        <div class="account_icon" id="accountIcon">
+          <img class="account_icon__avatar" src="assets/images/reviews/people1.jpg" alt="Account" loading="lazy">
+
+          <div class="account_icon__name">
+            <p class="sm-text text-dark m-0">
+              Юлия
+            </p>
+
+            <svg id="accountMenuArrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 8.33331L10.8838 12.161C10.3977 12.613 9.60227 12.613 9.11616 12.161L5 8.33331" stroke="#A3A8A9" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="account_navigation" id="accountNav">
+          <div class="account_navigation__wrapper">
+            <a href="myAccount.html" class="not-decor-link account_navigation__item">
+              Личные данные
+            </a>
+
+            <a href="accountSecure.html" class="not-decor-link account_navigation__item">
+              Пароль и безопасность
+            </a>
+
+            <a href="accountFavourites.html" class="not-decor-link account_navigation__item">
+              Избранные отели
+            </a>
+
+            <hr class="account_navigation__line">
+
+            <div class="account_navigation__exit">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5333 12.1833L16.6667 10.05L14.5333 7.91667" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.1333 10.05H16.6083" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.79997 16.6667C6.11663 16.6667 3.1333 14.1667 3.1333 9.99999C3.1333 5.83333 6.11663 3.33333 9.79997 3.33333" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              Выйти
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile_top_header bg-white">
+  <div class="mobile_top_header__wrapper">
+    <div class="mobile_top_header__logo">
+      <a href="index.html">
+        <img src="assets/images/logotypes/mobile-dark-logo.svg" loading="lazy" alt="Logotype">
+      </a>
+    </div>
+
+    <div class="mobile_top_header__menu">
+      <button type="button" class="mb_action mobile_account" id="account">
+        <img src="assets/images/reviews/people1.jpg" loading="lazy" alt="Profile">
+      </button>
+
+      <button type="button" class="mb_action" id="burger">
+        <img src="assets/images/icons/dark_burger.svg" loading="lazy" alt="Burger">
+      </button>
+    </div>
+  </div>
+</div>
+
+<main class="md_padding_under_header overflow-visible">
+  <div class="container">
+    <div class="container_block">
+      <div class="account_form_block">
+        <div class="account_previous">
+          <div class="bread_crumbs">
+            <a href="index.html" class="bread_crumbs__item bread_crumbs__active">
+              Главная
+            </a>
+
+            <img class="d-block" src="assets/images/icons/arrow_right_dark.svg" loading="lazy" alt="Arrow">
+
+            <a href="objectAdd.html" class="bread_crumbs__item">
+              Создание объекта
+            </a>
+          </div>
+
+          <h1 class="contact_title">
+            Создание объекта
+          </h1>
+        </div>
+
+        <div class="create_obj">
+          <div class="create_obj__menu">
+            <div data-btn-step="1" class="create_obj__menu-item active_menu_step">
+              <div class="step_create_obj">1</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Контактные данные
+            </div>
+
+            <div data-btn-step="2" class="create_obj__menu-item">
+              <div class="step_create_obj">2</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Подтверждение данных
+            </div>
+
+            <div data-btn-step="3" class="create_obj__menu-item">
+              <div class="step_create_obj">3</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Тип объекта
+            </div>
+
+            <div data-btn-step="4" class="create_obj__menu-item">
+              <div class="step_create_obj">4</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Местоположение объекта
+            </div>
+
+            <div data-btn-step="5" class="create_obj__menu-item">
+              <div class="step_create_obj">5</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Фотографии объекта
+            </div>
+
+            <div data-btn-step="6" class="create_obj__menu-item">
+              <div class="step_create_obj">6</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Информация об отеле
+            </div>
+
+            <div data-btn-step="7" class="create_obj__menu-item">
+              <div class="step_create_obj">7</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Информация о номерах
+            </div>
+
+            <div data-btn-step="8" class="create_obj__menu-item">
+              <div class="step_create_obj">8</div>
+              <img class="d-none-imp" src="assets/images/icons/success.svg" alt="Success">
+              Тарифы и квоты
+            </div>
+          </div>
+
+          <div class="create_obj__main">
+            <form action="#" method="post" class="create_obj__main-top">
+              <div class="create_obj_block current_form" data-step-form="1">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Контактные данные
+                    </h3>
+
+                    <div class="create_obj_block__col2">
+                      <div class="lk_input">
+                        <input name="contact" type="text" placeholder="Контактное лицо" data-input-required="required" oninput="validateTextInput(event)">
+                      </div>
+
+                      <div class="lk_input question">
+                        <input name="confirmation_phone" class="phone_number" minlength="17" maxlength="17" type="tel" placeholder="Телефон для подтверждения" data-input-required="required">
+
+                        <div class="question__block">
+                          <div class="question__block-wrap hint_text">
+                            <img src="assets/images/icons/info-circle.svg" alt="Icon" loading="lazy">
+
+                            <p>Для чего телефон?</p>
+                          </div>
+
+                          <div class="order_action hint max-h-icons">
+                            <div class="order_action__wrapper">
+                              <div class="order_action__item hint__item">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus id impedit neque sint unde. Commodi dolore eum minus quidem repellendus.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="lk_input question">
+                        <input type="email" placeholder="Email" name="user_email" data-input-required="required">
+
+                        <div class="errorHold order-10"></div>
+
+                        <div class="question__block">
+                          <div class="question__block-wrap hint_text">
+                            <img src="assets/images/icons/info-circle.svg" alt="Icon" loading="lazy">
+
+                            <p>Для чего почта?</p>
+                          </div>
+
+                          <div class="order_action hint max-h-icons">
+                            <div class="order_action__wrapper">
+                              <div class="order_action__item hint__item">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus id impedit neque sint unde. Commodi dolore eum minus quidem repellendus.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="lk_input question hint_text">
+                        <input name="contact_phone" class="phone_number" minlength="17" maxlength="17" type="tel" placeholder="Контактный телефон" data-input-required="required">
+
+                        <div class="question__block">
+                          <div class="question__block-wrap hint_text">
+                            <img src="assets/images/icons/info-circle.svg" alt="Icon" loading="lazy">
+
+                            <p>Для чего телефон?</p>
+                          </div>
+
+                          <div class="order_action hint max-h-icons">
+                            <div class="order_action__wrapper">
+                              <div class="order_action__item hint__item">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus id impedit neque sint unde. Commodi dolore eum minus quidem repellendus.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="org_type">
+                      <div class="org_type__title">
+                        <p class="m-0 xl-text text-dark text-medium">
+                          К какой организационно-правовой форме принадлежит Ваш объект?
+                        </p>
+
+                        <div class="lk_form_radio create_obj_radio">
+                          <div class="lk_form_radio__wrapper">
+                            <input class="custom-radio" name="man" type="radio" id="le_type" checked>
+                            <label for="le_type" class="lg-text radio_active">Юридическое лицо</label>
+                          </div>
+
+                          <div class="lk_form_radio__wrapper">
+                            <input class="custom-radio" name="man" type="radio" id="ip_type">
+                            <label for="ip_type" class="lg-text">Индивидуальный предприниматель</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="create_obj_block__col2 rounded-none">
+                        <div class="lk_input">
+                          <input name="inn" type="number" placeholder="ИНН" data-input-required="required">
+                        </div>
+
+                        <div class="lk_input">
+                          <input name="kpp" type="number" placeholder="КПП" data-input-required="required">
+                        </div>
+
+                        <div class="lk_input d-none-imp ip_input">
+                          <input name="ogrnip" type="number" placeholder="ОГРНИП">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full d-flex justify-end">
+                        <button data-next-step="2" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="2">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Подтверждение номера телефона и электронной почты
+                    </h3>
+
+                    <div class="create_obj_block__codes">
+                      <div class="code_input">
+                        <p class="m-0 sm-text text-main-gray text-medium">
+                          Введите код, отправленный на номер:<br>
+                          <span class="text-dark">
+                          8 (965) 367-89-54
+                        </span>
+                        </p>
+
+                        <div class="code_input__block">
+                          <div class="code_input__numbers phone_code">
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+                          </div>
+
+                          <a href="#" class="d-block not-decor-link sm-text text-main-col text-medium">
+                            Отправить заново
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="code_input">
+                        <p class="m-0 sm-text text-main-gray text-medium">
+                          Введите код, отправленный на адрес:<br>
+                          <span class="text-dark">
+                          contact@hospitality.ru
+                        </span>
+                        </p>
+
+                        <div class="code_input__block">
+                          <div class="code_input__numbers email_code">
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+
+                            <input type="text" maxlength="1" class="code_input__numbers-item" data-input-required="required">
+                          </div>
+
+                          <p id="timer" class="m-0 sm-text text-main-gray text-medium">
+                            Повторная отправка через: 2 мин. 10 сек.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="1" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button data-next-step="3" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="3">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Тип объекта размещения
+                    </h3>
+
+                    <div class="create_obj__type">
+                      <div class="create_obj__type-wrap">
+                        <div class="lk_form_radio__wrapper create_obj__type-item active_radio_type">
+                          <input class="custom-radio" name="type1" type="radio" id="type1" checked>
+
+                          <label for="type1" class="lg-text">
+                            Отель
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type2" type="radio" id="type2">
+
+                          <label for="type2" class="lg-text">
+                            Гостиница
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type3" type="radio" id="type3">
+
+                          <label for="type3" class="lg-text">
+                            Хостел
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type4" type="radio" id="type4">
+
+                          <label for="type4" class="lg-text">
+                            Гостевой дом
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type5" type="radio" id="type5">
+
+                          <label for="type5" class="lg-text">
+                            Мини-отель
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type6" type="radio" id="type6">
+
+                          <label for="type6" class="lg-text">
+                            Санаторий
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type7" type="radio" id="type7">
+
+                          <label for="type7" class="lg-text">
+                            Апартаменты
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type8" type="radio" id="type8">
+
+                          <label for="type8" class="lg-text">
+                            Апарт-отель
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type9" type="radio" id="type9">
+
+                          <label for="type9" class="lg-text">
+                            База отдыха
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type10" type="radio" id="type10">
+
+                          <label for="type10" class="lg-text">
+                            Загородный отель
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type11" type="radio" id="type11">
+
+                          <label for="type11" class="lg-text">
+                            Спа-отель
+                          </label>
+                        </div>
+
+                        <div class="lk_form_radio__wrapper create_obj__type-item">
+                          <input class="custom-radio" name="type12" type="radio" id="type12">
+
+                          <label for="type12" class="lg-text">
+                            Пансионат
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="lk_input qnt_room">
+                        <input name="qnt_room" type="number" placeholder="Количество номеров" data-input-required="required">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="2" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button data-next-step="4" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="4">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Местоположение объекта
+                    </h3>
+
+                    <div class="create_obj_block__col2">
+                      <div class="lk_input">
+                        <input name="city" type="text" placeholder="Город" data-input-required="required" oninput="validateTextInput(event)">
+                      </div>
+
+                      <div class="lk_input">
+                        <input name="street" type="text" placeholder="Улица" data-input-required="required">
+                      </div>
+
+                      <div class="lk_input">
+                        <input name="house" type="number" placeholder="Дом" data-input-required="required">
+                      </div>
+
+                      <div class="lk_input">
+                        <input name="corpus" type="text" placeholder="Корпус">
+                      </div>
+                    </div>
+
+                    <div class="create_obj_block__map">
+                      <p class="m-0 xl-text text-dark text-medium">
+                        Укажите адрес и, при необходимости, скорректируйте отметку на карте
+                      </p>
+
+                      <div class="map_block" id="map"></div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="3" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button data-next-step="5" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="5">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Фотографии объекта
+                    </h3>
+
+                    <p class="m-0 sm-text text-dark">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda autem consectetur debitis dignissimos, dolores enim eos illum incidunt, iste laborum minima nobis quisquam rerum sed veniam, vitae? Eaque, qui!
+                    </p>
+
+                    <div class="create_obj__images">
+                      <div class="add_image_block">
+                        <p class="image_type">
+                          Главная фотография:
+                        </p>
+
+                        <div class="add_image_block__wrapper">
+                          <div class="add_image_block__items">
+                            <div class="object_image_add">
+                              <input type="file" class="d-none-imp" name="photo1">
+
+                              <div class="object_image_add__wrapper">
+                                <img class="d-block" src="assets/images/icons/gallery-add.svg" alt="Icon" loading="lazy">
+
+                                <p class="m-0 lg-text text-dark text-medium text-center">
+                                  Загрузить фото
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="create_obj__images">
+                      <div class="add_image_block">
+                        <p class="image_type">
+                          Галерея фотографий:
+                        </p>
+
+                        <div class="add_image_block__wrapper">
+                          <p class="m-0 sm-text text-dark">
+                            Добавьте к описанию номеров минимум 6 горизонтальных фотографий шириной не менее 1500 пикселей. Загружая фотографии, вы подтверждаете право их использования на Hospitality.ru: изображения сделаны вами, взяты с согласия автора или из легальных источников, а также не нарушают прав третьих лиц.
+                          </p>
+
+                          <div class="add_image_block__items">
+                            <div class="object_image">
+                              <img class="object_image__bg" src="assets/images/hotels/hotel2.jpg" alt="Hotel" loading="lazy">
+
+                              <button type="button" class="btn object_image__delete">
+                                <img src="assets/images/account/trash.svg" alt="Delete" loading="lazy">
+                              </button>
+                            </div>
+
+                            <div class="object_image">
+                              <img class="object_image__bg" src="assets/images/hotels/hotel3.jpg" alt="Hotel" loading="lazy">
+
+                              <button type="button" class="btn object_image__delete">
+                                <img src="assets/images/account/trash.svg" alt="Delete" loading="lazy">
+                              </button>
+                            </div>
+
+                            <div class="object_image_add">
+                              <input type="file" class="d-none-imp" name="photo1">
+
+                              <div class="object_image_add__wrapper">
+                                <img class="d-block" src="assets/images/icons/gallery-add.svg" alt="Icon" loading="lazy">
+
+                                <p class="m-0 lg-text text-dark text-medium text-center">
+                                  Загрузить фото
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="4" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button data-next-step="6" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="6">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Информация об объекте
+                    </h3>
+
+                    <div class="create_obj_block__info">
+                      <div class="create_obj_block__info-wrap">
+                        <div class="internet_search">
+                          <div class="lk_input">
+                            <input name="obj_name" type="text" placeholder="Название объекта размещения" data-input-required="required">
+                          </div>
+
+                          <div class="choose_site">
+                            <div class="lk_input">
+                              <input name="obj_site" id="siteInput" type="text" placeholder="Адрес сайта объекта" data-input-required="required">
+                            </div>
+
+                            <label>
+                              <input type="checkbox" id="noSite" name="no_site">
+                              Нет сайта
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="input_stars">
+                          <p class="m-0 lg-text text-dark text-medium">
+                            Количество звезд:
+                          </p>
+
+                          <div class="input_stars__block">
+                            <div class="stars_list">
+                              <div data-stars-qnt="1" class="choose_star">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M25.172 6.43497L28.3987 12.8883C28.8387 13.7866 30.012 14.6483 31.002 14.8133L36.8503 15.785C40.5903 16.4083 41.4703 19.1216 38.7753 21.7983L34.2287 26.345C33.4587 27.115 33.037 28.6 33.2753 29.6633L34.577 35.2916C35.6037 39.7466 33.2387 41.47 29.297 39.1416L23.8153 35.8966C22.8253 35.31 21.1937 35.31 20.1853 35.8966L14.7037 39.1416C10.7803 41.47 8.39699 39.7283 9.42366 35.2916L10.7253 29.6633C10.9637 28.6 10.542 27.115 9.77199 26.345L5.22532 21.7983C2.54865 19.1216 3.41032 16.4083 7.15032 15.785L12.9987 14.8133C13.9703 14.6483 15.1437 13.7866 15.5837 12.8883L18.8103 6.43497C20.5703 2.9333 23.4303 2.9333 25.172 6.43497Z" fill="white" stroke="#1A2528" stroke-opacity="0.1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </div>
+
+                              <div data-stars-qnt="2" class="choose_star">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M25.172 6.43497L28.3987 12.8883C28.8387 13.7866 30.012 14.6483 31.002 14.8133L36.8503 15.785C40.5903 16.4083 41.4703 19.1216 38.7753 21.7983L34.2287 26.345C33.4587 27.115 33.037 28.6 33.2753 29.6633L34.577 35.2916C35.6037 39.7466 33.2387 41.47 29.297 39.1416L23.8153 35.8966C22.8253 35.31 21.1937 35.31 20.1853 35.8966L14.7037 39.1416C10.7803 41.47 8.39699 39.7283 9.42366 35.2916L10.7253 29.6633C10.9637 28.6 10.542 27.115 9.77199 26.345L5.22532 21.7983C2.54865 19.1216 3.41032 16.4083 7.15032 15.785L12.9987 14.8133C13.9703 14.6483 15.1437 13.7866 15.5837 12.8883L18.8103 6.43497C20.5703 2.9333 23.4303 2.9333 25.172 6.43497Z" fill="white" stroke="#1A2528" stroke-opacity="0.1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </div>
+
+                              <div data-stars-qnt="3" class="choose_star">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M25.172 6.43497L28.3987 12.8883C28.8387 13.7866 30.012 14.6483 31.002 14.8133L36.8503 15.785C40.5903 16.4083 41.4703 19.1216 38.7753 21.7983L34.2287 26.345C33.4587 27.115 33.037 28.6 33.2753 29.6633L34.577 35.2916C35.6037 39.7466 33.2387 41.47 29.297 39.1416L23.8153 35.8966C22.8253 35.31 21.1937 35.31 20.1853 35.8966L14.7037 39.1416C10.7803 41.47 8.39699 39.7283 9.42366 35.2916L10.7253 29.6633C10.9637 28.6 10.542 27.115 9.77199 26.345L5.22532 21.7983C2.54865 19.1216 3.41032 16.4083 7.15032 15.785L12.9987 14.8133C13.9703 14.6483 15.1437 13.7866 15.5837 12.8883L18.8103 6.43497C20.5703 2.9333 23.4303 2.9333 25.172 6.43497Z" fill="white" stroke="#1A2528" stroke-opacity="0.1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </div>
+
+                              <div data-stars-qnt="4" class="choose_star">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M25.172 6.43497L28.3987 12.8883C28.8387 13.7866 30.012 14.6483 31.002 14.8133L36.8503 15.785C40.5903 16.4083 41.4703 19.1216 38.7753 21.7983L34.2287 26.345C33.4587 27.115 33.037 28.6 33.2753 29.6633L34.577 35.2916C35.6037 39.7466 33.2387 41.47 29.297 39.1416L23.8153 35.8966C22.8253 35.31 21.1937 35.31 20.1853 35.8966L14.7037 39.1416C10.7803 41.47 8.39699 39.7283 9.42366 35.2916L10.7253 29.6633C10.9637 28.6 10.542 27.115 9.77199 26.345L5.22532 21.7983C2.54865 19.1216 3.41032 16.4083 7.15032 15.785L12.9987 14.8133C13.9703 14.6483 15.1437 13.7866 15.5837 12.8883L18.8103 6.43497C20.5703 2.9333 23.4303 2.9333 25.172 6.43497Z" fill="white" stroke="#1A2528" stroke-opacity="0.1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </div>
+
+                              <div data-stars-qnt="5" class="choose_star">
+                                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M25.172 6.43497L28.3987 12.8883C28.8387 13.7866 30.012 14.6483 31.002 14.8133L36.8503 15.785C40.5903 16.4083 41.4703 19.1216 38.7753 21.7983L34.2287 26.345C33.4587 27.115 33.037 28.6 33.2753 29.6633L34.577 35.2916C35.6037 39.7466 33.2387 41.47 29.297 39.1416L23.8153 35.8966C22.8253 35.31 21.1937 35.31 20.1853 35.8966L14.7037 39.1416C10.7803 41.47 8.39699 39.7283 9.42366 35.2916L10.7253 29.6633C10.9637 28.6 10.542 27.115 9.77199 26.345L5.22532 21.7983C2.54865 19.1216 3.41032 16.4083 7.15032 15.785L12.9987 14.8133C13.9703 14.6483 15.1437 13.7866 15.5837 12.8883L18.8103 6.43497C20.5703 2.9333 23.4303 2.9333 25.172 6.43497Z" fill="white" stroke="#1A2528" stroke-opacity="0.1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                              </div>
+                            </div>
+
+                            <input type="hidden" name="stars_qnt" id="starsQntInput">
+
+                            <label>
+                              <input type="checkbox" id="noStars" name="no_stars">
+                              Без звёзд
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Описание отеля
+                    </h3>
+
+                    <div class="lk_input bb_gray">
+                      <textarea name="obj_description" placeholder="Описание объекта" data-input-required="required"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Удобства отеля
+                    </h3>
+
+                    <div class="hotel_facilities">
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience1">
+
+                        <img class="d-block" width="20" src="assets/images/icons/wifi_dark.svg" alt="Icon" loading="lazy">
+
+                        Бесплатный Wi-Fi
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience2">
+
+                        <img class="d-block" width="20" src="assets/images/icons/gym_dark.svg" alt="Icon" loading="lazy">
+
+                        Тренажерный зал
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience3">
+
+                        <img class="d-block" width="20" src="assets/images/icons/beach_dark.svg" alt="Icon" loading="lazy">
+
+                        Близко к пляжу
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience4">
+
+                        <img class="d-block" width="20" src="assets/images/icons/pool_dark.svg" alt="Icon" loading="lazy">
+
+                        Бассейн
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience5">
+
+                        <img class="d-block" width="20" src="assets/images/icons/tv_dark.svg" alt="Icon" loading="lazy">
+
+                        Кабельное ТВ
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience6">
+
+                        <img class="d-block" width="20" src="assets/images/icons/polotence_dark.svg" alt="Icon" loading="lazy">
+
+                        Баня, сауна
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience7">
+
+                        <img class="d-block" width="20" src="assets/images/icons/car_dark.svg" alt="Icon" loading="lazy">
+
+                        Парковка
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience8">
+
+                        <img class="d-block" width="20" src="assets/images/icons/pet_dark.svg" alt="Icon" loading="lazy">
+
+                        Можно с питомцами
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Питание
+                    </h3>
+
+                    <div class="obj_inputs_list">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Завтрак
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Завтрак" name="object_category" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="breakfast">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="breakfast">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="breakfast">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="breakfast">
+                            <div class="selector">
+                              <input type="text" placeholder="Завтрак" name="breakfast_type" value="Комплексный" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Комплексный
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    По меню
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Шведский стол
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="breakfast">
+                            <div class="secure_password_input">
+                              <input type="number" name="breakfast_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Обед
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Обед" name="object_category" value="Не предоставляется" readonly data-input-required="required">
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="lunch">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="lunch">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="lunch">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="lunch">
+                            <div class="selector">
+                              <input type="text" placeholder="Обед" name="lunch_type" value="Комплексный" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Комплексный
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    По меню
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Шведский стол
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="lunch">
+                            <div class="secure_password_input">
+                              <input type="number" name="lunch_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Ужин
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Ужин" name="object_category" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="dinner">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="dinner">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="dinner">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="dinner">
+                            <div class="selector">
+                              <input type="text" placeholder="Ужин" name="dinner_type" value="Комплексный" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Комплексный
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    По меню
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Шведский стол
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="dinner">
+                            <div class="secure_password_input">
+                              <input type="number" name="dinner_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Трансфер
+                    </h3>
+
+                    <div class="obj_inputs_list">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер от ж/д вокзала
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер от ж/д вокзала" name="from_train" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_train">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="from_train">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_train">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="from_train">
+                            <div class="secure_password_input">
+                              <input type="number" name="from_train_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер до ж/д вокзала
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер до ж/д вокзала" name="to_train" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_train">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="to_train">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_train">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="to_train">
+                            <div class="secure_password_input">
+                              <input type="number" name="to_train_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер из аэропорта
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер из аэропорта" name="from_plane" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_plane">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="from_plane">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_plane">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="from_plane">
+                            <div class="secure_password_input">
+                              <input type="number" name="from_plane_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер в аэропорта
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер в аэропорта" name="to_plane" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_plane">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="to_plane">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_plane">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="to_plane">
+                            <div class="secure_password_input">
+                              <input type="number" name="to_plane_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Прокат велосипедов
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Прокат велосипедов" name="bicycle_rental" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="bicycle_rental">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="bicycle_rental">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="bicycle_rental">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="bicycle_rental">
+                            <div class="secure_password_input">
+                              <input type="number" name="bicycle_rental_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Парковка
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Парковка" name="parking" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="parking">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="parking">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="parking">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="parking">
+                            <div class="secure_password_input">
+                              <input type="number" name="parking_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Услуги
+                    </h3>
+
+                    <div class="obj_inputs_list">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Организация регистрации
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Организация регистрации" name="org_reg" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="org_reg">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="org_reg">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="org_reg">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="org_reg">
+                            <div class="secure_password_input">
+                              <input type="number" name="org_reg_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Предоставление документов для отчетов
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Предоставление документов для отчетов" name="document" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="document">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="document">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="document">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="document">
+                            <div class="secure_password_input">
+                              <input type="number" name="document_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Смена постельного белья
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Смена постельного белья" name="change_linen" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="change_linen">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="change_linen">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="change_linen">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="change_linen">
+                            <div class="secure_password_input">
+                              <input type="number" name="change_linen_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Услуги экскурсовода
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Услуги экскурсовода" name="guide" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="guide">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="guide">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="guide">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="guide">
+                            <div class="secure_password_input">
+                              <input type="number" name="guide_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Аниматор
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Аниматор" name="animator" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="animator">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="animator">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="animator">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="animator">
+                            <div class="secure_password_input">
+                              <input type="number" name="animator_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Пользование стиральной машиной
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Пользование стиральной машиной" name="washing_machine" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="washing_machine">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="washing_machine">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="washing_machine">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="washing_machine">
+                            <div class="secure_password_input">
+                              <input type="number" name="washing_machine_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Баня/Сауна
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Баня/Сауна" name="sauna" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="sauna">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="sauna">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="sauna">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="sauna">
+                            <div class="secure_password_input">
+                              <input type="number" name="sauna_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Правила размещения
+                    </h3>
+
+                    <div class="lk_form_inputs">
+                      <div class="lk_input">
+                        <div class="selector">
+                          <input type="text" placeholder="Время заезда" name="check-in_time" readonly data-input-required="required">
+
+                          <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                          <div class="selector_block">
+                            <ul class="selector_block__list">
+                              <li class="selector_block__item">
+                                с 13:00
+                              </li>
+
+                              <li class="selector_block__item">
+                                с 14:00
+                              </li>
+
+                              <li class="selector_block__item">
+                                с 15:00
+                              </li>
+
+                              <li class="selector_block__item">
+                                По согласованию
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="lk_input">
+                        <div class="selector">
+                          <input type="text" placeholder="Время выезда" name="departure_time" readonly data-input-required="required">
+
+                          <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                          <div class="selector_block">
+                            <ul class="selector_block__list">
+                              <li class="selector_block__item">
+                                с 12:00 до 13:00
+                              </li>
+
+                              <li class="selector_block__item">
+                                с 13:00 до 14:00
+                              </li>
+
+                              <li class="selector_block__item">
+                                с 14:00 до 15:00
+                              </li>
+
+                              <li class="selector_block__item">
+                                По согласованию
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="5" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button data-next-step="7" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="7">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Характеристики номера
+                    </h3>
+
+                    <div class="room_property">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Количество гостей
+                        </p>
+
+                        <div class="lk_input">
+                          <input type="number" placeholder="Количество гостей" name="people_qnt" data-input-required="required">
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Количество кроватей
+                        </p>
+
+                        <div class="lk_input">
+                          <input type="number" placeholder="Количество кроватей" name="beds_qnt" data-input-required="required">
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Количество ключей
+                        </p>
+
+                        <div class="lk_input">
+                          <input type="number" placeholder="Количество ключей" name="keys_qnt" data-input-required="required">
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Количество ванн
+                        </p>
+
+                        <div class="lk_input">
+                          <input type="number" placeholder="Количество ванн" name="bath_qnt" data-input-required="required">
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Площадь номера (кв.м)
+                        </p>
+
+                        <div class="lk_input">
+                          <input type="number" placeholder="Площадь номера" name="room_sqrt" data-input-required="required">
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Кровати
+                        </p>
+
+                        <div class="lk_input">
+                          <div class="selector">
+                            <input type="text" placeholder="Кровати" name="double_bed" readonly data-input-required="required">
+
+                            <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                            <div class="selector_block">
+                              <ul class="selector_block__list">
+                                <li class="selector_block__item">
+                                  1 двухспальная
+                                </li>
+
+                                <li class="selector_block__item">
+                                  2 односпальные
+                                </li>
+
+                                <li class="selector_block__item">
+                                  1 двухспальная + диван
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Оплата
+                        </p>
+
+                        <div class="lk_input">
+                          <div class="selector">
+                            <input type="text" placeholder="Оплата" name="time_pay" readonly data-input-required="required">
+
+                            <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                            <div class="selector_block">
+                              <ul class="selector_block__list">
+                                <li class="selector_block__item">
+                                  При заселении
+                                </li>
+
+                                <li class="selector_block__item">
+                                  При бронировании
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="obj_inputs_list__item">
+                      <p class="m-0 lg-text text-dark text-medium">
+                        Бесплатная отмена брони
+                      </p>
+
+                      <div class="object_category lk_form_inputs">
+                        <div class="lk_input object_category__selector">
+                          <div class="selector">
+                            <input type="text" placeholder="Бесплатная отмена брони" name="free_cancellation" readonly data-input-required="required">
+
+                            <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                            <div class="selector_block">
+                              <ul class="selector_block__list">
+                                <li class="selector_block__item" data-action-service="price" data-type-service="free_cancellation">
+                                  За Х дней
+                                </li>
+
+                                <li class="selector_block__item" data-action-service="no_price" data-type-service="free_cancellation">
+                                  Отсутствует
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="lk_input object_category__price d-none-imp" data-block-service="free_cancellation">
+                          <div class="secure_password_input">
+                            <input type="number" name="day_free_cancellation_qnt" placeholder="Дни">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Фотографии номеров
+                    </h3>
+
+                    <p class="m-0 sm-text text-dark">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda autem consectetur debitis dignissimos, dolores enim eos illum incidunt, iste laborum minima nobis quisquam rerum sed veniam, vitae? Eaque, qui!
+                    </p>
+
+                    <div class="create_obj__images">
+                      <div class="add_image_block">
+                        <p class="image_type">
+                          Галерея фотографий:
+                        </p>
+
+                        <div class="add_image_block__wrapper">
+                          <p class="m-0 sm-text text-dark">
+                            Добавьте к описанию номеров минимум 6 горизонтальных фотографий шириной не менее 1500 пикселей. Загружая фотографии, вы подтверждаете право их использования на Hospitality.ru: изображения сделаны вами, взяты с согласия автора или из легальных источников, а также не нарушают прав третьих лиц.
+                          </p>
+
+                          <div class="add_image_block__items">
+                            <div class="object_image">
+                              <img class="object_image__bg" src="assets/images/hotels/hotel2.jpg" alt="Hotel" loading="lazy">
+
+                              <button type="button" class="btn object_image__delete">
+                                <img src="assets/images/account/trash.svg" alt="Delete" loading="lazy">
+                              </button>
+                            </div>
+
+                            <div class="object_image">
+                              <img class="object_image__bg" src="assets/images/hotels/hotel3.jpg" alt="Hotel" loading="lazy">
+
+                              <button type="button" class="btn object_image__delete">
+                                <img src="assets/images/account/trash.svg" alt="Delete" loading="lazy">
+                              </button>
+                            </div>
+
+                            <div class="object_image_add">
+                              <input type="file" class="d-none-imp" name="photo1">
+
+                              <div class="object_image_add__wrapper">
+                                <img class="d-block" src="assets/images/icons/gallery-add.svg" alt="Icon" loading="lazy">
+
+                                <p class="m-0 lg-text text-dark text-medium text-center">
+                                  Загрузить фото
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Категория
+                    </h3>
+
+                    <div class="obj_inputs_list">
+                      <div class="obj_inputs_list__item">
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Категория" name="room_category" readonly data-input-required="required">
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Эконом
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Стандарт
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Комфорт
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Удобства номера
+                    </h3>
+
+                    <div class="hotel_facilities">
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience1">
+
+                        <img class="d-block" width="20" src="assets/images/icons/wifi_dark.svg" alt="Icon" loading="lazy">
+
+                        Бесплатный Wi-Fi
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience2">
+
+                        <img class="d-block" width="20" src="assets/images/icons/gym_dark.svg" alt="Icon" loading="lazy">
+
+                        Тренажерный зал
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience3">
+
+                        <img class="d-block" width="20" src="assets/images/icons/beach_dark.svg" alt="Icon" loading="lazy">
+
+                        Близко к пляжу
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience4">
+
+                        <img class="d-block" width="20" src="assets/images/icons/pool_dark.svg" alt="Icon" loading="lazy">
+
+                        Бассейн
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience5">
+
+                        <img class="d-block" width="20" src="assets/images/icons/tv_dark.svg" alt="Icon" loading="lazy">
+
+                        Кабельное ТВ
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience6">
+
+                        <img class="d-block" width="20" src="assets/images/icons/polotence_dark.svg" alt="Icon" loading="lazy">
+
+                        Баня, сауна
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience7">
+
+                        <img class="d-block" width="20" src="assets/images/icons/car_dark.svg" alt="Icon" loading="lazy">
+
+                        Парковка
+                      </label>
+
+                      <label class="flex-items-center gap-10px sm-text text-dark">
+                        <input class="m-0 checkbox_size" type="checkbox" name="convenience8">
+
+                        <img class="d-block" width="20" src="assets/images/icons/pet_dark.svg" alt="Icon" loading="lazy">
+
+                        Можно с питомцами
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Питание
+                    </h3>
+
+                    <div class="obj_inputs_list">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Завтрак
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Завтрак" name="object_category" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="breakfast">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="breakfast">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="breakfast">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="breakfast">
+                            <div class="selector">
+                              <input type="text" placeholder="Завтрак" name="breakfast_type" value="Комплексный" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Комплексный
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    По меню
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Шведский стол
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="breakfast">
+                            <div class="secure_password_input">
+                              <input type="number" name="breakfast_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Обед
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Обед" name="object_category" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="lunch">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="lunch">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="lunch">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="lunch">
+                            <div class="selector">
+                              <input type="text" placeholder="Обед" name="lunch_type" value="Комплексный" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Комплексный
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    По меню
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Шведский стол
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="lunch">
+                            <div class="secure_password_input">
+                              <input type="number" name="lunch_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Ужин
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Ужин" name="object_category" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="dinner">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="dinner">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="dinner">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="dinner">
+                            <div class="selector">
+                              <input type="text" placeholder="Ужин" name="dinner_type" value="Комплексный" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item">
+                                    Комплексный
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    По меню
+                                  </li>
+
+                                  <li class="selector_block__item">
+                                    Шведский стол
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="dinner">
+                            <div class="secure_password_input">
+                              <input type="number" name="dinner_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Трансфер
+                    </h3>
+
+                    <div class="obj_inputs_list">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер от ж/д вокзала
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер от ж/д вокзала" name="from_train" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_train">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="from_train">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_train">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="from_train">
+                            <div class="secure_password_input">
+                              <input type="number" name="from_train_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер до ж/д вокзала
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер до ж/д вокзала" name="to_train" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_train">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="to_train">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_train">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="to_train">
+                            <div class="secure_password_input">
+                              <input type="number" name="to_train_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер из аэропорта
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер из аэропорта" name="from_plane" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_plane">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="from_plane">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="from_plane">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="from_plane">
+                            <div class="secure_password_input">
+                              <input type="number" name="from_plane_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Трансфер в аэропорта
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Трансфер в аэропорта" name="to_plane" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_plane">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="to_plane">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="to_plane">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="to_plane">
+                            <div class="secure_password_input">
+                              <input type="number" name="to_plane_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Прокат велосипедов
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Прокат велосипедов" name="bicycle_rental" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="bicycle_rental">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="bicycle_rental">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="bicycle_rental">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="bicycle_rental">
+                            <div class="secure_password_input">
+                              <input type="number" name="bicycle_rental_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Парковка
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Парковка" name="parking" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="parking">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="parking">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="parking">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="parking">
+                            <div class="secure_password_input">
+                              <input type="number" name="parking_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Услуги
+                    </h3>
+
+                    <div class="obj_inputs_list pb-0 bb-none">
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Организация регистрации
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Организация регистрации" name="org_reg" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="org_reg">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="org_reg">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="org_reg">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="org_reg">
+                            <div class="secure_password_input">
+                              <input type="number" name="org_reg_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Предоставление документов для отчетов
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Предоставление документов для отчетов" name="document" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="document">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="document">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="document">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="document">
+                            <div class="secure_password_input">
+                              <input type="number" name="document_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Смена постельного белья
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Смена постельного белья" name="change_linen" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="change_linen">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="change_linen">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="change_linen">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="change_linen">
+                            <div class="secure_password_input">
+                              <input type="number" name="change_linen_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Услуги экскурсовода
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Услуги экскурсовода" name="guide" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="guide">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="guide">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="guide">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="guide">
+                            <div class="secure_password_input">
+                              <input type="number" name="guide_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Аниматор
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Аниматор" name="animator" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="animator">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="animator">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="animator">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="animator">
+                            <div class="secure_password_input">
+                              <input type="number" name="animator_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Пользование стиральной машиной
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Пользование стиральной машиной" name="washing_machine" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="washing_machine">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="washing_machine">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="washing_machine">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="washing_machine">
+                            <div class="secure_password_input">
+                              <input type="number" name="washing_machine_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="obj_inputs_list__item">
+                        <p class="m-0 lg-text text-dark text-medium">
+                          Баня/Сауна
+                        </p>
+
+                        <div class="object_category lk_form_inputs">
+                          <div class="lk_input object_category__selector">
+                            <div class="selector">
+                              <input type="text" placeholder="Баня/Сауна" name="sauna" value="Не предоставляется" readonly>
+
+                              <img class="lk_input__icon selector_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+                              <div class="selector_block">
+                                <ul class="selector_block__list">
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="sauna">
+                                    Не предоставляется
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="price" data-type-service="sauna">
+                                    Предоставляется, не входит в стоимость
+                                  </li>
+
+                                  <li class="selector_block__item" data-action-service="no_price" data-type-service="sauna">
+                                    Предоставляется, входит в стоимость
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="lk_input object_category__price d-none-imp" data-block-service="sauna">
+                            <div class="secure_password_input">
+                              <input type="number" name="sauna_price" placeholder="Цена">
+
+                              <img class="input_eye" src="assets/images/icons/rub.svg" alt="Rub" loading="lazy">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="6" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button data-next-step="8" type="button" class="btn btn__auth next_step_btn">
+                          Продолжить
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="create_obj_block d-none-imp" data-step-form="8">
+                <div class="create_obj_block__wrapper">
+                  <div class="create_obj_block__top">
+                    <h3 class="create_obj_block__title">
+                      Тарифы и квоты
+                    </h3>
+                  </div>
+
+                  <div class="next_step">
+                    <div class="next_step__first_type">
+                      <div class="w-full flex-items-center justify-between gap-16px">
+                        <button data-prev-step="7" type="button" class="btn btn__prev prev_step_btn">
+                          Назад
+                        </button>
+
+                        <button type="submit" class="btn btn__auth next_step_btn">
+                          Оставить заявку
+                        </button>
+                      </div>
+
+                      <div class="approval">
+                        <p class="m-0 xs-text text-main-gray text-start">
+                          Нажимая на кнопку «Продолжить», вы соглашаетесь
+                          <a href="#" class="not-decor-link text-main-col">
+                            Условиями использования
+                          </a>
+                          и
+                          <a href="#" class="not-decor-link text-main-col">
+                            Политикой обработки персональных данных
+                          </a>
+                          с Hospitality.ru
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <div class="create_obj__main-bottom">
+              <div class="difficulties">
+                <div class="difficulties__left">
+                  <p class="m-0 xl-text text-dark text-medium">
+                    Возникли трудности в процессе регистрации?
+                  </p>
+
+                  <p class="m-0 sm-text text-dark">
+                    Свяжитесь с нашей технической поддержкой:
+                  </p>
+                </div>
+
+                <div class="difficulties__right">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="m-0 xs-text text-main-gray">
+                      Звонок по телефону:
+                    </p>
+
+                    <a href="tel:+78822345300" class="not-decor-link difficulties__link">
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M23.8008 19.8575C23.8008 20.2475 23.7141 20.6483 23.53 21.0383C23.3458 21.4283 23.1075 21.7966 22.7933 22.1433C22.2625 22.7283 21.6775 23.1508 21.0166 23.4216C20.3666 23.6925 19.6625 23.8333 18.9041 23.8333C17.7991 23.8333 16.6183 23.5733 15.3725 23.0425C14.1266 22.5116 12.8808 21.7966 11.6458 20.8975C10.4 19.9875 9.21913 18.98 8.09246 17.8641C6.97663 16.7375 5.96913 15.5566 5.06996 14.3216C4.18163 13.0866 3.46663 11.8516 2.94663 10.6275C2.42663 9.39246 2.16663 8.21163 2.16663 7.08496C2.16663 6.34829 2.29663 5.64413 2.55663 4.99413C2.81663 4.33329 3.22829 3.72663 3.80246 3.18496C4.49579 2.50246 5.25413 2.16663 6.05579 2.16663C6.35913 2.16663 6.66246 2.23163 6.93329 2.36163C7.21496 2.49163 7.46413 2.68663 7.65913 2.96829L10.1725 6.51079C10.3675 6.78163 10.5083 7.03079 10.6058 7.26913C10.7033 7.49663 10.7575 7.72413 10.7575 7.92996C10.7575 8.18996 10.6816 8.44996 10.53 8.69913C10.3891 8.94829 10.1833 9.20829 9.92329 9.46829L9.09996 10.3241C8.98079 10.4433 8.92663 10.5841 8.92663 10.7575C8.92663 10.8441 8.93746 10.92 8.95913 11.0066C8.99163 11.0933 9.02413 11.1583 9.04579 11.2233C9.24079 11.5808 9.57663 12.0466 10.0533 12.61C10.5408 13.1733 11.0608 13.7475 11.6241 14.3216C12.2091 14.8958 12.7725 15.4266 13.3466 15.9141C13.91 16.3908 14.3758 16.7158 14.7441 16.9108C14.7983 16.9325 14.8633 16.965 14.9391 16.9975C15.0258 17.03 15.1125 17.0408 15.21 17.0408C15.3941 17.0408 15.535 16.9758 15.6541 16.8566L16.4775 16.0441C16.7483 15.7733 17.0083 15.5675 17.2575 15.4375C17.5066 15.2858 17.7558 15.21 18.0266 15.21C18.2325 15.21 18.4491 15.2533 18.6875 15.3508C18.9258 15.4483 19.175 15.5891 19.4458 15.7733L23.0316 18.3191C23.3133 18.5141 23.5083 18.7416 23.6275 19.0125C23.7358 19.2833 23.8008 19.5541 23.8008 19.8575Z" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M20.0417 9.74992C20.0417 9.09992 19.5325 8.10325 18.7742 7.29075C18.0808 6.54325 17.16 5.95825 16.25 5.95825" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23.8333 9.74996C23.8333 5.55746 20.4425 2.16663 16.25 2.16663" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+
+                      +7 (882) 23-45-300
+                    </a>
+                  </div>
+
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="m-0 xs-text text-main-gray">
+                      Написать на почту:
+                    </p>
+
+                    <a href="mailto:contact@hospitality.ru" class="not-decor-link difficulties__link">
+                      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.4166 22.2083H7.58329C4.33329 22.2083 2.16663 20.5833 2.16663 16.7916V9.20829C2.16663 5.41663 4.33329 3.79163 7.58329 3.79163H18.4166C21.6666 3.79163 23.8333 5.41663 23.8333 9.20829V16.7916C23.8333 20.5833 21.6666 22.2083 18.4166 22.2083Z" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18.4167 9.75L15.0259 12.4583C13.91 13.3467 12.0792 13.3467 10.9634 12.4583L7.58337 9.75" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+
+                      contact@hospitality.ru
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer__wrapper">
+    <div class="footer_top">
+      <a href="index.html" class="d-block">
+        <img src="assets/images/logotypes/dark-logo.svg" alt="Logotype" loading="lazy">
+      </a>
+
+      <a href="partnerPage.html" class="flex-items-center btn btn__login not-decor-link link__lg">
+        Сдать жильё
+      </a>
+    </div>
+
+    <div class="footer_center">
+      <p class="text-main-gray m-0 footer_text">
+        Hospitality.ru - часть Hospitality Holdings Inc., мирового лидера в сфере бронирования жилья и сопроводительных услуг.
+      </p>
+
+      <a href="partnerPage.html" class="w-full flex-items-center justify-center btn btn__login not-decor-link link__sm">
+        Сдать жильё
+      </a>
+
+      <nav class="footer_nav footer_center-lg">
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Служба помощи
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Справочный раздел
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="contact.html" class="not-decor-link text-dark">
+              Контакты
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Гостям
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Как снять жилье
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Гарантии сервиса
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Отзывы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Хозяевам
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Сдать жилье
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Условия размещения
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            О нас
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="about.html" class="not-decor-link text-dark">
+              О компании
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              СМИ о нас
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вакансии
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Блог
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer_center-sm">
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Служба помощи
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Справочный раздел
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="contact.html" class="not-decor-link text-dark">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Гостям
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Как снять жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Гарантии сервиса
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Отзывы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Хозяевам
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Сдать жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Условия размещения
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              О нас
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="about.html" class="not-decor-link text-dark">
+                О компании
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                СМИ о нас
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вакансии
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Блог
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="social_network">
+        <p class="m-0 text-center text-main-gray text-nowrap text-medium with_we">
+          Будьте с нами
+        </p>
+
+        <div class="flex-items-center gap-12px">
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/vk.svg" alt="VK" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/tg.svg" alt="Telegram" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/yt.svg" alt="Youtube" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <div class="footer_bottom-top">
+        <div class="foot-top flex-items-center gap-32px-imp">
+          <a href="#" class="text-main-gray">
+            Политика обработки персональных данных
+          </a>
+
+          <a href="#" class="text-main-gray">
+            Правовая информация
+          </a>
+        </div>
+
+        <div class="foot-bottom flex-items-center gap-20px-imp">
+          <p class="text-main-gray m-0">
+            Принимаем к оплате:
+          </p>
+
+          <div class="flex-items-center gap-12px">
+            <div>
+              <img src="assets/images/payments/visa.svg" alt="Visa" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/no_know.svg" alt="Icon" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/mir.svg" alt="Mir" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom-bottom">
+        <p class="text-main-gray m-0">
+          © Hospitality.ru - бронирование гостиниц и квартир. Все права защищены.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=viewport-units"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewport-units-buggyfill/0.6.2/viewport-units-buggyfill.js"></script>
+<script>
+    window.onload = function() {
+        window.viewportUnitsBuggyfill.init();
+    };
+</script>
+
+<script src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
+
+<script src="assets/scripts/dropMenu.js"></script>
+<script src="assets/scripts/mobileHeader.js"></script>
+<script src="assets/scripts/inputText.js"></script>
+<script src="assets/scripts/inputNumber.js"></script>
+<script src="assets/scripts/account/accountHead.js"></script>
+<script src="assets/scripts/account/phoneFormatted.js"></script>
+<script src="assets/scripts/account/closeSelectorBlocks.js"></script>
+<script src="assets/scripts/account/emailValidator.js"></script>
+<script src="assets/scripts/account/objectType.js"></script>
+<script src="assets/scripts/account/smsCode.js"></script>
+<script src="assets/scripts/account/timer.js"></script>
+<script src="assets/scripts/account/createObject.js"></script>
+<script src="assets/scripts/account/seeHint.js"></script>
+<script src="assets/scripts/account/chooseObjectType.js"></script>
+<script src="assets/scripts/account/addObjectPhoto.js"></script>
+<script src="assets/scripts/account/selector.js"></script>
+<script src="assets/scripts/account/siteAndStars.js"></script>
+<script src="assets/scripts/account/addServicePrice.js"></script>
+<script src="assets/scripts/closePopUpClick.js"></script>
+<script src="assets/scripts/footerNavigation.js"></script>
+<script src="assets/scripts/addFunctionAttributes.js"></script>
+</body>
+</html>

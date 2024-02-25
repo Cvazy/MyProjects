@@ -1,0 +1,2063 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex" />
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="description" content="Blog Page">
+  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/base.min.css">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Hospitality - Блог</title>
+</head>
+<body>
+
+<div class="d-none-imp auth_blackout blackout h-full-imp flex-items-baseline">
+  <div class="d-none-imp auth modal_help_form auth_block_position">
+    <div class="modal_form__wrapper">
+      <div class="w-full flex-items-center justify-between">
+        <p class="help_form__title">
+          Помощь в регистрации
+        </p>
+
+        <div class="modal_help_form__close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form modal_help_auth_form" data-modal-auth-block="help">
+        <div class="modal_auth_form__wrapper">
+          <p class="m-0 text-main-gray lg-text text-start">
+            Наши специалисты бесплатно помогут вам зарегистрировать вашу компанию в нашем сервисе
+          </p>
+
+          <div class="modal_auth_form__input">
+            <input type="text" name="help_name" placeholder="Имя">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="email" name="help_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="tel" name="help_phone" placeholder="Телефон">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Оставить заявку
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-none-imp auth modal_recovery_form auth_block_position">
+    <div class="modal_form__wrapper">
+      <div class="w-full flex-items-center justify-between">
+        <p class="recovery_form__title">
+          Восстановление пароля
+        </p>
+
+        <div class="modal_recovery_form__close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form modal_recovery_auth_form" data-modal-auth-block="help">
+        <div class="modal_auth_form__wrapper">
+          <p class="m-0 text-main-gray lg-text text-start">
+            Для восстановления пароля введите адрес электронной почты, указанный при бронировании:
+          </p>
+
+          <div class="modal_auth_form__input">
+            <input type="email" name="recovery_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Восстановить пароль
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="auth main_modal_auth auth_block_position">
+    <div class="modal_form__wrapper">
+      <div class="w-full flex-items-center justify-between modal_auth__title gap-16px" data-modal-auth-title="login">
+        <p class="help_form__title">
+          Войдите в личный кабинет
+        </p>
+
+        <div class="auth_blackout_close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <div class="d-none-imp w-full flex-items-center justify-between modal_auth__title gap-16px" data-modal-auth-title="registration">
+        <p class="help_form__title">
+          Зарегистрируйте личный кабинет
+        </p>
+
+        <div class="auth_blackout_close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <div class="auth_modal__navigation">
+        <button type="button" data-modal-auth-btn="login" class="btn auth_modal__navigation-item modal_auth_block_active">
+          Войти
+        </button>
+
+        <button type="button" data-modal-auth-btn="registration" class="btn auth_modal__navigation-item">
+          Зарегистрироваться
+        </button>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form" data-modal-auth-block="login">
+        <div class="modal_auth_form__wrapper">
+          <div class="modal_auth_form__input">
+            <input type="email" name="login_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input class="mb_forget" type="password" name="login_password" placeholder="Пароль">
+
+            <img class="input_eye" src="assets/images/icons/eye.svg" alt="Eye" loading="lazy">
+
+            <a href="#" class="not-decor-link text-main-col sm-text modal_auth_recovery">
+              Забыли пароль?
+            </a>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Войти
+        </button>
+      </form>
+
+      <form method="post" action="#" class="d-none-imp modal_auth_form" data-modal-auth-block="registration">
+        <div class="modal_auth_form__wrapper">
+          <div class="modal_auth_form__input">
+            <input type="text" name="reg_name" placeholder="Имя">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="text" name="reg_lastname" placeholder="Фамилия">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="email" name="reg_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="password" name="reg_password1" placeholder="Пароль">
+
+            <img class="input_eye" src="assets/images/icons/eye.svg" alt="Eye" loading="lazy">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="password" name="reg_password2" placeholder="Повторите пароль">
+
+            <img class="input_eye" src="assets/images/icons/eye.svg" alt="Eye" loading="lazy">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Зарегистрироваться
+        </button>
+      </form>
+
+      <p class="alt_auth">
+        Или войдите через
+      </p>
+
+      <div class="auth_network">
+        <a href="#" class="not-decor-link auth_network__item">
+          <div class="flex-items-center gap-12px">
+            <img class="d-block" src="assets/images/auth/Google.svg" alt="Google" loading="lazy">
+
+            <p class="m-0 lg-text text-dark text-medium">
+              Google
+            </p>
+          </div>
+        </a>
+
+        <a href="#" class="not-decor-link auth_network__item">
+          <div class="flex-items-center gap-12px">
+            <img class="d-block" src="assets/images/auth/Apple.svg" alt="Apple" loading="lazy">
+
+            <p class="m-0 lg-text text-dark text-medium">
+              Apple
+            </p>
+          </div>
+        </a>
+
+        <a href="#" class="not-decor-link auth_network__item">
+          <div class="flex-items-center gap-12px">
+            <img class="d-block" src="assets/images/auth/VK.svg" alt="VK" loading="lazy">
+
+            <p class="m-0 lg-text text-dark text-medium">
+              VK
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <a href="#" class="d-none-imp not-decor-link modal_auth_info text-main-col">
+        <img class="d-block" src="assets/images/auth/info-circle.svg" alt="Icon" loading="lazy">
+
+        Вы можете обратиться к нашим специалистам и они сделают это за Вас
+      </a>
+
+      <p class="m-0 xs-text text-main-gray text-start">
+        Входя в аккаунт, вы соглашаетесь с
+        <a href="#" class="not-decor-link text-main-col">
+          Условиями использования
+        </a>
+        и
+        <a href="#" class="not-decor-link text-main-col">
+          Политикой обработки персональных данных
+        </a>
+        Hospitality.ru
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="navigation">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top relative">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <a href="index.html">
+            <img src="assets/images/logotypes/mobile-dark-logo.svg" alt="Dark Logotype">
+          </a>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action back_arrow">
+            <img src="assets/images/icons/arrow-left.svg" alt="Back">
+          </button>
+
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper up-layer">
+        <ul class="mobile_nav">
+          <li onclick="mobileMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Отели
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="not-decor-link mb-nav_text">
+              О компании
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="not-decor-link mb-nav_text">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_mobile_nav">
+        <ul class="mobile_nav">
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Москва
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Самара
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Санкт-Петербург
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Воронеж
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Сочи
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Самое важное про текущую ситуацию:
+          <br>
+          <span class="border-underline-dark mt-4px">
+              <a href="#" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+          <br>
+
+        <div class="mt-12px">
+          <a class="text-dark not-decor-link text-medium" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+        </p>
+      </div>
+
+      <a href="partnerPage.html" class="d-block w-full btn btn__mobile not-decor-link">
+        Сдать жильё
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="bg-white">
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="header_left">
+        <p class="text-light-grey m-0">
+          Самое важное про текущую ситуацию:
+
+          <span class="border-underline" id="headerUnderline">
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="flex-items-center text-medium gap-2">
+        <p class="text-light-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+        </p>
+
+        <div>
+          <a data-text="header" class="text-dark not-decor-link" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="flex-items-center gap-4">
+        <a href="index.html">
+          <img src="assets/images/logotypes/dark-logo.svg" loading="lazy" alt="Logotype">
+        </a>
+
+        <nav>
+          <ul class="navigation_list gap-3">
+            <li class="navigation_list__item relative">
+              <a class="not-decor-link" href="#">
+                <div class="drop_menu" id="hotel">
+                  <p class="hotel_text text-dark m-0 lh-20" data-text="header">
+                    Отели
+                  </p>
+
+                  <img src="assets/images/icons/arrow_down_dark.svg" loading="lazy" alt="Arrow Down" id="dropMenuArrow">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Москва
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Сочи
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Санкт-Петербург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Казань
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Нижний Новгород
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Екатеринбург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Калининград
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Самара
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Адлер
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Ярославль
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Воронеж
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Краснодар
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Новосибирск
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Тула
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Владивосток
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Уфа
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="about.html" data-text="header" class="text-dark not-decor-link lh-20">
+                О компании
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="contact.html" data-text="header" class="text-dark not-decor-link lh-20">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex-items-center gap-3 relative">
+        <div>
+          <a href="partnerPage.html" data-text="header" class="text-dark text-medium not-decor-link">
+            Сдать жильё
+          </a>
+        </div>
+
+        <div class="account_icon" id="accountIcon">
+          <img class="account_icon__avatar" src="assets/images/reviews/people1.jpg" alt="Account" loading="lazy">
+
+          <div class="account_icon__name">
+            <p class="sm-text text-dark m-0">
+              Юлия
+            </p>
+
+            <svg id="accountMenuArrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 8.33331L10.8838 12.161C10.3977 12.613 9.60227 12.613 9.11616 12.161L5 8.33331" stroke="#A3A8A9" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="account_navigation" id="accountNav">
+          <div class="account_navigation__wrapper">
+            <a href="myAccount.html" class="not-decor-link account_navigation__item">
+              Личные данные
+            </a>
+
+            <a href="accountSecure.html" class="not-decor-link account_navigation__item">
+              Пароль и безопасность
+            </a>
+
+            <a href="accountFavourites.html" class="not-decor-link account_navigation__item">
+              Избранные отели
+            </a>
+
+            <hr class="account_navigation__line">
+
+            <div class="account_navigation__exit">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5333 12.1833L16.6667 10.05L14.5333 7.91667" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.1333 10.05H16.6083" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.79997 16.6667C6.11663 16.6667 3.1333 14.1667 3.1333 9.99999C3.1333 5.83333 6.11663 3.33333 9.79997 3.33333" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              Выйти
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile_top_header bg-white">
+  <div class="mobile_top_header__wrapper">
+    <div class="mobile_top_header__logo">
+      <a href="index.html">
+        <img src="assets/images/logotypes/mobile-dark-logo.svg" loading="lazy" alt="Logotype">
+      </a>
+    </div>
+
+    <div class="mobile_top_header__menu">
+      <button type="button" class="mb_action mobile_account" id="account">
+        <img src="assets/images/reviews/people1.jpg" loading="lazy" alt="Profile">
+      </button>
+
+      <button type="button" class="mb_action" id="burger">
+        <img src="assets/images/icons/dark_burger.svg" loading="lazy" alt="Burger">
+      </button>
+    </div>
+  </div>
+</div>
+
+<main class="md_padding_under_header">
+  <div class="container_block">
+    <div class="blog">
+      <div class="blog__head">
+        <div class="bread_crumbs">
+          <a href="index.html" class="bread_crumbs__item bread_crumbs__active">
+            Главная
+          </a>
+
+          <img class="d-block" src="assets/images/icons/arrow_right_dark.svg" loading="lazy" alt="Arrow">
+
+          <a href="blog.html" class="bread_crumbs__item">
+            Блог
+          </a>
+        </div>
+
+        <div class="blog_search">
+          <h1 class="blog_title">
+            Блог Hospitality.ru
+          </h1>
+
+          <div class="input__item blog_search__input">
+            <input id="blog_search" autocomplete="off" name="blog_search" class="br-12px-imp w-auto" type="text" placeholder="Поиск по блогу">
+
+            <img class="input__item_img" src="assets/images/icons/search.svg" alt="Search">
+
+            <div class="popup_block search_name" id="select_blog">
+              <div class="search_name__wrapper flex-col">
+                <a href="#" class="not-decor-link finding_item">
+                  Название статьи №1
+                </a>
+
+                <a href="#" class="not-decor-link finding_item">
+                  Название статьи №2
+                </a>
+
+                <a href="#" class="not-decor-link finding_item">
+                  Название статьи №3
+                </a>
+
+                <div class="finding_item nothing_search d-none">
+                  Ничего не найдено
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog__main">
+        <div class="blog_important">
+          <div class="blog_important__left">
+            <div class="blog_important__left-wrap">
+              <img class="main_blog_image" src="assets/images/blog/main/blog.jpg" alt="Image" loading="lazy">
+
+              <div class="blog_description">
+                <div class="blog_description__top">
+                  <div class="blog_topic">
+                    Как путешествовать
+                  </div>
+
+                  <p class="m-0 text-main-gray sm-text">
+                    22.11.22
+                  </p>
+                </div>
+
+                <div class="blog_description__medium">
+                  <p class="blog_big_name text-medium text-dark">
+                    Чёрная пятница на Hospitality.ru: промокоды всем!
+                  </p>
+
+                  <p class="blog_big_preview text-dark">
+                    Кто не любит классную акцию или распродажу, когда можно выгодно приобрести что-то, что давно лежит в избранном или сохранено в закладках.
+                  </p>
+                </div>
+
+                <div class="blog_description__bottom">
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex-items-center gap-12px">
+                    <p class="m-0 text-main-gray sm-text">
+                      Виктория К.
+                    </p>
+
+                    <img class="d-block" src="assets/images/blog/people/people1.svg" alt="People" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog_important__right">
+            <div class="blog_important__right-wrap">
+              <a href="#" class="not-decor-link blog_text">
+                <div class="blog_text__wrapper">
+                  <p class="block_text_top text-main-gray sm-text">
+                    22.11.2022
+                  </p>
+
+                  <p class="block_text_medium xl-text text-dark text-medium">
+                    До аэропорта «Внуково» можно будет добраться на метро
+                  </p>
+
+                  <div class="block_text_bottom">
+                    <div class="flex-items-center gap-16px">
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          217
+                        </p>
+                      </div>
+
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          4 мин.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex-items-center gap-12px">
+                      <p class="m-0 text-main-gray sm-text text-nowrap">
+                        Виктория К.
+                      </p>
+
+                      <img class="d-block" src="assets/images/blog/people/people1.svg" alt="People" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="not-decor-link blog_text">
+                <div class="blog_text__wrapper">
+                  <p class="block_text_top text-main-gray sm-text">
+                    22.11.2022
+                  </p>
+
+                  <p class="block_text_medium xl-text text-dark text-medium">
+                    Воздушные шары полетят через Эльбрус
+                  </p>
+
+                  <div class="block_text_bottom">
+                    <div class="flex-items-center gap-16px">
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          317
+                        </p>
+                      </div>
+
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          2 мин.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex-items-center gap-12px">
+                      <p class="m-0 text-main-gray sm-text text-nowrap">
+                        Екатерина Ф.
+                      </p>
+
+                      <img class="d-block" src="assets/images/blog/people/people2.svg" alt="People" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="not-decor-link blog_text">
+                <div class="blog_text__wrapper">
+                  <p class="block_text_top text-main-gray sm-text">
+                    22.11.2022
+                  </p>
+
+                  <p class="block_text_medium xl-text text-dark text-medium">
+                    До аэропорта «Внуково» можно будет добраться на метро
+                  </p>
+
+                  <div class="block_text_bottom">
+                    <div class="flex-items-center gap-16px">
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          817
+                        </p>
+                      </div>
+
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          7 мин.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex-items-center gap-12px">
+                      <p class="m-0 text-main-gray sm-text text-nowrap">
+                        Алена М.
+                      </p>
+
+                      <img class="d-block" src="assets/images/blog/people/people3.svg" alt="People" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="not-decor-link blog_text">
+                <div class="blog_text__wrapper">
+                  <p class="block_text_top text-main-gray sm-text">
+                    22.11.2022
+                  </p>
+
+                  <p class="block_text_medium xl-text text-dark text-medium">
+                    Воздушные шары полетят через Эльбрус
+                  </p>
+
+                  <div class="block_text_bottom">
+                    <div class="flex-items-center gap-16px">
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          374
+                        </p>
+                      </div>
+
+                      <div class="flex-items-center gap-6px">
+                        <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                        <p class="m-0 sm-text text-main-gray text-nowrap">
+                          2 мин.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="flex-items-center gap-12px">
+                      <p class="m-0 text-main-gray sm-text text-nowrap">
+                        Ксения Ч.
+                      </p>
+
+                      <img class="d-block" src="assets/images/blog/people/people4.svg" alt="People" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog_medium">
+          <div class="blog_medium__item">
+            <div class="blog_medium__item-wrap">
+              <div class="blog_medium_image">
+                <img src="assets/images/blog/medium/medium1.jpg" alt="Image" loading="lazy">
+              </div>
+
+              <div class="medium_desc blog_description">
+                <div class="blog_description__top">
+                  <div class="blog_topic">
+                    Как путешествовать
+                  </div>
+
+                  <p class="m-0 text-main-gray sm-text">
+                    22.11.22
+                  </p>
+                </div>
+
+                <div class="blog_description__medium">
+                  <p class="blog_small_name text-medium text-dark">
+                    Что случилось в отеле — останется в отеле (но это не точно): делимся вашими классными историями
+                  </p>
+
+                  <p class="blog_small_preview text-dark">
+                    В аэропорту Хамад в Дохе представили новый центральный зал ожидания. Это огромный...
+                  </p>
+                </div>
+
+                <div class="blog_description__bottom">
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex-items-center gap-12px">
+                    <p class="m-0 text-main-gray sm-text">
+                      Виктория К.
+                    </p>
+
+                    <img class="d-block" src="assets/images/blog/people/people1.svg" alt="People" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog_medium__item">
+            <div class="blog_medium__item-wrap">
+              <div class="blog_medium_image">
+                <img src="assets/images/blog/medium/medium2.jpg" alt="Image" loading="lazy">
+              </div>
+
+              <div class="medium_desc blog_description">
+                <div class="blog_description__top">
+                  <div class="blog_topic">
+                    Как путешествовать
+                  </div>
+
+                  <p class="m-0 text-main-gray sm-text">
+                    22.11.22
+                  </p>
+                </div>
+
+                <div class="blog_description__medium">
+                  <p class="blog_small_name text-medium text-dark">
+                    11 вредных советов для тех, кто планирует отправиться в поход
+                  </p>
+
+                  <p class="blog_small_preview text-dark">
+                    Свежий воздух, запах костра, красивые виды и лучшие друзья — походы как отдельный вид особо...
+                  </p>
+                </div>
+
+                <div class="blog_description__bottom">
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex-items-center gap-12px">
+                    <p class="m-0 text-main-gray sm-text">
+                      Виктория К.
+                    </p>
+
+                    <img class="d-block" src="assets/images/blog/people/people2.svg" alt="People" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog_medium__item">
+            <div class="blog_medium__item-wrap">
+              <div class="blog_medium_image">
+                <img src="assets/images/blog/medium/medium3.jpg" alt="Image" loading="lazy">
+              </div>
+
+              <div class="medium_desc blog_description">
+                <div class="blog_description__top">
+                  <div class="blog_topic">
+                    Как путешествовать
+                  </div>
+
+                  <p class="m-0 text-main-gray sm-text">
+                    22.11.22
+                  </p>
+                </div>
+
+                <div class="blog_description__medium">
+                  <p class="blog_small_name text-medium text-dark">
+                    От керамики до украшений: что привезти из поездок по России
+                  </p>
+
+                  <p class="blog_small_preview text-dark">
+                    Привезенными из отпуска магнитами семью и друзей давно не удивишь, как и казанским чак-чаком и....
+                  </p>
+                </div>
+
+                <div class="blog_description__bottom">
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex-items-center gap-12px">
+                    <p class="m-0 text-main-gray sm-text">
+                      Виктория К.
+                    </p>
+
+                    <img class="d-block" src="assets/images/blog/people/people3.svg" alt="People" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog_bottom">
+          <div class="blog_bottom__cards">
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small1.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где посмотреть на китов в России...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Киты уверенно теснят другие весомые причины отправить...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small2.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать волонтером в 2023 году...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Налево пойдешь — альпаку погладишь, направо пойдешь...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small3.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать в апреле 2023...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Апрель — не самый очевидный месяц для отпусков. Как...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small4.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где пофестивалить от всей души: 12...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Лето — время зажигательных фестивалей, красочных...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small2.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать волонтером в 2023 году...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Налево пойдешь — альпаку погладишь, направо пойдешь...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small3.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать в апреле 2023...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Апрель — не самый очевидный месяц для отпусков. Как...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small1.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где посмотреть на китов в России...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Киты уверенно теснят другие весомые причины отправить...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small4.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где пофестивалить от всей души: 12...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Лето — время зажигательных фестивалей, красочных...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small1.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где посмотреть на китов в России...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Киты уверенно теснят другие весомые причины отправить...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small2.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать волонтером в 2023 году...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Налево пойдешь — альпаку погладишь, направо пойдешь...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small3.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать в апреле 2023...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Апрель — не самый очевидный месяц для отпусков. Как...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small4.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где пофестивалить от всей души: 12...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Лето — время зажигательных фестивалей, красочных...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small2.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать волонтером в 2023 году...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Налево пойдешь — альпаку погладишь, направо пойдешь...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small3.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Куда поехать в апреле 2023...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Апрель — не самый очевидный месяц для отпусков. Как...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small1.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где посмотреть на китов в России...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Киты уверенно теснят другие весомые причины отправить...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp small_blog">
+              <div class="small_blog__wrapper">
+                <div class="small_blog_image">
+                  <img src="assets/images/blog/small/small4.jpg" alt="Image" loading="lazy">
+                </div>
+
+                <div class="small_blog_description">
+                  <div class="flex-col flex-items-start gap-8px">
+                    <p class="sm-text m-0 text-main-gray">
+                      18.11.2022
+                    </p>
+
+                    <p class="m-0 xl-text text-dark text-medium">
+                      Где пофестивалить от всей души: 12...
+                    </p>
+
+                    <p class="lg-text text-dark m-0">
+                      Лето — время зажигательных фестивалей, красочных...
+                    </p>
+                  </div>
+
+                  <div class="flex-items-center gap-16px">
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/eye.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        217
+                      </p>
+                    </div>
+
+                    <div class="flex-items-center gap-6px">
+                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                      <p class="m-0 sm-text text-main-gray">
+                        4 мин.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="loading_more_news" class="btn btn__loading_more all_news">
+            Показать ещё
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer__wrapper">
+    <div class="footer_top">
+      <a href="index.html" class="d-block">
+        <img src="assets/images/logotypes/dark-logo.svg" alt="Logotype" loading="lazy">
+      </a>
+
+      <a href="partnerPage.html" class="flex-items-center btn btn__login not-decor-link link__lg">
+        Сдать жильё
+      </a>
+    </div>
+
+    <div class="footer_center">
+      <p class="text-main-gray m-0 footer_text">
+        Hospitality.ru - часть Hospitality Holdings Inc., мирового лидера в сфере бронирования жилья и сопроводительных услуг.
+      </p>
+
+      <a href="partnerPage.html" class="w-full flex-items-center justify-center btn btn__login not-decor-link link__sm">
+        Сдать жильё
+      </a>
+
+      <nav class="footer_nav footer_center-lg">
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Служба помощи
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Справочный раздел
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="contact.html" class="not-decor-link text-dark">
+              Контакты
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Гостям
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Как снять жилье
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Гарантии сервиса
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Отзывы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Хозяевам
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Сдать жилье
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Условия размещения
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            О нас
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="about.html" class="not-decor-link text-dark">
+              О компании
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              СМИ о нас
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вакансии
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Блог
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer_center-sm">
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Служба помощи
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Справочный раздел
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="contact.html" class="not-decor-link text-dark">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Гостям
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Как снять жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Гарантии сервиса
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Отзывы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Хозяевам
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Сдать жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Условия размещения
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              О нас
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="about.html" class="not-decor-link text-dark">
+                О компании
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                СМИ о нас
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вакансии
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Блог
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="social_network">
+        <p class="m-0 text-center text-main-gray text-nowrap text-medium with_we">
+          Будьте с нами
+        </p>
+
+        <div class="flex-items-center gap-12px">
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/vk.svg" alt="VK" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/tg.svg" alt="Telegram" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/yt.svg" alt="Youtube" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <div class="footer_bottom-top">
+        <div class="foot-top flex-items-center gap-32px-imp">
+          <a href="#" class="text-main-gray">
+            Политика обработки персональных данных
+          </a>
+
+          <a href="#" class="text-main-gray">
+            Правовая информация
+          </a>
+        </div>
+
+        <div class="foot-bottom flex-items-center gap-20px-imp">
+          <p class="text-main-gray m-0">
+            Принимаем к оплате:
+          </p>
+
+          <div class="flex-items-center gap-12px">
+            <div>
+              <img src="assets/images/payments/visa.svg" alt="Visa" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/no_know.svg" alt="Icon" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/mir.svg" alt="Mir" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom-bottom">
+        <p class="text-main-gray m-0">
+          © Hospitality.ru - бронирование гостиниц и квартир. Все права защищены.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=viewport-units"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewport-units-buggyfill/0.6.2/viewport-units-buggyfill.js"></script>
+<script>
+    window.onload = function() {
+        window.viewportUnitsBuggyfill.init();
+    };
+</script>
+
+<script src="assets/scripts/auth/openHelpForm.js"></script>
+<script src="assets/scripts/auth/authModal.js"></script>
+<script src="assets/scripts/auth/seePassword.js"></script>
+<script src="assets/scripts/auth/helpFormModal.js"></script>
+<script src="assets/scripts/auth/authValidation.js"></script>
+<script src="assets/scripts/account/emailValidator.js"></script>
+<script src="assets/scripts/auth/openRecoveryPassword.js"></script>
+<script src="assets/scripts/auth/recoveryPasswordModal.js"></script>
+<script src="assets/scripts/dropMenu.js"></script>
+<script src="assets/scripts/mobileHeader.js"></script>
+<script src="assets/scripts/blogSearching.js"></script>
+<script src="assets/scripts/closePopUpClick.js"></script>
+<script src="assets/scripts/footerNavigation.js"></script>
+<script src="assets/scripts/addFunctionAttributes.js"></script>
+<script src="assets/scripts/loadingMore/smallNewsLoading.js"></script>
+
+</body>
+</html>
