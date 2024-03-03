@@ -1,0 +1,35 @@
+.text-bold {
+  font-weight: bold;
+}
+
+.error {
+  border: 1px solid #FF5A5F !important;
+}
+
+.errorHold {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  color: #FF5A5F;
+  margin-top: 5px;
+}
+
+.m-0-imp {
+  margin: 0 !important;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-h-menu {
+  max-height: 100% !important;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.d-none-imp {
+  display: none !important;
+}
