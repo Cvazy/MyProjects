@@ -1,0 +1,4564 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex" />
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="description" content="Page Catalog">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/base.css">
+  <link rel="stylesheet" href="assets/styles/css/balloon.css">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>KCHRbusiness - Каталог</title>
+</head>
+<body>
+
+<div class="d-none-imp auth_blackout blackout h-full-imp flex-items-baseline">
+  <div class="d-none-imp auth modal_help_form auth_block_position">
+    <div class="modal_form__wrapper">
+      <div class="w-full flex-items-center justify-between">
+        <p class="help_form__title">
+          Помощь в регистрации
+        </p>
+
+        <div class="modal_help_form__close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form modal_help_auth_form" data-modal-auth-block="help">
+        <div class="modal_auth_form__wrapper">
+          <p class="m-0 text-main-gray lg-text text-start">
+            Наши специалисты бесплатно помогут вам зарегистрировать вашу компанию в нашем сервисе
+          </p>
+
+          <div class="modal_auth_form__input">
+            <input type="text" name="help_name" placeholder="Имя">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="email" name="help_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="tel" name="help_phone" placeholder="Телефон">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Оставить заявку
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-none-imp auth modal_recovery_form auth_block_position">
+    <div class="modal_form__wrapper">
+      <div class="w-full flex-items-center justify-between">
+        <p class="recovery_form__title">
+          Восстановление пароля
+        </p>
+
+        <div class="modal_recovery_form__close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form modal_recovery_auth_form" data-modal-auth-block="help">
+        <div class="modal_auth_form__wrapper">
+          <p class="m-0 text-main-gray lg-text text-start">
+            Для восстановления пароля введите адрес электронной почты, указанный при бронировании:
+          </p>
+
+          <div class="modal_auth_form__input">
+            <input type="email" name="recovery_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Восстановить пароль
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="auth main_modal_auth auth_block_position">
+    <div class="modal_form__wrapper">
+      <div class="w-full flex-items-center justify-between modal_auth__title gap-16px" data-modal-auth-title="login">
+        <p class="help_form__title">
+          Войдите в личный кабинет
+        </p>
+
+        <div class="auth_blackout_close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <div class="d-none-imp w-full flex-items-center justify-between modal_auth__title gap-16px" data-modal-auth-title="registration">
+        <p class="help_form__title">
+          Зарегистрируйте личный кабинет
+        </p>
+
+        <div class="auth_blackout_close">
+          <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+        </div>
+      </div>
+
+      <div class="auth_modal__navigation">
+        <button type="button" data-modal-auth-btn="login" class="btn auth_modal__navigation-item modal_auth_block_active">
+          Войти
+        </button>
+
+        <button type="button" data-modal-auth-btn="registration" class="btn auth_modal__navigation-item">
+          Зарегистрироваться
+        </button>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form" data-modal-auth-block="login">
+        <div class="modal_auth_form__wrapper">
+          <div class="modal_auth_form__input">
+            <input type="email" name="login_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input class="mb_forget" type="password" name="login_password" placeholder="Пароль">
+
+            <img class="input_eye" src="assets/images/icons/eye.svg" alt="Eye" loading="lazy">
+
+            <a href="#" class="not-decor-link text-main-col sm-text modal_auth_recovery">
+              Забыли пароль?
+            </a>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Войти
+        </button>
+      </form>
+
+      <form method="post" action="#" class="d-none-imp modal_auth_form" data-modal-auth-block="registration">
+        <div class="modal_auth_form__wrapper">
+          <div class="modal_auth_form__input">
+            <input type="text" name="reg_name" placeholder="Имя">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="text" name="reg_lastname" placeholder="Фамилия">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="email" name="reg_email" placeholder="Email">
+            <div class="errorHold"></div>
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="password" name="reg_password1" placeholder="Пароль">
+
+            <img class="input_eye" src="assets/images/icons/eye.svg" alt="Eye" loading="lazy">
+          </div>
+
+          <div class="modal_auth_form__input">
+            <input type="password" name="reg_password2" placeholder="Повторите пароль">
+
+            <img class="input_eye" src="assets/images/icons/eye.svg" alt="Eye" loading="lazy">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn__auth w-full">
+          Зарегистрироваться
+        </button>
+      </form>
+
+      <p class="alt_auth">
+        Или войдите через
+      </p>
+
+      <div class="auth_network">
+        <a href="#" class="not-decor-link auth_network__item">
+          <div class="flex-items-center gap-12px">
+            <img class="d-block" src="assets/images/auth/Google.svg" alt="Google" loading="lazy">
+
+            <p class="m-0 lg-text text-dark text-medium">
+              Google
+            </p>
+          </div>
+        </a>
+
+        <a href="#" class="not-decor-link auth_network__item">
+          <div class="flex-items-center gap-12px">
+            <img class="d-block" src="assets/images/auth/Apple.svg" alt="Apple" loading="lazy">
+
+            <p class="m-0 lg-text text-dark text-medium">
+              Apple
+            </p>
+          </div>
+        </a>
+
+        <a href="#" class="not-decor-link auth_network__item">
+          <div class="flex-items-center gap-12px">
+            <img class="d-block" src="assets/images/auth/VK.svg" alt="VK" loading="lazy">
+
+            <p class="m-0 lg-text text-dark text-medium">
+              VK
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <a href="#" class="d-none-imp not-decor-link modal_auth_info text-main-col">
+        <img class="d-block" src="assets/images/auth/info-circle.svg" alt="Icon" loading="lazy">
+
+        Вы можете обратиться к нашим специалистам и они сделают это за Вас
+      </a>
+
+      <p class="m-0 xs-text text-main-gray text-start">
+        Входя в аккаунт, вы соглашаетесь с
+        <a href="#" class="not-decor-link text-main-col">
+          Условиями использования
+        </a>
+        и
+        <a href="#" class="not-decor-link text-main-col">
+          Политикой обработки персональных данных
+        </a>
+        Hospitality.ru
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="under_popup">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Параметры
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button id="underPopUpClose" type="button" class="mb_action">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <form class="search_form w-full p-popup" method="post">
+      <div class="checkbox_block mb-8px">
+        <div class="toggle-pill-color">
+          <input type="checkbox" id="business-trip_mb_catalog" name="business_trip">
+          <label for="business-trip_mb_catalog"></label>
+
+          <span class="text-dark base-text">
+            Еду в командировку
+          </span>
+        </div>
+      </div>
+
+      <div class="params_inputs">
+        <div class="params_inputs__wrapper">
+          <div class="input__item" onclick="headerOpenMobile('searching')">
+            <input autocomplete="off" class="search_town" type="text" name="town" placeholder="Куда" readonly>
+
+            <img class="input__item_img" src="assets/images/icons/location.svg" alt="Location">
+
+            <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+            <div class="popup_block search_name">
+              <div class="search_name__wrapper test_wrap">
+                <div class="finding_item">
+                  Санкт-Петербург
+                </div>
+
+                <div class="finding_item">
+                  Сыктывкар
+                </div>
+
+                <div class="finding_item">
+                  Сызрань
+                </div>
+
+                <div class="finding_item nothing_search d-none">
+                  Ничего не найдено
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input__item" onclick="headerOpenMobile('calendar')">
+            <input id="search_date_mobile" autocomplete="off" name="select_period" type="text" placeholder="Когда" class="flatpickr-input" readonly="readonly">
+
+            <img class="input__item_img" src="assets/images/icons/calendar.svg" alt="Calendar">
+
+            <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+          </div>
+
+          <div class="input__item" onclick="headerOpenMobile('emoji')">
+            <input autocomplete="off" class="search_emoji" type="text" name="emoji" placeholder="Впечатления" readonly>
+
+            <img class="input__item_img" src="assets/images/icons/global-search.svg" alt="Location">
+
+            <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+            <div class="popup_block search_emoji_list">
+              <div class="search_emoji_list__wrapper">
+                <div class="finding_item">
+                  Пешие туры
+                </div>
+
+                <div class="finding_item">
+                  Конные туры
+                </div>
+
+                <div class="finding_item">
+                  Джиппинг
+                </div>
+
+                <div class="finding_item">
+                  Прогулки на воздушном шаре
+                </div>
+
+                <div class="finding_item nothing_search d-none">
+                  Ничего не найдено
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input__item" onclick="headerOpenMobile('visitors')">
+            <div class="test">
+              <p class="m-0 text-dark text-medium base-text">
+                <span id="catalog_mobile_adults">2</span> взрослых
+              </p>
+
+              <p id="childCountMobile" class="d-none m-0 text-dark text-medium base-text">
+                <span id="catalog_mobile_child">0</span> детей
+              </p>
+            </div>
+
+            <img class="input__item_img" src="assets/images/icons/profile.svg" alt="Profile">
+
+            <img class="input__item_delete" src="assets/images/icons/close-square.svg" alt="Close" onclick="cleanPeopleInput()">
+
+            <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+            <div class="popup_block choose_people">
+              <div class="choose_people__wrapper">
+                <div class="choose_people__item">
+                  <div class="choose_people__item-text">
+                    <p class="m-0 top-text text-medium">
+                      Взрослые
+                    </p>
+
+                    <p class="m-0 bottom-text">
+                      Старше 12 лет
+                    </p>
+                  </div>
+
+                  <div class="choose_people__item-btn">
+                    <button type="button" class="minus_adults">
+                      <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                    </button>
+
+                    <p class="m-0 people_qnt">2</p>
+                    <input type="hidden" min="1" name="qnt_adults" value="2">
+
+                    <button type="button" class="plus_adults">
+                      <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                    </button>
+                  </div>
+                </div>
+
+                <div class="choose_people__item">
+                  <div class="choose_people__item-text">
+                    <p class="m-0 top-text text-medium">
+                      Дети
+                    </p>
+
+                    <p class="m-0 bottom-text">
+                      До 12 лет
+                    </p>
+                  </div>
+
+                  <div class="choose_people__item-btn">
+                    <button type="button" class="minus_child">
+                      <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                    </button>
+
+                    <p class="m-0 people_qnt">0</p>
+                    <input type="hidden" name="qnt_child" value="0">
+
+                    <button type="button" class="plus_child">
+                      <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="submitMainBtnMobile" class="btn btn__search base-text">
+          Найти впечатление
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="navigation">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top relative">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <a href="index.html">
+            <img src="assets/images/logotypes/mobile-dark-logo.svg" alt="Dark Logotype">
+          </a>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action back_arrow">
+            <img src="assets/images/icons/arrow-left.svg" alt="Back">
+          </button>
+
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper up-layer">
+        <ul class="mobile_nav">
+          <li onclick="mobileExcursionMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Экскурсии
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li onclick="mobileEmojiMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Впечатления
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="not-decor-link mb-nav_text">
+              О нас
+            </a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="not-decor-link mb-nav_text">
+              Блог
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="not-decor-link mb-nav_text">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_mobile_nav">
+        <ul class="mobile_nav">
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Москва
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Самара
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Санкт-Петербург
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Воронеж
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Сочи
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_emoji">
+        <ul class="mobile_nav">
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Пешие туры
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Боулинг
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Инструкторские услуги по горнолыжке
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Прогулки на дельтоплане
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Конные туры
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Самое важное про текущую ситуацию:
+          <br>
+          <span class="border-underline-dark mt-4px">
+              <a href="#" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+          <br>
+
+        <div class="mt-12px">
+          <a class="text-dark not-decor-link text-medium" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+        </p>
+      </div>
+
+      <a href="#" class="d-block w-full btn btn__mobile not-decor-link">
+        Предложить экскурсию
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="visitors">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Посетители
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full mobile_nav_wrapper">
+        <div class="choose_people mobile_choose_people">
+          <div class="choose_people__wrapper p-0-imp">
+            <div class="choose_people__item">
+              <div class="choose_people__item-text">
+                <p class="m-0 top-text text-medium">
+                  Взрослые
+                </p>
+
+                <p class="m-0 bottom-text">
+                  Старше 12 лет
+                </p>
+              </div>
+
+              <div class="choose_people__item-btn">
+                <button type="button" class="minus_adults">
+                  <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                </button>
+
+                <p class="m-0 people_qnt" id="mobile_adults">2</p>
+                <input type="hidden" min="1" name="qnt_adults" value="2">
+
+                <button type="button" class="plus_adults">
+                  <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                </button>
+              </div>
+            </div>
+
+            <div class="choose_people__item">
+              <div class="choose_people__item-text">
+                <p class="m-0 top-text text-medium">
+                  Дети
+                </p>
+
+                <p class="m-0 bottom-text">
+                  До 12 лет
+                </p>
+              </div>
+
+              <div class="choose_people__item-btn">
+                <button type="button" class="minus_child">
+                  <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                </button>
+
+                <p class="m-0 people_qnt" id="mobile_child">0</p>
+                <input type="hidden" name="qnt_child" value="0">
+
+                <button type="button" class="plus_child">
+                  <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="mobile_visitors_btns">
+        <button class="text-dark flex-grow btn btn__clear justify-center" onclick="cleanPeopleInput()">
+          Очистить
+        </button>
+
+        <button class="flex-grow btn btn__mobile justify-center navClose">
+          Применить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="searching">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Город
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="input__item mobile_nav_wrapper">
+        <input autocomplete="off" class="input__item-mobile" type="text" name="town_mobile" placeholder="Куда">
+
+        <img class="input__item_img mb-icon-left" src="assets/images/icons/location.svg" alt="Location">
+
+        <img id="cleanInputSearch" class="input__item_arrow mb-icon-right" src="assets/images/icons/mobile-close.svg" alt="Close">
+
+        <div class="popup_block mobile-town-list">
+          <div class="search_name__wrapper">
+            <div class="finding_item">
+              Санкт-Петербург
+            </div>
+
+            <div class="finding_item">
+              Сыктывкар
+            </div>
+
+            <div class="finding_item">
+              Сызрань
+            </div>
+
+            <div class="finding_item nothing_search-mobile d-none">
+              Ничего не найдено
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="mobile_visitors_btns">
+        <button class="flex-grow btn btn__mobile justify-center navClose">
+          Найти
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="emoji">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Впечатления
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="input__item mobile_nav_wrapper">
+        <input autocomplete="off" class="input__emoji_mobile input__item-mobile" type="text" name="emoji_mobile" placeholder="Впечатления">
+
+        <img class="input__item_img mb-icon-left" src="assets/images/icons/global-search.svg" alt="Icon">
+
+        <img id="cleanInputSearchEmoji" class="input__item_arrow mb-icon-right" src="assets/images/icons/mobile-close.svg" alt="Close">
+
+        <div class="popup_block mobile-emoji-list">
+          <div class="search_emoji_list__wrapper">
+            <div class="finding_item">
+              Пешие туры
+            </div>
+
+            <div class="finding_item">
+              Конные туры
+            </div>
+
+            <div class="finding_item">
+              Джиппинг
+            </div>
+
+            <div class="finding_item">
+              Прогулки на воздушном шаре
+            </div>
+
+            <div class="finding_item nothing_search-mobile d-none">
+              Ничего не найдено
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="mobile_visitors_btns">
+        <button class="flex-grow btn btn__mobile justify-center navClose">
+          Найти
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="calendar">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1 h-full justify-between">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Период
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <div class="w-full mobile_nav_wrapper" id="mobileCalendar"></div>
+
+      <div class="mobile__menu-bottom">
+        <div class="mobile_visitors_btns">
+          <button class="flex-grow btn btn__mobile justify-center navClose">
+            Применить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="filter">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Фильтры
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile_filter_wrap">
+      <div class="filters_full">
+        <form method="post" action="#" class="filters_full__wrapper">
+          <div class="filters_full__params">
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Впечатление
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur1">
+
+                    Пешие туры
+                  </label>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur2">
+
+                    Конные туры
+                  </label>
+
+                  <p class="m-0 input_count sm-text">78</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur3">
+
+                    Туры на квадроциклах (снегоходах)
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur4">
+
+                    Джиппинг
+                  </label>
+
+                  <p class="m-0 input_count sm-text">221</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur5">
+
+                    Прокат SKI оборудования
+                  </label>
+
+                  <p class="m-0 input_count sm-text">327</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur6">
+
+                    Инструкторские услуги по горнолыжке
+                  </label>
+
+                  <p class="m-0 input_count sm-text">429</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur7">
+
+                    Гастро туры
+                  </label>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur8">
+
+                    Экскурсионные бюро
+                  </label>
+
+                  <p class="m-0 input_count sm-text">78</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur9">
+
+                    Вертолетные экскурсии
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur10">
+
+                    Прогулки на воздушном шаре
+                  </label>
+
+                  <p class="m-0 input_count sm-text">221</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur11">
+
+                    Прогулки на дельтоплане
+                  </label>
+
+                  <p class="m-0 input_count sm-text">327</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur12">
+
+                    Рестораны
+                  </label>
+
+                  <p class="m-0 input_count sm-text">429</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur13">
+
+                    Боулинг
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Тип экскурсии
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="type1">
+
+                    Индивидуальная
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="type2">
+
+                    Групповая
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="type3">
+
+                    Мини-группа
+                  </label>
+
+                  <p class="m-0 input_count sm-text">22</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Бюджет
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price1">
+
+                    до 1 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">97</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price2">
+
+                    1 000 ₽ - 2 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">223</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price3">
+
+                    2 000 ₽ - 5 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">113</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price4">
+
+                    5 000 ₽ - 10 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">13</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price5">
+
+                    более 10 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">98</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Время проведения
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time1">
+
+                    Утро
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    06:00 - 12:00
+                  </p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time2">
+
+                    День
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    12:00 - 18:00
+                  </p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time3">
+
+                    Вечер
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    18:00 - 23:00
+                  </p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time4">
+
+                    Ночь
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    23:00 - 6:00
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Продолжительность
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow"></div>
+              </div>
+
+              <div class="filter_item__list flex-items-start open_list gap-20px-imp">
+                <div class="slide_input_mobile max-h-icons">
+                  <div class="flex-items-center gap-6px">
+                    <span class="text-main-gray sm-text">
+                      до
+                    </span>
+
+                    <input type="text" class="time_input__mobile" value="10 часов" readonly>
+                  </div>
+
+                  <div class="slide_input_mobile__bottom">
+                    <div class="price-range-slider">
+                      <div class="slider-track_mobile no-transition"></div>
+                      <div class="slider-range_mobile no-transition"></div>
+                      <div class="slider-thumb no-transition" id="rightThumbMobile"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="checkbox_block">
+                  <div class="toggle-pill-color">
+                    <input type="checkbox" id="any_mobile" name="one_night">
+                    <label for="any_mobile"></label>
+
+                    <span class="text-dark sm-text">
+                      Любая
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Способ перемещения
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="move1">
+
+                    Пешком
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="move2">
+
+                    На автобусе
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Интересы
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest1">
+
+                    Обзорные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">187</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest2">
+
+                    Необычные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">127</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest3">
+
+                    Вечерние
+                  </label>
+
+                  <p class="m-0 input_count sm-text">410</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest4">
+
+                    Выездные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest5">
+
+                    Для детей
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4089</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest6">
+
+                    Гастрономические
+                  </label>
+
+                  <p class="m-0 input_count sm-text">2089</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Достопримечательности
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place1">
+
+                    Казанский Кремль
+                  </label>
+
+                  <p class="m-0 input_count sm-text">187</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place2">
+
+                    Мечеть Кул Шариф
+                  </label>
+
+                  <p class="m-0 input_count sm-text">127</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place3">
+
+                    Дворец Земледельцев
+                  </label>
+
+                  <p class="m-0 input_count sm-text">410</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place4">
+
+                    Башня Сююмбике
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place5">
+
+                    Старо-Татарская Слобода
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4089</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place6">
+
+                    Театр кукол “Экият”
+                  </label>
+
+                  <p class="m-0 input_count sm-text">2089</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Особенности
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="specificity1">
+
+                    Авторские
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="specificity2">
+
+                    С аудиогидом
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="mobile_visitors_btns">
+        <button class="text-dark flex-grow btn btn__clear justify-center reset_filter">
+          Очистить
+        </button>
+
+        <button class="flex-grow btn btn__mobile justify-center navClose">
+          Применить
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="bg-white">
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="header_left">
+        <p class="text-light-grey m-0">
+          Самое важное про текущую ситуацию:
+
+          <span class="border-underline" id="headerUnderline">
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="flex-items-center text-medium gap-2">
+        <p class="text-dark-half m-0">
+          Пн-Пт с 9:00 до 19:00
+        </p>
+
+        <div>
+          <a data-text="header" class="text-dark not-decor-link" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="flex-items-center gap-4">
+        <a href="index.html">
+          <img src="assets/images/logotypes/dark-logo.svg" alt="Logotype">
+        </a>
+
+        <nav>
+          <ul class="navigation_list gap-3">
+            <li class="navigation_list__item relative">
+              <a class="not-decor-link" href="#">
+                <div class="drop_menu" id="excursions">
+                  <p class="hotel_text text-dark m-0 lh-20" data-text="header">
+                    Экскурсии
+                  </p>
+
+                  <img class="user-select-none drop_menu_arrow" id="dropExcursionsArrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow Down">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropExcursionsMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Москва
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Сочи
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Санкт-Петербург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Казань
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Нижний Новгород
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Екатеринбург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Калининград
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Самара
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Адлер
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Ярославль
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Воронеж
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Краснодар
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Новосибирск
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Тула
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Владивосток
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Уфа
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item relative">
+              <a class="not-decor-link" href="#">
+                <div class="drop_menu" id="emojiList">
+                  <p class="hotel_text text-dark m-0 lh-20" data-text="header">
+                    Впечатления
+                  </p>
+
+                  <img class="user-select-none drop_menu_arrow" id="dropEmojiArrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow Down">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropEmojiMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Пешие туры
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Конные туры
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Туры на квадроциклах (снегоходах)
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Джиппинг
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Прокат SKI оборудования
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Инструкторские услуги по горнолыжке
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Вертолетные экскурсии
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Прогулки на воздушном шаре
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Прогулки на дельтоплане
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Рестораны
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Боулинг
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Экскурсионные бюро
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Гастро туры
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="about.html" data-text="header" class="text-dark not-decor-link lh-20">
+                О нас
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="blog.html" data-text="header" class="text-dark not-decor-link lh-20">
+                Блог
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="contact.html" data-text="header" class="text-dark not-decor-link lh-20">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex-items-center gap-3">
+        <div>
+          <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+            Предложить экскурсию
+          </a>
+        </div>
+
+        <div>
+          <a href="#" class="not-decor-link btn btn__login open_auth">
+            Войти
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__wrapper">
+    <form method="post" action="#" class="catalog_inputs params_inputs">
+      <div class="params_inputs__wrapper catalog_inputs__wrapper">
+        <div class="input__item" id="searching">
+          <input autocomplete="off" class="readonly_search search_town" type="text" name="town" id="search_town" placeholder="Где">
+
+          <img class="input__item_img" src="assets/images/icons/location.svg" alt="Location">
+
+          <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+          <div class="popup_block search_name" id="select_town">
+            <div class="search_name__wrapper">
+              <div class="finding_item">
+                Санкт-Петербург
+              </div>
+
+              <div class="finding_item">
+                Сыктывкар
+              </div>
+
+              <div class="finding_item">
+                Сызрань
+              </div>
+
+              <div class="finding_item nothing_search d-none">
+                Ничего не найдено
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input__item" id="calendar">
+          <input id="search_date" autocomplete="off" name="select_period" type="text" placeholder="Когда">
+
+          <img class="input__item_img" src="assets/images/icons/calendar.svg" alt="Calendar">
+
+          <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+        </div>
+
+        <div class="input__item" id="emoji">
+          <input autocomplete="off" class="readonly_search search_emoji" type="text" name="emoji" id="search_emoji" placeholder="Впечатления">
+
+          <img class="input__item_img" src="assets/images/icons/global-search.svg" alt="Location">
+
+          <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+          <div class="popup_block search_emoji_list" id="select_emoji">
+            <div class="search_emoji_list__wrapper">
+              <div class="finding_item">
+                Пешие туры
+              </div>
+
+              <div class="finding_item">
+                Конные туры
+              </div>
+
+              <div class="finding_item">
+                Джиппинг
+              </div>
+
+              <div class="finding_item">
+                Прогулки на воздушном шаре
+              </div>
+
+              <div class="finding_item nothing_search d-none">
+                Ничего не найдено
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input__item" id="visitors">
+          <div class="test" id="search_people">
+            <p class="m-0 text-dark text-medium base-text">
+              <span id="test_adults_qnt">2</span> взрослых
+            </p>
+
+            <p id="childCount" class="d-none m-0 text-dark text-medium base-text">
+              <span id="test_child_qnt">0</span> детей
+            </p>
+          </div>
+
+          <img class="input__item_img" src="assets/images/icons/profile.svg" alt="Profile">
+
+          <img class="input__item_delete" src="assets/images/icons/close-square.svg" alt="Close" onclick="cleanPeopleInput()">
+
+          <img class="input__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+
+          <div class="popup_block choose_people" id="choose_people">
+            <div class="choose_people__wrapper">
+              <div class="choose_people__item">
+                <div class="choose_people__item-text">
+                  <p class="m-0 top-text text-medium">
+                    Взрослые
+                  </p>
+
+                  <p class="m-0 bottom-text">
+                    Старше 12 лет
+                  </p>
+                </div>
+
+                <div class="choose_people__item-btn">
+                  <button type="button" class="minus_adults">
+                    <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                  </button>
+
+                  <p class="m-0 people_qnt" id="desktop_adults">2</p>
+                  <input type="hidden" min="1" name="qnt_adults" value="2">
+
+                  <button type="button" class="plus_adults">
+                    <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                  </button>
+                </div>
+              </div>
+
+              <div class="choose_people__item">
+                <div class="choose_people__item-text">
+                  <p class="m-0 top-text text-medium">
+                    Дети
+                  </p>
+
+                  <p class="m-0 bottom-text">
+                    До 12 лет
+                  </p>
+                </div>
+
+                <div class="choose_people__item-btn">
+                  <button type="button" class="minus_child">
+                    <img class="top-init relative" src="assets/images/icons/minus.svg" alt="Minus">
+                  </button>
+
+                  <p class="m-0 people_qnt" id="desktop_child">0</p>
+                  <input type="hidden" name="qnt_child" value="0">
+
+                  <button type="button" class="plus_child">
+                    <img class="top-init relative" src="assets/images/icons/plus.svg" alt="Plus">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" id="submitMainBtn" class="btn btn__search base-text">
+        Найти тур
+      </button>
+    </form>
+  </div>
+</header >
+
+<div class="catalog_mobile_header">
+  <div class="mobile_header__wrapper">
+    <div class="mobile_header_block mb-8px">
+      <div class="mobile_top_header__logo">
+        <a href="index.html">
+          <img src="assets/images/logotypes/mobile-dark-logo.svg" alt="Logotype">
+        </a>
+      </div>
+
+      <div class="mobile_top_header__menu">
+        <button type="button" class="mb_action">
+          <img src="assets/images/icons/dark_profile_icon.svg" alt="Profile">
+        </button>
+
+        <button type="button" class="mb_action" id="burger">
+          <img src="assets/images/icons/dark_burger.svg" alt="Burger">
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile_header_block">
+      <div class="mobile_form">
+        <p class="mobile_town xs-text m-0 text-dark">
+          Москва
+        </p>
+
+        <p class="mobile_date xs-text m-0 text-dark">
+          23.01 - 24.02
+        </p>
+      </div>
+
+      <div class="mobile_header_block__right">
+        <div class="sorting_btn sorting_block">
+          <div class="sorting_block__item bg-none">
+              <span class="text-dark xs-text">
+                По популярности
+              </span>
+
+            <img class="d-block" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+          </div>
+
+          <div class="sorting_block__list">
+            <p class="filter_type" data-filter-action="popular">
+              По популярности
+            </p>
+
+            <p class="filter_type" data-filter-action="cost">
+              По стоимости
+            </p>
+
+            <p class="filter_type" data-filter-action="reviews">
+              По отзывам
+            </p>
+
+            <p class="filter_type" data-filter-action="rating">
+              По рейтингу
+            </p>
+          </div>
+        </div>
+
+        <img class="block" id="filter"  src="assets/images/icons/filter.svg" alt="Filter">
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="padding_under_header catalog__wrapper">
+  <div class="container_block">
+    <div class="catalog">
+      <div class="catalog__nav">
+        <h1 class="catalog_title">
+          Москва: 273 впечатления
+        </h1>
+
+        <div class="catalog_btns">
+          <div class="catalog_btns__left">
+            <div class="sorting_btn sorting_block">
+              <div class="sorting_block__item" id="chooseSorted">
+              <span class="text-dark base-text">
+                По популярности
+              </span>
+
+                <img class="d-block" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+              </div>
+
+              <div class="sorting_block__list" id="sortedList">
+                <p class="filter_type" data-filter-action="popular">
+                  По популярности
+                </p>
+
+                <p class="filter_type" data-filter-action="cost">
+                  По стоимости
+                </p>
+
+                <p class="filter_type" data-filter-action="reviews">
+                  По отзывам
+                </p>
+
+                <p class="filter_type" data-filter-action="rating">
+                  По рейтингу
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="catalog_btns__right">
+            <button id="tableMode" type="button" class="active_state btn bg-none p-0" onclick="changeMode(this, 'listMode')">
+              <img src="assets/images/icons/see_table_dark.svg" alt="Icon">
+
+              <img class="d-none" src="assets/images/icons/see_table.svg" alt="Icon">
+            </button>
+
+            <button id="listMode" type="button" class="btn bg-none p-0" onclick="changeMode(this, 'tableMode')">
+              <img src="assets/images/icons/see_list.svg" alt="Icon">
+
+              <img class="d-none" src="assets/images/icons/see_list_dark.svg" alt="Icon">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog__main">
+        <div class="filters">
+          <form method="post" action="#" class="filters__wrapper">
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Впечатление
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur1">
+
+                    Пешие туры
+                  </label>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur2">
+
+                    Конные туры
+                  </label>
+
+                  <p class="m-0 input_count sm-text">78</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur3">
+
+                    Туры на квадроциклах (снегоходах)
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur4">
+
+                    Джиппинг
+                  </label>
+
+                  <p class="m-0 input_count sm-text">221</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur5">
+
+                    Прокат SKI оборудования
+                  </label>
+
+                  <p class="m-0 input_count sm-text">327</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur6">
+
+                    Инструкторские услуги по горнолыжке
+                  </label>
+
+                  <p class="m-0 input_count sm-text">429</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur7">
+
+                    Гастро туры
+                  </label>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur8">
+
+                    Экскурсионные бюро
+                  </label>
+
+                  <p class="m-0 input_count sm-text">78</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur9">
+
+                    Вертолетные экскурсии
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur10">
+
+                    Прогулки на воздушном шаре
+                  </label>
+
+                  <p class="m-0 input_count sm-text">221</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur11">
+
+                    Прогулки на дельтоплане
+                  </label>
+
+                  <p class="m-0 input_count sm-text">327</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur12">
+
+                    Рестораны
+                  </label>
+
+                  <p class="m-0 input_count sm-text">429</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="tur13">
+
+                    Боулинг
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Тип экскурсии
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="type1">
+
+                    Индивидуальная
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="type2">
+
+                    Групповая
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="type3">
+
+                    Мини-группа
+                  </label>
+
+                  <p class="m-0 input_count sm-text">22</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Бюджет
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price1">
+
+                    до 1 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">97</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price2">
+
+                    1 000 ₽ - 2 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">223</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price3">
+
+                    2 000 ₽ - 5 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">113</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price4">
+
+                    5 000 ₽ - 10 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">13</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="price5">
+
+                    более 10 000 ₽
+                  </label>
+
+                  <p class="m-0 input_count sm-text">98</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Время проведения
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time1">
+
+                    Утро
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    06:00 - 12:00
+                  </p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time2">
+
+                    День
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    12:00 - 18:00
+                  </p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time3">
+
+                    Вечер
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    18:00 - 23:00
+                  </p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="time4">
+
+                    Ночь
+                  </label>
+
+                  <p class="m-0 input_count sm-text">
+                    23:00 - 6:00
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Продолжительность
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow"></div>
+              </div>
+
+              <div class="filter_item__list flex-items-start open_list gap-20px-imp">
+                <div class="slide_input max-h-icons">
+                  <div class="flex-items-center gap-6px">
+                    <span class="text-main-gray sm-text">
+                      до
+                    </span>
+
+                    <input type="text" class="time_input" value="10 часов" readonly>
+                  </div>
+
+                  <div class="slide_input__bottom">
+                    <div class="price-range-slider">
+                      <div class="slider-track no-transition"></div>
+                      <div class="slider-range no-transition"></div>
+                      <div class="slider-thumb no-transition" id="rightThumb"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="checkbox_block">
+                  <div class="toggle-pill-color">
+                    <input type="checkbox" id="any" name="one_night">
+                    <label for="any"></label>
+
+                    <span class="text-dark sm-text">
+                      Любая
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Способ перемещения
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="move1">
+
+                    Пешком
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="move2">
+
+                    На автобусе
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+
+                <div class="d-none-imp flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="move1">
+
+                    На машине
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="d-none-imp flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="move2">
+
+                    На пароходе
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+              </div>
+
+              <button type="button" class="btn see_all_filter">
+                Показать все
+              </button>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Интересы
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest1">
+
+                    Обзорные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">187</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest2">
+
+                    Необычные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">127</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest3">
+
+                    Вечерние
+                  </label>
+
+                  <p class="m-0 input_count sm-text">410</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest4">
+
+                    Выездные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest5">
+
+                    Для детей
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4089</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest6">
+
+                    Гастрономические
+                  </label>
+
+                  <p class="m-0 input_count sm-text">2089</p>
+                </div>
+
+                <div class="d-none-imp flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest5">
+
+                    Водные
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4089</p>
+                </div>
+
+                <div class="d-none-imp flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="interest6">
+
+                    Тематические
+                  </label>
+
+                  <p class="m-0 input_count sm-text">2089</p>
+                </div>
+              </div>
+
+              <button type="button" class="btn see_all_filter">
+                Показать все
+              </button>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Достопримечательности
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place1">
+
+                    Казанский Кремль
+                  </label>
+
+                  <p class="m-0 input_count sm-text">187</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place2">
+
+                    Мечеть Кул Шариф
+                  </label>
+
+                  <p class="m-0 input_count sm-text">127</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place3">
+
+                    Дворец Земледельцев
+                  </label>
+
+                  <p class="m-0 input_count sm-text">410</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place4">
+
+                    Башня Сююмбике
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4</p>
+                </div>
+
+                <div class="d-none-imp flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place5">
+
+                    Старо-Татарская Слобода
+                  </label>
+
+                  <p class="m-0 input_count sm-text">4089</p>
+                </div>
+
+                <div class="d-none-imp flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="place6">
+
+                    Театр кукол “Экият”
+                  </label>
+
+                  <p class="m-0 input_count sm-text">2089</p>
+                </div>
+              </div>
+
+              <button type="button" class="btn see_all_filter">
+                Показать все
+              </button>
+            </div>
+
+            <div class="filter_item bg-white">
+              <div class="flex-items-center justify-between gap-8px">
+                <div class="filter_block">
+                  <p class="text-medium m-0 base-text">
+                    Особенности
+                  </p>
+
+                  <img class="d-block rotate-180 user-select-none" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+
+              <div class="filter_item__list open_list">
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="specificity1">
+
+                    Авторские
+                  </label>
+
+                  <p class="m-0 input_count sm-text">987</p>
+                </div>
+
+                <div class="flex-items-center justify-between gap-8px">
+                  <label class="flex-items-center gap-12px sm-text text-dark">
+                    <input class="m-0 checkbox_size" type="checkbox" name="specificity2">
+
+                    С аудиогидом
+                  </label>
+
+                  <p class="m-0 input_count sm-text">166</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn__reset sm-text text-medium text-nowrap reset_filter">
+              Сбросить фильтры
+            </button>
+          </form>
+        </div>
+
+        <div class="cards">
+          <div class="cards__wrapper" data-load-block="catalog" data-load-qnt="3">
+            <div class="catalog_item" data-item-id="1">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog1.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="1" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="2">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog2.jpg" alt="Image" loading="lazy">
+
+                    <div class="tumbler">
+                      Авторская
+                    </div>
+
+                    <button data-btn-id="2" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="3">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog3.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="3" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="4">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog4.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="4" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="5">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog5.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="5" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="6">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog6.jpg" alt="Image" loading="lazy">
+
+                    <div class="tumbler">
+                      Авторская
+                    </div>
+
+                    <button data-btn-id="6" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="7">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog7.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="7" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="8">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog8.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="8" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="9">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog9.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="9" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="10">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog10.jpg" alt="Image" loading="lazy">
+
+                    <div class="tumbler">
+                      Авторская
+                    </div>
+
+                    <button data-btn-id="10" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog_item" data-item-id="11">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog11.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="11" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp catalog_item" data-loading="true" data-item-id="12">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog6.jpg" alt="Image" loading="lazy">
+
+                    <div class="tumbler">
+                      Авторская
+                    </div>
+
+                    <button data-btn-id="12" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp catalog_item" data-loading="true" data-item-id="13">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog7.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="13" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp catalog_item" data-loading="true" data-item-id="14">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog8.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="14" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp catalog_item" data-loading="true" data-item-id="15">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog9.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="15" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp catalog_item" data-loading="true" data-item-id="16">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog10.jpg" alt="Image" loading="lazy">
+
+                    <div class="tumbler">
+                      Авторская
+                    </div>
+
+                    <button data-btn-id="16" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-none-imp catalog_item" data-loading="true" data-item-id="17">
+              <div class="catalog_item__wrapper">
+                <div class="catalog_top">
+                  <div class="catalog_image">
+                    <img class="w-full br-12px" src="assets/images/catalog/catalog11.jpg" alt="Image" loading="lazy">
+
+                    <button data-btn-id="17" type="button" class="btn like heart">
+                      <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                      <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                    </button>
+                  </div>
+
+                  <div class="catalog_info">
+                    <div class="catalog_info__main">
+                      <div class="excursion_info_params">
+                        <p class="m-0 text-main-gray sm-text text-medium">
+                          Групповая сборная
+                        </p>
+
+                        <div class="flex-items-center gap-8px">
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              45 чел.
+                            </p>
+                          </div>
+
+                          <div class="flex-items-center gap-4px">
+                            <img width="20" class="d-block" src="assets/images/icons/clock.svg" alt="Icon" loading="lazy">
+                            <p class="m-0 text-main-gray sm-text">
+                              3 ч.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="base-text m-0 text-dark">
+                        3 в 1: Вселенский храм, Иннополис и Свияжск
+                      </p>
+
+                      <div class="flex-col flex-items-start gap-8px">
+                        <p class="m-0 text-main-gray xs-text">
+                          Ближайшая:
+                        </p>
+
+                        <div class="flex-items-center gap-4px">
+                          <div class="desc_medium__times-block-xs-text">
+                            Завтра в 08:00
+                          </div>
+
+                          <div class="desc_medium__times-block-xs-text">
+                            Вс, 27 ноя, 12:30
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_bottom">
+                  <div class="catalog_bottom__info">
+                    <div class="flex-col flex-items-start gap-12px">
+                      <div class="catalog_bottom__left">
+                        <p class="price">1 040 ₽</p>
+
+                        <p class="text-main-gray m-0 sm-text">
+                          за человека
+                        </p>
+                      </div>
+
+                      <a href="excursionPage.html" class="d-none-imp not-decor-link btn catalog_bottom__right btn_link_exc">
+                        Подробнее
+                      </a>
+                    </div>
+
+                    <div class="flex-col flex-items-start gap-4px">
+                      <div class="rating">
+                        <div class="text-white xs-text text-bold">
+                          8,9
+                        </div>
+                      </div>
+
+                      <p class="m-0 text-main-gray sm-text">
+                        86 отзывов
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn__loading_more" data-load-btn="catalog" onclick="loadingMore(this)">
+            Показать ещё
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer__wrapper">
+    <div class="footer_top">
+      <a href="index.html" class="d-block">
+        <img src="assets/images/logotypes/dark-logo.svg" alt="Logotype" loading="lazy">
+      </a>
+
+      <a href="#" class="flex-items-center btn btn__login not-decor-link link__lg">
+        Предложить экскурсию
+      </a>
+    </div>
+
+    <div class="footer_center">
+      <p class="text-dark m-0 footer_text">
+        Ищите жилье для отдыха или поездки?
+        Переходите на наш сайт
+        <a href="#" class="text-main-col not-decor-link">
+          Hospitality.ru
+        </a>
+      </p>
+
+      <a href="#" class="w-full flex-items-center justify-center btn btn__login not-decor-link link__sm">
+        Предложить экскурсию
+      </a>
+
+      <nav class="footer_nav footer_center-lg">
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Путешественникам
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="policyPage.html" class="not-decor-link text-dark">
+              Правила оказания услуг
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Отзывы
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Организаторам
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Предложить тур
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="policyPage.html" class="not-decor-link text-dark">
+              Правила оказания услуг
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            О нас
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="about.html" class="not-decor-link text-dark">
+              О компании
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Блог
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer_center-sm">
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Служба помощи
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Справочный раздел
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="contact.html" class="not-decor-link text-dark">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Гостям
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Как снять жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Гарантии сервиса
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Отзывы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Хозяевам
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Сдать жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Условия размещения
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              О нас
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="about.html" class="not-decor-link text-dark">
+                О компании
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                СМИ о нас
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вакансии
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Блог
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="social_network">
+        <p class="m-0 text-center text-main-gray text-nowrap text-medium with_we">
+          Будьте с нами
+        </p>
+
+        <div class="flex-items-center gap-12px">
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/vk.svg" alt="VK" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/tg.svg" alt="Telegram" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/yt.svg" alt="Youtube" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <div class="footer_bottom-top">
+        <div class="foot-top flex-items-center gap-32px-imp">
+          <a href="#" class="text-main-gray">
+            Политика обработки персональных данных
+          </a>
+
+          <a href="#" class="text-main-gray">
+            Правовая информация
+          </a>
+        </div>
+
+        <div class="foot-bottom flex-items-center gap-20px-imp">
+          <p class="text-main-gray m-0">
+            Принимаем к оплате:
+          </p>
+
+          <div class="flex-items-center gap-12px">
+            <div>
+              <img src="assets/images/payments/visa.svg" alt="Visa" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/no_know.svg" alt="Icon" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/mir.svg" alt="Mir" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom-bottom">
+        <p class="text-main-gray m-0">
+          © KCHRbusiness.ru - поиск экскурсий и впечатлений. Все права защищены.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=viewport-units"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewport-units-buggyfill/0.6.2/viewport-units-buggyfill.js"></script>
+<script>
+    window.onload = function() {
+        window.viewportUnitsBuggyfill.init();
+    };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        flatpickr("#search_date", {
+            mode: "single",
+            minDate: "today",
+            locale: "ru",
+            dateFormat: "d.m.Y",
+            monthSelectorType: 'static',
+            showMonths: 2,
+            closeOnSelect: true,
+            disableMobile: true,
+            position: "below left",
+            nextArrow: `
+                    <button type="button" class="arrow-btn right-arrow">
+                        <img class="relative top-init" src="assets/images/icons/arrow-right.svg" alt="Right Arrow">
+                    </button>
+                `,
+            prevArrow: `
+                    <button type="button" class="arrow-btn left-arrow">
+                        <img class="relative top-init" src="assets/images/icons/arrow-left.svg" alt="Left Arrow">
+                    </button>
+                `,
+        })
+
+        flatpickr("#search_date_mobile", {
+            mode: "single",
+            minDate: "today",
+            locale: "ru",
+            dateFormat: "d.m.Y",
+            monthSelectorType: 'static',
+            showMonths: 1,
+            closeOnSelect: false,
+            disableMobile: true,
+            position: "below left",
+            nextArrow: `
+                    <button type="button" class="arrow-btn right-arrow">
+                        <img class="relative top-init" src="assets/images/icons/arrow-right.svg" alt="Right Arrow">
+                    </button>
+                `,
+            prevArrow: `
+                    <button type="button" class="arrow-btn left-arrow">
+                        <img class="relative top-init" src="assets/images/icons/arrow-left.svg" alt="Left Arrow">
+                    </button>
+                `,
+        })
+    })
+</script>
+
+<script src="assets/scripts/auth/openHelpForm.js"></script>
+<script src="assets/scripts/auth/authModal.js"></script>
+<script src="assets/scripts/auth/seePassword.js"></script>
+<script src="assets/scripts/auth/helpFormModal.js"></script>
+<script src="assets/scripts/auth/authValidation.js"></script>
+<script src="assets/scripts/account/emailValidator.js"></script>
+<script src="assets/scripts/auth/openRecoveryPassword.js"></script>
+<script src="assets/scripts/auth/recoveryPasswordModal.js"></script>
+<script src="assets/scripts/displayMode.js"></script>
+<script src="assets/scripts/loadingMore.js"></script>
+<script src="assets/scripts/clickLike.js"></script>
+<script src="assets/scripts/formatedInput.js"></script>
+<script src="assets/scripts/searchingInputs.js"></script>
+<script src="assets/scripts/searching.js"></script>
+<script src="assets/scripts/mobileSearching.js"></script>
+<script src="assets/scripts/mainSearch.js"></script>
+<script src="assets/scripts/mainFilter.js"></script>
+<script src="assets/scripts/duration.js"></script>
+<script src="assets/scripts/durationMobile.js"></script>
+<script src="assets/scripts/closePopUpClick.js"></script>
+<script src="assets/scripts/searchMobileBottom.js"></script>
+<script src="assets/scripts/mobileHeader.js"></script>
+<script src="assets/scripts/cleanSearchInputs.js"></script>
+<script src="assets/scripts/calendarCheckOpen.js"></script>
+<script src="assets/scripts/dropMenu.js"></script>
+<script src="assets/scripts/createCards/catalog.js"></script>
+<script src="assets/scripts/filterOpen.js"></script>
+<script src="assets/scripts/typeFilter.js"></script>
+<script src="assets/scripts/addFunctionAttributes.js"></script>
+<script src="assets/scripts/footerNavigation.js"></script>
+</body>
+</html>

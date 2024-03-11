@@ -1,0 +1,1418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex" />
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <meta name="description" content="Page Account Objects">
+  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/base.css">
+  <link rel="icon" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&family=Inter+Tight:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Hospitality - Мои впечатления</title>
+</head>
+<body>
+
+<div class="d-none-imp obj_delete_blackout blackout h-full-imp">
+  <div class="obj modal_help_form relative">
+    <div class="modal_form__wrapper">
+      <div class="obj_delete_top">
+        <div class="w-full flex-items-center justify-between gap-12px">
+          <p class="help_form__title">
+            Подтверждение действия
+          </p>
+
+          <div class="modal_obj__close">
+            <img src="assets/images/icons/close-square.svg" alt="Close" loading="lazy">
+          </div>
+        </div>
+
+        <p class="m-0 lg-text text-dark align-start">
+          Вы действительно хотите удалить это впечатление?
+        </p>
+      </div>
+
+      <form method="post" action="#" class="modal_auth_form modal_obj_form">
+        <div class="modal_auth_form__wrapper">
+          <input type="hidden" name="obj_id">
+        </div>
+
+        <div class="grid-col-2 gap-12px">
+          <button type="button" class="btn btn__booking-modal modal_obj__close">
+            Нет, не хочу
+          </button>
+
+          <button type="submit" class="btn btn__delete_photo lg-text">
+            <img width="26" class="sm-none" src="assets/images/account/trash.svg" alt="Delete" loading="lazy">
+            Да, удалить
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="order_action order_action_mobile">
+  <div class="order_action__wrapper">
+    <div class="order_action__title">
+      <p>
+        Действия с объектом
+      </p>
+
+      <img id="closeMobileAction" src="assets/images/icons/close-square-dark.svg" alt="Icon" loading="lazy">
+    </div>
+
+    <div class="order_action__item">
+      Редактировать
+    </div>
+
+    <div class="order_action__item object_visible">
+      Скрыть с сайта
+    </div>
+
+    <div class="order_action__item order_delete">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.5 4.98335C14.725 4.70835 11.9333 4.56668 9.15 4.56668C7.5 4.56668 5.85 4.65001 4.2 4.81668L2.5 4.98335" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.08301 4.14166L7.26634 3.04999C7.39967 2.25832 7.49967 1.66666 8.90801 1.66666H11.0913C12.4997 1.66666 12.608 2.29166 12.733 3.05832L12.9163 4.14166" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.7087 7.61667L15.167 16.0083C15.0753 17.3167 15.0003 18.3333 12.6753 18.3333H7.32533C5.00033 18.3333 4.92533 17.3167 4.83366 16.0083L4.29199 7.61667" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8.6084 13.75H11.3834" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.91699 10.4167H12.0837" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+
+      Удалить
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="navigation">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top relative">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <a href="index.html">
+            <img src="assets/images/logotypes/mobile-dark-logo.svg" alt="Dark Logotype">
+          </a>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action back_arrow">
+            <img src="assets/images/icons/arrow-left.svg" alt="Back">
+          </button>
+
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper up-layer">
+        <ul class="mobile_nav">
+          <li onclick="mobileExcursionMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Экскурсии
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li onclick="mobileEmojiMenu()">
+            <a href="#" class="not-decor-link">
+              <div class="mobile_nav__item">
+                <p class="m-0 mb-nav_text">
+                  Впечатления
+                </p>
+
+                <div>
+                  <img class="mobile_nav__item_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html" class="not-decor-link mb-nav_text">
+              О нас
+            </a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="not-decor-link mb-nav_text">
+              Блог
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="not-decor-link mb-nav_text">
+              Контакты
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_mobile_nav">
+        <ul class="mobile_nav">
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Москва
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Самара
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Санкт-Петербург
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Воронеж
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Сочи
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="mobile_nav_wrapper under_emoji">
+        <ul class="mobile_nav">
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Пешие туры
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Боулинг
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Инструкторские услуги по горнолыжке
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Прогулки на дельтоплане
+            </a>
+          </li>
+
+          <li>
+            <a href="catalog.html" class="not-decor-link mb-nav_text">
+              Конные туры
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Самое важное про текущую ситуацию:
+          <br>
+          <span class="border-underline-dark mt-4px">
+              <a href="#" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="w-full">
+        <p class="text-dark-grey m-0">
+          Пн-Пт с 9:00 до 19:00
+          <br>
+
+        <div class="mt-12px">
+          <a class="text-dark not-decor-link text-medium" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+        </p>
+      </div>
+
+      <a href="#" class="d-block w-full btn btn__mobile not-decor-link">
+        Предложить экскурсию
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mobile" data-mobail-block="account">
+  <div class="mobile__menu">
+    <div class="mobile__menu-top gap-1">
+      <div class="mobile_header">
+        <div class="mobile_header__logo">
+          <p class="mobile_header__title">
+            Профиль
+          </p>
+        </div>
+
+        <div class="mobile_header__menu">
+          <button type="button" class="mb_action navClose">
+            <img src="assets/images/icons/mobile-close.svg" alt="Close">
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile_nav_wrapper">
+        <ul class="mobile_nav">
+          <li>
+            <a href="myAccount.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/icons/profile_dark.svg" alt="Icon">
+              Личные данные
+            </a>
+          </li>
+
+          <li>
+            <a href="accountSecure.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/lock.svg" alt="Icon">
+              Пароль и безопасность
+            </a>
+          </li>
+
+          <li>
+            <a href="accountFavourites.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/heart_dark.svg" alt="Icon">
+              Избранные впечатления
+            </a>
+          </li>
+
+          <li>
+            <a href="accountOrders.html" class="not-decor-link mb-nav_text flex-items-center gap-8px">
+              <img width="24" class="d-block" src="assets/images/account/history.svg" alt="Icon">
+              История заказов
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile__menu-bottom">
+      <a href="#" class="not-decor-link mb-nav_text flex-items-center gap-8px text-red-imp">
+        <svg class="d-block" width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5333 12.1833L16.6667 10.05L14.5333 7.91667" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.1333 10.05H16.6083" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9.79997 16.6667C6.11663 16.6667 3.1333 14.1667 3.1333 9.99999C3.1333 5.83333 6.11663 3.33333 9.79997 3.33333" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        Выйти
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="bg-white">
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="header_left">
+        <p class="text-light-grey m-0">
+          Самое важное про текущую ситуацию:
+
+          <span class="border-underline" id="headerUnderline">
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                сводка,
+              </a>
+
+              <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+                телеграм-канал
+              </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="flex-items-center text-medium gap-2">
+        <p class="text-dark-half m-0">
+          Пн-Пт с 9:00 до 19:00
+        </p>
+
+        <div>
+          <a data-text="header" class="text-dark not-decor-link" href="tel:+78822345300">
+            +7(882) 23-45-300
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="w-full d-flex justify-center">
+    <div class="header__wrapper">
+      <div class="flex-items-center gap-4">
+        <a href="index.html">
+          <img src="assets/images/logotypes/dark-logo.svg" alt="Logotype">
+        </a>
+
+        <nav>
+          <ul class="navigation_list gap-3">
+            <li class="navigation_list__item relative">
+              <a class="not-decor-link" href="#">
+                <div class="drop_menu" id="excursions">
+                  <p class="hotel_text text-dark m-0 lh-20" data-text="header">
+                    Экскурсии
+                  </p>
+
+                  <img class="user-select-none drop_menu_arrow" id="dropExcursionsArrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow Down">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropExcursionsMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Москва
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Сочи
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Санкт-Петербург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Казань
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Нижний Новгород
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Екатеринбург
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Калининград
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Самара
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Адлер
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Ярославль
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Воронеж
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Краснодар
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Новосибирск
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Тула
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Владивосток
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Уфа
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item relative">
+              <a class="not-decor-link" href="#">
+                <div class="drop_menu" id="emojiList">
+                  <p class="hotel_text text-dark m-0 lh-20" data-text="header">
+                    Впечатления
+                  </p>
+
+                  <img class="user-select-none drop_menu_arrow" id="dropEmojiArrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow Down">
+                </div>
+              </a>
+
+              <div class="dropmenu_block" id="dropEmojiMenu">
+                <div class="drop_container">
+                  <p class="m-0 base-text text-main-gray text-medium">
+                    Популярные направления:
+                  </p>
+
+                  <div class="drop_container__wrapper">
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Пешие туры
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Конные туры
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Туры на квадроциклах (снегоходах)
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Джиппинг
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Прокат SKI оборудования
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Инструкторские услуги по горнолыжке
+                      </a>
+                    </div>
+
+                    <div class="menu_column">
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Вертолетные экскурсии
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Прогулки на воздушном шаре
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Прогулки на дельтоплане
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Рестораны
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Боулинг
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Экскурсионные бюро
+                      </a>
+
+                      <a href="catalog.html" class="text-nowrap d-block not-decor-link text-dark base-text">
+                        Гастро туры
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="about.html" data-text="header" class="text-dark not-decor-link lh-20">
+                О нас
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="blog.html" data-text="header" class="text-dark not-decor-link lh-20">
+                Блог
+              </a>
+            </li>
+
+            <li class="navigation_list__item">
+              <a href="contact.html" data-text="header" class="text-dark not-decor-link lh-20">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="flex-items-center gap-3 relative">
+        <div>
+          <a href="#" data-text="header" class="text-dark text-medium not-decor-link">
+            Предложить экскурсию
+          </a>
+        </div>
+
+        <div class="account_icon" id="accountIcon">
+          <img class="account_icon__avatar" src="assets/images/reviews/people1.jpg" alt="Account" loading="lazy">
+
+          <div class="account_icon__name">
+            <p class="sm-text text-dark m-0">
+              Юлия
+            </p>
+
+            <svg id="accountMenuArrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 8.33331L10.8838 12.161C10.3977 12.613 9.60227 12.613 9.11616 12.161L5 8.33331" stroke="#AEAEB5" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="account_navigation" id="accountNav">
+          <div class="account_navigation__wrapper">
+            <a href="myAccount.html" class="not-decor-link account_navigation__item">
+              Личные данные
+            </a>
+
+            <a href="accountSecure.html" class="not-decor-link account_navigation__item">
+              Пароль и безопасность
+            </a>
+
+            <a href="accountFavourites.html" class="not-decor-link account_navigation__item">
+              Избранные впечатления
+            </a>
+
+            <hr class="account_navigation__line">
+
+            <div class="account_navigation__exit">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5333 12.1833L16.6667 10.05L14.5333 7.91667" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.1333 10.05H16.6083" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9.79997 16.6667C6.11663 16.6667 3.1333 14.1667 3.1333 9.99999C3.1333 5.83333 6.11663 3.33333 9.79997 3.33333" stroke="#FF5A5F" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
+              Выйти
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header >
+
+<div class="mobile_top_header bg-white">
+  <div class="mobile_top_header__wrapper">
+    <div class="mobile_top_header__logo">
+      <a href="index.html">
+        <img src="assets/images/logotypes/mobile-dark-logo.svg" loading="lazy" alt="Logotype">
+      </a>
+    </div>
+
+    <div class="mobile_top_header__menu">
+      <button type="button" class="mb_action mobile_account" id="account">
+        <img src="assets/images/reviews/people1.jpg" loading="lazy" alt="Profile">
+      </button>
+
+      <button type="button" class="mb_action" id="burger">
+        <img src="assets/images/icons/dark_burger.svg" loading="lazy" alt="Burger">
+      </button>
+    </div>
+  </div>
+</div>
+
+<main class="md_padding_under_header overflow-visible">
+  <div class="container">
+    <div class="container_block">
+      <div class="account_form_block">
+        <div class="account_previous">
+          <div class="bread_crumbs">
+            <a href="index.html" class="bread_crumbs__item bread_crumbs__active">
+              Главная
+            </a>
+
+            <img class="d-block" src="assets/images/icons/arrow_right_dark.svg" loading="lazy" alt="Arrow">
+
+            <a href="accountFavourites.html" class="bread_crumbs__item">
+              Мои впечатления
+            </a>
+          </div>
+
+          <h1 class="contact_title">
+            Мои впечатления
+          </h1>
+        </div>
+
+        <div class="account">
+          <div class="account__menu">
+            <div class="account__menu-wrap">
+              <a href="partnerAccount.html" class="not-decor-link account_menu_item">
+                <svg class="d-block" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.1733 11.7758C13.0649 11.765 12.9349 11.765 12.8158 11.7758C10.2374 11.6892 8.18994 9.57666 8.18994 6.97666C8.18994 4.32249 10.3349 2.16666 12.9999 2.16666C15.6541 2.16666 17.8099 4.32249 17.8099 6.97666C17.7991 9.57666 15.7516 11.6892 13.1733 11.7758Z" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.75678 15.7733C5.13511 17.5283 5.13511 20.3883 7.75678 22.1325C10.7359 24.1258 15.6218 24.1258 18.6009 22.1325C21.2226 20.3775 21.2226 17.5175 18.6009 15.7733C15.6326 13.7908 10.7468 13.7908 7.75678 15.7733Z" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+                Личные данные
+              </a>
+
+              <a href="accountSecure.html" class="not-decor-link account_menu_item">
+                <svg class="d-block" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 10V8C6 4.69 7 2 12 2C17 2 18 4.69 18 8V10" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 22H7C3 22 2 21 2 17V15C2 11 3 10 7 10H17C21 10 22 11 22 15V17C22 21 21 22 17 22Z" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15.9965 16H16.0054" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M11.9955 16H12.0045" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.99451 16H8.00349" stroke="#1A2528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+                Пароль и безопасность
+              </a>
+
+              <a href="accountObjects.html" class="not-decor-link account_menu_item account_menu_active">
+                <svg class="d-block" width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.70001 18H4.15002C2.72002 18 2 17.28 2 15.85V4.15002C2 2.72002 2.72002 2 4.15002 2H8.45001C9.88001 2 10.6 2.72002 10.6 4.15002V6" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17.3702 8.41998V19.58C17.3702 21.19 16.5702 22 14.9602 22H9.12018C7.51018 22 6.7002 21.19 6.7002 19.58V8.41998C6.7002 6.80998 7.51018 6 9.12018 6H14.9602C16.5702 6 17.3702 6.80998 17.3702 8.41998Z" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.4004 6V4.15002C13.4004 2.72002 14.1204 2 15.5504 2H19.8503C21.2803 2 22.0004 2.72002 22.0004 4.15002V15.85C22.0004 17.28 21.2803 18 19.8503 18H17.3704" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10 11H14" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10 14H14" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 22V19" stroke="#1A2528" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+
+                Мои впечатления
+              </a>
+            </div>
+          </div>
+
+          <div class="account__main">
+            <div class="my_orders">
+              <a href="objectAdd.html" class="not-decor-link add_object btn btn__login text-center">
+                Предложить впечатление
+              </a>
+
+              <div class="my_orders__list">
+                <div class="catalog_item w-full" data-item-id="1">
+                  <div class="catalog_item__wrapper my_orders__item">
+                    <div class="catalog_top my_orders__item-top">
+                      <div class="catalog_image order_img">
+                        <img class="br-12px" src="assets/images/catalog/catalog1.jpg" alt="Image" loading="lazy">
+
+                        <button data-btn-id="1" type="button" class="btn like heart">
+                          <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                          <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                        </button>
+                      </div>
+
+                      <div class="my_orders__info">
+                        <div class="object_hidden_mb d-none-imp">
+                          <img src="assets/images/icons/eye-slash.svg" alt="Icon" loading="lazy">
+                        </div>
+
+                        <div class="my_orders__info-wrap h-full">
+                          <div class="object_info">
+                            <div class="catalog_info__main">
+                              <p class="xl-text m-0 text-dark text-medium max-w-text text-ellipsis">
+                                Гостиница золотое кольцо
+                              </p>
+
+                              <div class="flex-col flex-items-start gap-8px">
+                                <div class="short_info">
+                                  <p class="m-0 sm-text text-main-gray text-medium">
+                                    Индивидуальная
+                                  </p>
+
+                                  <div class="short_info__icons">
+                                    <div class="flex-items-center gap-4px">
+                                      <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+
+                                      <p class="m-0 sm-text text-main-gray">
+                                        1-2 чел.
+                                      </p>
+                                    </div>
+
+                                    <div class="flex-items-center gap-4px">
+                                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                                      <p class="m-0 sm-text text-main-gray">
+                                        3 ч.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card_params__top">
+                                  <div class="card_params__top-wrap">
+                                    <div class="rating">
+                                      <div class="text-white xs-text text-bold">
+                                        8,9
+                                      </div>
+                                    </div>
+
+                                    <span class="sm-text">
+                                      2583 отзыва
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="object_price">
+                            <div class="flex-items-center gap-4px">
+                              <p class="m-0 xl-text text-main-gray text-medium">
+                                от
+                              </p>
+                              <p class="m-0 xl-text text-dark text-medium">
+                                7 250 ₽
+                              </p>
+                            </div>
+
+                            <p class="excursion_type">
+                              за экскурсию
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="my_orders__info-btn lg-visible" data-card-id="1">
+                          <img src="assets/images/icons/more.svg" alt="Icon" loading="lazy">
+                        </div>
+
+                        <div class="column justify-between flex-items-end h-full lg-hidden">
+                          <div class="flex-items-center gap-20px-imp">
+                            <div class="object_hidden">
+                              <img src="assets/images/icons/eye-slash.svg" alt="Icon" loading="lazy">
+                            </div>
+
+                            <div class="order_action">
+                              <div class="order_action__wrapper">
+                                <div class="order_action__item">
+                                  Редактировать
+                                </div>
+
+                                <div data-obj-id="1" class="object_visible order_action__item">
+                                  Показать на сайте
+                                </div>
+
+                                <div data-order-id="1" class="order_action__item order_delete">
+                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.5 4.98335C14.725 4.70835 11.9333 4.56668 9.15 4.56668C7.5 4.56668 5.85 4.65001 4.2 4.81668L2.5 4.98335" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.08301 4.14166L7.26634 3.04999C7.39967 2.25832 7.49967 1.66666 8.90801 1.66666H11.0913C12.4997 1.66666 12.608 2.29166 12.733 3.05832L12.9163 4.14166" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.7087 7.61667L15.167 16.0083C15.0753 17.3167 15.0003 18.3333 12.6753 18.3333H7.32533C5.00033 18.3333 4.92533 17.3167 4.83366 16.0083L4.29199 7.61667" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.6084 13.75H11.3834" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.91699 10.4167H12.0837" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+
+                                  Удалить
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="my_orders__info-btn">
+                              <img src="assets/images/icons/more.svg" alt="Icon" loading="lazy">
+                            </div>
+                          </div>
+
+                          <a href="catalog.html" class="not-decor-link btn btn__login text-nowrap md-none">
+                            Открыть на сайте
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_item w-full" data-item-id="2">
+                  <div class="catalog_item__wrapper my_orders__item">
+                    <div class="catalog_top my_orders__item-top">
+                      <div class="catalog_image order_img">
+                        <img class="br-12px" src="assets/images/catalog/catalog2.jpg" alt="Image" loading="lazy">
+
+                        <button data-btn-id="2" type="button" class="btn like heart">
+                          <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                          <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                        </button>
+                      </div>
+
+                      <div class="my_orders__info">
+                        <div class="object_hidden_mb d-none-imp">
+                          <img src="assets/images/icons/eye-slash.svg" alt="Icon" loading="lazy">
+                        </div>
+
+                        <div class="my_orders__info-wrap h-full">
+                          <div class="object_info">
+                            <div class="catalog_info__main">
+                              <p class="xl-text m-0 text-dark text-medium max-w-text text-ellipsis">
+                                Русские Сезоны Комфорт отель Поречье
+                              </p>
+
+                              <div class="flex-col flex-items-start gap-8px">
+                                <div class="short_info">
+                                  <p class="m-0 sm-text text-main-gray text-medium">
+                                    Индивидуальная
+                                  </p>
+
+                                  <div class="short_info__icons">
+                                    <div class="flex-items-center gap-4px">
+                                      <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+
+                                      <p class="m-0 sm-text text-main-gray">
+                                        1-2 чел.
+                                      </p>
+                                    </div>
+
+                                    <div class="flex-items-center gap-4px">
+                                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                                      <p class="m-0 sm-text text-main-gray">
+                                        3 ч.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card_params__top">
+                                  <div class="card_params__top-wrap">
+                                    <div class="rating">
+                                      <div class="text-white xs-text text-bold">
+                                        8,9
+                                      </div>
+                                    </div>
+
+                                    <span class="sm-text">
+                                      2583 отзыва
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="object_price">
+                            <div class="flex-items-center gap-4px">
+                              <p class="m-0 xl-text text-main-gray text-medium">
+                                от
+                              </p>
+                              <p class="m-0 xl-text text-dark text-medium">
+                                750 ₽
+                              </p>
+                            </div>
+
+                            <p class="excursion_type">
+                              за человека
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="my_orders__info-btn lg-visible" data-card-id="2">
+                          <img src="assets/images/icons/more.svg" alt="Icon" loading="lazy">
+                        </div>
+
+                        <div class="column justify-between flex-items-end h-full lg-hidden">
+                          <div class="flex-items-center gap-20px-imp">
+                            <div class="object_hidden d-none-imp">
+                              <img src="assets/images/icons/eye-slash.svg" alt="Icon" loading="lazy">
+                            </div>
+
+                            <div class="order_action">
+                              <div class="order_action__wrapper">
+                                <div class="order_action__item">
+                                  Редактировать
+                                </div>
+
+                                <div data-obj-id="2" class="object_visible order_action__item">
+                                  Скрыть с сайта
+                                </div>
+
+                                <div data-order-id="2"  class="order_action__item order_delete">
+                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.5 4.98335C14.725 4.70835 11.9333 4.56668 9.15 4.56668C7.5 4.56668 5.85 4.65001 4.2 4.81668L2.5 4.98335" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.08301 4.14166L7.26634 3.04999C7.39967 2.25832 7.49967 1.66666 8.90801 1.66666H11.0913C12.4997 1.66666 12.608 2.29166 12.733 3.05832L12.9163 4.14166" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.7087 7.61667L15.167 16.0083C15.0753 17.3167 15.0003 18.3333 12.6753 18.3333H7.32533C5.00033 18.3333 4.92533 17.3167 4.83366 16.0083L4.29199 7.61667" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.6084 13.75H11.3834" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.91699 10.4167H12.0837" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+
+                                  Удалить
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="my_orders__info-btn">
+                              <img src="assets/images/icons/more.svg" alt="Icon" loading="lazy">
+                            </div>
+                          </div>
+
+                          <a href="catalog.html" class="not-decor-link btn btn__login text-nowrap md-none">
+                            Открыть на сайте
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="catalog_item w-full" data-item-id="3">
+                  <div class="catalog_item__wrapper my_orders__item">
+                    <div class="catalog_top my_orders__item-top">
+                      <div class="catalog_image order_img">
+                        <img class="br-12px" src="assets/images/catalog/catalog3.jpg" alt="Image" loading="lazy">
+
+                        <button data-btn-id="3" type="button" class="btn like heart">
+                          <img class="no_like" src="assets/images/icons/heart.svg" alt="Like" loading="lazy">
+
+                          <img class="d-none-imp click_like" src="assets/images/icons/heart_click.svg" alt="Like">
+                        </button>
+                      </div>
+
+                      <div class="my_orders__info">
+                        <div class="object_hidden_mb d-none-imp">
+                          <img src="assets/images/icons/eye-slash.svg" alt="Icon" loading="lazy">
+                        </div>
+
+                        <div class="my_orders__info-wrap h-full">
+                          <div class="object_info">
+                            <div class="catalog_info__main">
+                              <p class="xl-text m-0 text-dark text-medium max-w-text text-ellipsis">
+                                Отель Шератон Палас Москва
+                              </p>
+
+                              <div class="flex-col flex-items-start gap-8px">
+                                <div class="short_info">
+                                  <p class="m-0 sm-text text-main-gray text-medium">
+                                    Индивидуальная
+                                  </p>
+
+                                  <div class="short_info__icons">
+                                    <div class="flex-items-center gap-4px">
+                                      <img width="20" class="d-block" src="assets/images/icons/group.svg" alt="Icon" loading="lazy">
+
+                                      <p class="m-0 sm-text text-main-gray">
+                                        1-2 чел.
+                                      </p>
+                                    </div>
+
+                                    <div class="flex-items-center gap-4px">
+                                      <img width="20" class="d-block" src="assets/images/icons/clock_gray.svg" alt="Icon" loading="lazy">
+
+                                      <p class="m-0 sm-text text-main-gray">
+                                        3 ч.
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card_params__top">
+                                  <div class="card_params__top-wrap">
+                                    <div class="rating">
+                                      <div class="text-white xs-text text-bold">
+                                        8,9
+                                      </div>
+                                    </div>
+
+                                    <span class="sm-text">
+                                      2583 отзыва
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="object_price">
+                            <div class="flex-items-center gap-4px">
+                              <p class="m-0 xl-text text-main-gray text-medium">
+                                от
+                              </p>
+                              <p class="m-0 xl-text text-dark text-medium">
+                                250 ₽
+                              </p>
+                            </div>
+
+                            <p class="excursion_type">
+                              за человека
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="my_orders__info-btn lg-visible" data-card-id="3">
+                          <img src="assets/images/icons/more.svg" alt="Icon" loading="lazy">
+                        </div>
+
+                        <div class="column justify-between flex-items-end h-full lg-hidden">
+                          <div class="flex-items-center gap-20px-imp">
+                            <div class="object_hidden d-none-imp">
+                              <img src="assets/images/icons/eye-slash.svg" alt="Icon" loading="lazy">
+                            </div>
+
+                            <div class="order_action">
+                              <div class="order_action__wrapper">
+                                <div class="order_action__item">
+                                  Редактировать
+                                </div>
+
+                                <div data-obj-id="3" class="object_visible order_action__item">
+                                  Скрыть с сайта
+                                </div>
+
+                                <div data-order-id="3"  class="order_action__item order_delete">
+                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.5 4.98335C14.725 4.70835 11.9333 4.56668 9.15 4.56668C7.5 4.56668 5.85 4.65001 4.2 4.81668L2.5 4.98335" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.08301 4.14166L7.26634 3.04999C7.39967 2.25832 7.49967 1.66666 8.90801 1.66666H11.0913C12.4997 1.66666 12.608 2.29166 12.733 3.05832L12.9163 4.14166" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.7087 7.61667L15.167 16.0083C15.0753 17.3167 15.0003 18.3333 12.6753 18.3333H7.32533C5.00033 18.3333 4.92533 17.3167 4.83366 16.0083L4.29199 7.61667" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8.6084 13.75H11.3834" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M7.91699 10.4167H12.0837" stroke="#FF5A5F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                  </svg>
+
+                                  Удалить
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="my_orders__info-btn">
+                              <img src="assets/images/icons/more.svg" alt="Icon" loading="lazy">
+                            </div>
+                          </div>
+
+                          <a href="catalog.html" class="not-decor-link btn btn__login text-nowrap md-none">
+                            Открыть на сайте
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer__wrapper">
+    <div class="footer_top">
+      <a href="index.html" class="d-block">
+        <img src="assets/images/logotypes/dark-logo.svg" alt="Logotype" loading="lazy">
+      </a>
+
+      <a href="#" class="flex-items-center btn btn__login not-decor-link link__lg">
+        Предложить экскурсию
+      </a>
+    </div>
+
+    <div class="footer_center">
+      <p class="text-dark m-0 footer_text">
+        Ищите жилье для отдыха или поездки?
+        Переходите на наш сайт
+        <a href="#" class="text-main-col not-decor-link">
+          Hospitality.ru
+        </a>
+      </p>
+
+      <a href="#" class="w-full flex-items-center justify-center btn btn__login not-decor-link link__sm">
+        Предложить экскурсию
+      </a>
+
+      <nav class="footer_nav footer_center-lg">
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Путешественникам
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="policyPage.html" class="not-decor-link text-dark">
+              Правила оказания услуг
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Отзывы
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            Организаторам
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Предложить тур
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="policyPage.html" class="not-decor-link text-dark">
+              Правила оказания услуг
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Вопросы и ответы
+            </a>
+          </li>
+        </ul>
+
+        <ul class="footer_nav__list">
+          <li class="footer_nav__list-item mb-8px text-main-gray text-medium">
+            О нас
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="about.html" class="not-decor-link text-dark">
+              О компании
+            </a>
+          </li>
+
+          <li class="footer_nav__list-item">
+            <a href="#" class="not-decor-link text-dark">
+              Блог
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer_center-sm">
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Служба помощи
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Справочный раздел
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="contact.html" class="not-decor-link text-dark">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Гостям
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Как снять жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Гарантии сервиса
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Отзывы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              Хозяевам
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Сдать жилье
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Условия размещения
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вопросы и ответы
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sm_footer_nav">
+          <div class="sm_footer_nav__item">
+            <p class="m-0 text-dark base-text">
+              О нас
+            </p>
+
+            <div>
+              <img class="footer_arrow" src="assets/images/icons/arrow_down_dark.svg" alt="Arrow">
+            </div>
+          </div>
+
+          <ul class="footer_nav__list">
+            <li class="footer_nav__list-item">
+              <a href="about.html" class="not-decor-link text-dark">
+                О компании
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                СМИ о нас
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Вакансии
+              </a>
+            </li>
+
+            <li class="footer_nav__list-item">
+              <a href="#" class="not-decor-link text-dark">
+                Блог
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="social_network">
+        <p class="m-0 text-center text-main-gray text-nowrap text-medium with_we">
+          Будьте с нами
+        </p>
+
+        <div class="flex-items-center gap-12px">
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/vk.svg" alt="VK" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/tg.svg" alt="Telegram" loading="lazy">
+          </a>
+
+          <a href="#" class="not-decor-link d-block">
+            <img src="assets/images/networks/yt.svg" alt="Youtube" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer_bottom">
+      <div class="footer_bottom-top">
+        <div class="foot-top flex-items-center gap-32px-imp">
+          <a href="#" class="text-main-gray">
+            Политика обработки персональных данных
+          </a>
+
+          <a href="#" class="text-main-gray">
+            Правовая информация
+          </a>
+        </div>
+
+        <div class="foot-bottom flex-items-center gap-20px-imp">
+          <p class="text-main-gray m-0">
+            Принимаем к оплате:
+          </p>
+
+          <div class="flex-items-center gap-12px">
+            <div>
+              <img src="assets/images/payments/visa.svg" alt="Visa" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/no_know.svg" alt="Icon" loading="lazy">
+            </div>
+
+            <div>
+              <img src="assets/images/payments/mir.svg" alt="Mir" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer_bottom-bottom">
+        <p class="text-main-gray m-0">
+          © KCHRbusiness.ru - поиск экскурсий и впечатлений. Все права защищены.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=viewport-units"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewport-units-buggyfill/0.6.2/viewport-units-buggyfill.js"></script>
+<script>
+    window.onload = function() {
+        window.viewportUnitsBuggyfill.init();
+    };
+</script>
+
+<script src="assets/scripts/dropMenu.js"></script>
+<script src="assets/scripts/mobileHeader.js"></script>
+<script src="assets/scripts/account/accountHead.js"></script>
+<script src="assets/scripts/account/ordersAction.js"></script>
+<script src="assets/scripts/account/hiddenObject.js"></script>
+<script src="assets/scripts/closePopUpClick.js"></script>
+<script src="assets/scripts/clickLike.js"></script>
+<script src="assets/scripts/footerNavigation.js"></script>
+<script src="assets/scripts/addFunctionAttributes.js"></script>
+</body>
+</html>

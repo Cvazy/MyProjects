@@ -1,0 +1,29 @@
+ymaps {
+    border-radius: 12px;
+    transition-property: none;
+}
+
+.ymaps-2-1-79-balloon__content {
+    padding: 0 !important;
+}
+
+.balloon {
+    background: white;
+    border-right: 20px;
+    width: 300px;
+    height: 95px;
+}
+
+.balloon__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px;
+    width: 95%;
+}
+
+.balloon_image img {
+    width: 76px;
+    height: 76px;
+    border-radius: 12px;
+}
