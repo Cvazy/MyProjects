@@ -1,0 +1,60 @@
+.text-white {
+    color: white;
+}
+
+.text-white-imp {
+    color: white !important;
+}
+
+.text-dark {
+    color: var(--dark-col);
+}
+
+.text-wrap {
+    white-space: normal;
+}
+
+.bg-pink {
+    background: var(--dress-code-pink);
+}
+
+.bg-violet {
+    background: var(--dress-code-violet);
+}
+
+.bg-women-gray {
+    background: var(--dress-code-women-gray);
+}
+
+.bg-women-dark-gray {
+    background: var(--dress-code-women-dark-gray);
+}
+
+.bg-man-gray {
+    background: var(--dress-code-man-gray);
+}
+
+.bg-dark-violet {
+    background: var(--dress-code-dark-violet);
+}
+
+.bg-brown {
+    background: var(--dress-code-brown);
+}
+
+.bg-light-brown {
+    background: var(--dress-code-light-brown);
+}
+
+.d-none-imp {
+    display: none !important;
+}
+
+.opacity-100 {
+    opacity: 1 !important;
+}
+
+.form_input_visible {
+    max-height: 150px !important;
+    overflow: visible !important;
+}

@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Andrey&Polina">
+    <link rel="icon" href="assets/images/icons/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/css/style.css">
+    <link rel="stylesheet" href="assets/styles/css/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" defer>
+    <link rel="stylesheet" href="assets/styles/css/fancybox_custom.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e2dd3cf5-7476-49d0-b880-4467e1101fec&lang=ru_RU" type="text/javascript" defer></script>
+    <script src="assets/scripts/map.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+    <script src="assets/scripts/scrollingPage.js" defer></script>
+    <script src="assets/scripts/visitorsText.js" defer></script>
+    <script src="assets/scripts/visitorsRadio.js" defer></script>
+    <script src="assets/scripts/timer.js" defer></script>
+    <script src="assets/scripts/chooseGenderColors.js" defer></script>
+    <script src="assets/scripts/fancyboxConfig.js" defer></script>
+    <script src="assets/scripts/checkAllergy.js" defer></script>
+    <script src="assets/scripts/addNewMusic.js" defer></script>
+    <title>Andrey & Polina</title>
+</head>
+<body>
+
+<main>
+    <button type="button" class="scroll_top">
+        <img src="assets/images/popup/arrow-scrolling.svg"
+             alt="Scrolling"
+             loading="lazy">
+    </button>
+
+    <div class="wrapper">
+        <section class="head_section">
+            <img class="head_section__bg"
+                 src="assets/images/main/head.jpeg"
+                 alt="Main"
+                 loading="lazy">
+
+            <div class="head_section__content">
+                <div class="container">
+                    <div class="head_section__wrapper">
+                        <h3 class="head_section__subtitle">
+                            A wonderful event
+                        </h3>
+
+                        <h1 class="head_section__title">
+                            Andrey & Polina
+                        </h1>
+
+                        <div class="basement_row">
+                            <p class="basement_row__item">
+                                The marriage process
+                            </p>
+
+                            <p class="basement_row__item">
+                                Ulyanovsk
+                            </p>
+
+                            <p class="basement_row__item">
+                                September 7, 2024
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hello_section">
+            <div class="hello_section__image hello_bg">
+                <div class="container">
+                    <div class="hello_section__wrapper">
+                        <h2 class="subtitle text-white text-wrap">
+                            Уважаемые, любимые и самые дорогие
+                        </h2>
+
+                        <p class="main_signature text-white">
+                            Вы получили эту ссылку, а это значит,
+                            что мы спешим сообщить Вам важную новость:
+                        </p>
+
+                        <div class="hello_section__center">
+                            <p class="hello_section__text">
+                                We're getting married
+                            </p>
+                        </div>
+
+                        <p class="main_signature text-white">
+                            Один день в этом году будет для нас особенным,
+                            и мы хотим провести его в кругу близких и друзей!
+                        </p>
+
+                        <p class="main_signature text-white">
+                            С огромным удовольствием приглашаем Вас
+                            разделить с нами этот праздник.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timer_section">
+            <div class="container">
+                <div class="timer_section__wrapper">
+                    <h2 class="timer_section__title">
+                        До нашей свадьбы осталось:
+                    </h2>
+
+                    <div class="timer_row">
+                        <div class="timer_block">
+                            <p class="timer_block__number timer_line"></p>
+
+                            <p class="timer_block__text">
+                                дней
+                            </p>
+                        </div>
+
+                        <div class="timer_block">
+                            <p class="timer_block__number timer_line"></p>
+
+                            <p class="timer_block__text">
+                                часов
+                            </p>
+                        </div>
+
+                        <div class="timer_block">
+                            <p class="timer_block__number timer_line"></p>
+
+                            <p class="timer_block__text">
+                                минут
+                            </p>
+                        </div>
+
+                        <div class="timer_block">
+                            <p class="timer_block__number"></p>
+
+                            <p class="timer_block__text">
+                                секунд
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location_section">
+            <div class="location_section__image location_bg">
+                <div class="container">
+                    <div class="location_section__wrapper">
+                        <div class="subtitle y-text">
+                            <p class="y-text__item y-text__location">л</p>
+                            <p class="y-text__item y-text__location">о</p>
+                            <p class="y-text__item y-text__location">к</p>
+                            <p class="y-text__item y-text__location">а</p>
+                            <p class="y-text__item y-text__location">ц</p>
+                            <p class="y-text__item y-text__location">и</p>
+                            <p class="y-text__item y-text__location">я</p>
+                        </div>
+                        <div class="location_section__container">
+                            <div class="location_gallery">
+                                <a data-fancybox="location"
+                                   href="assets/images/location/registration.jpg"
+                                   class="location_gallery__item">
+                                    <img src="assets/images/location/registration.jpg"
+                                         alt="Registration"
+                                         loading="lazy">
+                                </a>
+
+                                <a data-fancybox="location"
+                                   href="assets/images/location/restoration.jpg"
+                                   class="location_gallery__item">
+                                    <img src="assets/images/location/restoration.jpg"
+                                         alt="Restoration"
+                                         loading="lazy">
+                                </a>
+                            </div>
+
+                            <h3 class="location_name location_text">
+                                Александровский парк
+                            </h3>
+
+                            <h4 class="location_text">
+                                Александровская ул., 60А, Ульяновск
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dress_code_section">
+            <div class="container">
+                <div class="dress_code_section__wrapper">
+                    <div class="dress_code_section__head">
+                        <h2 class="dress_code_section__title">
+                            Дресс код
+                        </h2>
+
+                        <div class="dress_code_section__tabs">
+                            <button class="gender_tab"
+                                    data-gender-tab="man">
+                                Мужчины
+                            </button>
+
+                            <button class="gender_tab gender_active"
+                                    data-gender-tab="woman">
+                                Женщины
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dress_code_container"
+                         data-gender-block="man">
+                        <p class="gender_title">
+                            Для мужчин:
+                        </p>
+
+                        <div class="dress_code_row">
+                            <div class="dress_code_circle bg-light-brown"></div>
+
+                            <div class="dress_code_circle bg-man-gray"></div>
+
+                            <div class="dress_code_circle bg-dark-violet"></div>
+
+                            <div class="dress_code_circle bg-brown"></div>
+                        </div>
+                    </div>
+
+                    <div class="dress_code_container dress_code_active"
+                         data-gender-block="woman">
+                        <p class="gender_title">
+                            Для женщин:
+                        </p>
+
+                        <div class="dress_code_row">
+                            <div class="dress_code_circle bg-pink"></div>
+
+                            <div class="dress_code_circle bg-violet"></div>
+
+                            <div class="dress_code_circle bg-women-gray"></div>
+
+                            <div class="dress_code_circle bg-women-dark-gray"></div>
+                        </div>
+
+                        <p class="asking">
+                            Будем признательны, если в белом наряде
+                            останется только невеста.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule_section">
+            <div class="schedule_section__image schedule_bg">
+                <div class="container">
+                    <div class="schedule_section__wrapper">
+                        <div class="schedule_section__list">
+                            <div class="schedule_section__column">
+                                <div class="schedule_section__row">
+                                    <p class="schedule_section__time">
+                                        17:00
+                                    </p>
+
+                                    <hr>
+
+                                    <div class="schedule_section__description">
+                                        <p class="schedule_section__title">
+                                            Сбор гостей
+                                        </p>
+
+                                        <p class="schedule_section__subtitle">
+                                            приветствие <br> напитки & фуршет
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="schedule_section__row">
+                                    <p class="schedule_section__time">
+                                        17:00
+                                    </p>
+
+                                    <hr>
+
+                                    <div class="schedule_section__description">
+                                        <p class="schedule_section__title">
+                                            Сбор гостей
+                                        </p>
+
+                                        <p class="schedule_section__subtitle">
+                                            приветствие <br> напитки & фуршет
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="schedule_section__row">
+                                    <p class="schedule_section__time">
+                                        17:00
+                                    </p>
+
+                                    <hr>
+
+                                    <div class="schedule_section__description">
+                                        <p class="schedule_section__title">
+                                            Сбор гостей
+                                        </p>
+
+                                        <p class="schedule_section__subtitle">
+                                            приветствие <br> напитки & фуршет
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subtitle y-text y-text__form">
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                р
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                а
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                с
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                п
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                и
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                с
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                а
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                н
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                и
+                            </p>
+
+                            <p class="y-text__item y-text__form-item text-white-imp">
+                                е
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map">
+            <div class="container">
+                <div class="map__wrapper">
+                    <div class="map__block">
+                        <div class="map__text">
+                            <h2 class="subtitle text-dark">
+                                Как добраться?
+                            </h2>
+
+                            <p class="main_signature text-dark">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Aperiam dolor eligendi et iusto magni modi nesciunt
+                                omnis pariatur temporibus ut?
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="map__block">
+                        <div class="map__container">
+                            <div class="map_btns_wrap">
+                                <button type="button"
+                                        class="custom_btn_map"
+                                        id="zoomInButton">
+                                    <img src="assets/images/icons/map_plus.svg"
+                                         alt="Plus"
+                                         loading="lazy">
+                                </button>
+
+                                <button type="button"
+                                        class="custom_btn_map"
+                                        id="zoomOutButton">
+                                    <img src="assets/images/icons/map_minus.svg" alt="Minus" loading="lazy">
+                                </button>
+                            </div>
+
+                            <div class="init_map" id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section_gallery">
+            <div class="section_gallery__wrapper">
+                <a href="assets/images/gallery/image1.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image1.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <div class="section_gallery__gray">
+                    <h2 class="section_gallery__title">
+                        Gallery
+                    </h2>
+                </div>
+
+                <a href="assets/images/gallery/image2.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image2.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <a href="assets/images/gallery/image3.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image3.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <a href="assets/images/gallery/image4.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image4.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <a href="assets/images/gallery/image5.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image5.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <a href="assets/images/gallery/image6.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image6.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <a href="assets/images/gallery/image8.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image8.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+
+                <a href="assets/images/gallery/image7.jpeg"
+                   class="section_gallery__item"
+                   data-fancybox="main">
+                    <img class="section_gallery__image"
+                         src="assets/images/gallery/image7.jpeg"
+                         loading="lazy"
+                         alt="Image">
+
+                    <p class="section_gallery__signature">Image signature</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="form_visitors">
+            <div class="container">
+                <div class="form_visitors__wrapper">
+                    <div class="form_visitors__block">
+                        <img class="form_visitors__image"
+                             src="assets/images/main/form_image.jpeg"
+                             alt="Image"
+                             loading="lazy">
+                    </div>
+
+                    <div class="form_visitors__block">
+                        <form method="post" action="#">
+                            <div class="form_input">
+                                <label for="visitor_name">
+                                    Как вас зовут?
+                                </label>
+
+                                <input id="visitor_name"
+                                       type="text"
+                                       name="visitor_name">
+                            </div>
+
+                            <div class="radio_container">
+                                <div class="radio_container__wrapper">
+                                    <p class="radio_title">
+                                        Присутствие:
+                                    </p>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="visitor_once"
+                                                   type="radio"
+                                                   name="visitor_once">
+
+                                            <label for="visitor_once">
+                                                Приду один (одна)
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="visitor_company"
+                                                   type="radio"
+                                                   name="visitor_company">
+
+                                            <label for="visitor_company">
+                                                Приду с половинкой
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="not_visited"
+                                                   type="radio"
+                                                   name="not_visited">
+
+                                            <label for="not_visited">
+                                                Не смогу присутствовать (не сможем)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="radio_container">
+                                <div class="radio_container__wrapper">
+                                    <p class="radio_title">
+                                        Предпочтение по алкоголю:
+                                    </p>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="prefer_viski"
+                                                   type="radio"
+                                                   name="prefer_viski">
+
+                                            <label for="prefer_viski">
+                                                Виски
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="prefer_vodka"
+                                                   type="radio"
+                                                   name="prefer_vodka">
+
+                                            <label for="prefer_vodka">
+                                                Водка
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="prefer_koniak"
+                                                   type="radio"
+                                                   name="prefer_koniak">
+
+                                            <label for="prefer_koniak">
+                                                Коньяк
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="prefer_white_vino"
+                                                   type="radio"
+                                                   name="prefer_white_vino">
+
+                                            <label for="prefer_white_vino">
+                                                Белое вино
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="prefer_shampany"
+                                                   type="radio"
+                                                   name="prefer_shampany">
+
+                                            <label for="prefer_shampany">
+                                                Шампанское
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form_radio">
+                                        <div class="form_radio__wrapper">
+                                            <input id="prefer_red_vino"
+                                                   type="radio"
+                                                   name="prefer_red_vino">
+
+                                            <label for="prefer_red_vino">
+                                                Красное вино
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="toggle-pill-color">
+                                <input type="checkbox"
+                                       id="allergy_check"
+                                       name="allergy_check">
+
+                                <label for="allergy_check"></label>
+
+                                <p class="checkbox_signature">
+                                  Есть аллергия
+                                </p>
+                            </div>
+
+                            <div class="form_input d-none-imp" id="allergyText">
+                                <label for="allergy_text">
+                                    Укажите свою аллергию
+                                </label>
+
+                                <input id="allergy_text"
+                                       type="text"
+                                       name="allergy_text">
+                            </div>
+
+                            <div class="music_container">
+                                <div class="music_list">
+                                    <div class="form_input">
+                                        <label for="visitor_music">
+                                            Ваша любимая музыка
+                                        </label>
+
+                                        <input id="visitor_music"
+                                               type="text"
+                                               name="visitor_music">
+                                    </div>
+                                </div>
+
+                                <button type="button" class="add_music">
+                                    <img src="assets/images/icons/add.svg"
+                                         alt="Plus"
+                                         loading="lazy">
+                                </button>
+                            </div>
+
+                            <button type="submit" class="form_visitors__submit">
+                                Отправить анкету
+                            </button>
+                        </form>
+
+                        <div class="form_text_wrapper">
+                            <div class="subtitle y-text y-text__form">
+                                <p class="y-text__item y-text__form-item">а</p>
+                                <p class="y-text__item y-text__form-item">н</p>
+                                <p class="y-text__item y-text__form-item">к</p>
+                                <p class="y-text__item y-text__form-item">е</p>
+                                <p class="y-text__item y-text__form-item">т</p>
+                                <p class="y-text__item y-text__form-item">а</p>
+                            </div>
+
+                            <div class="subtitle y-text y-text__form">
+                                <p class="y-text__item y-text__form-item">г</p>
+                                <p class="y-text__item y-text__form-item">о</p>
+                                <p class="y-text__item y-text__form-item">с</p>
+                                <p class="y-text__item y-text__form-item">т</p>
+                                <p class="y-text__item y-text__form-item">я</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,1663 @@
+@import "mixins";
+@import "../css/props.css";
+
+* {
+  box-sizing: border-box;
+  transition: .3s;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+p {
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.scroll_top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background: var(--dark-col);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 250;
+  opacity: 0;
+
+  img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    transform: rotate(-90deg);
+
+    @include respondedBy(1440px) {
+      width: 48px;
+      height: 48px;
+    }
+
+    @include respondedBy(1024px) {
+      width: 36px;
+      height: 36px;
+    }
+
+    @include respondedBy(767px) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @include respondedBy(1440px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  @include respondedBy(1024px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @include respondedBy(767px) {
+    width: 45px;
+    height: 45px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+}
+
+section {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+
+  @include respondedBy(1770px) {
+    max-width: 1400px;
+  }
+
+  @include respondedBy(1440px) {
+    max-width: 90%;
+  }
+
+  @include respondedBy(600px) {
+    max-width: 93%;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  padding-bottom: 5rem;
+
+  @include respondedBy(1440px) {
+    gap: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  @include respondedBy(980px) {
+    gap: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @include respondedBy(480px) {
+    gap: 2rem;
+  }
+}
+
+.subtitle {
+  font-size: 5rem;
+  line-height: 6rem;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  white-space: nowrap;
+
+  @include respondedBy(1280px) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+
+  @include respondedBy(767px) {
+    font-size: 3rem;
+    line-height: 3.75rem;
+  }
+
+  @include respondedBy(600px) {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+  }
+
+  @include respondedBy(480px) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.form_text_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.y-text {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+
+  &__item {
+    text-transform: uppercase;
+    color: white;
+    width: fit-content;
+    line-height: normal;
+
+    @include respondedBy(980px) {
+      font-size: 5rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 4rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 3rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.y-text__form {
+  flex-direction: column;
+
+  &-item {
+    transform: rotate(90deg);
+    color: var(--dark-col);
+
+    @include respondedBy(980px) {
+      font-size: 3.5rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 2.75rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+.main_signature {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  font-family: "Poiret One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  @include respondedBy(1280px) {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+
+  @include respondedBy(767px) {
+    font-size: 1.575rem;
+    line-height: 2rem;
+  }
+
+  @include respondedBy(600px) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  @include respondedBy(480px) {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+}
+
+.head_section {
+  position: relative;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 5rem 0 8rem;
+
+    @include respondedBy(980px) {
+      padding: 3rem 0 5rem;
+    }
+
+    @include respondedBy(600px) {
+      padding: 2rem 0 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 10rem;
+    line-height: 12rem;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    white-space: nowrap;
+    color: white;
+
+    @include respondedBy(1280px) {
+      font-size: 7rem;
+      line-height: 8.5rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 3.5rem;
+      line-height: 4.25rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 5.5rem;
+    line-height: 7rem;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    white-space: nowrap;
+    color: white;
+
+    @include respondedBy(1280px) {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 3rem;
+      line-height: 3.75rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  .basement_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+
+    &__item {
+      font-size: 2.5rem;
+      line-height: 3.25rem;
+      font-family: "Poiret One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      white-space: nowrap;
+      color: white;
+
+      @include respondedBy(1280px) {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+      }
+
+      @include respondedBy(767px) {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+
+      @include respondedBy(600px) {
+        font-size: 1rem;
+        line-height: 1.25rem;
+      }
+
+      @include respondedBy(480px) {
+        font-size: .875rem;
+        line-height: 1.125rem;
+      }
+    }
+  }
+}
+
+.hello_section,
+.location_section,
+.schedule_section {
+  background: rgba(0, 0, 0, 0.4);
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .hello_bg {
+    background-image: url("../../images/background/flower.jpeg");
+  }
+
+  .location_bg {
+    background-image: url("../../images/background/location-bg.jpg");
+  }
+
+  .schedule_bg {
+    background-image: url("../../images/background/schedule.jpg");
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    padding: 5rem 0;
+
+    @include respondedBy(767px) {
+      gap: 1.5rem;
+      padding: 3rem 0;
+    }
+
+    @include respondedBy(480px) {
+      gap: 1rem;
+    }
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 7rem;
+    line-height: 8.5rem;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    white-space: nowrap;
+    color: white;
+
+    @include respondedBy(980px) {
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 3.5rem;
+      line-height: 4.25rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 2.5rem;
+      line-height: 3.25rem;
+    }
+  }
+}
+
+.location_section {
+  &__wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+    max-width: 80%;
+
+    @include respondedBy(600px) {
+      gap: 1rem;
+    }
+
+    @include respondedBy(480px) {
+      gap: .75rem;
+    }
+  }
+
+  .y-text__location {
+    transform: rotate(-90deg);
+  }
+
+  .location_gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+
+    @include respondedBy(980px) {
+      gap: 1.5rem;
+    }
+
+    @include respondedBy(600px) {
+      gap: 1rem;
+    }
+
+    &__item {
+      width: 100%;
+
+      img {
+        border-radius: 1.25rem;
+        width: 100%;
+
+        @include respondedBy(1280px) {
+          border-radius: 1rem;
+        }
+
+        @include respondedBy(600px) {
+          border-radius: .875rem;
+        }
+      }
+    }
+  }
+
+  .location_text {
+    font-size: 4rem;
+    line-height: 5.5rem;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    margin: 0;
+    text-align: end;
+
+    @include respondedBy(1440px) {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+
+    @include respondedBy(1280px) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .location_name {
+    text-transform: uppercase;
+  }
+}
+
+.timer_section,
+.dress_code_section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .dress_code_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    
+    @include respondedBy(767px) {
+      display: none;
+    }
+
+    .gender_title {
+      font-size: 2.75rem;
+      line-height: 3.5rem;
+      font-family: "Poiret One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--dark-col);
+      text-align: center;
+
+      @include respondedBy(1280px) {
+        font-size: 2.25rem;
+        line-height: 3rem;
+      }
+
+      @include respondedBy(767px) {
+        display: none;
+      }
+    }
+
+    .asking {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      font-family: "Poiret One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--dark-col);
+      text-align: center;
+
+      @include respondedBy(1280px) {
+        font-size: 1.25rem;
+        line-height: 1.575rem;
+      }
+
+      @include respondedBy(767px) {
+        font-size: 1rem;
+        line-height: 1.25rem;
+      }
+
+      @include respondedBy(480px) {
+        font-size: .875rem;
+        line-height: 1rem;
+      }
+    }
+  }
+
+  &__tabs {
+    display: none;
+    align-items: center;
+    gap: .75rem;
+
+    @include respondedBy(767px) {
+      display: flex;
+    }
+
+    @include respondedBy(480px) {
+      width: 100%;
+    }
+
+    .gender_tab {
+      font-size: 1rem;
+      line-height: 1.25rem;
+      font-family: "Poiret One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--dark-col);
+      border-radius: .5rem;
+      padding: .5rem 1.125rem;
+      border: 1px solid var(--dark-col);
+      background: white;
+
+      @include respondedBy(480px) {
+        flex-grow: 1;
+      }
+    }
+
+    .gender_active {
+      color: white;
+      background: var(--dark-col);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+
+    @include respondedBy(1280px) {
+      gap: 2.5rem;
+    }
+
+    @include respondedBy(767px) {
+      gap: 1.75rem;
+    }
+
+    @include respondedBy(480px) {
+      gap: 1rem;
+    }
+  }
+
+  &__title {
+    font-size: 6rem;
+    line-height: 7.5rem;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+
+    @include respondedBy(1440px) {
+      font-size: 5rem;
+      line-height: 6.5rem;
+    }
+
+    @include respondedBy(1280px) {
+      font-size: 4.5rem;
+      line-height: 5.5rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 3rem;
+      line-height: 3.75rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+  }
+
+  .timer_row,
+  .dress_code_row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+
+    .timer_block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__number,
+      &__text {
+        font-family: "Poiret One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+      }
+
+      &__number {
+        font-size: 8rem;
+        line-height: 9.5rem;
+        width: 100%;
+
+        @include respondedBy(1440px) {
+          font-size: 6.5rem;
+          line-height: 7.5rem;
+        }
+
+        @include respondedBy(980px) {
+          font-size: 5rem;
+          line-height: 6rem;
+        }
+
+        @include respondedBy(767px) {
+          font-size: 4rem;
+          line-height: 5rem;
+        }
+
+        @include respondedBy(480px) {
+          font-size: 2.75rem;
+          line-height: 3.5rem;
+        }
+      }
+
+      &__text {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+
+        @include respondedBy(1440px) {
+          font-size: 2.25rem;
+          line-height: 3rem;
+        }
+
+        @include respondedBy(980px) {
+          font-size: 1.75rem;
+          line-height: 2.5rem;
+        }
+
+        @include respondedBy(767px) {
+          font-size: 1.25rem;
+          line-height: 1.5rem;
+        }
+
+        @include respondedBy(480px) {
+          font-size: .875rem;
+          line-height: 1rem;
+        }
+      }
+
+      .timer_line {
+        border-right: 2px solid var(--dark-col);
+
+        @include respondedBy(480px) {
+          border-width: 1px;
+        }
+      }
+    }
+
+    .dress_code_circle {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+
+      @include respondedBy(1440px) {
+        width: 9rem;
+        height: 9rem;
+      }
+
+      @include respondedBy(980px) {
+        width: 7rem;
+        height: 7rem;
+      }
+
+      @include respondedBy(767px) {
+        width: 6rem;
+        height: 6rem;
+      }
+
+      @include respondedBy(480px) {
+        width: 4.25rem;
+        height: 4.25rem;
+      }
+    }
+  }
+
+  .dress_code_row {
+    justify-items: center;
+  }
+
+  .dress_code_active {
+    display: flex;
+  }
+}
+
+.schedule_section {
+  &__wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 85%;
+
+    @include respondedBy(1280px) {
+      max-width: 100%;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+    width: 100%;
+    max-width: 65%;
+
+    @include respondedBy(980px) {
+      max-width: 75%;
+    }
+
+    @include respondedBy(767px) {
+      max-width: 85%;
+    }
+
+    @include respondedBy(600px) {
+      max-width: 97%;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+
+    @include respondedBy(600px) {
+      gap: 1rem;
+    }
+  }
+
+  &__time,
+  &__title,
+  &__subtitle {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  &__time,
+  &__title {
+    color: #FCEBD2;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  &__time {
+    font-size: 7rem;
+    line-height: 8.25rem;
+
+    @include respondedBy(1440px) {
+      font-size: 6rem;
+      line-height: 7rem;
+    }
+
+    @include respondedBy(1280px) {
+      font-size: 5.25rem;
+      line-height: 6rem;
+    }
+
+    @include respondedBy(980px) {
+      font-size: 4rem;
+      line-height: 4.75rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 3.25rem;
+      line-height: 3.75rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 2.75rem;
+      line-height: 3.25rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 5rem;
+    line-height: 6.25rem;
+
+    @include respondedBy(1440px) {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+
+    @include respondedBy(1280px) {
+      font-size: 3.5rem;
+      line-height: 4.25rem;
+    }
+
+    @include respondedBy(980px) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 3.25rem;
+    line-height: 4rem;
+    color: white;
+    text-transform: lowercase;
+
+    @include respondedBy(1440px) {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
+    @include respondedBy(1280px) {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+
+    @include respondedBy(980px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    @include respondedBy(480px) {
+      gap: .25rem;
+    }
+  }
+
+  hr {
+    width: 1px;
+    height: 100%;
+    background: white;
+  }
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+
+    @include respondedBy(1280px) {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+  }
+
+  &__block {
+    display: flex;
+    width: 100%;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+    gap: 2rem;
+
+    @include respondedBy(1280px) {
+      gap: 1.5rem;
+    }
+
+    @include respondedBy(767px) {
+      gap: 1.25rem;
+    }
+
+    @include respondedBy(600px) {
+      gap: 1rem;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+
+  .map_btns_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    right: 2rem;
+    top: 35%;
+
+    @include respondedBy(980px) {
+      right: 1.5rem;
+      gap: 1.5rem;
+    }
+
+    @include respondedBy(480px) {
+      right: .75rem;
+      gap: 1rem;
+    }
+  }
+
+  .custom_btn_map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 4rem;
+    z-index: 100;
+    height: 4rem;
+    background: rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    @include respondedBy(980px) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    @include respondedBy(480px) {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    img {
+      display: block;
+      width: 2.5rem;
+
+      @include respondedBy(980px) {
+        width: 1.75rem;
+      }
+
+      @include respondedBy(480px) {
+        width: 1.25rem;
+      }
+    }
+  }
+
+  .init_map {
+    width: 100%;
+    height: 500px;
+    transition-property: none;
+
+    @include respondedBy(600px) {
+      height: 380px;
+    }
+
+    ymaps {
+      border-radius: 12px;
+      width: 100%;
+      transition-property: none;
+    }
+
+    .ymaps-2-1-79-ground-pane {
+      filter: grayscale(1);
+    }
+
+    .ymaps-2-1-79-copyright_logo_no {
+      display: none;
+    }
+  }
+}
+
+.section_gallery {
+  width: 100%;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__gray {
+    width: 100%;
+    height: 100%;
+    background: var(--dark-gray);
+    position: relative;
+  }
+
+  &__title,
+  &__signature {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    margin: 0;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 5rem;
+    top: 2rem;
+
+    @include respondedBy(1440px) {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+
+    @include respondedBy(1024px) {
+      font-size: 2.5rem;
+      line-height: 3.125rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      top: 1.25rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1.375rem;
+      line-height: 1.5rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &__signature {
+    font-size: 3rem;
+    line-height: 4rem;
+    bottom: 2rem;
+
+    @include respondedBy(1440px) {
+      font-size: 2.25rem;
+      line-height: 3rem;
+    }
+
+    @include respondedBy(1024px) {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+
+    @include respondedBy(767px) {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      bottom: 1.25rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: .75rem;
+      line-height: 1rem;
+    }
+  }
+}
+
+.form_visitors {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include respondedBy(1440px) {
+      gap: 0;
+    }
+
+    @include respondedBy(980px) {
+      display: flex;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+    width: 100%;
+
+    &:first-child {
+      @include respondedBy(980px) {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      @include respondedBy(480px) {
+        gap: 1rem;
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.5rem;
+      width: 85%;
+
+      @include respondedBy(1770px) {
+        width: 80%;
+      }
+
+      @include respondedBy(767px) {
+        gap: 1.75rem;
+        width: 90%;
+      }
+
+      @include respondedBy(480px) {
+        width: 100%;
+        gap: 1.25rem;
+      }
+    }
+
+    .radio_container {
+      width: 100%;
+      border-radius: .75rem;
+      border: 1px solid #0000001f;
+
+      &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        width: 100%;
+        padding: 1.25rem;
+      }
+    }
+
+    .form_input,
+    .form_radio {
+      width: 100%;
+      font-family: "Poiret One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      position: relative;
+
+      label {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        color: var(--dark-col);
+        position: absolute;
+
+        @include respondedBy(600px) {
+          font-size: 1.25rem;
+          line-height: 1.575rem;
+        }
+
+        @include respondedBy(480px) {
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+      }
+
+      input[type="text"] {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        color: var(--dark-col);
+        background: none;
+        width: 100%;
+        border-bottom: 2px solid var(--dark-col);
+        padding: 0 0 8px;
+
+        @include respondedBy(600px) {
+          font-size: 1.25rem;
+          line-height: 1.575rem;
+          padding: 0 0 6px;
+        }
+
+        @include respondedBy(480px) {
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+      }
+    }
+
+    .form_radio__wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      label {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        position: relative;
+
+        @include respondedBy(600px) {
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+      }
+
+      input[type="radio"] {
+        margin: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        appearance: none;
+        border: 1px solid var(--dark-col);
+        border-radius: 50%;
+
+        @include respondedBy(600px) {
+          width: 1rem;
+          height: 1rem;
+        }
+
+        @include respondedBy(600px) {
+          width: .875rem;
+          height: .875rem;
+        }
+      }
+
+      input[type="radio"]:checked {
+        border: 4px solid var(--dark-col);
+
+        @include respondedBy(480px) {
+          border-width: 3px;
+        }
+      }
+    }
+
+    .radio_title {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      font-family: "Poiret One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: var(--dark-col);
+
+      @include respondedBy(600px) {
+        font-size: 1.25rem;
+        line-height: 1.575rem;
+      }
+    }
+
+    .active_label {
+      top: -30px;
+      font-size: 1.25rem !important;
+      line-height: 1.75rem !important;
+
+      @include respondedBy(600px) {
+        top: -20px;
+        font-size: .75rem !important;
+        line-height: 1rem !important;
+      }
+
+      @include respondedBy(600px) {
+        top: -15px;
+        font-size: .575rem !important;
+        line-height: .875rem !important;
+      }
+    }
+
+    .music_container {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
+      width: 100%;
+
+      @include respondedBy(1280px) {
+        gap: 1.25rem;
+      }
+
+      @include respondedBy(980px) {
+        gap: 1rem;
+      }
+
+      @include respondedBy(767px) {
+        gap: .75rem;
+      }
+
+      .music_list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        width: 100%;
+
+        @include respondedBy(767px) {
+          gap: 1.75rem;
+        }
+
+        @include respondedBy(480px) {
+          gap: 1.25rem;
+        }
+      }
+
+      .add_music {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--dark-col);
+        border-radius: .5rem;
+        width: 32px;
+        height: 32px;
+
+        &:hover {
+          background: rgba(26, 37, 40, 0.7);
+        }
+
+        @include respondedBy(980px) {
+          width: 24px;
+          height: 24px;
+        }
+
+        img {
+          width: 26px;
+          height: 26px;
+
+          @include respondedBy(980px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 1.25rem;
+
+    @include respondedBy(1440px) {
+      position: relative;
+      left: -12%;
+      border-radius: 0 1.25rem 1.25rem 0;
+    }
+  }
+
+  &__submit {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background: var(--dark-col);
+    border-radius: .75rem;
+    text-align: center;
+    white-space: nowrap;
+    padding: 1rem 2rem;
+
+    &:hover {
+      background: #353535;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1.25rem;
+      line-height: 1.575rem;
+    }
+
+    @include respondedBy(480px) {
+      width: 100%;
+      padding: .875rem 1.5rem;
+    }
+  }
+}
+
+.timer_end {
+  @include respondedBy(480px) {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+.toggle-pill-color {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & input[type="checkbox"] {
+    display: none;
+  }
+
+  & input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    width: 3em;
+    height: 1.6em;
+    border-radius: 1em;
+    background: rgba(26, 37, 40, 0.35);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition: background 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out;
+  }
+
+  & input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 1em;
+    background: white;
+    position: absolute;
+    left: 0.2em;
+    top: 0.2em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  & input[type="checkbox"]:checked + label {
+    background: var(--dark-col);
+  }
+
+  & input[type="checkbox"]:checked + label:before {
+    left: 1.6em;
+    background: white;
+  }
+
+  .checkbox_signature {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--dark-col);
+
+    @include respondedBy(600px) {
+      font-size: 1.25rem;
+      line-height: 1.575rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  }
+}
+
+#allergyText {
+  max-height: 0;
+  overflow: hidden;
+}
