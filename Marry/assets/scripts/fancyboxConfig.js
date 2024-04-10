@@ -1,14 +1,14 @@
 const config = {
-    loop: true,
-    infobar: false,
-    keyboard: true,
+  loop: true,
+  infobar: false,
+  keyboard: true,
 
+  clickSlide: false,
+
+  mobile: {
     clickSlide: false,
+  },
+};
 
-    mobile: {
-        clickSlide: false,
-    },
-}
-
-$('[data-fancybox="location"]').fancybox(config)
-$('[data-fancybox="main"]').fancybox(config)
+$('[data-fancybox="location"]').fancybox(config);
+$('[data-fancybox="main"]').fancybox(config);
