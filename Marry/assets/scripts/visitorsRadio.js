@@ -1,13 +1,17 @@
-const visitorsRadios = document.querySelectorAll(".form_radio input");
+const radioWrappers = document.querySelectorAll(".radio_container__wrapper");
 
-visitorsRadios.forEach((radio) => {
-  radio.addEventListener("change", () => {
-    if (radio.checked) {
-      visitorsRadios.forEach((el) => {
-        el.checked = false;
-      });
+radioWrappers.forEach((block) => {
+  let visitorsRadios = block.querySelectorAll(".form_radio input");
 
-      radio.checked = true;
-    }
+  visitorsRadios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (radio.checked) {
+        visitorsRadios.forEach((el) => {
+          el.checked = false;
+        });
+
+        radio.checked = true;
+      }
+    });
   });
 });

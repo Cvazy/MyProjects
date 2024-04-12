@@ -25,7 +25,7 @@
     <script src="assets/scripts/chooseGenderColors.js" defer></script>
     <script src="assets/scripts/fancyboxConfig.js" defer></script>
     <script src="assets/scripts/checkAllergy.js" defer></script>
-    <script src="assets/scripts/addNewMusic.js" defer></script>
+    <script src="assets/scripts/musicActions.js" defer></script>
     <title>Andrey & Polina</title>
 </head>
 <body>
@@ -676,14 +676,19 @@
 
                             <div class="music_container">
                                 <div class="music_list">
-                                    <div class="form_input">
-                                        <label for="visitor_music">
-                                            Ваша любимая музыка
-                                        </label>
+                                    <div class="form_input_container">
+                                        <div class="form_input">
+                                            <label for="visitor_music">
+                                                Ваша любимая музыка
+                                            </label>
 
-                                        <input id="visitor_music"
-                                               type="text"
-                                               name="visitor_music">
+                                            <input id="visitor_music"
+                                                   type="text"
+                                                   name="visitor_music"
+                                                   oninput="activeLabel(this, event)"
+                                                   onclick="addActiveLabelOnClick(this)"
+                                            >
+                                        </div>
                                     </div>
                                 </div>
 

@@ -1355,6 +1355,13 @@ section {
       }
     }
 
+    .form_input_container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
     .form_input,
     .form_radio {
       width: 100%;
@@ -1369,6 +1376,11 @@ section {
         color: var(--dark-col);
         position: absolute;
 
+        @include respondedBy(1280px) {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+
         @include respondedBy(600px) {
           font-size: 1.25rem;
           line-height: 1.575rem;
@@ -1381,6 +1393,8 @@ section {
       }
 
       input[type="text"] {
+        position: relative;
+        z-index: 100;
         font-size: 1.75rem;
         line-height: 2.5rem;
         color: var(--dark-col);
@@ -1388,6 +1402,11 @@ section {
         width: 100%;
         border-bottom: 2px solid var(--dark-col);
         padding: 0 0 8px;
+
+        @include respondedBy(1280px) {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
 
         @include respondedBy(600px) {
           font-size: 1.25rem;
@@ -1420,20 +1439,26 @@ section {
 
       input[type="radio"] {
         margin: 0;
-        width: 1.25rem;
-        height: 1.25rem;
+        min-width: 1.25rem;
+        min-height: 1.25rem;
+        max-width: 1.25rem;
+        max-height: 1.25rem;
         appearance: none;
         border: 1px solid var(--dark-col);
         border-radius: 50%;
 
         @include respondedBy(600px) {
-          width: 1rem;
-          height: 1rem;
+          min-width: 1rem;
+          min-height: 1rem;
+          max-width: 1rem;
+          max-height: 1rem;
         }
 
         @include respondedBy(600px) {
-          width: .875rem;
-          height: .875rem;
+          min-width: .875rem;
+          min-height: .875rem;
+          max-width: .875rem;
+          max-height: .875rem;
         }
       }
 
@@ -1512,31 +1537,54 @@ section {
         }
       }
 
-      .add_music {
+      .add_music,
+      .remove_music {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--dark-col);
         border-radius: .5rem;
         width: 32px;
         height: 32px;
-
-        &:hover {
-          background: rgba(26, 37, 40, 0.7);
-        }
 
         @include respondedBy(980px) {
           width: 24px;
           height: 24px;
         }
+      }
+
+      .remove_music {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1215686275);
+
+        &:hover {
+          background: #f1f1f1;
+        }
 
         img {
-          width: 26px;
-          height: 26px;
+          width: 18px;
+          height: 18px;
 
           @include respondedBy(980px) {
-            width: 20px;
-            height: 20px;
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+
+      .add_music {
+        background: var(--dark-col);
+
+        &:hover {
+          background: rgba(26, 37, 40, 0.7);
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+
+          @include respondedBy(980px) {
+            width: 18px;
+            height: 18px;
           }
         }
       }
