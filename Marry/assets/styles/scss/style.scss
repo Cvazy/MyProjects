@@ -55,6 +55,28 @@ p {
   margin: 0;
 }
 
+.loader {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #34343496;
+
+    svg {
+      width: 40%;
+    }
+  }
+}
+
 main {
   width: 100%;
   height: 100%;

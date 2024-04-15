@@ -58,3 +58,8 @@
     max-height: 150px !important;
     overflow: visible !important;
 }
+
+.compensate-for-scrollbar {
+    margin-right: 0 !important;
+    overflow: auto !important;
+}
