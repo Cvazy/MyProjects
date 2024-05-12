@@ -63,3 +63,14 @@
     margin-right: 0 !important;
     overflow: auto !important;
 }
+
+.mt-2 {
+    margin-top: .5rem ;
+}
+
+.hidden_form_block {
+    max-height: 0 !important;
+    overflow: hidden;
+    border: none !important;
+    margin: 0 !important;
+}

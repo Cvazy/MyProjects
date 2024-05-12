@@ -2,8 +2,8 @@ ymaps.ready(init);
 
 function init() {
   const myMap = new ymaps.Map("map", {
-    center: [55.755814, 37.617635],
-    zoom: 12,
+    center: [54.274718, 48.266166],
+    zoom: 15,
     controls: [],
     type: "yandex#map",
   });
@@ -11,7 +11,7 @@ function init() {
   myMap.behaviors.disable("scrollZoom");
 
   const customMarker = new ymaps.Placemark(
-    [55.755814, 37.617635],
+    [54.274718, 48.266166],
     {},
     {
       iconLayout: "default#imageWithContent",

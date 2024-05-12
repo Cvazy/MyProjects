@@ -1,89 +1,110 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width,
+  <meta charset="UTF-8">
+  <meta
+        name="viewport"
+        content="width=device-width,
            user-scalable=no,
            initial-scale=1.0,
            maximum-scale=1.0,
            minimum-scale=1.0"
-    >
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Andrey&Polina">
-    <link rel="icon" href="assets/images/icons/logo.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poiret+One&display=swap">
-    <link rel="stylesheet" href="assets/styles/css/style.css">
-    <link rel="stylesheet" href="assets/styles/css/base.css">
-    <link rel="stylesheet"
-          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-    >
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
-    >
-    <link rel="stylesheet" href="assets/styles/css/fancybox_custom.css">
-    <script src="assets/scripts/loader.js"></script>
-    <script type="text/javascript"
-            src="https://api-maps.yandex.ru/2.1/?apikey=e2dd3cf5-7476-49d0-b880-4467e1101fec&lang=ru_RU"
-            defer>
-    </script>
-    <script src="assets/scripts/map.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="assets/scripts/aosInit.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-            defer>
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"
-            defer>
-    </script>
-    <script src="assets/scripts/scrollingPage.js" defer></script>
-    <script src="assets/scripts/visitorsText.js" defer></script>
-    <script src="assets/scripts/visitorsRadio.js" defer></script>
-    <script src="assets/scripts/timer.js" defer></script>
-    <script src="assets/scripts/chooseGenderColors.js" defer></script>
-    <script src="assets/scripts/fancyboxConfig.js" defer></script>
-    <script src="assets/scripts/checkAllergy.js" defer></script>
-    <script src="assets/scripts/musicActions.js" defer></script>
-    <title>Andrey & Polina</title>
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Andrey&Polina">
+  <link rel="icon" href="assets/images/icons/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poiret+One&display=swap"
+  >
+  <link rel="stylesheet" href="assets/styles/css/style.css">
+  <link rel="stylesheet" href="assets/styles/css/base.css">
+  <link rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+  >
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+  >
+  <link rel="stylesheet" href="assets/styles/css/fancybox_custom.css">
+  <script src="assets/scripts/loader.js"></script>
+  <script
+        type="text/javascript"
+        src="https://api-maps.yandex.ru/2.1/?apikey=e2dd3cf5-7476-49d0-b880-4467e1101fec&lang=ru_RU"
+        defer
+  >
+  </script>
+  <script src="assets/scripts/map.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="assets/scripts/aosInit.js" defer></script>
+  <script
+        src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+        defer
+  >
+  </script>
+  <script
+        src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"
+        defer
+  >
+  </script>
+  <script src="assets/scripts/scrollingPage.js" defer></script>
+  <script src="assets/scripts/visitorsText.js" defer></script>
+  <script src="assets/scripts/visitorsRadio.js" defer></script>
+  <script src="assets/scripts/timer.js" defer></script>
+  <script src="assets/scripts/chooseGenderColors.js" defer></script>
+  <script src="assets/scripts/fancyboxConfig.js" defer></script>
+  <script src="assets/scripts/customAlcoholCheckbox.js" defer></script>
+  <script src="assets/scripts/validateInput.js" defer></script>
+  <script src="assets/scripts/checkAllergy.js" defer></script>
+  <script src="assets/scripts/musicActions.js" defer></script>
+  <script src="assets/scripts/sendForm.js" defer></script>
+  <script src="assets/scripts/closeModalWindow.js" defer></script>
+  <title>Andrey & Polina</title>
 </head>
 <body>
 
 <div class="loader">
-    <div class="loader__wrapper">
-        <svg version="1.0"
-             xmlns="http://www.w3.org/2000/svg"
-             width="500.000000pt"
-             height="500.000000pt"
-             viewBox="0 0 500.000000 500.000000"
-             preserveAspectRatio="xMidYMid meet">
-            <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)">
-                <defs>
-                    <linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-                        <stop offset="0%"
-                              stop-color="grey"
-                              stop-opacity="1">
-                            <animate attributeName="stop-color"
-                                     values="grey; black"
-                                     dur="2s"
-                                     repeatCount="indefinite"
-                            />
-                        </stop>
+  <div class="loader__wrapper">
+    <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="500.000000pt"
+          height="500.000000pt"
+          viewBox="0 0 500.000000 500.000000"
+          preserveAspectRatio="xMidYMid meet"
+    >
+      <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop
+                  offset="0%"
+                  stop-color="grey"
+                  stop-opacity="1"
+            >
+              <animate
+                    attributeName="stop-color"
+                    values="grey; black"
+                    dur="2s"
+                    repeatCount="indefinite"
+              />
+            </stop>
 
-                        <stop offset="100%"
-                              stop-color="black"
-                              stop-opacity="1" >
-                            <animate attributeName="stop-color"
-                                     values="black; black"
-                                     dur="2s"
-                                     repeatCount="indefinite"
-                            />
-                        </stop>
-                    </linearGradient>
-                </defs>
-                <path d="M3715 3985 c-131 -29 -235 -78 -351 -166 l-65 -49 -62
+            <stop
+                  offset="100%"
+                  stop-color="black"
+                  stop-opacity="1"
+            >
+              <animate
+                    attributeName="stop-color"
+                    values="black; black"
+                    dur="2s"
+                    repeatCount="indefinite"
+              />
+            </stop>
+          </linearGradient>
+        </defs>
+        <path d="M3715 3985 c-131 -29 -235 -78 -351 -166 l-65 -49 -62
                 34 c-187 103 -472 153 -737 127 -287 -28 -480 -109 -641 -270 -141
                 -142 -202 -288 -201 -481 1 -332 261 -569 571 -521 81 13 141 34 141
                 51 0 18 -29 23 -56 11 -80 -36 -228 -32 -340 10 -112 42 -223 177 -259
@@ -96,930 +117,1244 @@
                 514 160 580 419 56 218 -37 504 -227 699 -48 50 -85 93 -82 98 12 19 138
                 101 205 132 195 93 420 100 558 19 62 -36 124 -95 161 -154 18 -27 36 -49
                 41 -49 23 0 18 34 -11 80 -62 96 -172 176 -285 206 -63 17 -221 17 -300 -1z"
-                      fill="url(#gradient)"
-                />
+              fill="url(#gradient)"
+        />
 
-                <path d="M2262 3613 c-9 -15 -189 -473 -292 -740 -17 -46 -29 -87 -25 -93 13
+        <path d="M2262 3613 c-9 -15 -189 -473 -292 -740 -17 -46 -29 -87 -25 -93 13
                 -21 31 -8 46 33 49 135 193 503 200 510 4 5 44 -85 89 -200 155 -391 370 -949
                 370 -958 0 -3 -30 -5 -68 -5 -56 0 -69 -3 -79 -20 -12 -19 -9 -19 78 -22 l92 -3
                 109 -280 c147 -379 171 -449 172 -516 2 -93 -32 -129 -136 -144 -31 -5 -48 -12
                 -48 -21 0 -12 58 -14 350 -14 286 0 350 2 350 13 0 8 -22 19 -54 26 -106 24 -194
                 109 -273 264 -48 95 -147 346 -386 972 -114 297 -264 690 -334 874 -71 184 -133 336
                 -140 338 -6 2 -16 -4 -21 -14z"
-                      fill="url(#gradient)"
-                />
+              fill="url(#gradient)"
+        />
 
-                <path d="M1806 2452 c-379 -971 -424 -1074 -503 -1163 -59 -65 -113 -95 -195 -109
+        <path d="M1806 2452 c-379 -971 -424 -1074 -503 -1163 -59 -65 -113 -95 -195 -109
                 -46 -8 -68 -17 -68 -26 0 -12 54 -14 348 -12 347 3 405 10 295 34 -87 19 -125 44
                 -158 105 -26 48 -30 64 -30 139 0 110 14 156 132 453 l97 247 291 2 c267 3 290 4
                 293 21 3 16 -16 17 -282 17 -157 0 -286 3 -286 7 0 4 43 117 96 250 52 133 93 247
                 89 253 -17 28 -37 -8 -119 -218z"
-                      fill="url(#gradient)"
-                />
+              fill="url(#gradient)"
+        />
 
-                <path d="M1450 2649 c-253 -39 -449 -201 -531 -439 -34 -99 -39 -289 -10 -395 49
+        <path d="M1450 2649 c-253 -39 -449 -201 -531 -439 -34 -99 -39 -289 -10 -395 49
                 -177 154 -310 304 -386 82 -40 129 -47 135 -19 1 10 -16 21 -57 33 -213 67 -361
                 290 -361 547 0 295 183 534 465 605 112 28 307 19 366 -18 25 -16 48 5 30 27 -34 41
                 -211 65 -341 45z"
-                      fill="url(#gradient)"
-                />
+              fill="url(#gradient)"
+        />
 
-                <path d="M2411 2293 c-196 -445 -332 -646 -525 -772 -92 -60 -201 -101 -289 -108 -71
+        <path d="M2411 2293 c-196 -445 -332 -646 -525 -772 -92 -60 -201 -101 -289 -108 -71
                 -6 -81 -11 -71 -37 7 -18 56 -14 159 10 271 65 557 351 820 821 l57 102 -26 73 c-15
                 41 -31 79 -35 86 -5 9 -37 -54 -90 -175z"
-                      fill="url(#gradient)"
-                />
-            </g>
-        </svg>
+              fill="url(#gradient)"
+        />
+      </g>
+    </svg>
+  </div>
+</div>
+
+<div class="modal">
+  <div class="modal__wrapper">
+    <div class="success_register">
+      <div class="success_register__wrapper">
+        <div class="success_register__head">
+          <p class="success_register__title">
+            Ваша анкета успешно отправлена
+          </p>
+
+          <button type="button" class="success_register__close">
+            <svg
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="arrow">
+                <path
+                      d="m16 2a14 14 0 1 0 14 14 14 14 0 0 0 -14-14zm7 19.54a1 1 0 1 1 -1.46 1.46l-5.54-5.59-5.54 5.59a1 1 0 0 1 -1.46-1.46l5.59-5.54-5.59-5.54a1 1 0 0 1 1.46-1.46l5.54 5.59 5.54-5.59a1 1 0 0 1 1.46 1.46l-5.59 5.54z"
+                      fill="#1A2528"
+                >
+                </path>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <p class="success_register__text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Dolorum, ex expedita in placeat provident voluptas!
+          At molestias optio pariatur suscipit.
+          Consequuntur doloribus dolorum ducimus esse incidunt
+          nulla odit quisquam, similique! Aliquam amet dicta optio quos,
+          recusandae tempore temporibus veniam!
+          Adipisci aut hic magni neque nesciunt perspiciatis quo quos.
+          Accusantium, animi!
+        </p>
+      </div>
     </div>
+  </div>
 </div>
 
 <main>
-    <button type="button" class="scroll_top">
-        <img src="assets/images/popup/arrow-scrolling.svg"
-             alt="Scrolling"
-             loading="lazy">
-    </button>
+  <button type="button" class="scroll_top">
+    <img
+          src="assets/images/popup/arrow-scrolling.svg"
+          alt="Scrolling"
+          loading="lazy"
+    >
+  </button>
 
-    <div class="wrapper">
-        <section class="head_section">
-            <img class="head_section__bg"
-                 src="assets/images/main/head.jpeg"
-                 alt="Main"
-                 loading="lazy">
+  <div class="wrapper">
+    <section class="head_section">
+      <img
+            class="head_section__bg"
+            src="assets/images/main/head.jpeg"
+            alt="Main"
+            loading="lazy"
+      >
 
-            <div class="head_section__content">
-                <div class="container">
-                    <div class="head_section__wrapper">
-                        <h3 class="head_section__subtitle"
-                            data-aos="fade-down"
-                            data-aos-duration="1500">
-                            A wonderful event
-                        </h3>
+      <div class="head_section__content">
+        <div class="container">
+          <div class="head_section__wrapper">
+            <h3
+                  class="head_section__subtitle"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              A wonderful event
+            </h3>
 
-                        <h1 class="head_section__title"
-                            data-aos="fade-down"
-                            data-aos-duration="1500">
-                            Andrey & Polina
-                        </h1>
+            <h1
+                  class="head_section__title"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              Andrey & Polina
+            </h1>
 
-                        <div class="basement_row"
-                             data-aos="fade-down"
-                             data-aos-duration="1500">
-                            <p class="basement_row__item">
-                                The marriage process
-                            </p>
+            <div
+                  class="basement_row"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              <p class="basement_row__item">
+                The marriage process
+              </p>
 
-                            <p class="basement_row__item">
-                                Ulyanovsk
-                            </p>
+              <p class="basement_row__item">
+                Ulyanovsk
+              </p>
 
-                            <p class="basement_row__item">
-                                September 7, 2024
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              <p class="basement_row__item">
+                September 7, 2024
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="hello_section">
-            <div class="hello_section__image hello_bg">
-                <div class="container">
-                    <div class="hello_section__wrapper">
-                        <h2 class="subtitle text-white text-wrap"
-                            data-aos="fade-right"
-                            data-aos-duration="1500">
-                            Уважаемые, любимые и самые дорогие
-                        </h2>
+    <section class="hello_section">
+      <div class="hello_section__image hello_bg">
+        <div class="container">
+          <div class="hello_section__wrapper">
+            <h2
+                  class="subtitle text-white text-wrap"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+            >
+              Уважаемые, любимые и самые дорогие
+            </h2>
 
-                        <p class="main_signature text-white"
-                           data-aos="fade-right"
-                           data-aos-duration="1500">
-                            Вы получили эту ссылку, а это значит,
-                            что мы спешим сообщить Вам важную новость:
-                        </p>
+            <p
+                  class="main_signature text-white"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+            >
+              Вы получили эту ссылку, а это значит,
+              что мы спешим сообщить Вам важную новость:
+            </p>
 
-                        <div class="hello_section__center"
-                             data-aos="fade-down"
-                             data-aos-duration="1500">
-                            <p class="hello_section__text">
-                                We're getting married
-                            </p>
-                        </div>
-
-                        <p class="main_signature text-white"
-                           data-aos="fade-left"
-                           data-aos-duration="1500">
-                            Один день в этом году будет для нас особенным,
-                            и мы хотим провести его в кругу близких и друзей!
-                        </p>
-
-                        <p class="main_signature text-white"
-                           data-aos="fade-left"
-                           data-aos-duration="1500">
-                            С огромным удовольствием приглашаем Вас
-                            разделить с нами этот праздник.
-                        </p>
-                    </div>
-                </div>
+            <div
+                  class="hello_section__center"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              <p class="hello_section__text">
+                We're getting married
+              </p>
             </div>
-        </section>
 
-        <section data-aos="fade-down"
-                 data-aos-duration="1500"
-                 class="timer_section">
-            <div class="container">
-                <div class="timer_section__wrapper">
-                    <h2 class="timer_section__title">
-                        До нашей свадьбы осталось:
-                    </h2>
+            <p
+                  class="main_signature text-white"
+                  data-aos="fade-left"
+                  data-aos-duration="1500"
+            >
+              Один день в этом году будет для нас особенным,
+              и мы хотим провести его в кругу близких и друзей!
+            </p>
 
-                    <div class="timer_row">
-                        <div class="timer_block">
-                            <p class="timer_block__number timer_line"></p>
+            <p
+                  class="main_signature text-white"
+                  data-aos="fade-left"
+                  data-aos-duration="1500"
+            >
+              С огромным удовольствием приглашаем Вас
+              разделить с нами этот праздник.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                            <p class="timer_block__text">
-                                дней
-                            </p>
-                        </div>
+    <section
+          data-aos="fade-down"
+          data-aos-duration="1500"
+          class="timer_section"
+    >
+      <div class="container">
+        <div class="timer_section__wrapper">
+          <h2 class="timer_section__title">
+            До нашей свадьбы осталось:
+          </h2>
 
-                        <div class="timer_block">
-                            <p class="timer_block__number timer_line"></p>
+          <div class="timer_row">
+            <div class="timer_block">
+              <p class="timer_block__number timer_line"></p>
 
-                            <p class="timer_block__text">
-                                часов
-                            </p>
-                        </div>
-
-                        <div class="timer_block">
-                            <p class="timer_block__number timer_line"></p>
-
-                            <p class="timer_block__text">
-                                минут
-                            </p>
-                        </div>
-
-                        <div class="timer_block">
-                            <p class="timer_block__number"></p>
-
-                            <p class="timer_block__text">
-                                секунд
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              <p class="timer_block__text">
+                дней
+              </p>
             </div>
-        </section>
 
-        <section class="location_section">
-            <div class="location_section__image location_bg">
-                <div class="container">
-                    <div class="location_section__wrapper">
-                        <div class="subtitle y-text"
-                             data-aos="fade-right"
-                             data-aos-duration="1500">
-                            <p class="y-text__item y-text__location">
-                                л
-                            </p>
+            <div class="timer_block">
+              <p class="timer_block__number timer_line"></p>
 
-                            <p class="y-text__item y-text__location">
-                                о
-                            </p>
-
-                            <p class="y-text__item y-text__location">
-                                к
-                            </p>
-
-                            <p class="y-text__item y-text__location">
-                                а
-                            </p>
-
-                            <p class="y-text__item y-text__location">
-                                ц
-                            </p>
-
-                            <p class="y-text__item y-text__location">
-                                и
-                            </p>
-
-                            <p class="y-text__item y-text__location">
-                                я
-                            </p>
-                        </div>
-
-                        <div class="location_section__container">
-                            <div class="location_gallery">
-                                <a data-fancybox="location"
-                                   data-aos="fade-left"
-                                   data-aos-duration="1500"
-                                   href="assets/images/location/registration.jpg"
-                                   class="location_gallery__item">
-                                    <img src="assets/images/location/registration.jpg"
-                                         alt="Registration"
-                                         loading="lazy">
-                                </a>
-
-                                <a data-fancybox="location"
-                                   data-aos="fade-left"
-                                   data-aos-duration="1500"
-                                   href="assets/images/location/restoration.jpg"
-                                   class="location_gallery__item">
-                                    <img src="assets/images/location/restoration.jpg"
-                                         alt="Restoration"
-                                         loading="lazy">
-                                </a>
-                            </div>
-
-                            <h3 class="location_name location_text"
-                                data-aos="fade-left"
-                                data-aos-duration="1500">
-                                Александровский парк
-                            </h3>
-
-                            <h4 class="location_text"
-                                data-aos="fade-left"
-                                data-aos-duration="1500">
-                                Александровская ул., 60А, Ульяновск
-                            </h4>
-                        </div>
-                    </div>
-                </div>
+              <p class="timer_block__text">
+                часов
+              </p>
             </div>
-        </section>
 
-        <section class="dress_code_section">
-            <div class="container">
-                <div class="dress_code_section__wrapper">
-                    <div class="dress_code_section__head">
-                        <h2 class="dress_code_section__title"
-                            data-aos="fade-down"
-                            data-aos-duration="1500">
-                            Дресс код
-                        </h2>
+            <div class="timer_block">
+              <p class="timer_block__number timer_line"></p>
 
-                        <div class="dress_code_section__tabs"
-                             data-aos="fade-down"
-                             data-aos-duration="1500">
-                            <button class="gender_tab"
-                                    data-gender-tab="man">
-                                Мужчины
-                            </button>
-
-                            <button class="gender_tab gender_active"
-                                    data-gender-tab="woman">
-                                Женщины
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="dress_code_container"
-                         data-gender-block="man">
-                        <p class="gender_title"
-                           data-aos="fade-down"
-                           data-aos-duration="1500">
-                            Для мужчин:
-                        </p>
-
-                        <div class="dress_code_row">
-                            <div class="dress_code_circle bg-light-brown"
-                                 data-aos="fade-left"
-                                 data-aos-duration="1500">
-                            </div>
-
-                            <div class="dress_code_circle bg-man-gray"
-                                 data-aos="fade-left"
-                                 data-aos-duration="1500">
-                            </div>
-
-                            <div class="dress_code_circle bg-dark-violet"
-                                 data-aos="fade-left"
-                                 data-aos-duration="1500">
-                            </div>
-
-                            <div class="dress_code_circle bg-brown"
-                                 data-aos="fade-left"
-                                 data-aos-duration="1500">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="dress_code_container dress_code_active"
-                         data-gender-block="woman">
-                        <p class="gender_title"
-                           data-aos="fade-down"
-                           data-aos-duration="1500">
-                            Для женщин:
-                        </p>
-
-                        <div class="dress_code_row">
-                            <div class="dress_code_circle bg-pink"
-                                 data-aos="fade-right"
-                                 data-aos-duration="1500">
-                            </div>
-
-                            <div class="dress_code_circle bg-violet"
-                                 data-aos="fade-right"
-                                 data-aos-duration="1500">
-                            </div>
-
-                            <div class="dress_code_circle bg-women-gray"
-                                 data-aos="fade-right"
-                                 data-aos-duration="1500">
-                            </div>
-
-                            <div class="dress_code_circle bg-women-dark-gray"
-                                 data-aos="fade-right"
-                                 data-aos-duration="1500">
-                            </div>
-                        </div>
-
-                        <p class="asking"
-                           data-aos="fade-down"
-                           data-aos-duration="1500">
-                            Будем признательны, если в белом наряде
-                            останется только невеста.
-                        </p>
-                    </div>
-                </div>
+              <p class="timer_block__text">
+                минут
+              </p>
             </div>
-        </section>
 
-        <section class="schedule_section">
-            <div class="schedule_section__image schedule_bg">
-                <div class="container">
-                    <div class="schedule_section__wrapper">
-                        <div class="schedule_section__list">
-                            <div class="schedule_section__column">
-                                <div class="schedule_section__row"
-                                     data-aos="fade-down"
-                                     data-aos-duration="1500">
-                                    <p class="schedule_section__time">
-                                        17:00
-                                    </p>
+            <div class="timer_block">
+              <p class="timer_block__number"></p>
 
-                                    <hr>
-
-                                    <div class="schedule_section__description">
-                                        <p class="schedule_section__title">
-                                            Сбор гостей
-                                        </p>
-
-                                        <p class="schedule_section__subtitle">
-                                            приветствие <br> напитки & фуршет
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="schedule_section__row"
-                                     data-aos="fade-down"
-                                     data-aos-duration="1500">
-                                    <p class="schedule_section__time">
-                                        17:00
-                                    </p>
-
-                                    <hr>
-
-                                    <div class="schedule_section__description">
-                                        <p class="schedule_section__title">
-                                            Сбор гостей
-                                        </p>
-
-                                        <p class="schedule_section__subtitle">
-                                            приветствие <br> напитки & фуршет
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="schedule_section__row"
-                                     data-aos="fade-down"
-                                     data-aos-duration="1500">
-                                    <p class="schedule_section__time">
-                                        17:00
-                                    </p>
-
-                                    <hr>
-
-                                    <div class="schedule_section__description">
-                                        <p class="schedule_section__title">
-                                            Сбор гостей
-                                        </p>
-
-                                        <p class="schedule_section__subtitle">
-                                            приветствие <br> напитки & фуршет
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="subtitle y-text y-text__form"
-                             data-aos="fade-left"
-                             data-aos-duration="1500">
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                р
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                а
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                с
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                п
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                и
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                с
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                а
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                н
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                и
-                            </p>
-
-                            <p class="y-text__item y-text__form-item text-white-imp">
-                                е
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              <p class="timer_block__text">
+                секунд
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="map">
-            <div class="container">
-                <div class="map__wrapper">
-                    <div class="map__block">
-                        <div class="map__text">
-                            <h2 class="subtitle text-dark"
-                                data-aos="fade-right"
-                                data-aos-duration="1500">
-                                Как добраться?
-                            </h2>
+    <section class="location_section">
+      <div class="location_section__image location_bg">
+        <div class="container">
+          <div class="location_section__wrapper">
+            <div
+                  class="subtitle y-text"
+                  data-aos="fade-right"
+                  data-aos-duration="1500"
+            >
+              <p class="y-text__item y-text__location">
+                л
+              </p>
 
-                            <p class="main_signature text-dark"
-                               data-aos="fade-left"
-                               data-aos-duration="1500">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Aperiam dolor eligendi et iusto magni modi nesciunt
-                                omnis pariatur temporibus ut?
-                            </p>
-                        </div>
-                    </div>
+              <p class="y-text__item y-text__location">
+                о
+              </p>
 
-                    <div class="map__block"
-                         data-aos="fade-down"
-                         data-aos-duration="1500">
-                        <div class="map__container">
-                            <div class="map_btns_wrap">
-                                <button type="button"
-                                        class="custom_btn_map"
-                                        id="zoomInButton">
-                                    <img src="assets/images/icons/map_plus.svg"
-                                         alt="Plus"
-                                         loading="lazy">
-                                </button>
+              <p class="y-text__item y-text__location">
+                к
+              </p>
 
-                                <button type="button"
-                                        class="custom_btn_map"
-                                        id="zoomOutButton">
-                                    <img src="assets/images/icons/map_minus.svg" alt="Minus" loading="lazy">
-                                </button>
-                            </div>
+              <p class="y-text__item y-text__location">
+                а
+              </p>
 
-                            <div class="init_map" id="map"></div>
-                        </div>
-                    </div>
-                </div>
+              <p class="y-text__item y-text__location">
+                ц
+              </p>
+
+              <p class="y-text__item y-text__location">
+                и
+              </p>
+
+              <p class="y-text__item y-text__location">
+                я
+              </p>
             </div>
-        </section>
 
-        <section class="section_gallery">
-            <div class="section_gallery__wrapper">
-                <a href="assets/images/gallery/image1.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image1.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
-                    </p>
+            <div class="location_section__container">
+              <div class="location_gallery">
+                <a
+                      data-fancybox="location"
+                      data-aos="fade-left"
+                      data-aos-duration="1500"
+                      href="assets/images/location/registration.jpg"
+                      class="location_gallery__item"
+                >
+                  <img
+                        src="assets/images/location/registration.jpg"
+                        alt="Registration"
+                        loading="lazy"
+                  >
                 </a>
 
-                <div class="section_gallery__gray"
-                     data-aos="fade-down"
-                     data-aos-duration="1500">
-                    <h2 class="section_gallery__title"
-                        data-aos="fade-down"
-                        data-aos-duration="1500">
-                        Gallery
-                    </h2>
+                <a
+                      data-fancybox="location"
+                      data-aos="fade-left"
+                      data-aos-duration="1500"
+                      href="assets/images/location/restoration.jpg"
+                      class="location_gallery__item"
+                >
+                  <img
+                        src="assets/images/location/restoration.jpg"
+                        alt="Restoration"
+                        loading="lazy"
+                  >
+                </a>
+              </div>
+
+              <h3
+                    class="location_name location_text"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              >
+                Александровский парк
+              </h3>
+
+              <h4
+                    class="location_text"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              >
+                Александровская ул., 60А, Ульяновск
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dress_code_section">
+      <div class="container">
+        <div class="dress_code_section__wrapper">
+          <div class="dress_code_section__head">
+            <h2
+                  class="dress_code_section__title"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              Дресс код
+            </h2>
+
+            <div
+                  class="dress_code_section__tabs"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              <button
+                    class="gender_tab"
+                    data-gender-tab="man"
+              >
+                Мужчины
+              </button>
+
+              <button
+                    class="gender_tab gender_active"
+                    data-gender-tab="woman"
+              >
+                Женщины
+              </button>
+            </div>
+          </div>
+
+          <div
+                class="dress_code_container"
+                data-gender-block="man"
+          >
+            <p
+                  class="gender_title"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              Для мужчин:
+            </p>
+
+            <div class="dress_code_row">
+              <div
+                    class="dress_code_circle bg-light-brown"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              ></div>
+
+              <div
+                    class="dress_code_circle bg-man-gray"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              ></div>
+
+              <div
+                    class="dress_code_circle bg-dark-violet"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              ></div>
+
+              <div
+                    class="dress_code_circle bg-brown"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              ></div>
+            </div>
+          </div>
+
+          <div
+                class="dress_code_container dress_code_active"
+                data-gender-block="woman"
+          >
+            <p
+                  class="gender_title"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              Для женщин:
+            </p>
+
+            <div class="dress_code_row">
+              <div
+                    class="dress_code_circle bg-pink"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+              >
+              </div>
+
+              <div
+                    class="dress_code_circle bg-violet"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+              >
+              </div>
+
+              <div
+                    class="dress_code_circle bg-women-gray"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+              >
+              </div>
+
+              <div
+                    class="dress_code_circle bg-women-dark-gray"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+              >
+              </div>
+            </div>
+
+            <p
+                  class="asking"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              Будем признательны, если в белом наряде
+              останется только невеста.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule_section">
+      <div class="schedule_section__image schedule_bg">
+        <div class="container">
+          <div class="schedule_section__wrapper">
+            <div class="schedule_section__list">
+              <div class="schedule_section__column">
+                <div
+                      class="schedule_section__row"
+                      data-aos="fade-down"
+                      data-aos-duration="1500"
+                >
+                  <p class="schedule_section__time">
+                    17:00
+                  </p>
+
+                  <hr>
+
+                  <div class="schedule_section__description">
+                    <p class="schedule_section__title">
+                      Сбор гостей
+                    </p>
+
+                    <p class="schedule_section__subtitle">
+                      приветствие <br> напитки & фуршет
+                    </p>
+                  </div>
                 </div>
 
-                <a href="assets/images/gallery/image2.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image2.jpeg"
-                         loading="lazy"
-                         alt="Image">
+                <div
+                      class="schedule_section__row"
+                      data-aos="fade-down"
+                      data-aos-duration="1500"
+                >
+                  <p class="schedule_section__time">
+                    17:00
+                  </p>
 
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
+                  <hr>
+
+                  <div class="schedule_section__description">
+                    <p class="schedule_section__title">
+                      Сбор гостей
                     </p>
-                </a>
 
-                <a href="assets/images/gallery/image3.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image3.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
+                    <p class="schedule_section__subtitle">
+                      приветствие <br> напитки & фуршет
                     </p>
-                </a>
-
-                <a href="assets/images/gallery/image4.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image4.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
-                    </p>
-                </a>
-
-                <a href="assets/images/gallery/image5.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image5.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
-                    </p>
-                </a>
-
-                <a href="assets/images/gallery/image6.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image6.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
-                    </p>
-                </a>
-
-                <a href="assets/images/gallery/image8.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image8.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
-                    </p>
-                </a>
-
-                <a href="assets/images/gallery/image7.jpeg"
-                   class="section_gallery__item"
-                   data-fancybox="main"
-                   data-aos="fade-down"
-                   data-aos-duration="1500">
-                    <img class="section_gallery__image"
-                         src="assets/images/gallery/image7.jpeg"
-                         loading="lazy"
-                         alt="Image">
-
-                    <p class="section_gallery__signature"
-                       data-aos="fade-down"
-                       data-aos-duration="1500">
-                        Image signature
-                    </p>
-                </a>
-            </div>
-        </section>
-
-        <section class="form_visitors">
-            <div class="container">
-                <div class="form_visitors__wrapper">
-                    <div class="form_visitors__block"
-                         data-aos="fade-right"
-                         data-aos-duration="1500">
-                        <img class="form_visitors__image"
-                             src="assets/images/main/form_image.jpeg"
-                             alt="Image"
-                             loading="lazy">
-                    </div>
-
-                    <div class="form_visitors__block">
-                        <form method="post"
-                              action="#"
-                              data-aos="fade-down"
-                              data-aos-duration="1500">
-                            <div class="form_input">
-                                <label for="visitor_name">
-                                    Как вас зовут?
-                                </label>
-
-                                <input id="visitor_name"
-                                       type="text"
-                                       name="visitor_name">
-                            </div>
-
-                            <div class="radio_container">
-                                <div class="radio_container__wrapper">
-                                    <p class="radio_title">
-                                        Присутствие:
-                                    </p>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="visitor_once"
-                                                   type="radio"
-                                                   name="visitor_once">
-
-                                            <label for="visitor_once">
-                                                Приду один (одна)
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="visitor_company"
-                                                   type="radio"
-                                                   name="visitor_company">
-
-                                            <label for="visitor_company">
-                                                Приду с половинкой
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="not_visited"
-                                                   type="radio"
-                                                   name="not_visited">
-
-                                            <label for="not_visited">
-                                                Не смогу присутствовать (не сможем)
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="radio_container">
-                                <div class="radio_container__wrapper">
-                                    <p class="radio_title">
-                                        Предпочтение по алкоголю:
-                                    </p>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="prefer_viski"
-                                                   type="radio"
-                                                   name="prefer_viski">
-
-                                            <label for="prefer_viski">
-                                                Виски
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="prefer_vodka"
-                                                   type="radio"
-                                                   name="prefer_vodka">
-
-                                            <label for="prefer_vodka">
-                                                Водка
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="prefer_koniak"
-                                                   type="radio"
-                                                   name="prefer_koniak">
-
-                                            <label for="prefer_koniak">
-                                                Коньяк
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="prefer_white_vino"
-                                                   type="radio"
-                                                   name="prefer_white_vino">
-
-                                            <label for="prefer_white_vino">
-                                                Белое вино
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="prefer_shampany"
-                                                   type="radio"
-                                                   name="prefer_shampany">
-
-                                            <label for="prefer_shampany">
-                                                Шампанское
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_radio">
-                                        <div class="form_radio__wrapper">
-                                            <input id="prefer_red_vino"
-                                                   type="radio"
-                                                   name="prefer_red_vino">
-
-                                            <label for="prefer_red_vino">
-                                                Красное вино
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="toggle-pill-color">
-                                <input type="checkbox"
-                                       id="allergy_check"
-                                       name="allergy_check">
-
-                                <label for="allergy_check"></label>
-
-                                <p class="checkbox_signature">
-                                    Есть аллергия
-                                </p>
-                            </div>
-
-                            <div class="form_input d-none-imp" id="allergyText">
-                                <label for="allergy_text">
-                                    Укажите свою аллергию
-                                </label>
-
-                                <input id="allergy_text"
-                                       type="text"
-                                       name="allergy_text">
-                            </div>
-
-                            <div class="music_container">
-                                <div class="music_list">
-                                    <div class="form_input_container">
-                                        <div class="form_input">
-                                            <label for="visitor_music">
-                                                Ваша любимая музыка
-                                            </label>
-
-                                            <input id="visitor_music"
-                                                   type="text"
-                                                   name="visitor_music"
-                                                   oninput="activeLabel(this, event)"
-                                                   onclick="addActiveLabelOnClick(this)"
-                                            >
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <button type="button" class="add_music">
-                                    <img src="assets/images/icons/add.svg"
-                                         alt="Plus"
-                                         loading="lazy">
-                                </button>
-                            </div>
-
-                            <button type="submit" class="form_visitors__submit">
-                                Отправить анкету
-                            </button>
-                        </form>
-
-                        <div class="form_text_wrapper">
-                            <div class="subtitle y-text y-text__form"
-                                 data-aos="fade-left"
-                                 data-aos-duration="1500">
-                                <p class="y-text__item y-text__form-item">
-                                    а
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    н
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    к
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    е
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    т
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    а
-                                </p>
-                            </div>
-
-                            <div class="subtitle y-text y-text__form"
-                                 data-aos="fade-left"
-                                 data-aos-duration="1500">
-                                <p class="y-text__item y-text__form-item">
-                                    г
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    о
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    с
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    т
-                                </p>
-
-                                <p class="y-text__item y-text__form-item">
-                                    я
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+
+                <div
+                      class="schedule_section__row"
+                      data-aos="fade-down"
+                      data-aos-duration="1500"
+                >
+                  <p class="schedule_section__time">
+                    17:00
+                  </p>
+
+                  <hr>
+
+                  <div class="schedule_section__description">
+                    <p class="schedule_section__title">
+                      Сбор гостей
+                    </p>
+
+                    <p class="schedule_section__subtitle">
+                      приветствие <br> напитки & фуршет
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-    </div>
+
+            <div class="subtitle y-text y-text__form"
+                 data-aos="fade-left"
+                 data-aos-duration="1500">
+              <p class="y-text__item y-text__form-item text-white-imp">
+                р
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                а
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                с
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                п
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                и
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                с
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                а
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                н
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                и
+              </p>
+
+              <p class="y-text__item y-text__form-item text-white-imp">
+                е
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map">
+      <div class="container">
+        <div class="map__wrapper">
+          <div class="map__block">
+            <div class="map__text">
+              <h2
+                    class="subtitle text-dark"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+              >
+                Как добраться?
+              </h2>
+
+              <p
+                    class="main_signature text-dark"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Aperiam dolor eligendi et iusto magni modi nesciunt
+                omnis pariatur temporibus ut?
+              </p>
+            </div>
+          </div>
+
+          <div
+                class="map__block"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            <div class="map__container">
+              <div class="map_btns_wrap">
+                <button
+                      type="button"
+                      class="custom_btn_map"
+                      id="zoomInButton"
+                >
+                  <img
+                        src="assets/images/icons/map_plus.svg"
+                        alt="Plus"
+                        loading="lazy"
+                        draggable="false"
+                  >
+                </button>
+
+                <button
+                      type="button"
+                      class="custom_btn_map"
+                      id="zoomOutButton"
+                >
+                  <img
+                        src="assets/images/icons/map_minus.svg"
+                        alt="Minus"
+                        loading="lazy"
+                        draggable="false"
+                  >
+                </button>
+              </div>
+
+              <div class="init_map" id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section_gallery">
+      <div class="section_gallery__wrapper">
+        <a
+              href="assets/images/gallery/image1.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image1.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <div
+              class="section_gallery__gray"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <h2
+                class="section_gallery__title"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Gallery
+          </h2>
+        </div>
+
+        <a
+              href="assets/images/gallery/image2.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image2.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <a
+              href="assets/images/gallery/image3.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image3.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <a
+              href="assets/images/gallery/image4.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image4.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <a
+              href="assets/images/gallery/image5.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image5.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <a
+              href="assets/images/gallery/image6.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image6.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <a
+              href="assets/images/gallery/image8.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image8.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+
+        <a
+              href="assets/images/gallery/image7.jpeg"
+              class="section_gallery__item"
+              data-fancybox="main"
+              data-aos="fade-down"
+              data-aos-duration="1500"
+        >
+          <img
+                class="section_gallery__image"
+                src="assets/images/gallery/image7.jpeg"
+                loading="lazy"
+                alt="Image"
+          >
+
+          <p
+                class="section_gallery__signature"
+                data-aos="fade-down"
+                data-aos-duration="1500"
+          >
+            Image signature
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <section class="form_visitors">
+      <div class="container">
+        <div class="form_visitors__wrapper">
+          <div
+                class="form_visitors__block"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+          >
+            <img
+                  class="form_visitors__image"
+                  src="assets/images/main/form_image.jpeg"
+                  alt="Image"
+                  loading="lazy"
+            >
+          </div>
+
+          <div class="form_visitors__block">
+            <form
+                  method="post"
+                  action="#"
+                  class="main_form"
+                  data-aos="fade-down"
+                  data-aos-duration="1500"
+            >
+              <div class="form_input">
+                <label for="visitor_name">
+                  Как вас зовут?
+                </label>
+
+                <input
+                      id="visitor_name"
+                      type="text"
+                      name="visitor_name"
+                      oninput="activeLabel(this, event)"
+                      onclick="addActiveLabelOnClick(this)"
+                >
+              </div>
+
+              <div class="radio_container my">
+                <div class="radio_container__wrapper">
+                  <p class="radio_title">
+                    Присутствие:
+                  </p>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            class="visited_checkbox"
+                            id="visitor_once"
+                            type="radio"
+                            name="visitor_once"
+                      >
+
+                      <label for="visitor_once">
+                        Приду один (одна)
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            class="visited_checkbox"
+                            id="visitor_company"
+                            type="radio"
+                            name="visitor_company"
+                      >
+
+                      <label for="visitor_company">
+                        Приду с половинкой
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            class="visited_checkbox"
+                            id="visitor_custom"
+                            type="radio"
+                            name="visitor_company"
+                      >
+
+                      <label for="visitor_custom">
+                        Указать количество
+                      </label>
+                    </div>
+                  </div>
+
+                  <div
+                        class="form_input_container d-none-imp"
+                        id="indicate_of_guests"
+                  >
+                    <div class="form_input">
+                      <label
+                            class="number_label"
+                            for="custom_qnt_visitors"
+                      >
+                        Укажите количество
+                      </label>
+
+                      <input
+                            class="small_input"
+                            id="custom_qnt_visitors"
+                            type="text"
+                            name="custom_qnt_visitors"
+                            oninput="activeLabel(this, event); validateInput(this);"
+                            onclick="addActiveLabelOnClick(this)"
+                            pattern="^[0-9]*$"
+                      >
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            class="visited_checkbox"
+                            id="not_visited"
+                            type="radio"
+                            name="not_visited"
+                      >
+
+                      <label for="not_visited">
+                        Не смогу присутствовать (не сможем)
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="radio_container my" id="alcohol_preference">
+                <div class="radio_container__wrapper">
+                  <p class="radio_title">
+                    Предпочтение по алкоголю:
+                  </p>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="prefer_viski"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="prefer_viski">
+                        Виски
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="prefer_vodka"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="prefer_vodka">
+                        Водка
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="prefer_koniak"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="prefer_koniak">
+                        Коньяк
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="prefer_white_vino"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="prefer_white_vino">
+                        Белое вино
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="prefer_shampany"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="prefer_shampany">
+                        Шампанское
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="prefer_red_vino"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="prefer_red_vino">
+                        Красное вино
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
+                            id="custom_prefer"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="custom_prefer">
+                        Указать вручную
+                      </label>
+                    </div>
+                  </div>
+
+                  <div
+                        class="form_input_container d-none-imp"
+                        id="custom_alcohol_prefer_block"
+                  >
+                    <div class="form_input">
+                      <label class="number_label" for="custom_alcohol_prefer">
+                        Ваши предпочтения
+                      </label>
+
+                      <input
+                            class="small_input"
+                            id="custom_alcohol_prefer"
+                            type="text"
+                            name="custom_alcohol_prefer"
+                            oninput="activeLabel(this, event)"
+                            onclick="addActiveLabelOnClick(this)"
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="toggle-pill-color my">
+                <input
+                      type="checkbox"
+                      id="allergy_check"
+                      name="allergy_check"
+                >
+
+                <label for="allergy_check"></label>
+
+                <p class="checkbox_signature">
+                  Есть аллергия
+                </p>
+              </div>
+
+              <div class="form_input d-none-imp" id="allergyText">
+                <label for="allergy_text">
+                  Укажите свою аллергию
+                </label>
+
+                <input
+                      id="allergy_text"
+                      type="text"
+                      name="allergy_text"
+                      oninput="activeLabel(this, event)"
+                      onclick="addActiveLabelOnClick(this)"
+                >
+              </div>
+
+              <div class="music_container my">
+                <div class="music_list">
+                  <div class="form_input_container">
+                    <div class="form_input">
+                      <label for="visitor_music">
+                        Ваша любимая музыка
+                      </label>
+
+                      <input
+                            id="visitor_music"
+                            type="text"
+                            name="visitor_music"
+                            oninput="activeLabel(this, event)"
+                            onclick="addActiveLabelOnClick(this)"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="add_music">
+                  <img
+                        src="assets/images/icons/add.svg"
+                        alt="Plus"
+                        loading="lazy"
+                  >
+                </button>
+              </div>
+
+              <button type="submit" class="form_visitors__submit">
+                Отправить анкету
+              </button>
+            </form>
+
+            <div class="form_text_wrapper">
+              <div
+                    class="subtitle y-text y-text__form"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              >
+                <p class="y-text__item y-text__form-item">
+                  а
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  н
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  к
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  е
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  т
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  а
+                </p>
+              </div>
+
+              <div
+                    class="subtitle y-text y-text__form"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+              >
+                <p class="y-text__item y-text__form-item">
+                  г
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  о
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  с
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  т
+                </p>
+
+                <p class="y-text__item y-text__form-item">
+                  я
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 
 </body>

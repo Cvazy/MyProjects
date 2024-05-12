@@ -55,13 +55,12 @@ p {
   margin: 0;
 }
 
-.loader {
-  opacity: 1;
+.loader,
+.modal {
   transition: opacity 1s ease-out;
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 9999;
 
   &__wrapper {
     display: flex;
@@ -75,6 +74,20 @@ p {
       width: 40%;
     }
   }
+}
+
+.loader {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.modal {
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal_visible {
+  opacity: 1 !important;
 }
 
 main {
@@ -1341,10 +1354,6 @@ section {
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2.5rem;
       width: 85%;
 
       @include respondedBy(1770px) {
@@ -1352,13 +1361,15 @@ section {
       }
 
       @include respondedBy(767px) {
-        gap: 1.75rem;
         width: 90%;
       }
 
       @include respondedBy(480px) {
         width: 100%;
-        gap: 1.25rem;
+      }
+
+      div {
+        max-height: 500px;
       }
     }
 
@@ -1382,6 +1393,17 @@ section {
       align-items: center;
       gap: 1rem;
       width: 100%;
+    }
+
+    #indicate_of_guests,
+    #custom_alcohol_prefer_block {
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    .active_indicate_of_guests {
+      max-height: 4rem !important;
+      overflow: visible !important;
     }
 
     .form_input,
@@ -1414,16 +1436,39 @@ section {
         }
       }
 
-      input[type="text"] {
+      .number_label {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+
+        @include respondedBy(600px) {
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+
+        @include respondedBy(480px) {
+          font-size: .875rem;
+          line-height: 1rem;
+        }
+      }
+
+      input[type="text"],
+      input[type="number"] {
         position: relative;
         z-index: 100;
-        font-size: 1.75rem;
-        line-height: 2.5rem;
         color: var(--dark-col);
         background: none;
         width: 100%;
         border-bottom: 2px solid var(--dark-col);
         padding: 0 0 8px;
+
+        @include respondedBy(600px) {
+          padding: 0 0 6px;
+        }
+      }
+
+      input[type="text"]:not(.small_input) {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
 
         @include respondedBy(1280px) {
           font-size: 1.5rem;
@@ -1433,12 +1478,27 @@ section {
         @include respondedBy(600px) {
           font-size: 1.25rem;
           line-height: 1.575rem;
-          padding: 0 0 6px;
         }
 
         @include respondedBy(480px) {
           font-size: 1rem;
           line-height: 1.25rem;
+        }
+      }
+
+      input[type="number"],
+      .small_input {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+
+        @include respondedBy(600px) {
+          font-size: 1rem;
+          line-height: 1.25rem;
+        }
+
+        @include respondedBy(480px) {
+          font-size: .875rem;
+          line-height: 1rem;
         }
       }
     }
@@ -1518,10 +1578,18 @@ section {
         line-height: 1rem !important;
       }
 
-      @include respondedBy(600px) {
+      @include respondedBy(480px) {
         top: -15px;
         font-size: .575rem !important;
         line-height: .875rem !important;
+      }
+    }
+
+    .active_number_label {
+      @include respondedTo(600px) {
+        font-size: 1rem !important;
+        line-height: 1.25rem !important;
+        top: -20px !important;
       }
     }
 
@@ -1730,4 +1798,202 @@ section {
 #allergyText {
   max-height: 0;
   overflow: hidden;
+}
+
+.my {
+  margin: 2.5rem 0;
+
+  @include respondedBy(767px) {
+    margin: 1.75rem 0;
+  }
+
+  @include respondedBy(480px) {
+    margin: 1.25rem 0;
+  }
+}
+
+.circle_checkbox {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+
+  &:checked {
+
+    ~ .circle_checkbox_span {
+      border-color: #1A2528;
+      box-shadow: 0px 0px 0px 3px #1A2528 inset;
+
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.circle_checkbox_span {
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  max-width: 1.25rem;
+  max-height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 100px;
+  background-color: #FFF;
+  border: 1px solid #1A2528;
+  box-shadow: 0px 0px 0px 0px #1A2528 inset;
+  transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
+
+  @include respondedBy(600px) {
+    min-width: 1rem;
+    min-height: 1rem;
+    max-width: 1rem;
+    max-height: 1rem;
+  }
+
+  @include respondedBy(600px) {
+    min-width: .875rem;
+    min-height: .875rem;
+    max-width: .875rem;
+    max-height: .875rem;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 4;
+    position: absolute;
+    transform: scale(0);
+    background-size: 50%;
+    background-image: url('https://s6.picofile.com/d/8392306668/bacc888c-bed7-41a9-bf24-f6ff0718f471/checkmark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition-delay: 0.2s !important;
+    transition: all 0.25s cubic-bezier(0, 1.05, 0.72, 1.07);
+  }
+}
+
+.success_register {
+  background-color: white;
+  border-radius: 1rem;
+  width: 40%;
+
+  @include respondedBy(1490px) {
+    width: 55%;
+  }
+
+  @include respondedBy(1024px) {
+    width: 70%;
+  }
+
+  @include respondedBy(767px) {
+    width: 82%;
+  }
+
+  @include respondedBy(480px) {
+    width: 93%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+
+    @include respondedBy(1280px) {
+      gap: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__close {
+    display: flex;
+    background: none;
+    padding: 0;
+    border: none;
+
+    svg {
+      width: 2.25rem;
+      height: 2.25rem;
+
+      @include respondedBy(1280px) {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      @include respondedBy(600px) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      @include respondedBy(480px) {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-family: "Poiret One", sans-serif;
+    color: var(--dark-col);
+    margin: 0;
+
+    @include respondedBy(1280px) {
+      font-size: 1.5rem;
+      line-height: 1.75rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-family: "Poiret One", sans-serif;
+    color: var(--dark-col);
+    margin: 0;
+
+    @include respondedBy(1280px) {
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+    }
+
+    @include respondedBy(600px) {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+
+    @include respondedBy(480px) {
+      font-size: .75rem;
+      line-height: 1rem;
+    }
+  }
 }
