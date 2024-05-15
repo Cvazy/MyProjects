@@ -27,16 +27,23 @@ async function sendData(data) {
 
 async function handleFormSubmit() {
   const data = serializeForm(mainForm);
-  const response = await sendData(data);
+  return await sendData(data);
 }
 
 mainForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  modalWindow.style.zIndex = "9999";
-  modalWindow.classList.add("modal_visible");
+  openLoader();
 
   handleFormSubmit().then((status) => {
-    console.log(status);
+    closeLoader();
+
+    modalWindow.style.zIndex = "9999";
+    modalWindow.classList.add("modal_visible");
+
+    if (!status.ok) {
+      successRegisterTitle.textContent = "Произошла ошибка";
+      successRegisterText.textContent =
+        "Пожалуйста, обратитесь к Андрею за помощью для получения дополнительной информации";
+    }
   });
 });

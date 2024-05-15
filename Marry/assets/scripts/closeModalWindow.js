@@ -11,7 +11,6 @@ closeModalWindowButton.addEventListener("click", () => {
 document.addEventListener("click", (event) => {
   if (
     !successBlock.contains(event.target) &&
-    !submitButton.contains(event.target) &&
     modalWindow.classList.contains("modal_visible")
   ) {
     closeModal();

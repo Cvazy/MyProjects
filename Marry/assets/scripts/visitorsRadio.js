@@ -6,6 +6,7 @@ const togglePillColor = document.querySelector(".toggle-pill-color");
 const allergyBlock = document.querySelector("#allergyText");
 const musicContainer = document.querySelector(".music_container");
 const successRegisterText = document.querySelector(".success_register__text");
+const successRegisterTitle = document.querySelector(".success_register__title");
 
 const notVisitedText = "Благодарим за ответ!";
 
