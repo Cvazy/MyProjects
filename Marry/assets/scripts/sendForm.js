@@ -38,22 +38,23 @@ function serializeForm(formNode) {
 
   return Array.from(elements)
     .filter((item) => !!item.name)
-    .map((element) => {
+    .reduce((obj, element) => {
       const { name, type } = element;
       const value =
         type === "checkbox" || type === "radio"
           ? element.checked
           : element.value;
 
-      return { name, value };
-    });
+      obj[name] = value;
+      return obj;
+    }, {});
 }
 
 async function sendData(data) {
   return await fetch("api/internal/form/send/", {
     method: "POST",
-    headers: { "Content-Type": "multipart/form-data" },
-    body: data,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
   });
 }
 
