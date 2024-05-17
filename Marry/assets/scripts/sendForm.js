@@ -1,5 +1,37 @@
 const mainForm = document.querySelector(".main_form");
 const modalWindow = document.querySelector(".modal");
+const inputNameVisitor = document.querySelector("#visitor_name");
+const radioContainerBlocks = document.querySelectorAll(".radio_container");
+const radioContainerVisitorBlock =
+  radioContainerBlocks[0].querySelectorAll(".form_radio");
+const radioContainerAlcoholBlock =
+  radioContainerBlocks[1].querySelectorAll(".form_radio");
+
+function checkRadioBlock(container) {
+  container.forEach((block) => {
+    if (block.querySelector("input").checked === false) {
+      block.closest(".radio_container").classList.add("error_radio_block");
+
+      return true;
+    }
+  });
+
+  return false;
+}
+
+function removeErrorRadioClass(container) {
+  container.forEach((block) => {
+    if (block.querySelector("input").checked === false) {
+      block.closest(".radio_container").classList.remove("error_radio_block");
+    }
+  });
+}
+
+inputNameVisitor.addEventListener("input", (event) => {
+  if (event.target.value !== "") {
+    inputNameVisitor.classList.remove("error_input");
+  }
+});
 
 function serializeForm(formNode) {
   const { elements } = formNode;
@@ -32,18 +64,32 @@ async function handleFormSubmit() {
 
 mainForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  openLoader();
 
-  handleFormSubmit().then((status) => {
-    closeLoader();
+  let checkRadioVisitorBlock = checkRadioBlock(radioContainerVisitorBlock);
+  let checkRadioAlcoholBlock = checkRadioBlock(radioContainerAlcoholBlock);
 
-    modalWindow.style.zIndex = "9999";
-    modalWindow.classList.add("modal_visible");
+  if (inputNameVisitor.value === "") {
+    inputNameVisitor.classList.add("error_input");
 
-    if (!status.ok) {
-      successRegisterTitle.textContent = "Произошла ошибка";
-      successRegisterText.textContent =
-        "Пожалуйста, обратитесь к Андрею за помощью для получения дополнительной информации";
-    }
-  });
+    return 0;
+  } else if (checkRadioVisitorBlock || checkRadioAlcoholBlock) {
+    return 0;
+  } else {
+    removeErrorRadioClass(radioContainerVisitorBlock);
+    removeErrorRadioClass(radioContainerAlcoholBlock);
+    openLoader();
+
+    handleFormSubmit().then((status) => {
+      closeLoader();
+
+      modalWindow.style.zIndex = "9999";
+      modalWindow.classList.add("modal_visible");
+
+      if (!status.ok) {
+        successRegisterTitle.textContent = "Произошла ошибка";
+        successRegisterText.textContent =
+          "Пожалуйста, обратитесь к Андрею за помощью для получения дополнительной информации";
+      }
+    });
+  }
 });

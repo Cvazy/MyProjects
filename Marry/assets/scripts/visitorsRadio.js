@@ -2,6 +2,9 @@ const visitorsRadios = document.querySelectorAll(".visited_checkbox");
 const indicateOfGuests = document.querySelector("#indicate_of_guests");
 const alcoholPreference = document.querySelector("#alcohol_preference");
 const alcoholCheckboxes = alcoholPreference.querySelectorAll(".form_radio");
+const alcoholCustomBlocks = alcoholPreference.querySelectorAll(
+  ".form_radio__wrapper",
+);
 const togglePillColor = document.querySelector(".toggle-pill-color");
 const allergyBlock = document.querySelector("#allergyText");
 const musicContainer = document.querySelector(".music_container");
@@ -21,6 +24,8 @@ visitorsRadios.forEach((radio) => {
       });
 
       radio.checked = true;
+
+      radio.closest(".radio_container").classList.remove("error_radio_block");
 
       setVisibilityFormBlocks(true);
 
@@ -71,5 +76,11 @@ alcoholCheckboxes.forEach((block) => {
 
   circleSpan.addEventListener("click", () => {
     circleSpan.nextElementSibling.click();
+  });
+});
+
+alcoholCustomBlocks.forEach((block) => {
+  block.addEventListener("click", () => {
+    alcoholPreference.classList.remove("error_radio_block");
   });
 });

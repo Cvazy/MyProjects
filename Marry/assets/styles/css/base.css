@@ -98,3 +98,11 @@
         text-align: center;
     }
 }
+
+.error_input {
+    border-bottom: 2px solid #ff7e7e !important;
+}
+
+.error_radio_block {
+    border: 2px solid #ff7e7e !important;
+}
