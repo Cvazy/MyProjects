@@ -58,6 +58,7 @@
   <script src="assets/scripts/validateInput.js" defer></script>
   <script src="assets/scripts/checkAllergy.js" defer></script>
   <script src="assets/scripts/musicActions.js" defer></script>
+  <script src="assets/scripts/validationForm.js" defer></script>
   <script src="assets/scripts/sendForm.js" defer></script>
   <script src="assets/scripts/closeModalWindow.js" defer></script>
   <title>Andrey & Polina</title>
@@ -1202,6 +1203,23 @@
                   <div class="form_radio">
                     <div class="form_radio__wrapper">
                       <input
+                            id="not_alcohol"
+                            name="not_alcohol"
+                            class="circle_checkbox"
+                            type="checkbox"
+                      >
+
+                      <span class="circle_checkbox_span"></span>
+
+                      <label for="not_alcohol">
+                        Не пью алкоголь
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="form_radio">
+                    <div class="form_radio__wrapper">
+                      <input
                             id="custom_prefer"
                             name="custom_prefer"
                             class="circle_checkbox"
@@ -1212,23 +1230,6 @@
 
                       <label for="custom_prefer">
                         Указать вручную
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="form_radio">
-                    <div class="form_radio__wrapper">
-                      <input
-                            id="not_alcohol"
-                            name="prefer_red_vino"
-                            class="circle_checkbox"
-                            type="checkbox"
-                      >
-
-                      <span class="circle_checkbox_span"></span>
-
-                      <label for="not_alcohol">
-                        Не пью алкоголь
                       </label>
                     </div>
                   </div>

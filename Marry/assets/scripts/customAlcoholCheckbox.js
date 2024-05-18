@@ -13,6 +13,8 @@ customPrefer.addEventListener("change", () => {
   } else {
     customPreferBlock.classList.remove("active_indicate_of_guests");
 
+    customPreferBlock.querySelector("input").classList.remove("error_input");
+
     setTimeout(() => {
       customPreferBlock.classList.add("d-none-imp");
     }, 300);

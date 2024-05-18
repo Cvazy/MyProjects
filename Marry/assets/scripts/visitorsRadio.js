@@ -11,14 +11,19 @@ const musicContainer = document.querySelector(".music_container");
 const successRegisterText = document.querySelector(".success_register__text");
 const successRegisterTitle = document.querySelector(".success_register__title");
 
+const allergyText = document.getElementById("allergyText");
+const allergyCheckbox = document.getElementById("allergy_check");
+
 const notVisitedText = "Благодарим за ответ!";
 
 const visitedText =
   "Благодарим вас за заполнение анкеты! Мы обязательно возьмём в учёт ваши пожелания. Будем очень рады видеть вас на нашей свадьбе!";
 
 visitorsRadios.forEach((radio) => {
-  radio.addEventListener("change", () => {
+  radio.addEventListener("change", (event) => {
     if (radio.checked) {
+      event.preventDefault();
+
       visitorsRadios.forEach((el) => {
         el.checked = false;
       });
@@ -46,8 +51,19 @@ visitorsRadios.forEach((radio) => {
         }, 300);
 
         successRegisterText.textContent = notVisitedText;
+
+        allergyText.classList.remove("form_input_visible");
+        allergyText.classList.remove("my");
+
+        setTimeout(() => {
+          allergyText.classList.add("d-none-imp");
+        }, 1);
+
+        allergyCheckbox.checked = false;
       } else {
         indicateOfGuests.classList.remove("active_indicate_of_guests");
+
+        indicateOfGuests.querySelector("input").classList.remove("error_input");
 
         setTimeout(() => {
           indicateOfGuests.classList.add("d-none-imp");
