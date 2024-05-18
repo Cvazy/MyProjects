@@ -1099,6 +1099,7 @@ section {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    width: 100%;
 
     @include respondedBy(480px) {
       gap: .25rem;
